@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A2D92125C20935D13DCA00C /* Pods_Donly_deUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C3B630B7F4F453F68D27147 /* Pods_Donly_deUITests.framework */; };
+		5616B79BDCC2151ED54F8E03 /* Pods_Donly_deTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 688493A6803C95A4E2504C35 /* Pods_Donly_deTests.framework */; };
+		B37C485B6E76722ECFA303E5 /* Pods_Donly_de.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A90C87EAC5D9362CCDFAF6C /* Pods_Donly_de.framework */; };
 		F46C464F1E8D90E8001FF145 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46C464E1E8D90E8001FF145 /* AppDelegate.swift */; };
 		F46C46511E8D90E8001FF145 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46C46501E8D90E8001FF145 /* ViewController.swift */; };
 		F46C46541E8D90E8001FF145 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F46C46521E8D90E8001FF145 /* Main.storyboard */; };
@@ -14,6 +17,11 @@
 		F46C46591E8D90E8001FF145 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F46C46571E8D90E8001FF145 /* LaunchScreen.storyboard */; };
 		F46C46641E8D90E8001FF145 /* Donly_deTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46C46631E8D90E8001FF145 /* Donly_deTests.swift */; };
 		F46C466F1E8D90E8001FF145 /* Donly_deUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46C466E1E8D90E8001FF145 /* Donly_deUITests.swift */; };
+		F46C467E1E8D9139001FF145 /* OnboardingStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F46C467D1E8D9139001FF145 /* OnboardingStoryboard.storyboard */; };
+		F46C46821E8D960F001FF145 /* OnboardingPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46C46811E8D960F001FF145 /* OnboardingPageVC.swift */; };
+		F46C46851E8D963F001FF145 /* OnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46C46831E8D963F001FF145 /* OnboardingVC.swift */; };
+		F46C46861E8D963F001FF145 /* OnboardingVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F46C46841E8D963F001FF145 /* OnboardingVC.xib */; };
+		F46C46881E8D982B001FF145 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46C46871E8D982B001FF145 /* OnboardingViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +42,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		10954E214063C1466DC7DB1E /* Pods-Donly.deTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Donly.deTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Donly.deTests/Pods-Donly.deTests.debug.xcconfig"; sourceTree = "<group>"; };
+		51DBC975BBA7DA5D50196906 /* Pods-Donly.de.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Donly.de.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Donly.de/Pods-Donly.de.debug.xcconfig"; sourceTree = "<group>"; };
+		59CBEEE1F6504CEED02283CE /* Pods-Donly.deUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Donly.deUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Donly.deUITests/Pods-Donly.deUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		6138A163037F96D23375BAB4 /* Pods-Donly.de.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Donly.de.release.xcconfig"; path = "Pods/Target Support Files/Pods-Donly.de/Pods-Donly.de.release.xcconfig"; sourceTree = "<group>"; };
+		688493A6803C95A4E2504C35 /* Pods_Donly_deTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Donly_deTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A90C87EAC5D9362CCDFAF6C /* Pods_Donly_de.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Donly_de.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		76D0C15A763060B83E1BBCAA /* Pods-Donly.deTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Donly.deTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Donly.deTests/Pods-Donly.deTests.release.xcconfig"; sourceTree = "<group>"; };
+		8C3B630B7F4F453F68D27147 /* Pods_Donly_deUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Donly_deUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3D8A333BF5987B22F504E7E /* Pods-Donly.deUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Donly.deUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Donly.deUITests/Pods-Donly.deUITests.release.xcconfig"; sourceTree = "<group>"; };
 		F46C464B1E8D90E8001FF145 /* Donly.de.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Donly.de.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F46C464E1E8D90E8001FF145 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F46C46501E8D90E8001FF145 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +64,11 @@
 		F46C466A1E8D90E8001FF145 /* Donly.deUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Donly.deUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F46C466E1E8D90E8001FF145 /* Donly_deUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Donly_deUITests.swift; sourceTree = "<group>"; };
 		F46C46701E8D90E8001FF145 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F46C467D1E8D9139001FF145 /* OnboardingStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = OnboardingStoryboard.storyboard; sourceTree = "<group>"; };
+		F46C46811E8D960F001FF145 /* OnboardingPageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingPageVC.swift; sourceTree = "<group>"; };
+		F46C46831E8D963F001FF145 /* OnboardingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingVC.swift; sourceTree = "<group>"; };
+		F46C46841E8D963F001FF145 /* OnboardingVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OnboardingVC.xib; sourceTree = "<group>"; };
+		F46C46871E8D982B001FF145 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B37C485B6E76722ECFA303E5 /* Pods_Donly_de.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5616B79BDCC2151ED54F8E03 /* Pods_Donly_deTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,12 +92,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A2D92125C20935D13DCA00C /* Pods_Donly_deUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		ADFFDE2BEB54DE272121C837 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6A90C87EAC5D9362CCDFAF6C /* Pods_Donly_de.framework */,
+				688493A6803C95A4E2504C35 /* Pods_Donly_deTests.framework */,
+				8C3B630B7F4F453F68D27147 /* Pods_Donly_deUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DA821CB166F373EE8D574B35 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				51DBC975BBA7DA5D50196906 /* Pods-Donly.de.debug.xcconfig */,
+				6138A163037F96D23375BAB4 /* Pods-Donly.de.release.xcconfig */,
+				10954E214063C1466DC7DB1E /* Pods-Donly.deTests.debug.xcconfig */,
+				76D0C15A763060B83E1BBCAA /* Pods-Donly.deTests.release.xcconfig */,
+				59CBEEE1F6504CEED02283CE /* Pods-Donly.deUITests.debug.xcconfig */,
+				F3D8A333BF5987B22F504E7E /* Pods-Donly.deUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		F46C46421E8D90E8001FF145 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +129,8 @@
 				F46C46621E8D90E8001FF145 /* Donly.deTests */,
 				F46C466D1E8D90E8001FF145 /* Donly.deUITests */,
 				F46C464C1E8D90E8001FF145 /* Products */,
+				DA821CB166F373EE8D574B35 /* Pods */,
+				ADFFDE2BEB54DE272121C837 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,6 +147,7 @@
 		F46C464D1E8D90E8001FF145 /* Donly.de */ = {
 			isa = PBXGroup;
 			children = (
+				F46C467C1E8D9103001FF145 /* Scenes */,
 				F46C464E1E8D90E8001FF145 /* AppDelegate.swift */,
 				F46C46501E8D90E8001FF145 /* ViewController.swift */,
 				F46C46521E8D90E8001FF145 /* Main.storyboard */,
@@ -125,6 +176,18 @@
 			path = Donly.deUITests;
 			sourceTree = "<group>";
 		};
+		F46C467C1E8D9103001FF145 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				F46C467D1E8D9139001FF145 /* OnboardingStoryboard.storyboard */,
+				F46C46811E8D960F001FF145 /* OnboardingPageVC.swift */,
+				F46C46831E8D963F001FF145 /* OnboardingVC.swift */,
+				F46C46841E8D963F001FF145 /* OnboardingVC.xib */,
+				F46C46871E8D982B001FF145 /* OnboardingViewModel.swift */,
+			);
+			name = Scenes;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +195,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F46C46731E8D90E8001FF145 /* Build configuration list for PBXNativeTarget "Donly.de" */;
 			buildPhases = (
+				8A2AB7C3C8D204D4DFA34662 /* [CP] Check Pods Manifest.lock */,
 				F46C46471E8D90E8001FF145 /* Sources */,
 				F46C46481E8D90E8001FF145 /* Frameworks */,
 				F46C46491E8D90E8001FF145 /* Resources */,
+				F38B43A97B42A49835953099 /* [CP] Embed Pods Frameworks */,
+				FE9311FCC0357C94765A8A42 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -149,9 +215,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F46C46761E8D90E8001FF145 /* Build configuration list for PBXNativeTarget "Donly.deTests" */;
 			buildPhases = (
+				F8A02C7431D9AA1C9CAAAC11 /* [CP] Check Pods Manifest.lock */,
 				F46C465B1E8D90E8001FF145 /* Sources */,
 				F46C465C1E8D90E8001FF145 /* Frameworks */,
 				F46C465D1E8D90E8001FF145 /* Resources */,
+				B8321470D25900EA125DEB99 /* [CP] Embed Pods Frameworks */,
+				BA002E376A50E0AA4BFB0EE8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -167,9 +236,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F46C46791E8D90E8001FF145 /* Build configuration list for PBXNativeTarget "Donly.deUITests" */;
 			buildPhases = (
+				7098FA807108D64A92063ABA /* [CP] Check Pods Manifest.lock */,
 				F46C46661E8D90E8001FF145 /* Sources */,
 				F46C46671E8D90E8001FF145 /* Frameworks */,
 				F46C46681E8D90E8001FF145 /* Resources */,
+				4CB13C7D5A7016123A6774F6 /* [CP] Embed Pods Frameworks */,
+				A38600849E66023FE19FD3FD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -235,8 +307,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F46C46861E8D963F001FF145 /* OnboardingVC.xib in Resources */,
 				F46C46591E8D90E8001FF145 /* LaunchScreen.storyboard in Resources */,
 				F46C46561E8D90E8001FF145 /* Assets.xcassets in Resources */,
+				F46C467E1E8D9139001FF145 /* OnboardingStoryboard.storyboard in Resources */,
 				F46C46541E8D90E8001FF145 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -257,11 +331,152 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4CB13C7D5A7016123A6774F6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Donly.deUITests/Pods-Donly.deUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7098FA807108D64A92063ABA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8A2AB7C3C8D204D4DFA34662 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A38600849E66023FE19FD3FD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Donly.deUITests/Pods-Donly.deUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B8321470D25900EA125DEB99 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Donly.deTests/Pods-Donly.deTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BA002E376A50E0AA4BFB0EE8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Donly.deTests/Pods-Donly.deTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F38B43A97B42A49835953099 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Donly.de/Pods-Donly.de-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F8A02C7431D9AA1C9CAAAC11 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		FE9311FCC0357C94765A8A42 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Donly.de/Pods-Donly.de-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F46C46471E8D90E8001FF145 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F46C46881E8D982B001FF145 /* OnboardingViewModel.swift in Sources */,
+				F46C46821E8D960F001FF145 /* OnboardingPageVC.swift in Sources */,
+				F46C46851E8D963F001FF145 /* OnboardingVC.swift in Sources */,
 				F46C46511E8D90E8001FF145 /* ViewController.swift in Sources */,
 				F46C464F1E8D90E8001FF145 /* AppDelegate.swift in Sources */,
 			);
@@ -415,10 +630,12 @@
 		};
 		F46C46741E8D90E8001FF145 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 51DBC975BBA7DA5D50196906 /* Pods-Donly.de.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = HPX9HV787C;
 				INFOPLIST_FILE = Donly.de/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.donly.Donly-de";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -428,10 +645,12 @@
 		};
 		F46C46751E8D90E8001FF145 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6138A163037F96D23375BAB4 /* Pods-Donly.de.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = HPX9HV787C;
 				INFOPLIST_FILE = Donly.de/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.donly.Donly-de";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -441,6 +660,7 @@
 		};
 		F46C46771E8D90E8001FF145 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 10954E214063C1466DC7DB1E /* Pods-Donly.deTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -456,6 +676,7 @@
 		};
 		F46C46781E8D90E8001FF145 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 76D0C15A763060B83E1BBCAA /* Pods-Donly.deTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -471,6 +692,7 @@
 		};
 		F46C467A1E8D90E8001FF145 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 59CBEEE1F6504CEED02283CE /* Pods-Donly.deUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = HPX9HV787C;
@@ -485,6 +707,7 @@
 		};
 		F46C467B1E8D90E8001FF145 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F3D8A333BF5987B22F504E7E /* Pods-Donly.deUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = HPX9HV787C;
@@ -516,6 +739,7 @@
 				F46C46751E8D90E8001FF145 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F46C46761E8D90E8001FF145 /* Build configuration list for PBXNativeTarget "Donly.deTests" */ = {
 			isa = XCConfigurationList;
@@ -524,6 +748,7 @@
 				F46C46781E8D90E8001FF145 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F46C46791E8D90E8001FF145 /* Build configuration list for PBXNativeTarget "Donly.deUITests" */ = {
 			isa = XCConfigurationList;
@@ -532,6 +757,7 @@
 				F46C467B1E8D90E8001FF145 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
