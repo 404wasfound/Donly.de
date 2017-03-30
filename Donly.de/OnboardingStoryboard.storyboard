@@ -11,10 +11,22 @@
         <!--Onboarding PageVC-->
         <scene sceneID="avs-BG-MBO">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="aUu-DU-pmF" customClass="OnboardingPageVC" customModule="Donly_de" customModuleProvider="target" sceneMemberID="viewController"/>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="aUu-DU-pmF" customClass="OnboardingPageVC" customModule="Donly_de" customModuleProvider="target" sceneMemberID="viewController">
+                    <connections>
+                        <segue destination="lm2-of-ugo" kind="showDetail" identifier="segueToMainBoard" action="showViewController:sender:" id="HvK-Nr-8qY"/>
+                    </connections>
+                </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fki-cr-oV8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="268" y="101"/>
+        </scene>
+        <!--MainStoryboard-->
+        <scene sceneID="snZ-L4-QzS">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MainStoryboard" id="lm2-of-ugo" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CGJ-o6-BiB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1094" y="100"/>
         </scene>
     </scenes>
 </document>

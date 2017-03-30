@@ -9,7 +9,6 @@
 import UIKit
 
 class OnboardingPageVC: UIPageViewController, UIPageViewControllerDelegate, UIPageViewControllerDataSource {
-  
   var pages: [Page] = [.first, .second, .third]
   
   override func viewDidLoad() {
@@ -19,7 +18,7 @@ class OnboardingPageVC: UIPageViewController, UIPageViewControllerDelegate, UIPa
   }
   
   override func viewWillAppear(_ animated: Bool) {
-    let controller = OnboardingVC(page: .first)
+    let controller = OnboardingVC(page: .first, delegate: self)
     setViewControllers([controller], direction: .forward, animated: true, completion: nil)
   }
 
@@ -28,7 +27,7 @@ class OnboardingPageVC: UIPageViewController, UIPageViewControllerDelegate, UIPa
     if let identifier = viewController.restorationIdentifier {
       if let page = Page(rawValue: identifier), let index = pages.index(of: page) {
         if index > 0 {
-          return OnboardingVC(page: pages[index - 1])
+          return OnboardingVC(page: pages[index - 1], delegate: self)
         }
       }
     }
@@ -39,7 +38,7 @@ class OnboardingPageVC: UIPageViewController, UIPageViewControllerDelegate, UIPa
     if let identifier = viewController.restorationIdentifier {
       if let page = Page(rawValue: identifier), let index = pages.index(of: page) {
         if index < pages.count - 1 {
-          return OnboardingVC(page: pages[index + 1])
+          return OnboardingVC(page: pages[index + 1], delegate: self)
         }
       }
     }
@@ -70,5 +69,15 @@ class OnboardingPageVC: UIPageViewController, UIPageViewControllerDelegate, UIPa
       }
     }
   }
-  
+}
+
+/// Protocol for communication viewModel -> PageVC
+protocol OnboardingPageProtocol {
+  func performSegueToMainBoard()
+}
+/// Extension which implemets protocol
+extension OnboardingPageVC: OnboardingPageProtocol {
+  func performSegueToMainBoard() {
+    performSegue(withIdentifier: "segueToMainBoard", sender: nil)
+  }
 }

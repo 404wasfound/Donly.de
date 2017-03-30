@@ -54,7 +54,7 @@
                         <constraint firstAttribute="width" constant="240" id="rdD-b8-eVO"/>
                     </constraints>
                 </stackView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bcn-YZ-hYy" customClass="OnboardingButton" customModule="Donly_de" customModuleProvider="target">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bcn-YZ-hYy" customClass="CustomButton" customModule="Donly_de" customModuleProvider="target">
                     <rect key="frame" x="67" y="537" width="240" height="50"/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>

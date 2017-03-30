@@ -8,8 +8,8 @@
 
 import UIKit
 
-class OnboardingButton: UIButton {
-  
+class CustomButton: UIButton {
+
   override func awakeFromNib() {
     layer.cornerRadius = 3.0
     layer.shadowColor = UIColor(red: 200/255, green: 200/255, blue: 200/255, alpha: 0.5).cgColor
