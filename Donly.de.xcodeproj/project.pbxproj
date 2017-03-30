@@ -1,0 +1,539 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F46C464F1E8D90E8001FF145 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46C464E1E8D90E8001FF145 /* AppDelegate.swift */; };
+		F46C46511E8D90E8001FF145 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46C46501E8D90E8001FF145 /* ViewController.swift */; };
+		F46C46541E8D90E8001FF145 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F46C46521E8D90E8001FF145 /* Main.storyboard */; };
+		F46C46561E8D90E8001FF145 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F46C46551E8D90E8001FF145 /* Assets.xcassets */; };
+		F46C46591E8D90E8001FF145 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F46C46571E8D90E8001FF145 /* LaunchScreen.storyboard */; };
+		F46C46641E8D90E8001FF145 /* Donly_deTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46C46631E8D90E8001FF145 /* Donly_deTests.swift */; };
+		F46C466F1E8D90E8001FF145 /* Donly_deUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46C466E1E8D90E8001FF145 /* Donly_deUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F46C46601E8D90E8001FF145 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F46C46431E8D90E8001FF145 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F46C464A1E8D90E8001FF145;
+			remoteInfo = Donly.de;
+		};
+		F46C466B1E8D90E8001FF145 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F46C46431E8D90E8001FF145 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F46C464A1E8D90E8001FF145;
+			remoteInfo = Donly.de;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F46C464B1E8D90E8001FF145 /* Donly.de.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Donly.de.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F46C464E1E8D90E8001FF145 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F46C46501E8D90E8001FF145 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F46C46531E8D90E8001FF145 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F46C46551E8D90E8001FF145 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F46C46581E8D90E8001FF145 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F46C465A1E8D90E8001FF145 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F46C465F1E8D90E8001FF145 /* Donly.deTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Donly.deTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F46C46631E8D90E8001FF145 /* Donly_deTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Donly_deTests.swift; sourceTree = "<group>"; };
+		F46C46651E8D90E8001FF145 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F46C466A1E8D90E8001FF145 /* Donly.deUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Donly.deUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F46C466E1E8D90E8001FF145 /* Donly_deUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Donly_deUITests.swift; sourceTree = "<group>"; };
+		F46C46701E8D90E8001FF145 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F46C46481E8D90E8001FF145 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F46C465C1E8D90E8001FF145 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F46C46671E8D90E8001FF145 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F46C46421E8D90E8001FF145 = {
+			isa = PBXGroup;
+			children = (
+				F46C464D1E8D90E8001FF145 /* Donly.de */,
+				F46C46621E8D90E8001FF145 /* Donly.deTests */,
+				F46C466D1E8D90E8001FF145 /* Donly.deUITests */,
+				F46C464C1E8D90E8001FF145 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F46C464C1E8D90E8001FF145 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F46C464B1E8D90E8001FF145 /* Donly.de.app */,
+				F46C465F1E8D90E8001FF145 /* Donly.deTests.xctest */,
+				F46C466A1E8D90E8001FF145 /* Donly.deUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F46C464D1E8D90E8001FF145 /* Donly.de */ = {
+			isa = PBXGroup;
+			children = (
+				F46C464E1E8D90E8001FF145 /* AppDelegate.swift */,
+				F46C46501E8D90E8001FF145 /* ViewController.swift */,
+				F46C46521E8D90E8001FF145 /* Main.storyboard */,
+				F46C46551E8D90E8001FF145 /* Assets.xcassets */,
+				F46C46571E8D90E8001FF145 /* LaunchScreen.storyboard */,
+				F46C465A1E8D90E8001FF145 /* Info.plist */,
+			);
+			path = Donly.de;
+			sourceTree = "<group>";
+		};
+		F46C46621E8D90E8001FF145 /* Donly.deTests */ = {
+			isa = PBXGroup;
+			children = (
+				F46C46631E8D90E8001FF145 /* Donly_deTests.swift */,
+				F46C46651E8D90E8001FF145 /* Info.plist */,
+			);
+			path = Donly.deTests;
+			sourceTree = "<group>";
+		};
+		F46C466D1E8D90E8001FF145 /* Donly.deUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F46C466E1E8D90E8001FF145 /* Donly_deUITests.swift */,
+				F46C46701E8D90E8001FF145 /* Info.plist */,
+			);
+			path = Donly.deUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F46C464A1E8D90E8001FF145 /* Donly.de */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F46C46731E8D90E8001FF145 /* Build configuration list for PBXNativeTarget "Donly.de" */;
+			buildPhases = (
+				F46C46471E8D90E8001FF145 /* Sources */,
+				F46C46481E8D90E8001FF145 /* Frameworks */,
+				F46C46491E8D90E8001FF145 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Donly.de;
+			productName = Donly.de;
+			productReference = F46C464B1E8D90E8001FF145 /* Donly.de.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F46C465E1E8D90E8001FF145 /* Donly.deTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F46C46761E8D90E8001FF145 /* Build configuration list for PBXNativeTarget "Donly.deTests" */;
+			buildPhases = (
+				F46C465B1E8D90E8001FF145 /* Sources */,
+				F46C465C1E8D90E8001FF145 /* Frameworks */,
+				F46C465D1E8D90E8001FF145 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F46C46611E8D90E8001FF145 /* PBXTargetDependency */,
+			);
+			name = Donly.deTests;
+			productName = Donly.deTests;
+			productReference = F46C465F1E8D90E8001FF145 /* Donly.deTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F46C46691E8D90E8001FF145 /* Donly.deUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F46C46791E8D90E8001FF145 /* Build configuration list for PBXNativeTarget "Donly.deUITests" */;
+			buildPhases = (
+				F46C46661E8D90E8001FF145 /* Sources */,
+				F46C46671E8D90E8001FF145 /* Frameworks */,
+				F46C46681E8D90E8001FF145 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F46C466C1E8D90E8001FF145 /* PBXTargetDependency */,
+			);
+			name = Donly.deUITests;
+			productName = Donly.deUITests;
+			productReference = F46C466A1E8D90E8001FF145 /* Donly.deUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F46C46431E8D90E8001FF145 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = 404wasfound;
+				TargetAttributes = {
+					F46C464A1E8D90E8001FF145 = {
+						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = HPX9HV787C;
+						ProvisioningStyle = Automatic;
+					};
+					F46C465E1E8D90E8001FF145 = {
+						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = HPX9HV787C;
+						ProvisioningStyle = Automatic;
+						TestTargetID = F46C464A1E8D90E8001FF145;
+					};
+					F46C46691E8D90E8001FF145 = {
+						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = HPX9HV787C;
+						ProvisioningStyle = Automatic;
+						TestTargetID = F46C464A1E8D90E8001FF145;
+					};
+				};
+			};
+			buildConfigurationList = F46C46461E8D90E8001FF145 /* Build configuration list for PBXProject "Donly.de" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F46C46421E8D90E8001FF145;
+			productRefGroup = F46C464C1E8D90E8001FF145 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F46C464A1E8D90E8001FF145 /* Donly.de */,
+				F46C465E1E8D90E8001FF145 /* Donly.deTests */,
+				F46C46691E8D90E8001FF145 /* Donly.deUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F46C46491E8D90E8001FF145 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F46C46591E8D90E8001FF145 /* LaunchScreen.storyboard in Resources */,
+				F46C46561E8D90E8001FF145 /* Assets.xcassets in Resources */,
+				F46C46541E8D90E8001FF145 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F46C465D1E8D90E8001FF145 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F46C46681E8D90E8001FF145 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F46C46471E8D90E8001FF145 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F46C46511E8D90E8001FF145 /* ViewController.swift in Sources */,
+				F46C464F1E8D90E8001FF145 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F46C465B1E8D90E8001FF145 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F46C46641E8D90E8001FF145 /* Donly_deTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F46C46661E8D90E8001FF145 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F46C466F1E8D90E8001FF145 /* Donly_deUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F46C46611E8D90E8001FF145 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F46C464A1E8D90E8001FF145 /* Donly.de */;
+			targetProxy = F46C46601E8D90E8001FF145 /* PBXContainerItemProxy */;
+		};
+		F46C466C1E8D90E8001FF145 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F46C464A1E8D90E8001FF145 /* Donly.de */;
+			targetProxy = F46C466B1E8D90E8001FF145 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F46C46521E8D90E8001FF145 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F46C46531E8D90E8001FF145 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F46C46571E8D90E8001FF145 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F46C46581E8D90E8001FF145 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F46C46711E8D90E8001FF145 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F46C46721E8D90E8001FF145 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F46C46741E8D90E8001FF145 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = HPX9HV787C;
+				INFOPLIST_FILE = Donly.de/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.donly.Donly-de";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		F46C46751E8D90E8001FF145 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = HPX9HV787C;
+				INFOPLIST_FILE = Donly.de/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.donly.Donly-de";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		F46C46771E8D90E8001FF145 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = HPX9HV787C;
+				INFOPLIST_FILE = Donly.deTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.donly.Donly-deTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Donly.de.app/Donly.de";
+			};
+			name = Debug;
+		};
+		F46C46781E8D90E8001FF145 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = HPX9HV787C;
+				INFOPLIST_FILE = Donly.deTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.donly.Donly-deTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Donly.de.app/Donly.de";
+			};
+			name = Release;
+		};
+		F46C467A1E8D90E8001FF145 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = HPX9HV787C;
+				INFOPLIST_FILE = Donly.deUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.donly.Donly-deUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Donly.de;
+			};
+			name = Debug;
+		};
+		F46C467B1E8D90E8001FF145 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = HPX9HV787C;
+				INFOPLIST_FILE = Donly.deUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.donly.Donly-deUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Donly.de;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F46C46461E8D90E8001FF145 /* Build configuration list for PBXProject "Donly.de" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F46C46711E8D90E8001FF145 /* Debug */,
+				F46C46721E8D90E8001FF145 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F46C46731E8D90E8001FF145 /* Build configuration list for PBXNativeTarget "Donly.de" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F46C46741E8D90E8001FF145 /* Debug */,
+				F46C46751E8D90E8001FF145 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F46C46761E8D90E8001FF145 /* Build configuration list for PBXNativeTarget "Donly.deTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F46C46771E8D90E8001FF145 /* Debug */,
+				F46C46781E8D90E8001FF145 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F46C46791E8D90E8001FF145 /* Build configuration list for PBXNativeTarget "Donly.deUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F46C467A1E8D90E8001FF145 /* Debug */,
+				F46C467B1E8D90E8001FF145 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F46C46431E8D90E8001FF145 /* Project object */;
+}
