@@ -18,11 +18,12 @@ class OnboardingPageVC: UIPageViewController, UIPageViewControllerDelegate, UIPa
     self.dataSource = self
   }
   
-  override func viewDidAppear(_ animated: Bool) {
+  override func viewWillAppear(_ animated: Bool) {
     let controller = OnboardingVC(page: .first)
     setViewControllers([controller], direction: .forward, animated: true, completion: nil)
   }
 
+  //MARK: UIPageControl and DataSource methods.
   public func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
     if let identifier = viewController.restorationIdentifier {
       if let page = Page(rawValue: identifier), let index = pages.index(of: page) {
@@ -58,6 +59,7 @@ class OnboardingPageVC: UIPageViewController, UIPageViewControllerDelegate, UIPa
     return 0
   }
   
+  //MARK: UI adjustment
   override func viewDidLayoutSubviews() {
     super.viewDidLayoutSubviews()
     for view in view.subviews {

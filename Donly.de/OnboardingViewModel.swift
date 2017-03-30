@@ -17,7 +17,7 @@ enum Page: String {
 
 protocol OnboardingViewModelProtocol {
   var text: Variable<String> { get set }
-  var page: Page { get set }
+  var page: Variable<Page> { get set }
 }
 
 extension OnboardingViewModelProtocol {
@@ -26,18 +26,18 @@ extension OnboardingViewModelProtocol {
 class OnboardingViewModel: OnboardingViewModelProtocol {
   
   var text: Variable<String>
-  var page: Page
+  var page: Variable<Page>
   
   init(page: Page) {
     switch page {
     case .first:
-      self.text = Variable("The first")
+      self.text = Variable("The first onboarding page about how good is the service, why to use it, what benefits to the user and all that stuff")
     case .second:
-      self.text = Variable("The second")
+      self.text = Variable("The second onboarding page about how good is the service, why to use it, what benefits to the user and all that stuff")
     case .third:
-      self.text = Variable("The third")
+      self.text = Variable("The third onboarding page about how good is the service, why to use it, what benefits to the user and all that stuff")
     }
-    self.page = page
+    self.page = Variable(page)
   }
   
 }

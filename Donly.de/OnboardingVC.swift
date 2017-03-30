@@ -13,7 +13,7 @@ import RxSwift
 class OnboardingVC: UIViewController {
 
   @IBOutlet private var textLabel: UILabel!
-  @IBOutlet private var button: UIButton!
+  @IBOutlet private var button: OnboardingButton!
   
   private let viewModel: OnboardingViewModelProtocol
   private let disposeBag = DisposeBag()
@@ -34,17 +34,24 @@ class OnboardingVC: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     self.setupBindings()
-    self.setRestorationID()
   }
   
   func setupBindings() {
     self.viewModel.text.asObservable()
     .bindTo(self.textLabel.rx.text)
     .addDisposableTo(disposeBag)
-  }
-  
-  func setRestorationID() {
-    self.restorationIdentifier = self.viewModel.page.rawValue
+    
+    self.viewModel.page.asObservable()
+      .bindNext({ page in
+        self.restorationIdentifier = page.rawValue
+        switch page {
+        case .first, .second:
+          self.button.isHidden = true
+        case .third:
+          self.button.setupButtonWith(title: "NEXT SCREEN")
+        }
+      })
+      .addDisposableTo(disposeBag)
   }
   
 }
