@@ -1,5 +1,5 @@
 //
-//  OnboardingButton.swift
+//  CustomButton.swift
 //  Donly.de
 //
 //  Created by Bogdan Yur on 3/30/17.

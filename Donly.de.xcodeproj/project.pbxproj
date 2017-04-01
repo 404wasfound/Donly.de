@@ -10,6 +10,12 @@
 		0A2D92125C20935D13DCA00C /* Pods_Donly_deUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C3B630B7F4F453F68D27147 /* Pods_Donly_deUITests.framework */; };
 		5616B79BDCC2151ED54F8E03 /* Pods_Donly_deTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 688493A6803C95A4E2504C35 /* Pods_Donly_deTests.framework */; };
 		B37C485B6E76722ECFA303E5 /* Pods_Donly_de.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A90C87EAC5D9362CCDFAF6C /* Pods_Donly_de.framework */; };
+		F428B32A1E8FCFBF00CF64F6 /* ApplicationSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F428B3291E8FCFBF00CF64F6 /* ApplicationSettings.swift */; };
+		F428B32C1E8FCFCB00CF64F6 /* ApplicationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F428B32B1E8FCFCB00CF64F6 /* ApplicationData.swift */; };
+		F428B3311E8FD53D00CF64F6 /* SplashVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F428B3301E8FD53D00CF64F6 /* SplashVC.xib */; };
+		F428B3331E8FD58400CF64F6 /* SplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F428B3321E8FD58400CF64F6 /* SplashVC.swift */; };
+		F428B3351E8FD82D00CF64F6 /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F428B3341E8FD82D00CF64F6 /* SplashViewModel.swift */; };
+		F428B3371E8FE04900CF64F6 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F428B3361E8FE04900CF64F6 /* MainViewController.swift */; };
 		F46C464F1E8D90E8001FF145 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46C464E1E8D90E8001FF145 /* AppDelegate.swift */; };
 		F46C46561E8D90E8001FF145 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F46C46551E8D90E8001FF145 /* Assets.xcassets */; };
 		F46C46641E8D90E8001FF145 /* Donly_deTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46C46631E8D90E8001FF145 /* Donly_deTests.swift */; };
@@ -19,7 +25,7 @@
 		F46C46851E8D963F001FF145 /* OnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46C46831E8D963F001FF145 /* OnboardingVC.swift */; };
 		F46C46861E8D963F001FF145 /* OnboardingVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F46C46841E8D963F001FF145 /* OnboardingVC.xib */; };
 		F46C46881E8D982B001FF145 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46C46871E8D982B001FF145 /* OnboardingViewModel.swift */; };
-		F46C468C1E8DB329001FF145 /* OnboardingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46C468B1E8DB329001FF145 /* OnboardingButton.swift */; };
+		F46C468C1E8DB329001FF145 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46C468B1E8DB329001FF145 /* CustomButton.swift */; };
 		F46C468E1E8DBB17001FF145 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F46C468D1E8DBB17001FF145 /* LaunchScreen.xib */; };
 		F46C46911E8DBEA0001FF145 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F46C46901E8DBEA0001FF145 /* MainStoryboard.storyboard */; };
 /* End PBXBuildFile section */
@@ -54,6 +60,12 @@
 		8C3B630B7F4F453F68D27147 /* Pods_Donly_deUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Donly_deUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B53FD0A6D3D647518F2FA4BA /* Pods-Donly.deTests.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Donly.deTests.staging.xcconfig"; path = "Pods/Target Support Files/Pods-Donly.deTests/Pods-Donly.deTests.staging.xcconfig"; sourceTree = "<group>"; };
 		F3D8A333BF5987B22F504E7E /* Pods-Donly.deUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Donly.deUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Donly.deUITests/Pods-Donly.deUITests.release.xcconfig"; sourceTree = "<group>"; };
+		F428B3291E8FCFBF00CF64F6 /* ApplicationSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationSettings.swift; sourceTree = "<group>"; };
+		F428B32B1E8FCFCB00CF64F6 /* ApplicationData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationData.swift; sourceTree = "<group>"; };
+		F428B3301E8FD53D00CF64F6 /* SplashVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SplashVC.xib; sourceTree = "<group>"; };
+		F428B3321E8FD58400CF64F6 /* SplashVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashVC.swift; sourceTree = "<group>"; };
+		F428B3341E8FD82D00CF64F6 /* SplashViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
+		F428B3361E8FE04900CF64F6 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		F46C464B1E8D90E8001FF145 /* Donly.de.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Donly.de.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F46C464E1E8D90E8001FF145 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F46C46551E8D90E8001FF145 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -69,7 +81,7 @@
 		F46C46831E8D963F001FF145 /* OnboardingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingVC.swift; sourceTree = "<group>"; };
 		F46C46841E8D963F001FF145 /* OnboardingVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OnboardingVC.xib; sourceTree = "<group>"; };
 		F46C46871E8D982B001FF145 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
-		F46C468B1E8DB329001FF145 /* OnboardingButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingButton.swift; sourceTree = "<group>"; };
+		F46C468B1E8DB329001FF145 /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		F46C468D1E8DBB17001FF145 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		F46C46901E8DBEA0001FF145 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -128,6 +140,25 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		F428B3281E8FCFAC00CF64F6 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				F428B3291E8FCFBF00CF64F6 /* ApplicationSettings.swift */,
+				F428B32B1E8FCFCB00CF64F6 /* ApplicationData.swift */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		F428B32D1E8FD46700CF64F6 /* Splash Screen */ = {
+			isa = PBXGroup;
+			children = (
+				F428B3301E8FD53D00CF64F6 /* SplashVC.xib */,
+				F428B3321E8FD58400CF64F6 /* SplashVC.swift */,
+				F428B3341E8FD82D00CF64F6 /* SplashViewModel.swift */,
+			);
+			name = "Splash Screen";
+			sourceTree = "<group>";
+		};
 		F46C46421E8D90E8001FF145 = {
 			isa = PBXGroup;
 			children = (
@@ -153,6 +184,7 @@
 		F46C464D1E8D90E8001FF145 /* Donly.de */ = {
 			isa = PBXGroup;
 			children = (
+				F428B3281E8FCFAC00CF64F6 /* Utils */,
 				F46C468A1E8DB311001FF145 /* Custom Views */,
 				F46C467C1E8D9103001FF145 /* Scenes */,
 				F46C464E1E8D90E8001FF145 /* AppDelegate.swift */,
@@ -184,13 +216,14 @@
 		F46C467C1E8D9103001FF145 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				F428B32D1E8FD46700CF64F6 /* Splash Screen */,
+				F46C46891E8DB211001FF145 /* Onboarding Screen */,
 				F46C468F1E8DBE6E001FF145 /* Main Screen */,
-				F46C46891E8DB211001FF145 /* Onboarding */,
 			);
 			name = Scenes;
 			sourceTree = "<group>";
 		};
-		F46C46891E8DB211001FF145 /* Onboarding */ = {
+		F46C46891E8DB211001FF145 /* Onboarding Screen */ = {
 			isa = PBXGroup;
 			children = (
 				F46C467D1E8D9139001FF145 /* OnboardingStoryboard.storyboard */,
@@ -199,13 +232,13 @@
 				F46C46841E8D963F001FF145 /* OnboardingVC.xib */,
 				F46C46871E8D982B001FF145 /* OnboardingViewModel.swift */,
 			);
-			name = Onboarding;
+			name = "Onboarding Screen";
 			sourceTree = "<group>";
 		};
 		F46C468A1E8DB311001FF145 /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
-				F46C468B1E8DB329001FF145 /* OnboardingButton.swift */,
+				F46C468B1E8DB329001FF145 /* CustomButton.swift */,
 			);
 			name = "Custom Views";
 			sourceTree = "<group>";
@@ -214,6 +247,7 @@
 			isa = PBXGroup;
 			children = (
 				F46C46901E8DBEA0001FF145 /* MainStoryboard.storyboard */,
+				F428B3361E8FE04900CF64F6 /* MainViewController.swift */,
 			);
 			name = "Main Screen";
 			sourceTree = "<group>";
@@ -338,6 +372,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F46C468E1E8DBB17001FF145 /* LaunchScreen.xib in Resources */,
+				F428B3311E8FD53D00CF64F6 /* SplashVC.xib in Resources */,
 				F46C46911E8DBEA0001FF145 /* MainStoryboard.storyboard in Resources */,
 				F46C46861E8D963F001FF145 /* OnboardingVC.xib in Resources */,
 				F46C46561E8D90E8001FF145 /* Assets.xcassets in Resources */,
@@ -507,8 +542,13 @@
 				F46C46881E8D982B001FF145 /* OnboardingViewModel.swift in Sources */,
 				F46C46821E8D960F001FF145 /* OnboardingPageVC.swift in Sources */,
 				F46C46851E8D963F001FF145 /* OnboardingVC.swift in Sources */,
-				F46C468C1E8DB329001FF145 /* OnboardingButton.swift in Sources */,
+				F428B3351E8FD82D00CF64F6 /* SplashViewModel.swift in Sources */,
+				F428B32C1E8FCFCB00CF64F6 /* ApplicationData.swift in Sources */,
+				F46C468C1E8DB329001FF145 /* CustomButton.swift in Sources */,
+				F428B3331E8FD58400CF64F6 /* SplashVC.swift in Sources */,
 				F46C464F1E8D90E8001FF145 /* AppDelegate.swift in Sources */,
+				F428B32A1E8FCFBF00CF64F6 /* ApplicationSettings.swift in Sources */,
+				F428B3371E8FE04900CF64F6 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,7 +11,7 @@
         <!--Onboarding PageVC-->
         <scene sceneID="avs-BG-MBO">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="aUu-DU-pmF" customClass="OnboardingPageVC" customModule="Donly_de" customModuleProvider="target" sceneMemberID="viewController">
+                <pageViewController storyboardIdentifier="Onboarding" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="aUu-DU-pmF" customClass="OnboardingPageVC" customModule="Donly_de" customModuleProvider="target" sceneMemberID="viewController">
                     <connections>
                         <segue destination="lm2-of-ugo" kind="showDetail" identifier="segueToMainBoard" action="showViewController:sender:" id="HvK-Nr-8qY"/>
                     </connections>

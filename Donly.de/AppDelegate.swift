@@ -13,10 +13,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   var window: UIWindow?
 
-
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-    // Override point for customization after application launch.
+    window = UIWindow(frame: UIScreen.main.bounds)
+    instantiateRootVC()
+    window?.makeKeyAndVisible()
     return true
+  }
+  
+  func instantiateRootVC() {
+    let splashViewController = SplashVC()
+    window?.rootViewController = splashViewController
   }
 
   func applicationWillResignActive(_ application: UIApplication) {

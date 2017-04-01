@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Foundation
 
 class OnboardingPageVC: UIPageViewController, UIPageViewControllerDelegate, UIPageViewControllerDataSource {
   var pages: [Page] = [.first, .second, .third]
@@ -15,6 +16,8 @@ class OnboardingPageVC: UIPageViewController, UIPageViewControllerDelegate, UIPa
     super.viewDidLoad()
     self.delegate = self
     self.dataSource = self
+    self.view.backgroundColor = UIColor(red: 0, green: 200/255, blue: 155/255, alpha: 1.0)
+    UserDefaults.standard.set(true, forKey: "OnboardingShown")
   }
   
   override func viewWillAppear(_ animated: Bool) {

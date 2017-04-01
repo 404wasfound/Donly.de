@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="pcz-NV-vIC">
             <objects>
-                <viewController id="bbf-UP-f7E" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Main" id="bbf-UP-f7E" customClass="MainViewController" customModule="Donly_de" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="K2c-5K-X1e"/>
                         <viewControllerLayoutGuide type="bottom" id="Ryk-mw-XQy"/>
@@ -87,6 +87,10 @@
         <scene sceneID="KH4-3o-v4e">
             <objects>
                 <viewController id="sJ0-tg-LC4" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="SZo-p0-Mr7"/>
+                        <viewControllerLayoutGuide type="bottom" id="CsK-XA-R0i"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="37z-Qy-7Z3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="565"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

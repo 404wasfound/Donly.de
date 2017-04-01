@@ -37,8 +37,8 @@ class OnboardingVC: UIViewController {
   
   func setupBindings() {
     self.viewModel.text.asObservable()
-    .bindTo(self.textLabel.rx.text)
-    .addDisposableTo(disposeBag)
+      .bindTo(self.textLabel.rx.text)
+      .addDisposableTo(disposeBag)
     self.viewModel.page.asObservable()
       .bindNext({ page in
         self.restorationIdentifier = page.rawValue
@@ -53,7 +53,7 @@ class OnboardingVC: UIViewController {
     self.button.rx.tap
       .subscribe(onNext: {
        self.viewModel.segueToMainBoard()
-    })
+      })
       .addDisposableTo(disposeBag)
   }
 }
