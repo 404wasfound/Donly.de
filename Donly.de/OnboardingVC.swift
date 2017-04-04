@@ -43,16 +43,28 @@ class OnboardingVC: UIViewController {
       .bindNext({ page in
         self.restorationIdentifier = page.rawValue
         switch page {
-        case .first, .second:
+        case .first:
           self.button.isHidden = true
+        case .second:
+          self.button.setupButtonWith(title: "LOCATION", image: UIImage(named: "loc_donly"))
         case .third:
+          self.button.setupButtonWith(title: "NOTIFICATIONS", image: UIImage(named: "notifs_donly"))
+        case .fourth:
           self.button.setupButtonWith(title: "NEXT SCREEN")
         }
       })
       .addDisposableTo(disposeBag)
     self.button.rx.tap
       .subscribe(onNext: {
-       self.viewModel.segueToMainBoard()
+        switch self.viewModel.page.value {
+        case .second:
+          self.viewModel.requestLocation()
+        case.third:
+          self.viewModel.requestNotifications()
+        case.fourth:
+          self.viewModel.segueToMainBoard()
+        default:()
+        }
       })
       .addDisposableTo(disposeBag)
   }

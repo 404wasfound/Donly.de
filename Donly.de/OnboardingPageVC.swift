@@ -10,7 +10,7 @@ import UIKit
 import Foundation
 
 class OnboardingPageVC: UIPageViewController, UIPageViewControllerDelegate, UIPageViewControllerDataSource {
-  var pages: [Page] = [.first, .second, .third]
+  var pages: [Page] = [.first, .second, .third, .fourth]
   
   override func viewDidLoad() {
     super.viewDidLoad()

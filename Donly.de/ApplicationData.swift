@@ -7,13 +7,23 @@
 //
 
 import Foundation
+import RxSwift
 
 protocol ApplicationDataProtocol {
   var userToken: String? { get set }
-  var userLocation: String? { get set }
+  var userLocation: Variable<Location?> { get set }
 }
 
+typealias Location = (lon: Double, lat: Double)
+var appData = ApplicationData.shared
+
 class ApplicationData: ApplicationDataProtocol {
-  var userToken: String?
-  var userLocation: String?
+
+  static let shared = ApplicationData()
+  init() {
+    ///
+  }
+  var userToken: String? = nil
+  var userLocation = Variable<Location?>(nil)
+  
 }

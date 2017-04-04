@@ -20,14 +20,15 @@ class SplashViewModel: SplashViewModelProtocol {
   var nextController: UIViewController?
   init() {
     self.onboardingShown = ApplicationSettings.shared.onboardingShown
-    self.nextController = configureNext(shown: onboardingShown)
+    self.nextController = configureNext()
   }
 }
 
 extension SplashViewModel {
-  func configureNext(shown: Bool) -> UIViewController? {
+  func configureNext() -> UIViewController? {
     var vc = UIViewController()
-    if shown {
+    self.onboardingShown = false
+    if onboardingShown {
       let storyboard = UIStoryboard(name: "MainStoryboard", bundle: nil)
       vc = storyboard.instantiateInitialViewController()!
     } else {

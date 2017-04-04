@@ -23,5 +23,12 @@ class CustomButton: UIButton {
     setTitleColor(UIColor(red: 0, green: 200/255, blue: 155/255, alpha: 1.0), for: .normal)
     isHidden = false
   }
+  
+  func setupButtonWith(title: String, image: UIImage?) {
+    setTitle(title, for: .normal)
+    setImage(image, for: .normal)
+    imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 32)
+    tintColor = UIColor(red: 0, green: 200/255, blue: 155/255, alpha: 1.0)
+  }
 
 }
