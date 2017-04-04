@@ -19,17 +19,12 @@ enum Page: String {
 protocol OnboardingViewModelProtocol {
   var text: Variable<String> { get set }
   var page: Variable<Page> { get set }
-  var delegate: OnboardingPageProtocol? { get set }
   func buttonTapped()
-  func requestLocation()
-  func requestNotifications()
-
 }
 
-extension OnboardingViewModelProtocol {
-  func segueToMainBoard() {
-    delegate?.performSegueToMainBoard()
-  }
+protocol OnboardingPermissionsProtocol {
+  func locationRequested()
+  func notificationsRequested()
 }
 
 class OnboardingViewModel: OnboardingViewModelProtocol {
@@ -47,13 +42,13 @@ class OnboardingViewModel: OnboardingViewModelProtocol {
       self.text = Variable("The third onboarding page where we ask for push notifications permissions with the button")
     case .fourth:
       self.text = Variable("Go to main Screen")
-      self.delegate = delegate
     }
+    self.delegate = delegate
     self.page = Variable(page)
   }
 }
 
-extension OnboardingViewModel {
+extension OnboardingViewModel: OnboardingPermissionsProtocol {
   
   func buttonTapped() {
     switch page.value {
@@ -68,11 +63,23 @@ extension OnboardingViewModel {
   }
   
   func requestLocation() {
-    locationManager.request()
+    locationManager.requestWith(delegate: self)
   }
   
   func requestNotifications() {
-    notificationsManager.request()
+    notificationsManager.requestWith(delegate: self)
+  }
+  
+  func locationRequested() {
+    delegate?.scrollTo(page: .third)
+  }
+  
+  func notificationsRequested() {
+    delegate?.scrollTo(page: .fourth)
+  }
+  
+  func segueToMainBoard() {
+    delegate?.performSegueToMainBoard()
   }
   
 }

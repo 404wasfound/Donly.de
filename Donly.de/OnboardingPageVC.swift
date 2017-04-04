@@ -77,10 +77,19 @@ class OnboardingPageVC: UIPageViewController, UIPageViewControllerDelegate, UIPa
 /// Protocol for communication viewModel -> PageVC
 protocol OnboardingPageProtocol {
   func performSegueToMainBoard()
+  func scrollTo(page: Page)
 }
+
 /// Extension which implemets protocol
 extension OnboardingPageVC: OnboardingPageProtocol {
   func performSegueToMainBoard() {
     performSegue(withIdentifier: "segueToMainBoard", sender: nil)
+  }
+  
+  func scrollTo(page: Page) {
+    let controller = OnboardingVC(page: page, delegate: self)
+    DispatchQueue.main.async {
+      self.setViewControllers([controller], direction: .forward, animated: true, completion: nil)
+    }
   }
 }

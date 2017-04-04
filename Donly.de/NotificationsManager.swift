@@ -15,11 +15,12 @@ var notificationsManager = NotificationsManager.shared
 class NotificationsManager {
   static let shared = NotificationsManager()
   
-  func request() {
+  func requestWith(delegate: OnboardingPermissionsProtocol) {
     UNUserNotificationCenter.current().requestAuthorization(options: [.badge, .alert, .sound]) { granted, error in
       if granted {
         UIApplication.shared.registerForRemoteNotifications()
       }
+      delegate.notificationsRequested()
     }
   }
   

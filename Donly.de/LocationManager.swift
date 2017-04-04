@@ -15,8 +15,11 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
   
   static let shared = LocationManager()
   let locationManager = CLLocationManager()
+  var delegate: OnboardingPermissionsProtocol?
   
-  func request() {
+  func requestWith(delegate: OnboardingPermissionsProtocol) {
+    self.delegate = delegate
+    locationManager.delegate = self
     locationManager.requestWhenInUseAuthorization()
   }
   
@@ -24,8 +27,10 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
     switch status {
     case .authorizedWhenInUse:
       locationManager.startUpdatingLocation()
+      delegate?.locationRequested()
     case .denied:
       appData.setCurrent(location: nil)
+      delegate?.locationRequested()
     default: ()
     }
   }

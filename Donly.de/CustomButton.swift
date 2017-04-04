@@ -16,12 +16,11 @@ class CustomButton: UIButton {
     layer.shadowOpacity = 0.8
     layer.shadowRadius = 4.0
     layer.shadowOffset = CGSize(width: 0.0, height: 4.0)
+    setTitleColor(UIColor(red: 0, green: 200/255, blue: 155/255, alpha: 1.0), for: .normal)
   }
   
   func setupButtonWith(title: String) {
     setTitle(title, for: .normal)
-    setTitleColor(UIColor(red: 0, green: 200/255, blue: 155/255, alpha: 1.0), for: .normal)
-    isHidden = false
   }
   
   func setupButtonWith(title: String, image: UIImage?) {

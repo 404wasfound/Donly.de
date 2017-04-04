@@ -11,9 +11,10 @@ import UIKit
 class SplashVC: UIViewController {
 
   @IBOutlet private weak var logo: UIImageView!
-  internal var splashViewModel: SplashViewModel!
   
-  init(viewModel: SplashViewModel) {
+  private var splashViewModel: SplashViewModelProtocol
+  
+  init(viewModel: SplashViewModelProtocol) {
     self.splashViewModel = viewModel
     super.init(nibName: String(describing: SplashVC.self), bundle: nil)
   }
