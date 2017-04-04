@@ -20,8 +20,10 @@ protocol OnboardingViewModelProtocol {
   var text: Variable<String> { get set }
   var page: Variable<Page> { get set }
   var delegate: OnboardingPageProtocol? { get set }
+  func buttonTapped()
   func requestLocation()
   func requestNotifications()
+
 }
 
 extension OnboardingViewModelProtocol {
@@ -30,11 +32,10 @@ extension OnboardingViewModelProtocol {
   }
 }
 
-class OnboardingViewModel: NSObject, OnboardingViewModelProtocol {
+class OnboardingViewModel: OnboardingViewModelProtocol {
   var text: Variable<String>
   var page: Variable<Page>
   var delegate: OnboardingPageProtocol?
-  var locationManager = CLLocationManager()
   
   init(page: Page, delegate: OnboardingPageProtocol) {
     switch page {
@@ -52,36 +53,26 @@ class OnboardingViewModel: NSObject, OnboardingViewModelProtocol {
   }
 }
 
-import CoreLocation
-
-extension OnboardingViewModel: CLLocationManagerDelegate {
+extension OnboardingViewModel {
+  
+  func buttonTapped() {
+    switch page.value {
+    case .second:
+      requestLocation()
+    case .third:
+      requestNotifications()
+    case .fourth:
+      segueToMainBoard()
+    default: ()
+    }
+  }
   
   func requestLocation() {
-    locationManager = CLLocationManager()
-    locationManager.delegate = self
-    locationManager.requestWhenInUseAuthorization()
+    locationManager.request()
   }
   
-  func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-    if status == .authorizedWhenInUse {
-      locationManager.startUpdatingLocation()
-    } else if status == .denied {
-      appData.userLocation = Variable(nil)
-    }
-  }
-  
-  func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-    if let location = locations.first {
-      let coordinates = Location(lon: location.coordinate.longitude, lat: location.coordinate.latitude)
-      appData.userLocation = Variable(coordinates)
-      print("COORDINATES: \(appData.userLocation.value)")
-    }
-  }
-  
-}
-
-extension OnboardingViewModel {
   func requestNotifications() {
-    //something
+    notificationsManager.request()
   }
+  
 }

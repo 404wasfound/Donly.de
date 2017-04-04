@@ -12,15 +12,12 @@ protocol ApplicationSettingsProtocol {
   var url: String { get }
   var onboardingShown: Bool { get }
   static var shared: ApplicationSettingsProtocol { get }
-  static func getShared() -> ApplicationSettingsProtocol
 }
+
+var appSet = ApplicationSettings.shared
 
 class ApplicationSettings: ApplicationSettingsProtocol {
   static var shared: ApplicationSettingsProtocol = ApplicationSettings()
-  static func getShared() -> ApplicationSettingsProtocol {
-    return shared
-  }
-  
   var url: String {
     if let baseUrl = Bundle.main.infoDictionary?["BASE_URL"] as? String {
       return baseUrl
@@ -28,7 +25,6 @@ class ApplicationSettings: ApplicationSettingsProtocol {
       return ""
     }
   }
-  
   var onboardingShown: Bool {
     return UserDefaults.standard.bool(forKey: "OnboardingShown")
   }

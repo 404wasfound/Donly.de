@@ -56,15 +56,7 @@ class OnboardingVC: UIViewController {
       .addDisposableTo(disposeBag)
     self.button.rx.tap
       .subscribe(onNext: {
-        switch self.viewModel.page.value {
-        case .second:
-          self.viewModel.requestLocation()
-        case.third:
-          self.viewModel.requestNotifications()
-        case.fourth:
-          self.viewModel.segueToMainBoard()
-        default:()
-        }
+        self.viewModel.buttonTapped()
       })
       .addDisposableTo(disposeBag)
   }

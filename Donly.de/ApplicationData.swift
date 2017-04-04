@@ -20,10 +20,13 @@ var appData = ApplicationData.shared
 class ApplicationData: ApplicationDataProtocol {
 
   static let shared = ApplicationData()
-  init() {
-    ///
-  }
   var userToken: String? = nil
   var userLocation = Variable<Location?>(nil)
   
+}
+
+extension ApplicationData {
+  func setCurrent(location: Location?) {
+    self.userLocation = Variable(location)
+  }
 }

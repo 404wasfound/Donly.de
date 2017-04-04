@@ -7,8 +7,7 @@
 //
 
 import Foundation
-import RxSwift
-import RxCocoa
+import UIKit
 
 protocol SplashViewModelProtocol {
   var onboardingShown: Bool { get set }
@@ -19,22 +18,20 @@ class SplashViewModel: SplashViewModelProtocol {
   var onboardingShown: Bool
   var nextController: UIViewController?
   init() {
-    self.onboardingShown = ApplicationSettings.shared.onboardingShown
+    self.onboardingShown = appSet.onboardingShown
     self.nextController = configureNext()
   }
 }
 
 extension SplashViewModel {
   func configureNext() -> UIViewController? {
-    var vc = UIViewController()
-    self.onboardingShown = false
+    self.onboardingShown = false /// TODO: Remove, its temporary 
     if onboardingShown {
       let storyboard = UIStoryboard(name: "MainStoryboard", bundle: nil)
-      vc = storyboard.instantiateInitialViewController()!
+      return storyboard.instantiateInitialViewController()
     } else {
       let storyboard = UIStoryboard(name: "OnboardingStoryboard", bundle: nil)
-      vc = storyboard.instantiateInitialViewController()!
+      return storyboard.instantiateInitialViewController()
     }
-    return vc
   }
 }

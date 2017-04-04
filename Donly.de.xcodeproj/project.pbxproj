@@ -16,6 +16,8 @@
 		F428B3331E8FD58400CF64F6 /* SplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F428B3321E8FD58400CF64F6 /* SplashVC.swift */; };
 		F428B3351E8FD82D00CF64F6 /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F428B3341E8FD82D00CF64F6 /* SplashViewModel.swift */; };
 		F428B3371E8FE04900CF64F6 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F428B3361E8FE04900CF64F6 /* MainViewController.swift */; };
+		F428B33B1E943AF900CF64F6 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F428B33A1E943AF900CF64F6 /* LocationManager.swift */; };
+		F428B33D1E943E9100CF64F6 /* NotificationsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F428B33C1E943E9100CF64F6 /* NotificationsManager.swift */; };
 		F46C464F1E8D90E8001FF145 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46C464E1E8D90E8001FF145 /* AppDelegate.swift */; };
 		F46C46561E8D90E8001FF145 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F46C46551E8D90E8001FF145 /* Assets.xcassets */; };
 		F46C46641E8D90E8001FF145 /* Donly_deTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46C46631E8D90E8001FF145 /* Donly_deTests.swift */; };
@@ -66,6 +68,8 @@
 		F428B3321E8FD58400CF64F6 /* SplashVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashVC.swift; sourceTree = "<group>"; };
 		F428B3341E8FD82D00CF64F6 /* SplashViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
 		F428B3361E8FE04900CF64F6 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		F428B33A1E943AF900CF64F6 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		F428B33C1E943E9100CF64F6 /* NotificationsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsManager.swift; sourceTree = "<group>"; };
 		F46C464B1E8D90E8001FF145 /* Donly.de.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Donly.de.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F46C464E1E8D90E8001FF145 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F46C46551E8D90E8001FF145 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -159,6 +163,15 @@
 			name = "Splash Screen";
 			sourceTree = "<group>";
 		};
+		F428B3391E943AE900CF64F6 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				F428B33A1E943AF900CF64F6 /* LocationManager.swift */,
+				F428B33C1E943E9100CF64F6 /* NotificationsManager.swift */,
+			);
+			name = Managers;
+			sourceTree = "<group>";
+		};
 		F46C46421E8D90E8001FF145 = {
 			isa = PBXGroup;
 			children = (
@@ -184,6 +197,7 @@
 		F46C464D1E8D90E8001FF145 /* Donly.de */ = {
 			isa = PBXGroup;
 			children = (
+				F428B3391E943AE900CF64F6 /* Managers */,
 				F428B3281E8FCFAC00CF64F6 /* Utils */,
 				F46C468A1E8DB311001FF145 /* Custom Views */,
 				F46C467C1E8D9103001FF145 /* Scenes */,
@@ -541,7 +555,9 @@
 			files = (
 				F46C46881E8D982B001FF145 /* OnboardingViewModel.swift in Sources */,
 				F46C46821E8D960F001FF145 /* OnboardingPageVC.swift in Sources */,
+				F428B33D1E943E9100CF64F6 /* NotificationsManager.swift in Sources */,
 				F46C46851E8D963F001FF145 /* OnboardingVC.swift in Sources */,
+				F428B33B1E943AF900CF64F6 /* LocationManager.swift in Sources */,
 				F428B3351E8FD82D00CF64F6 /* SplashViewModel.swift in Sources */,
 				F428B32C1E8FCFCB00CF64F6 /* ApplicationData.swift in Sources */,
 				F46C468C1E8DB329001FF145 /* CustomButton.swift in Sources */,
