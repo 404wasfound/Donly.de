@@ -23,5 +23,4 @@ class UserAPIRequest: APIRequestType {
     let client = APIClient()
     return client.getObjects(resource: self).map { $0[0] }
   }
-  
 }
