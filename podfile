@@ -9,6 +9,9 @@ target 'Donly.de' do
   pod 'RxCocoa'
   pod 'RxSwift'
   pod 'Alamofire'
+  pod 'RealmSwift'
+  pod 'SwiftyJSON'  
+ 
   target 'Donly.deTests' do
     inherit! :search_paths
     # Pods for testing

@@ -30,6 +30,9 @@
 		F46C468C1E8DB329001FF145 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46C468B1E8DB329001FF145 /* CustomButton.swift */; };
 		F46C468E1E8DBB17001FF145 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F46C468D1E8DBB17001FF145 /* LaunchScreen.xib */; };
 		F46C46911E8DBEA0001FF145 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F46C46901E8DBEA0001FF145 /* MainStoryboard.storyboard */; };
+		F4F118A31E991701006D5A50 /* APIResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F118A21E991701006D5A50 /* APIResource.swift */; };
+		F4F118A51E991983006D5A50 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F118A41E991983006D5A50 /* APIClient.swift */; };
+		F4F118A71E9919CA006D5A50 /* JSONSerializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F118A61E9919CA006D5A50 /* JSONSerializable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +91,9 @@
 		F46C468B1E8DB329001FF145 /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		F46C468D1E8DBB17001FF145 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		F46C46901E8DBEA0001FF145 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
+		F4F118A21E991701006D5A50 /* APIResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIResource.swift; sourceTree = "<group>"; };
+		F4F118A41E991983006D5A50 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		F4F118A61E9919CA006D5A50 /* JSONSerializable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONSerializable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +172,7 @@
 		F428B3391E943AE900CF64F6 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				F4F118A11E9916DA006D5A50 /* API */,
 				F428B33A1E943AF900CF64F6 /* LocationManager.swift */,
 				F428B33C1E943E9100CF64F6 /* NotificationsManager.swift */,
 			);
@@ -264,6 +271,16 @@
 				F428B3361E8FE04900CF64F6 /* MainViewController.swift */,
 			);
 			name = "Main Screen";
+			sourceTree = "<group>";
+		};
+		F4F118A11E9916DA006D5A50 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				F4F118A21E991701006D5A50 /* APIResource.swift */,
+				F4F118A41E991983006D5A50 /* APIClient.swift */,
+				F4F118A61E9919CA006D5A50 /* JSONSerializable.swift */,
+			);
+			name = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -554,6 +571,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F46C46881E8D982B001FF145 /* OnboardingViewModel.swift in Sources */,
+				F4F118A51E991983006D5A50 /* APIClient.swift in Sources */,
 				F46C46821E8D960F001FF145 /* OnboardingPageVC.swift in Sources */,
 				F428B33D1E943E9100CF64F6 /* NotificationsManager.swift in Sources */,
 				F46C46851E8D963F001FF145 /* OnboardingVC.swift in Sources */,
@@ -562,7 +580,9 @@
 				F428B32C1E8FCFCB00CF64F6 /* ApplicationData.swift in Sources */,
 				F46C468C1E8DB329001FF145 /* CustomButton.swift in Sources */,
 				F428B3331E8FD58400CF64F6 /* SplashVC.swift in Sources */,
+				F4F118A31E991701006D5A50 /* APIResource.swift in Sources */,
 				F46C464F1E8D90E8001FF145 /* AppDelegate.swift in Sources */,
+				F4F118A71E9919CA006D5A50 /* JSONSerializable.swift in Sources */,
 				F428B32A1E8FCFBF00CF64F6 /* ApplicationSettings.swift in Sources */,
 				F428B3371E8FE04900CF64F6 /* MainViewController.swift in Sources */,
 			);
