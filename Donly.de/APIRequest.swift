@@ -1,5 +1,5 @@
 //
-//  APIResource.swift
+//  APIRequest.swift
 //  Donly.de
 //
 //  Created by Bogdan Yur on 4/8/17.
@@ -18,13 +18,18 @@ enum Endpoint: String {
   case config = "/config"
 }
 
-protocol APIResource {
+protocol APIRequest {
   var method: HTTPMethod { get }
   var endpoint: Endpoint { get }
   var parameters: [String: String] { get }
 }
 
-extension APIResource {
+protocol APIRequestType: APIRequest {
+  associatedtype ReturnType: Any
+  func requestData() -> Observable<ReturnType?>
+}
+
+extension APIRequest {
   func makeRequest() -> URLRequest {
     guard let url = URL(string: appSet.url.appending(endpoint.rawValue)), var components = URLComponents(url: url, resolvingAgainstBaseURL: false) else {
       fatalError("Unable to create URL components.")

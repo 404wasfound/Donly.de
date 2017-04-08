@@ -18,7 +18,8 @@ enum APIClientError: Error {
 }
 
 final class APIClient {
-  func getObjects<T: JSONSerializable>(resource: APIResource) -> Observable<[T]> {
+  
+  func getObjects<T: JSONSerializable>(resource: APIRequest) -> Observable<[T]> {
     return getData(resource: resource).map { data in
       let json = JSON(data: data)
       guard let objects: [T] = deserialize(json: json) else {
@@ -28,7 +29,7 @@ final class APIClient {
     }
   }
   
-  private func getData(resource: APIResource) -> Observable<Data> {
+  private func getData(resource: APIRequest) -> Observable<Data> {
     let request = resource.makeRequest()
     return Observable.create { observer in
       Alamofire.request(request).responseData(completionHandler: { data in

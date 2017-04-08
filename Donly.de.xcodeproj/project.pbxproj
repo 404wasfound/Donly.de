@@ -30,9 +30,11 @@
 		F46C468C1E8DB329001FF145 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46C468B1E8DB329001FF145 /* CustomButton.swift */; };
 		F46C468E1E8DBB17001FF145 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F46C468D1E8DBB17001FF145 /* LaunchScreen.xib */; };
 		F46C46911E8DBEA0001FF145 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F46C46901E8DBEA0001FF145 /* MainStoryboard.storyboard */; };
-		F4F118A31E991701006D5A50 /* APIResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F118A21E991701006D5A50 /* APIResource.swift */; };
+		F4F118A31E991701006D5A50 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F118A21E991701006D5A50 /* APIRequest.swift */; };
 		F4F118A51E991983006D5A50 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F118A41E991983006D5A50 /* APIClient.swift */; };
 		F4F118A71E9919CA006D5A50 /* JSONSerializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F118A61E9919CA006D5A50 /* JSONSerializable.swift */; };
+		F4F118AA1E99289B006D5A50 /* UserAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F118A91E99289B006D5A50 /* UserAPIRequest.swift */; };
+		F4F118AD1E992BD3006D5A50 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F118AC1E992BD3006D5A50 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,9 +93,11 @@
 		F46C468B1E8DB329001FF145 /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		F46C468D1E8DBB17001FF145 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		F46C46901E8DBEA0001FF145 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
-		F4F118A21E991701006D5A50 /* APIResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIResource.swift; sourceTree = "<group>"; };
+		F4F118A21E991701006D5A50 /* APIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		F4F118A41E991983006D5A50 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		F4F118A61E9919CA006D5A50 /* JSONSerializable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONSerializable.swift; sourceTree = "<group>"; };
+		F4F118A91E99289B006D5A50 /* UserAPIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAPIRequest.swift; sourceTree = "<group>"; };
+		F4F118AC1E992BD3006D5A50 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,6 +208,7 @@
 		F46C464D1E8D90E8001FF145 /* Donly.de */ = {
 			isa = PBXGroup;
 			children = (
+				F4F118AB1E992BC5006D5A50 /* Model */,
 				F428B3391E943AE900CF64F6 /* Managers */,
 				F428B3281E8FCFAC00CF64F6 /* Utils */,
 				F46C468A1E8DB311001FF145 /* Custom Views */,
@@ -276,11 +281,28 @@
 		F4F118A11E9916DA006D5A50 /* API */ = {
 			isa = PBXGroup;
 			children = (
-				F4F118A21E991701006D5A50 /* APIResource.swift */,
+				F4F118A81E99287E006D5A50 /* APIRequests */,
+				F4F118A21E991701006D5A50 /* APIRequest.swift */,
 				F4F118A41E991983006D5A50 /* APIClient.swift */,
 				F4F118A61E9919CA006D5A50 /* JSONSerializable.swift */,
 			);
 			name = API;
+			sourceTree = "<group>";
+		};
+		F4F118A81E99287E006D5A50 /* APIRequests */ = {
+			isa = PBXGroup;
+			children = (
+				F4F118A91E99289B006D5A50 /* UserAPIRequest.swift */,
+			);
+			name = APIRequests;
+			sourceTree = "<group>";
+		};
+		F4F118AB1E992BC5006D5A50 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F4F118AC1E992BD3006D5A50 /* User.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -571,16 +593,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				F46C46881E8D982B001FF145 /* OnboardingViewModel.swift in Sources */,
+				F4F118AA1E99289B006D5A50 /* UserAPIRequest.swift in Sources */,
 				F4F118A51E991983006D5A50 /* APIClient.swift in Sources */,
 				F46C46821E8D960F001FF145 /* OnboardingPageVC.swift in Sources */,
 				F428B33D1E943E9100CF64F6 /* NotificationsManager.swift in Sources */,
 				F46C46851E8D963F001FF145 /* OnboardingVC.swift in Sources */,
 				F428B33B1E943AF900CF64F6 /* LocationManager.swift in Sources */,
+				F4F118AD1E992BD3006D5A50 /* User.swift in Sources */,
 				F428B3351E8FD82D00CF64F6 /* SplashViewModel.swift in Sources */,
 				F428B32C1E8FCFCB00CF64F6 /* ApplicationData.swift in Sources */,
 				F46C468C1E8DB329001FF145 /* CustomButton.swift in Sources */,
 				F428B3331E8FD58400CF64F6 /* SplashVC.swift in Sources */,
-				F4F118A31E991701006D5A50 /* APIResource.swift in Sources */,
+				F4F118A31E991701006D5A50 /* APIRequest.swift in Sources */,
 				F46C464F1E8D90E8001FF145 /* AppDelegate.swift in Sources */,
 				F4F118A71E9919CA006D5A50 /* JSONSerializable.swift in Sources */,
 				F428B32A1E8FCFBF00CF64F6 /* ApplicationSettings.swift in Sources */,

@@ -20,6 +20,8 @@ func deserialize<T: JSONSerializable>(json: JSON) -> T? {
 func deserialize<T: JSONSerializable>(json: JSON) -> [T]? {
   if let array = json.array {
     return array.flatMap { T(json: $0) }
+  } else if let object: T = deserialize(json: json) {
+    return [object]
   }
   return nil
 }
