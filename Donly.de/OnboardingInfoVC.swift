@@ -21,7 +21,7 @@ class OnboardingInfoVC: UIViewController {
   
   @IBOutlet private weak var nextButton: UIButton!
   @IBAction private func nextButtonPressed(_ sender: UIButton) {
-    viewModel?.pushToNextScreen()
+    navigateToNextVC()
   }
   
   internal var viewModel: OnboardingInfoViewModelProtocol?
@@ -40,6 +40,10 @@ class OnboardingInfoVC: UIViewController {
     fatalError()
   }
   
+  override func viewWillAppear(_ animated: Bool) {
+    navigationController?.setNavigationBarHidden(true, animated: animated)
+  }
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     self.setupUI()
@@ -52,6 +56,11 @@ class OnboardingInfoVC: UIViewController {
     self.secondElementDescription.text = viewModel?.secondElement.description
     self.thirdElementTitle.text = viewModel?.thirdElement.title
     self.thirdElementDescription.text = viewModel?.thirdElement.description
+  }
+  
+  func navigateToNextVC() {
+    let nextVC = OnboardingPermissionsVC(page: .notifications)
+    navigationController?.pushViewController(nextVC, animated: true)
   }
   
 }

@@ -10,26 +10,56 @@ import UIKit
 
 class OnboardingPermissionsVC: UIViewController {
   
+  @IBOutlet private weak var logoImageCenter: UIImageView!
+  @IBOutlet private weak var logoImageLeft: UIImageView!
+  @IBOutlet private weak var logoImageRight: UIImageView!
+  @IBOutlet private weak var permissionsTitle: UILabel!
+  @IBOutlet private weak var permissionsDescription: UILabel!
+  @IBOutlet private weak var permissionsCancelButton: OnboardingButton!
+  @IBAction private func permissionsCancelButtonPressed(_ sender: UIButton) {
+    /// when the cancel button is pressed
+  }
+  @IBOutlet private weak var permissionsAcceptedButton: OnboardingButton!
+  @IBAction private func permissionsAcceptedButtonPressed(_ sender: UIButton) {
+    /// when the accepted button is pressed
+  }
+  
+  internal var viewModel: OnboardingPermissionsViewModelProtocol?
+  
+  init(viewModel: OnboardingPermissionsViewModelProtocol) {
+    self.viewModel = viewModel
+    super.init(nibName: String(describing: OnboardingPermissionsVC.self), bundle: nil)
+  }
+  
+  convenience init(page: OnboardingPermissionsPage) {
+    let viewModel = OnboardingPermissionsViewModel(page: page)
+    self.init(viewModel: viewModel)
+  }
+  
+  required init?(coder aDecoder: NSCoder) {
+    fatalError()
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    navigationController?.setNavigationBarHidden(true, animated: animated)
+    setupUI()
+  }
+  
   override func viewDidLoad() {
     super.viewDidLoad()
-    
-    // Do any additional setup after loading the view.
   }
   
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
+  func setupUI() {
+    self.logoImageCenter.image = viewModel?.onboardingPermissionsImageSet.center
+    self.logoImageLeft.image = viewModel?.onboardingPermissionsImageSet.left
+    self.logoImageRight.image = viewModel?.onboardingPermissionsImageSet.right
+    self.permissionsTitle.text = viewModel?.onboardingInfoElement.title
+    self.permissionsDescription.text = viewModel?.onboardingInfoElement.description
+    guard let model = viewModel else {
+      fatalError("Failed to configure button.")
+    }
+    self.permissionsCancelButton.configure(button: .cancel, title: model.onboardingPermissionsButtons.cancel)
+    self.permissionsAcceptedButton.configure(button: .accept, title: model.onboardingPermissionsButtons.accept)
   }
-  
-  
-  /*
-   // MARK: - Navigation
-   
-   // In a storyboard-based application, you will often want to do a little preparation before navigation
-   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-   // Get the new view controller using segue.destinationViewController.
-   // Pass the selected object to the new view controller.
-   }
-   */
-  
+
 }

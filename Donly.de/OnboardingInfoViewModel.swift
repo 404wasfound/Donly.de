@@ -14,7 +14,6 @@ protocol OnboardingInfoViewModelProtocol {
   var firstElement: OnboardingInfoElement { get }
   var secondElement: OnboardingInfoElement { get }
   var thirdElement: OnboardingInfoElement { get }
-  func pushToNextScreen()
 }
 
 final class OnboardingInfoViewModel: OnboardingInfoViewModelProtocol {
@@ -27,10 +26,6 @@ final class OnboardingInfoViewModel: OnboardingInfoViewModelProtocol {
     self.firstElement = (title: "Donly ist kostenlos", description: "Bei donly kann einen Job anbieten und ausführen - 100% provisionsfrei")
     self.secondElement = (title: "Donly ist direkt", description: "Donly verbindet Auftraggerber und Helfer direkt - schnell, effizient und ohne Vermittlung")
     self.thirdElement = (title: "Donly ist veielfaltig", description: "Bei donly können Sie jeden Job anbieten oder ausführen. Sie sind nicht auf die bestehende Kategorien beschränkt")
-  }
-  
-  func pushToNextScreen() {
-    ///
   }
   
 }

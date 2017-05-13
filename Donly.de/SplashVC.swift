@@ -37,7 +37,9 @@ class SplashVC: UIViewController {
       return
     }
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
-    appDelegate.window?.rootViewController = nextController
+    let navController = UINavigationController()
+    navController.viewControllers = [nextController]
+    appDelegate.window?.rootViewController = navController
     appDelegate.window?.makeKeyAndVisible()
   }
   
