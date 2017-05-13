@@ -15,6 +15,9 @@
 		F421573B1EC73B56006441B3 /* OnboardingInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F421573A1EC73B56006441B3 /* OnboardingInfoViewModel.swift */; };
 		F421573E1EC74048006441B3 /* OnboardingInfoElementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F421573D1EC74048006441B3 /* OnboardingInfoElementView.swift */; };
 		F42157401EC741CF006441B3 /* OnboardingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F421573F1EC741CF006441B3 /* OnboardingButton.swift */; };
+		F42157451EC7490D006441B3 /* OnboardingPermissionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42157431EC7490D006441B3 /* OnboardingPermissionsVC.swift */; };
+		F42157461EC7490D006441B3 /* OnboardingPermissionsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F42157441EC7490D006441B3 /* OnboardingPermissionsVC.xib */; };
+		F42157481EC74920006441B3 /* OnboardingPermissionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42157471EC74920006441B3 /* OnboardingPermissionsViewModel.swift */; };
 		F428B32A1E8FCFBF00CF64F6 /* ApplicationSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F428B3291E8FCFBF00CF64F6 /* ApplicationSettings.swift */; };
 		F428B32C1E8FCFCB00CF64F6 /* ApplicationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F428B32B1E8FCFCB00CF64F6 /* ApplicationData.swift */; };
 		F428B3311E8FD53D00CF64F6 /* SplashVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F428B3301E8FD53D00CF64F6 /* SplashVC.xib */; };
@@ -83,6 +86,9 @@
 		F421573A1EC73B56006441B3 /* OnboardingInfoViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingInfoViewModel.swift; sourceTree = "<group>"; };
 		F421573D1EC74048006441B3 /* OnboardingInfoElementView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingInfoElementView.swift; sourceTree = "<group>"; };
 		F421573F1EC741CF006441B3 /* OnboardingButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingButton.swift; sourceTree = "<group>"; };
+		F42157431EC7490D006441B3 /* OnboardingPermissionsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingPermissionsVC.swift; sourceTree = "<group>"; };
+		F42157441EC7490D006441B3 /* OnboardingPermissionsVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OnboardingPermissionsVC.xib; sourceTree = "<group>"; };
+		F42157471EC74920006441B3 /* OnboardingPermissionsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingPermissionsViewModel.swift; sourceTree = "<group>"; };
 		F428B3291E8FCFBF00CF64F6 /* ApplicationSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationSettings.swift; sourceTree = "<group>"; };
 		F428B32B1E8FCFCB00CF64F6 /* ApplicationData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationData.swift; sourceTree = "<group>"; };
 		F428B3301E8FD53D00CF64F6 /* SplashVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SplashVC.xib; sourceTree = "<group>"; };
@@ -179,6 +185,7 @@
 		F42157351EC73405006441B3 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				F42157421EC748E2006441B3 /* OnboardingPermissions */,
 				F42157411EC7443D006441B3 /* OnboardingInfo */,
 				F421573C1EC7401F006441B3 /* Custom Views */,
 			);
@@ -202,6 +209,16 @@
 				F42157371EC734A5006441B3 /* OnboardingInfoVC.xib */,
 			);
 			name = OnboardingInfo;
+			sourceTree = "<group>";
+		};
+		F42157421EC748E2006441B3 /* OnboardingPermissions */ = {
+			isa = PBXGroup;
+			children = (
+				F42157431EC7490D006441B3 /* OnboardingPermissionsVC.swift */,
+				F42157471EC74920006441B3 /* OnboardingPermissionsViewModel.swift */,
+				F42157441EC7490D006441B3 /* OnboardingPermissionsVC.xib */,
+			);
+			name = OnboardingPermissions;
 			sourceTree = "<group>";
 		};
 		F428B3281E8FCFAC00CF64F6 /* Utils */ = {
@@ -497,6 +514,7 @@
 				F42157391EC734A5006441B3 /* OnboardingInfoVC.xib in Resources */,
 				F46C46561E8D90E8001FF145 /* Assets.xcassets in Resources */,
 				F46C467E1E8D9139001FF145 /* OnboardingStoryboard.storyboard in Resources */,
+				F42157461EC7490D006441B3 /* OnboardingPermissionsVC.xib in Resources */,
 				F4F118B81E993854006D5A50 /* JobCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -660,6 +678,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F42157451EC7490D006441B3 /* OnboardingPermissionsVC.swift in Sources */,
 				F46C46881E8D982B001FF145 /* OnboardingViewModel.swift in Sources */,
 				F42157381EC734A5006441B3 /* OnboardingInfoVC.swift in Sources */,
 				F4F118AA1E99289B006D5A50 /* UserAPIRequest.swift in Sources */,
@@ -678,6 +697,7 @@
 				F4F118B71E993854006D5A50 /* JobCell.swift in Sources */,
 				F428B3331E8FD58400CF64F6 /* SplashVC.swift in Sources */,
 				F4F118A31E991701006D5A50 /* APIRequest.swift in Sources */,
+				F42157481EC74920006441B3 /* OnboardingPermissionsViewModel.swift in Sources */,
 				F46C464F1E8D90E8001FF145 /* AppDelegate.swift in Sources */,
 				F4F118A71E9919CA006D5A50 /* JSONSerializable.swift in Sources */,
 				F42157401EC741CF006441B3 /* OnboardingButton.swift in Sources */,

@@ -84,19 +84,19 @@
                                             </constraints>
                                         </view>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="vNs-aT-kPW" userLabel="First element description">
-                                            <rect key="frame" x="66" y="0.0" width="277" height="109.5"/>
+                                            <rect key="frame" x="66" y="0.0" width="277" height="113"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="First title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ox-fU-B9Y">
-                                                    <rect key="frame" x="0.0" y="0.0" width="277" height="21.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="277" height="25"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="22" id="yym-Ui-Xv7"/>
+                                                        <constraint firstAttribute="height" constant="25" id="yym-Ui-Xv7"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The description of the first title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="1n5-Kr-Bue">
-                                                    <rect key="frame" x="0.0" y="29.5" width="277" height="80"/>
+                                                    <rect key="frame" x="0.0" y="33" width="277" height="80"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="80" id="mKd-RO-c6T"/>
                                                     </constraints>
@@ -134,19 +134,19 @@
                                             </constraints>
                                         </view>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="kja-5t-uJK" userLabel="Second element description">
-                                            <rect key="frame" x="66" y="0.0" width="277" height="109.5"/>
+                                            <rect key="frame" x="66" y="0.0" width="277" height="113"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Second title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Q9-hN-bA7">
-                                                    <rect key="frame" x="0.0" y="0.0" width="277" height="21.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="277" height="25"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="22" id="Mnd-ai-oUs"/>
+                                                        <constraint firstAttribute="height" constant="25" id="Mnd-ai-oUs"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The description of the second title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="uSY-GC-Hcr">
-                                                    <rect key="frame" x="0.0" y="29.5" width="277" height="80"/>
+                                                    <rect key="frame" x="0.0" y="33" width="277" height="80"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="80" id="e4G-oV-npf"/>
                                                     </constraints>
@@ -184,19 +184,19 @@
                                             </constraints>
                                         </view>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="BZP-Cr-UvQ" userLabel="Third element description">
-                                            <rect key="frame" x="66" y="0.0" width="277" height="109.5"/>
+                                            <rect key="frame" x="66" y="0.0" width="277" height="113"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Third title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gfr-mg-zdI">
-                                                    <rect key="frame" x="0.0" y="0.0" width="277" height="21.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="277" height="25"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="22" id="8tg-0O-OpH"/>
+                                                        <constraint firstAttribute="height" constant="25" id="8tg-0O-OpH"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The description of the third title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="RUi-9c-evq">
-                                                    <rect key="frame" x="0.0" y="29.5" width="277" height="80"/>
+                                                    <rect key="frame" x="0.0" y="33" width="277" height="80"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="80" id="wzZ-dr-ocv"/>
                                                     </constraints>
