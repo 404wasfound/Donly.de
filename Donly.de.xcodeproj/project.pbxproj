@@ -10,6 +10,11 @@
 		0A2D92125C20935D13DCA00C /* Pods_Donly_deUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C3B630B7F4F453F68D27147 /* Pods_Donly_deUITests.framework */; };
 		5616B79BDCC2151ED54F8E03 /* Pods_Donly_deTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 688493A6803C95A4E2504C35 /* Pods_Donly_deTests.framework */; };
 		B37C485B6E76722ECFA303E5 /* Pods_Donly_de.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A90C87EAC5D9362CCDFAF6C /* Pods_Donly_de.framework */; };
+		F42157381EC734A5006441B3 /* OnboardingInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42157361EC734A5006441B3 /* OnboardingInfoVC.swift */; };
+		F42157391EC734A5006441B3 /* OnboardingInfoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F42157371EC734A5006441B3 /* OnboardingInfoVC.xib */; };
+		F421573B1EC73B56006441B3 /* OnboardingInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F421573A1EC73B56006441B3 /* OnboardingInfoViewModel.swift */; };
+		F421573E1EC74048006441B3 /* OnboardingInfoElementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F421573D1EC74048006441B3 /* OnboardingInfoElementView.swift */; };
+		F42157401EC741CF006441B3 /* OnboardingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F421573F1EC741CF006441B3 /* OnboardingButton.swift */; };
 		F428B32A1E8FCFBF00CF64F6 /* ApplicationSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F428B3291E8FCFBF00CF64F6 /* ApplicationSettings.swift */; };
 		F428B32C1E8FCFCB00CF64F6 /* ApplicationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F428B32B1E8FCFCB00CF64F6 /* ApplicationData.swift */; };
 		F428B3311E8FD53D00CF64F6 /* SplashVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F428B3301E8FD53D00CF64F6 /* SplashVC.xib */; };
@@ -73,6 +78,11 @@
 		8C3B630B7F4F453F68D27147 /* Pods_Donly_deUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Donly_deUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B53FD0A6D3D647518F2FA4BA /* Pods-Donly.deTests.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Donly.deTests.staging.xcconfig"; path = "Pods/Target Support Files/Pods-Donly.deTests/Pods-Donly.deTests.staging.xcconfig"; sourceTree = "<group>"; };
 		F3D8A333BF5987B22F504E7E /* Pods-Donly.deUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Donly.deUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Donly.deUITests/Pods-Donly.deUITests.release.xcconfig"; sourceTree = "<group>"; };
+		F42157361EC734A5006441B3 /* OnboardingInfoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingInfoVC.swift; sourceTree = "<group>"; };
+		F42157371EC734A5006441B3 /* OnboardingInfoVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OnboardingInfoVC.xib; sourceTree = "<group>"; };
+		F421573A1EC73B56006441B3 /* OnboardingInfoViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingInfoViewModel.swift; sourceTree = "<group>"; };
+		F421573D1EC74048006441B3 /* OnboardingInfoElementView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingInfoElementView.swift; sourceTree = "<group>"; };
+		F421573F1EC741CF006441B3 /* OnboardingButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingButton.swift; sourceTree = "<group>"; };
 		F428B3291E8FCFBF00CF64F6 /* ApplicationSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationSettings.swift; sourceTree = "<group>"; };
 		F428B32B1E8FCFCB00CF64F6 /* ApplicationData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationData.swift; sourceTree = "<group>"; };
 		F428B3301E8FD53D00CF64F6 /* SplashVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SplashVC.xib; sourceTree = "<group>"; };
@@ -164,6 +174,34 @@
 				7087F503A7CE3C66354CECC2 /* Pods-Donly.deUITests.staging.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		F42157351EC73405006441B3 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				F42157411EC7443D006441B3 /* OnboardingInfo */,
+				F421573C1EC7401F006441B3 /* Custom Views */,
+			);
+			name = Onboarding;
+			sourceTree = "<group>";
+		};
+		F421573C1EC7401F006441B3 /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				F421573D1EC74048006441B3 /* OnboardingInfoElementView.swift */,
+				F421573F1EC741CF006441B3 /* OnboardingButton.swift */,
+			);
+			name = "Custom Views";
+			sourceTree = "<group>";
+		};
+		F42157411EC7443D006441B3 /* OnboardingInfo */ = {
+			isa = PBXGroup;
+			children = (
+				F42157361EC734A5006441B3 /* OnboardingInfoVC.swift */,
+				F421573A1EC73B56006441B3 /* OnboardingInfoViewModel.swift */,
+				F42157371EC734A5006441B3 /* OnboardingInfoVC.xib */,
+			);
+			name = OnboardingInfo;
 			sourceTree = "<group>";
 		};
 		F428B3281E8FCFAC00CF64F6 /* Utils */ = {
@@ -264,6 +302,7 @@
 		F46C46891E8DB211001FF145 /* Onboarding Screen */ = {
 			isa = PBXGroup;
 			children = (
+				F42157351EC73405006441B3 /* Onboarding */,
 				F46C467D1E8D9139001FF145 /* OnboardingStoryboard.storyboard */,
 				F46C46811E8D960F001FF145 /* OnboardingPageVC.swift */,
 				F46C46831E8D963F001FF145 /* OnboardingVC.swift */,
@@ -455,6 +494,7 @@
 				F428B3311E8FD53D00CF64F6 /* SplashVC.xib in Resources */,
 				F46C46911E8DBEA0001FF145 /* MainStoryboard.storyboard in Resources */,
 				F46C46861E8D963F001FF145 /* OnboardingVC.xib in Resources */,
+				F42157391EC734A5006441B3 /* OnboardingInfoVC.xib in Resources */,
 				F46C46561E8D90E8001FF145 /* Assets.xcassets in Resources */,
 				F46C467E1E8D9139001FF145 /* OnboardingStoryboard.storyboard in Resources */,
 				F4F118B81E993854006D5A50 /* JobCell.xib in Resources */,
@@ -621,6 +661,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F46C46881E8D982B001FF145 /* OnboardingViewModel.swift in Sources */,
+				F42157381EC734A5006441B3 /* OnboardingInfoVC.swift in Sources */,
 				F4F118AA1E99289B006D5A50 /* UserAPIRequest.swift in Sources */,
 				F4F118A51E991983006D5A50 /* APIClient.swift in Sources */,
 				F46C46821E8D960F001FF145 /* OnboardingPageVC.swift in Sources */,
@@ -630,13 +671,16 @@
 				F4F118AD1E992BD3006D5A50 /* User.swift in Sources */,
 				F428B3351E8FD82D00CF64F6 /* SplashViewModel.swift in Sources */,
 				F449648A1E993F0D0000330A /* JobsTableViewModel.swift in Sources */,
+				F421573B1EC73B56006441B3 /* OnboardingInfoViewModel.swift in Sources */,
 				F428B32C1E8FCFCB00CF64F6 /* ApplicationData.swift in Sources */,
 				F46C468C1E8DB329001FF145 /* CustomButton.swift in Sources */,
+				F421573E1EC74048006441B3 /* OnboardingInfoElementView.swift in Sources */,
 				F4F118B71E993854006D5A50 /* JobCell.swift in Sources */,
 				F428B3331E8FD58400CF64F6 /* SplashVC.swift in Sources */,
 				F4F118A31E991701006D5A50 /* APIRequest.swift in Sources */,
 				F46C464F1E8D90E8001FF145 /* AppDelegate.swift in Sources */,
 				F4F118A71E9919CA006D5A50 /* JSONSerializable.swift in Sources */,
+				F42157401EC741CF006441B3 /* OnboardingButton.swift in Sources */,
 				F428B32A1E8FCFBF00CF64F6 /* ApplicationSettings.swift in Sources */,
 				F428B3371E8FE04900CF64F6 /* MainVC.swift in Sources */,
 				F4F118AF1E99355E006D5A50 /* MainViewModel.swift in Sources */,

@@ -30,8 +30,8 @@ extension SplashViewModel {
       let storyboard = UIStoryboard(name: "MainStoryboard", bundle: nil)
       return storyboard.instantiateInitialViewController()
     } else {
-      let storyboard = UIStoryboard(name: "OnboardingStoryboard", bundle: nil)
-      return storyboard.instantiateInitialViewController()
+      let onboardingVC = OnboardingInfoVC()
+      return onboardingVC
     }
   }
 }
