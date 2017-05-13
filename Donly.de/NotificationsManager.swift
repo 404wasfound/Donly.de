@@ -20,7 +20,9 @@ class NotificationsManager {
       if granted {
         UIApplication.shared.registerForRemoteNotifications()
       }
-      delegate.notificationsRequested()
+      DispatchQueue.main.async {
+        delegate.notificationsRequested()
+      }
     }
   }
   

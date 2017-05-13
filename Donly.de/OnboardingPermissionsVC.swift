@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol OnboardingPermissionsVCProtocol {
+  func navigateTo(vc: UIViewController)
+}
+
 class OnboardingPermissionsVC: UIViewController {
   
   @IBOutlet private weak var logoImageCenter: UIImageView!
@@ -17,11 +21,11 @@ class OnboardingPermissionsVC: UIViewController {
   @IBOutlet private weak var permissionsDescription: UILabel!
   @IBOutlet private weak var permissionsCancelButton: OnboardingButton!
   @IBAction private func permissionsCancelButtonPressed(_ sender: UIButton) {
-    /// when the cancel button is pressed
+    viewModel?.cancelButtonPressed(delegate: self)
   }
   @IBOutlet private weak var permissionsAcceptedButton: OnboardingButton!
   @IBAction private func permissionsAcceptedButtonPressed(_ sender: UIButton) {
-    /// when the accepted button is pressed
+    viewModel?.acceptButtonPressed(delegate: self)
   }
   
   internal var viewModel: OnboardingPermissionsViewModelProtocol?
@@ -61,5 +65,12 @@ class OnboardingPermissionsVC: UIViewController {
     self.permissionsCancelButton.configure(button: .cancel, title: model.onboardingPermissionsButtons.cancel)
     self.permissionsAcceptedButton.configure(button: .accept, title: model.onboardingPermissionsButtons.accept)
   }
+  
+}
 
+extension OnboardingPermissionsVC: OnboardingPermissionsVCProtocol {
+  
+  func navigateTo(vc: UIViewController) {
+    navigationController?.pushViewController(vc, animated: true)
+  }
 }

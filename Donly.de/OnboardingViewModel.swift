@@ -22,11 +22,6 @@ protocol OnboardingViewModelProtocol {
   func buttonTapped()
 }
 
-protocol OnboardingPermissionsProtocol {
-  func locationRequested()
-  func notificationsRequested()
-}
-
 class OnboardingViewModel: OnboardingViewModelProtocol {
   var text: Variable<String>
   var page: Variable<Page>

@@ -22,11 +22,18 @@ enum PermissionsButton {
 typealias PermissionsImageSet = (center: UIImage, left: UIImage, right: UIImage)
 typealias PermissionsButtons = (cancel: String, accept: String)
 
+protocol OnboardingPermissionsProtocol {
+  func locationRequested()
+  func notificationsRequested()
+}
+
 protocol OnboardingPermissionsViewModelProtocol {
   var onboardingPermissionsPage: OnboardingPermissionsPage { get }
   var onboardingInfoElement: OnboardingInfoElement { get }
   var onboardingPermissionsImageSet: PermissionsImageSet { get }
   var onboardingPermissionsButtons: PermissionsButtons { get }
+  func acceptButtonPressed(delegate: OnboardingPermissionsVCProtocol)
+  func cancelButtonPressed(delegate: OnboardingPermissionsVCProtocol)
 }
 
 class OnboardingPermissionsViewModel: OnboardingPermissionsViewModelProtocol {
@@ -35,6 +42,7 @@ class OnboardingPermissionsViewModel: OnboardingPermissionsViewModelProtocol {
   var onboardingInfoElement: OnboardingInfoElement
   var onboardingPermissionsImageSet: PermissionsImageSet
   var onboardingPermissionsButtons: PermissionsButtons
+  var delegate: OnboardingPermissionsVCProtocol?
   
   init(page: OnboardingPermissionsPage) {
     self.onboardingPermissionsPage = page
@@ -56,4 +64,47 @@ class OnboardingPermissionsViewModel: OnboardingPermissionsViewModelProtocol {
     }
   }
   
+}
+
+extension OnboardingPermissionsViewModel: OnboardingPermissionsProtocol {
+  
+  func acceptButtonPressed(delegate: OnboardingPermissionsVCProtocol) {
+    self.delegate = delegate
+    switch onboardingPermissionsPage {
+    case .notifications:
+      requestNotifications()
+    case .location:
+      requestLocation()
+    }
+  }
+  
+  func cancelButtonPressed(delegate: OnboardingPermissionsVCProtocol) {
+    self.delegate = delegate
+    delegate.navigateTo(vc: getNextVC())
+  }
+  
+  func requestLocation() {
+    locationManager.requestWith(delegate: self)
+  }
+  
+  func requestNotifications() {
+    notificationsManager.requestWith(delegate: self)
+  }
+  
+  func locationRequested() {
+    delegate?.navigateTo(vc: getNextVC())
+  }
+  
+  func notificationsRequested() {
+    delegate?.navigateTo(vc: getNextVC())
+  }
+  
+  func getNextVC() -> UIViewController {
+    switch onboardingPermissionsPage {
+    case .notifications:
+       return OnboardingPermissionsVC(page: .location)
+    case .location:
+      return UIViewController()
+    }
+  }
 }
