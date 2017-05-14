@@ -10,7 +10,8 @@ target 'Donly.de' do
   pod 'RxSwift'
   pod 'Alamofire'
   pod 'RealmSwift'
-  pod 'SwiftyJSON'  
+  pod 'SwiftyJSON'
+  pod 'NVActivityIndicatorView'  
  
   target 'Donly.deTests' do
     inherit! :search_paths

@@ -23,6 +23,7 @@
 		F42268401EC8685100075CBE /* OnboardingLoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F422683F1EC8685100075CBE /* OnboardingLoginViewModel.swift */; };
 		F42268431EC879A800075CBE /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42268421EC879A800075CBE /* UIViewController+Extensions.swift */; };
 		F42268451EC89A4000075CBE /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42268441EC89A4000075CBE /* AlertManager.swift */; };
+		F42268471EC8A87400075CBE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42268461EC8A87400075CBE /* Constants.swift */; };
 		F428B32A1E8FCFBF00CF64F6 /* ApplicationSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F428B3291E8FCFBF00CF64F6 /* ApplicationSettings.swift */; };
 		F428B32C1E8FCFCB00CF64F6 /* ApplicationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F428B32B1E8FCFCB00CF64F6 /* ApplicationData.swift */; };
 		F428B3311E8FD53D00CF64F6 /* SplashVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F428B3301E8FD53D00CF64F6 /* SplashVC.xib */; };
@@ -94,6 +95,7 @@
 		F422683F1EC8685100075CBE /* OnboardingLoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingLoginViewModel.swift; sourceTree = "<group>"; };
 		F42268421EC879A800075CBE /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		F42268441EC89A4000075CBE /* AlertManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
+		F42268461EC8A87400075CBE /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F428B3291E8FCFBF00CF64F6 /* ApplicationSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationSettings.swift; sourceTree = "<group>"; };
 		F428B32B1E8FCFCB00CF64F6 /* ApplicationData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationData.swift; sourceTree = "<group>"; };
 		F428B3301E8FD53D00CF64F6 /* SplashVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SplashVC.xib; sourceTree = "<group>"; };
@@ -234,6 +236,7 @@
 			children = (
 				F428B3291E8FCFBF00CF64F6 /* ApplicationSettings.swift */,
 				F428B32B1E8FCFCB00CF64F6 /* ApplicationData.swift */,
+				F42268461EC8A87400075CBE /* Constants.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -690,6 +693,7 @@
 				F4F118AA1E99289B006D5A50 /* UserAPIRequest.swift in Sources */,
 				F4F118A51E991983006D5A50 /* APIClient.swift in Sources */,
 				F428B33D1E943E9100CF64F6 /* NotificationsManager.swift in Sources */,
+				F42268471EC8A87400075CBE /* Constants.swift in Sources */,
 				F428B33B1E943AF900CF64F6 /* LocationManager.swift in Sources */,
 				F4F118AD1E992BD3006D5A50 /* User.swift in Sources */,
 				F428B3351E8FD82D00CF64F6 /* SplashViewModel.swift in Sources */,

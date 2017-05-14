@@ -15,7 +15,7 @@ protocol OnboardingLoginViewModelProtocol {
   var loginInput: String? { get set }
   var passwordInput: String? { get set }
   var error: Variable<LoginError?> { get set }
-  func attemptLogin()
+  func attemptLogin(delegate: OnboardingLoginVCProtocol)
 }
 
 typealias LoginButtons = (login: String, register: String)
@@ -33,9 +33,10 @@ class OnboardingLoginViewModel: OnboardingLoginViewModelProtocol {
     self.loginButtons = (login: "Einloggen", register: "Zu einem Darsteller")
   }
   
-  func attemptLogin() {
+  func attemptLogin(delegate: OnboardingLoginVCProtocol) {
     if checkInputFields() {
       print("Fire request!")
+      delegate.triggerActivityIndicator()
 //      let userRequest = UserAPIRequest(parameters: [:])
 //      _ = userRequest.requestData().asObservable().subscribe(onNext: { user in
 //        /// assign the user oject to AppData
