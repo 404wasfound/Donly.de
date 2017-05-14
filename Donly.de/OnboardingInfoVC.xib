@@ -35,7 +35,7 @@
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="KhJ-TV-ZeE" userLabel="Logo">
                     <rect key="frame" x="107.5" y="45" width="160" height="90"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="onboarding_info_logo" translatesAutoresizingMaskIntoConstraints="NO" id="j11-C9-p5G">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="onboarding_logo_donly" translatesAutoresizingMaskIntoConstraints="NO" id="j11-C9-p5G">
                             <rect key="frame" x="0.0" y="0.0" width="160" height="61"/>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lohnt sich" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JSo-hi-se9">
@@ -252,6 +252,6 @@
     </objects>
     <resources>
         <image name="onboarding_info_bg" width="640" height="300"/>
-        <image name="onboarding_info_logo" width="196" height="83"/>
+        <image name="onboarding_logo_donly" width="331" height="141"/>
     </resources>
 </document>

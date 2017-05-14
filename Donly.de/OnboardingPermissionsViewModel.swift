@@ -104,7 +104,7 @@ extension OnboardingPermissionsViewModel: OnboardingPermissionsProtocol {
     case .notifications:
        return OnboardingPermissionsVC(page: .location)
     case .location:
-      return UIViewController()
+      return OnboardingLoginVC()
     }
   }
 }
