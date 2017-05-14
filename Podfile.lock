@@ -1,13 +1,13 @@
 PODS:
   - Alamofire (4.4.0)
-  - Realm (2.5.1):
-    - Realm/Headers (= 2.5.1)
-  - Realm/Headers (2.5.1)
-  - RealmSwift (2.5.1):
-    - Realm (= 2.5.1)
-  - RxCocoa (3.3.1):
-    - RxSwift (~> 3.3)
-  - RxSwift (3.3.1)
+  - Realm (2.7.0):
+    - Realm/Headers (= 2.7.0)
+  - Realm/Headers (2.7.0)
+  - RealmSwift (2.7.0):
+    - Realm (= 2.7.0)
+  - RxCocoa (3.4.1):
+    - RxSwift (~> 3.4)
+  - RxSwift (3.4.1)
   - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
@@ -19,10 +19,10 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
-  Realm: 32f86104d37c8521f864d4274050b38ba6190733
-  RealmSwift: f719e7511c902b8908593e8f143f59e47931bdb6
-  RxCocoa: 7dcb7a1860fc9cd0e23dae67ab105fc2916670b6
-  RxSwift: 8fc9f2de6275a9101d518444e00bf32f1a42caac
+  Realm: 07e5d3a9e0e41d65fd5f9f05150ed6295d0f093b
+  RealmSwift: 6d06425d3900c86473c4f323bf6949b43fca22bc
+  RxCocoa: a8a5f1d061d0043e28f56976829f31ce63e8eb09
+  RxSwift: 656f8fbeca5bc372121a72d9ebdd3cd3bc0ffade
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
 PODFILE CHECKSUM: 6b2e8dfef97ac7791972b9598ede9c5643988091
