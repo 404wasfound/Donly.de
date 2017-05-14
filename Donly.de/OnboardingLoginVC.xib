@@ -122,9 +122,6 @@
                     <state key="normal" title="Einloggen">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
-                    <connections>
-                        <action selector="loginButtonPressed:" destination="-1" eventType="touchUpInside" id="vRB-r6-ZPn"/>
-                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cQD-Vr-4n8" userLabel="Register" customClass="OnboardingButton" customModule="Donly_de" customModuleProvider="target">
                     <rect key="frame" x="16" y="583" width="343" height="60"/>
@@ -135,9 +132,6 @@
                     <state key="normal" title="Zu einem Darsteller">
                         <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
-                    <connections>
-                        <action selector="registerButtonPressed:" destination="-1" eventType="touchUpInside" id="lDY-Jl-Cbm"/>
-                    </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="oder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u1w-17-e5E">
                     <rect key="frame" x="166" y="538" width="42" height="21"/>
