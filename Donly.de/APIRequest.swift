@@ -15,7 +15,7 @@ enum HTTPMethod: String {
 }
 
 enum Endpoint: String {
-  case config = "/config"
+  case config = "login"
 }
 
 protocol APIRequest {

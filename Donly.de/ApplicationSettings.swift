@@ -20,6 +20,7 @@ class ApplicationSettings: ApplicationSettingsProtocol {
   static var shared: ApplicationSettingsProtocol = ApplicationSettings()
   var url: String {
     if let baseUrl = Bundle.main.infoDictionary?["BASE_URL"] as? String {
+      print("URL: \(baseUrl)")
       return baseUrl
     } else {
       return ""

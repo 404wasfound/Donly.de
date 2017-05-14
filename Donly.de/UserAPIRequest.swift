@@ -8,6 +8,7 @@
 
 import Foundation
 import RxSwift
+import SwiftyJSON
 
 class UserAPIRequest: APIRequestType {
   var method: HTTPMethod = .get
@@ -21,6 +22,16 @@ class UserAPIRequest: APIRequestType {
   
   func requestData() -> Observable<User?> {
     let client = APIClient()
+    return client.getData(resource: self).map { response -> User.Type in
+      switch response {
+      case .success(let data):
+        let json = JSON(data: data)
+        let user = User(json: json)
+        return user
+      case .failuer(let error):
+        break
+      }
+    }
     return client.getObjects(resource: self).map { $0[0] }
   }
 }

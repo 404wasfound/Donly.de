@@ -11,25 +11,33 @@ import Alamofire
 import RxSwift
 import SwiftyJSON
 
+enum APIResponse {
+  case success(Data)
+  case failuer(Error)
+}
+
 enum APIClientError: Error {
   case serializationJSONFailed
   case wrongHTTP(status: Int)
+  case noResponse
   case other(Error)
 }
 
 final class APIClient {
   
-  func getObjects<T: JSONSerializable>(resource: APIRequest) -> Observable<[T]> {
-    return getData(resource: resource).map { data in
-      let json = JSON(data: data)
-      guard let objects: [T] = deserialize(json: json) else {
-        throw APIClientError.serializationJSONFailed
-      }
-      return objects
-    }
-  }
+//  func getObjects<T: JSONSerializable>(resource: APIRequest) -> Observable<[T]> {
+//    return getData(resource: resource).map { data in
+//      let json = JSON(data: data)
+//      print("[JSON]")
+//      print(json)
+//      guard let objects: [T] = deserialize(json: json) else {
+//        throw APIClientError.serializationJSONFailed
+//      }
+//      return objects
+//    }
+//  }
   
-  private func getData(resource: APIRequest) -> Observable<Data> {
+  func getData(resource: APIRequest) -> Observable<APIResponse> {
     let request = resource.makeRequest()
     return Observable.create { observer in
       Alamofire.request(request).responseData(completionHandler: { data in
@@ -37,10 +45,11 @@ final class APIClient {
           observer.onError(APIClientError.other(error))
         }
         guard let response = data.response, let receivedData = data.data else {
-          fatalError("Get HTTP response failed.")
+          observer.onError(APIClientError.noResponse)
+          return
         }
         if 200 ..< 300 ~= response.statusCode {
-          observer.onNext(receivedData)
+          observer.onNext(.success(receivedData))
           observer.onCompleted()
         } else {
           observer.onError(APIClientError.wrongHTTP(status: response.statusCode))

@@ -35,14 +35,17 @@ class OnboardingLoginViewModel: OnboardingLoginViewModelProtocol {
   
   func attemptLogin(delegate: OnboardingLoginVCProtocol) {
     if checkInputFields() {
-      print("Fire request!")
       delegate.triggerActivityIndicator()
-//      let userRequest = UserAPIRequest(parameters: [:])
-//      _ = userRequest.requestData().asObservable().subscribe(onNext: { user in
-//        /// assign the user oject to AppData
-//      }, onError: { error in
-//        self.error.value = (title: "Connection Error", message: "\(error.localizedDescription)")
-//      }).addDisposableTo(disposeBag)
+      guard let login = loginInput, let password = passwordInput else {
+        return
+      }
+      let parameters = ["email": login, "password": password]
+      let userRequest = UserAPIRequest(parameters: parameters)
+      _ = userRequest.requestData().asObservable().subscribe(onNext: { user in
+        /// assign the user oject to AppData
+      }, onError: { error in
+        self.error.value = (title: "Connection Error", message: "\(error.localizedDescription)")
+      }).addDisposableTo(disposeBag)
     }
   }
   
