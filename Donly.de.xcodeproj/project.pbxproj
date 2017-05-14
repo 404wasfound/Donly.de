@@ -21,6 +21,7 @@
 		F422683D1EC8681200075CBE /* OnboardingLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F422683B1EC8681200075CBE /* OnboardingLoginVC.swift */; };
 		F422683E1EC8681200075CBE /* OnboardingLoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F422683C1EC8681200075CBE /* OnboardingLoginVC.xib */; };
 		F42268401EC8685100075CBE /* OnboardingLoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F422683F1EC8685100075CBE /* OnboardingLoginViewModel.swift */; };
+		F42268431EC879A800075CBE /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42268421EC879A800075CBE /* UIViewController+Extensions.swift */; };
 		F428B32A1E8FCFBF00CF64F6 /* ApplicationSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F428B3291E8FCFBF00CF64F6 /* ApplicationSettings.swift */; };
 		F428B32C1E8FCFCB00CF64F6 /* ApplicationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F428B32B1E8FCFCB00CF64F6 /* ApplicationData.swift */; };
 		F428B3311E8FD53D00CF64F6 /* SplashVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F428B3301E8FD53D00CF64F6 /* SplashVC.xib */; };
@@ -34,11 +35,6 @@
 		F46C46561E8D90E8001FF145 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F46C46551E8D90E8001FF145 /* Assets.xcassets */; };
 		F46C46641E8D90E8001FF145 /* Donly_deTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46C46631E8D90E8001FF145 /* Donly_deTests.swift */; };
 		F46C466F1E8D90E8001FF145 /* Donly_deUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46C466E1E8D90E8001FF145 /* Donly_deUITests.swift */; };
-		F46C467E1E8D9139001FF145 /* OnboardingStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F46C467D1E8D9139001FF145 /* OnboardingStoryboard.storyboard */; };
-		F46C46821E8D960F001FF145 /* OnboardingPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46C46811E8D960F001FF145 /* OnboardingPageVC.swift */; };
-		F46C46851E8D963F001FF145 /* OnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46C46831E8D963F001FF145 /* OnboardingVC.swift */; };
-		F46C46861E8D963F001FF145 /* OnboardingVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F46C46841E8D963F001FF145 /* OnboardingVC.xib */; };
-		F46C46881E8D982B001FF145 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46C46871E8D982B001FF145 /* OnboardingViewModel.swift */; };
 		F46C468C1E8DB329001FF145 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46C468B1E8DB329001FF145 /* CustomButton.swift */; };
 		F46C468E1E8DBB17001FF145 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F46C468D1E8DBB17001FF145 /* LaunchScreen.xib */; };
 		F46C46911E8DBEA0001FF145 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F46C46901E8DBEA0001FF145 /* MainStoryboard.storyboard */; };
@@ -95,6 +91,7 @@
 		F422683B1EC8681200075CBE /* OnboardingLoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingLoginVC.swift; sourceTree = "<group>"; };
 		F422683C1EC8681200075CBE /* OnboardingLoginVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OnboardingLoginVC.xib; sourceTree = "<group>"; };
 		F422683F1EC8685100075CBE /* OnboardingLoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingLoginViewModel.swift; sourceTree = "<group>"; };
+		F42268421EC879A800075CBE /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		F428B3291E8FCFBF00CF64F6 /* ApplicationSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationSettings.swift; sourceTree = "<group>"; };
 		F428B32B1E8FCFCB00CF64F6 /* ApplicationData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationData.swift; sourceTree = "<group>"; };
 		F428B3301E8FD53D00CF64F6 /* SplashVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SplashVC.xib; sourceTree = "<group>"; };
@@ -114,11 +111,6 @@
 		F46C466A1E8D90E8001FF145 /* Donly.deUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Donly.deUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F46C466E1E8D90E8001FF145 /* Donly_deUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Donly_deUITests.swift; sourceTree = "<group>"; };
 		F46C46701E8D90E8001FF145 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F46C467D1E8D9139001FF145 /* OnboardingStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = OnboardingStoryboard.storyboard; sourceTree = "<group>"; };
-		F46C46811E8D960F001FF145 /* OnboardingPageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingPageVC.swift; sourceTree = "<group>"; };
-		F46C46831E8D963F001FF145 /* OnboardingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingVC.swift; sourceTree = "<group>"; };
-		F46C46841E8D963F001FF145 /* OnboardingVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OnboardingVC.xib; sourceTree = "<group>"; };
-		F46C46871E8D982B001FF145 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		F46C468B1E8DB329001FF145 /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		F46C468D1E8DBB17001FF145 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		F46C46901E8DBEA0001FF145 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
@@ -188,24 +180,13 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		F42157351EC73405006441B3 /* Onboarding */ = {
-			isa = PBXGroup;
-			children = (
-				F422683A1EC867EB00075CBE /* OnboardingLogin */,
-				F42157421EC748E2006441B3 /* OnboardingPermissions */,
-				F42157411EC7443D006441B3 /* OnboardingInfo */,
-				F421573C1EC7401F006441B3 /* Custom Views */,
-			);
-			name = Onboarding;
-			sourceTree = "<group>";
-		};
-		F421573C1EC7401F006441B3 /* Custom Views */ = {
+		F421573C1EC7401F006441B3 /* Onboarding Custom Views  */ = {
 			isa = PBXGroup;
 			children = (
 				F421573D1EC74048006441B3 /* OnboardingInfoElementView.swift */,
 				F421573F1EC741CF006441B3 /* OnboardingButton.swift */,
 			);
-			name = "Custom Views";
+			name = "Onboarding Custom Views ";
 			sourceTree = "<group>";
 		};
 		F42157411EC7443D006441B3 /* OnboardingInfo */ = {
@@ -236,6 +217,14 @@
 				F422683C1EC8681200075CBE /* OnboardingLoginVC.xib */,
 			);
 			name = OnboardingLogin;
+			sourceTree = "<group>";
+		};
+		F42268411EC8795800075CBE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F42268421EC879A800075CBE /* UIViewController+Extensions.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 		F428B3281E8FCFAC00CF64F6 /* Utils */ = {
@@ -292,11 +281,12 @@
 		F46C464D1E8D90E8001FF145 /* Donly.de */ = {
 			isa = PBXGroup;
 			children = (
-				F4F118AB1E992BC5006D5A50 /* Model */,
-				F428B3391E943AE900CF64F6 /* Managers */,
-				F428B3281E8FCFAC00CF64F6 /* Utils */,
-				F46C468A1E8DB311001FF145 /* Custom Views */,
 				F46C467C1E8D9103001FF145 /* Scenes */,
+				F4F118AB1E992BC5006D5A50 /* Model */,
+				F46C468A1E8DB311001FF145 /* Custom Views */,
+				F428B3391E943AE900CF64F6 /* Managers */,
+				F42268411EC8795800075CBE /* Extensions */,
+				F428B3281E8FCFAC00CF64F6 /* Utils */,
 				F46C464E1E8D90E8001FF145 /* AppDelegate.swift */,
 				F46C46551E8D90E8001FF145 /* Assets.xcassets */,
 				F46C468D1E8DBB17001FF145 /* LaunchScreen.xib */,
@@ -336,12 +326,10 @@
 		F46C46891E8DB211001FF145 /* Onboarding Screen */ = {
 			isa = PBXGroup;
 			children = (
-				F42157351EC73405006441B3 /* Onboarding */,
-				F46C467D1E8D9139001FF145 /* OnboardingStoryboard.storyboard */,
-				F46C46811E8D960F001FF145 /* OnboardingPageVC.swift */,
-				F46C46831E8D963F001FF145 /* OnboardingVC.swift */,
-				F46C46841E8D963F001FF145 /* OnboardingVC.xib */,
-				F46C46871E8D982B001FF145 /* OnboardingViewModel.swift */,
+				F42157411EC7443D006441B3 /* OnboardingInfo */,
+				F42157421EC748E2006441B3 /* OnboardingPermissions */,
+				F422683A1EC867EB00075CBE /* OnboardingLogin */,
+				F421573C1EC7401F006441B3 /* Onboarding Custom Views  */,
 			);
 			name = "Onboarding Screen";
 			sourceTree = "<group>";
@@ -527,11 +515,9 @@
 				F46C468E1E8DBB17001FF145 /* LaunchScreen.xib in Resources */,
 				F428B3311E8FD53D00CF64F6 /* SplashVC.xib in Resources */,
 				F46C46911E8DBEA0001FF145 /* MainStoryboard.storyboard in Resources */,
-				F46C46861E8D963F001FF145 /* OnboardingVC.xib in Resources */,
 				F42157391EC734A5006441B3 /* OnboardingInfoVC.xib in Resources */,
 				F46C46561E8D90E8001FF145 /* Assets.xcassets in Resources */,
 				F422683E1EC8681200075CBE /* OnboardingLoginVC.xib in Resources */,
-				F46C467E1E8D9139001FF145 /* OnboardingStoryboard.storyboard in Resources */,
 				F42157461EC7490D006441B3 /* OnboardingPermissionsVC.xib in Resources */,
 				F4F118B81E993854006D5A50 /* JobCell.xib in Resources */,
 			);
@@ -697,13 +683,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				F42157451EC7490D006441B3 /* OnboardingPermissionsVC.swift in Sources */,
-				F46C46881E8D982B001FF145 /* OnboardingViewModel.swift in Sources */,
 				F42157381EC734A5006441B3 /* OnboardingInfoVC.swift in Sources */,
 				F4F118AA1E99289B006D5A50 /* UserAPIRequest.swift in Sources */,
 				F4F118A51E991983006D5A50 /* APIClient.swift in Sources */,
-				F46C46821E8D960F001FF145 /* OnboardingPageVC.swift in Sources */,
 				F428B33D1E943E9100CF64F6 /* NotificationsManager.swift in Sources */,
-				F46C46851E8D963F001FF145 /* OnboardingVC.swift in Sources */,
 				F428B33B1E943AF900CF64F6 /* LocationManager.swift in Sources */,
 				F4F118AD1E992BD3006D5A50 /* User.swift in Sources */,
 				F428B3351E8FD82D00CF64F6 /* SplashViewModel.swift in Sources */,
@@ -718,6 +701,7 @@
 				F422683D1EC8681200075CBE /* OnboardingLoginVC.swift in Sources */,
 				F42268401EC8685100075CBE /* OnboardingLoginViewModel.swift in Sources */,
 				F42157481EC74920006441B3 /* OnboardingPermissionsViewModel.swift in Sources */,
+				F42268431EC879A800075CBE /* UIViewController+Extensions.swift in Sources */,
 				F46C464F1E8D90E8001FF145 /* AppDelegate.swift in Sources */,
 				F4F118A71E9919CA006D5A50 /* JSONSerializable.swift in Sources */,
 				F42157401EC741CF006441B3 /* OnboardingButton.swift in Sources */,

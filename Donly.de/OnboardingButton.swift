@@ -19,7 +19,7 @@ class OnboardingButton: UIButton {
     case .accept:
       setGreenButton()
     case .cancel:
-      setGreyButto()
+      setGreyButton()
     }
     setTitle(title, for: .normal)
   }
@@ -28,7 +28,7 @@ class OnboardingButton: UIButton {
     layer.backgroundColor = UIColor(red:0.000, green:0.867, blue:0.761, alpha:1.00).cgColor
   }
   
-  private func setGreyButto() {
+  private func setGreyButton() {
     layer.borderWidth = 2.0
     layer.borderColor = UIColor.lightGray.cgColor
     layer.backgroundColor = UIColor(red:0.949, green:0.949, blue:0.949, alpha:1.00).cgColor

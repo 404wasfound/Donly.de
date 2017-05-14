@@ -9,12 +9,16 @@
 import Foundation
 
 protocol OnboardingLoginViewModelProtocol {
-  //// empty for now
+  var loginButtons: LoginButtons { get }
 }
+
+typealias LoginButtons = (login: String, register: String)
 
 class OnboardingLoginViewModel: OnboardingLoginViewModelProtocol {
   
+  var loginButtons: LoginButtons
+  
   init() {
-    /// also empty for now
+    self.loginButtons = (login: "Einloggen", register: "Zu einem Darsteller")
   }
 }
