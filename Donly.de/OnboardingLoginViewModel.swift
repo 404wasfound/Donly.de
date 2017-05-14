@@ -14,18 +14,20 @@ protocol OnboardingLoginViewModelProtocol {
   var loginButtons: LoginButtons { get }
   var loginInput: String? { get set }
   var passwordInput: String? { get set }
-  var errorMessage: Variable<String?> { get set }
+  var error: Variable<LoginError?> { get set }
   func attemptLogin()
 }
 
 typealias LoginButtons = (login: String, register: String)
+typealias LoginError = (title: String, message: String)
 
 class OnboardingLoginViewModel: OnboardingLoginViewModelProtocol {
   
   var loginButtons: LoginButtons
-  var errorMessage = Variable<String?>(nil)
+  var error = Variable<LoginError?>(nil)
   var loginInput: String?
   var passwordInput: String?
+  var disposeBag = DisposeBag()
   
   init() {
     self.loginButtons = (login: "Einloggen", register: "Zu einem Darsteller")
@@ -34,6 +36,12 @@ class OnboardingLoginViewModel: OnboardingLoginViewModelProtocol {
   func attemptLogin() {
     if checkInputFields() {
       print("Fire request!")
+//      let userRequest = UserAPIRequest(parameters: [:])
+//      _ = userRequest.requestData().asObservable().subscribe(onNext: { user in
+//        /// assign the user oject to AppData
+//      }, onError: { error in
+//        self.error.value = (title: "Connection Error", message: "\(error.localizedDescription)")
+//      }).addDisposableTo(disposeBag)
     }
   }
   
@@ -49,7 +57,7 @@ class OnboardingLoginViewModel: OnboardingLoginViewModelProtocol {
     if let input = loginInput, !input.isEmpty {
       return true
     }
-    self.errorMessage.value = "Login check failed!"
+    self.error.value = (title: "Error", message: "Please, enter your account name")
     return false
   }
   
@@ -57,7 +65,7 @@ class OnboardingLoginViewModel: OnboardingLoginViewModelProtocol {
     if let input = passwordInput, !input.isEmpty {
       return true
     }
-    self.errorMessage.value = "Password check failed!"
+    self.error.value = (title: "Error", message: "Please, enter your password")
     return false
   }
   

@@ -60,10 +60,10 @@ class OnboardingLoginVC: UIViewController {
       self.viewModel?.passwordInput = password
     }).addDisposableTo(disposeBag)
  
-    viewModel?.errorMessage.asObservable().bindNext({ errorMessage in
-      if let message = errorMessage {
-        /// the call for the alert manager or smth
-        print(message)
+    viewModel?.error.asObservable().bindNext({ error in
+      if let error = error {
+        let alert = alertManager.createAlertWith(style: .notification, title: error.title, message: error.message)
+        self.present(alert, animated: true, completion: nil)
       }
     }).addDisposableTo(disposeBag)
     
