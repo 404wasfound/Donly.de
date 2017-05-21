@@ -10,28 +10,40 @@ import Foundation
 import RxSwift
 import SwiftyJSON
 
+enum UserAPIResult {
+  case success(User)
+  case failure(APIClientError)
+}
+
 class UserAPIRequest: APIRequestType {
   var method: HTTPMethod = .get
   var parameters: [String : String]
   var endpoint: Endpoint = .config
-  typealias ReturnType = User
+  var client: APIClient
+  typealias ReturnType = UserAPIResult
   
   init(parameters: [String: String]) {
     self.parameters = parameters
+    self.client = APIClient()
   }
   
-  func requestData() -> Observable<User?> {
-    let client = APIClient()
-    return client.getData(resource: self).map { response -> User.Type in
-      switch response {
+  func send() -> Observable<UserAPIResult> {
+    return client.getData(resource: self).catchError({ error in
+      throw error
+    })
+    .map { result in
+      switch result {
       case .success(let data):
         let json = JSON(data: data)
-        let user = User(json: json)
-        return user
-      case .failuer(let error):
-        break
+        print(json)
+        if let user = User(json: json) {
+          return .success(user)
+        } else {
+          return .failure(APIClientError.serializationJSONFailed)
+        }
+      case .failure(let error):
+        return .failure(error)
       }
     }
-    return client.getObjects(resource: self).map { $0[0] }
   }
 }

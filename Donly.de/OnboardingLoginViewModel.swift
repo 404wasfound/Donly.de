@@ -40,11 +40,19 @@ class OnboardingLoginViewModel: OnboardingLoginViewModelProtocol {
         return
       }
       let parameters = ["email": login, "password": password]
+      print(parameters)
       let userRequest = UserAPIRequest(parameters: parameters)
-      _ = userRequest.requestData().asObservable().subscribe(onNext: { user in
-        /// assign the user oject to AppData
+      userRequest.send().subscribe(onNext: { result in
+        switch result {
+        case .success(let user):
+          print("Data is here!")
+        case .failure(let error):
+          print("Fuck you, the data is wrong!")
+        }
       }, onError: { error in
-        self.error.value = (title: "Connection Error", message: "\(error.localizedDescription)")
+        ///
+      }, onCompleted: {
+        delegate.triggerActivityIndicator()
       }).addDisposableTo(disposeBag)
     }
   }

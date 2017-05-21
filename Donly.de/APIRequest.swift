@@ -22,11 +22,12 @@ protocol APIRequest {
   var method: HTTPMethod { get }
   var endpoint: Endpoint { get }
   var parameters: [String: String] { get }
+  var client: APIClient { get set }
 }
 
 protocol APIRequestType: APIRequest {
   associatedtype ReturnType: Any
-  func requestData() -> Observable<ReturnType?>
+  func send() -> Observable<ReturnType>
 }
 
 extension APIRequest {

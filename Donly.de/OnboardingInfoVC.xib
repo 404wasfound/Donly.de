@@ -65,7 +65,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wpn-iB-m7t">
-                                                    <rect key="frame" x="14.5" y="15" width="21" height="21"/>
+                                                    <rect key="frame" x="15" y="15" width="21" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="oFD-3r-VUe"/>
                                                         <constraint firstAttribute="width" constant="21" id="yhG-NJ-0VM"/>
@@ -115,7 +115,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YVU-du-VwR">
-                                                    <rect key="frame" x="14.5" y="15" width="21" height="21"/>
+                                                    <rect key="frame" x="15" y="15" width="21" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="7KW-Nq-zmi"/>
                                                         <constraint firstAttribute="width" constant="21" id="RVf-j3-S73"/>
@@ -165,7 +165,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jYu-hF-Kea">
-                                                    <rect key="frame" x="14.5" y="15" width="21" height="21"/>
+                                                    <rect key="frame" x="15" y="15" width="21" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="7Th-dn-bBd"/>
                                                         <constraint firstAttribute="width" constant="21" id="S6u-tD-RnG"/>

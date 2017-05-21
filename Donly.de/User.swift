@@ -10,22 +10,32 @@ import Foundation
 import SwiftyJSON
 import RealmSwift
 
-class User: JSONSerializable {
-  var name: String = ""
-  var email: String = ""
-  var token: String = ""
-  
-  required init?(json: JSON) {
+struct User {
+  var name: String
+  var email: String
+  var token: String
+}
+extension User: JSONSerializable {
+  init?(json: JSON) {
+    var name: String?
+    var email: String?
+    var token: String?
     for (key, value) : (String, JSON) in json {
       switch key {
         case "name":
-        self.name = value.stringValue
+        name = value.stringValue
         case "email":
-        self.email = value.stringValue
+        email = value.stringValue
         case "token":
-        self.token = value.stringValue
+        token = value.stringValue
       default: ()
       }
     }
+    guard let nameParsed = name, let emailParsed = email, let tokenParsed = token else {
+      return nil
+    }
+    self.name = nameParsed
+    self.email = emailParsed
+    self.token = tokenParsed
   }
 }
