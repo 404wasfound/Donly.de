@@ -44,9 +44,9 @@ class OnboardingLoginViewModel: OnboardingLoginViewModelProtocol {
       let userRequest = UserAPIRequest(parameters: parameters)
       userRequest.send().subscribe(onNext: { result in
         switch result {
-        case .success(let user):
+        case .success( _):
           print("Data is here!")
-        case .failure(let error):
+        case .failure( _):
           print("Fuck you, the data is wrong!")
         }
       }, onError: { error in
