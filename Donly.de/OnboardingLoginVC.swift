@@ -28,16 +28,11 @@ class OnboardingLoginVC: UIViewController {
   internal var activityIndicator: NVActivityIndicatorView?
   fileprivate var activeField: UITextField?
 
-  init(viewModel: OnboardingLoginViewModelProtocol) {
+  init(withViewModel viewModel: OnboardingLoginViewModelProtocol) {
     self.viewModel = viewModel
     super.init(nibName: String(describing: OnboardingLoginVC.self), bundle: nil)
   }
-  
-  convenience init() {
-    let viewModel = OnboardingLoginViewModel()
-    self.init(viewModel: viewModel)
-  }
-  
+
   required init?(coder aDecoder: NSCoder) {
     fatalError()
   }

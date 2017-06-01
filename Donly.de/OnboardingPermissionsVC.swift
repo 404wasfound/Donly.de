@@ -30,14 +30,9 @@ class OnboardingPermissionsVC: UIViewController {
   
   internal var viewModel: OnboardingPermissionsViewModelProtocol?
   
-  init(viewModel: OnboardingPermissionsViewModelProtocol) {
+  init(withViewModel viewModel: OnboardingPermissionsViewModelProtocol) {
     self.viewModel = viewModel
     super.init(nibName: String(describing: OnboardingPermissionsVC.self), bundle: nil)
-  }
-  
-  convenience init(page: OnboardingPermissionsPage) {
-    let viewModel = OnboardingPermissionsViewModel(page: page)
-    self.init(viewModel: viewModel)
   }
   
   required init?(coder aDecoder: NSCoder) {

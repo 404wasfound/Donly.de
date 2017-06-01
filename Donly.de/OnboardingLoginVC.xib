@@ -31,7 +31,6 @@
                             <rect key="frame" x="0.0" y="0.0" width="320" height="222"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="9ym-Wh-151" secondAttribute="height" multiplier="75:52" id="3su-1s-Gtf"/>
-                                <constraint firstAttribute="height" relation="lessThanOrEqual" constant="260" id="ZTl-2C-joA"/>
                             </constraints>
                         </imageView>
                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="onboarding_logo_donly" translatesAutoresizingMaskIntoConstraints="NO" id="qaf-a2-7m5">

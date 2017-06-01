@@ -15,23 +15,31 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="lfe-n0-gy1">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_donly" translatesAutoresizingMaskIntoConstraints="NO" id="9i8-Fw-eAl">
-                    <rect key="frame" x="87.5" y="80" width="200" height="100"/>
+                    <rect key="frame" x="87.5" y="200" width="200" height="100"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="200" id="uhb-0k-OHE"/>
                         <constraint firstAttribute="height" constant="100" id="x3e-0X-wRO"/>
                     </constraints>
                 </imageView>
             </subviews>
-            <color key="backgroundColor" red="0.0" green="0.78431372549019607" blue="0.60784313725490191" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="9i8-Fw-eAl" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="80" id="TXS-Ua-HIG"/>
+                <constraint firstItem="lfe-n0-gy1" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Jdd-Q5-dTU"/>
+                <constraint firstItem="9i8-Fw-eAl" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="200" id="TXS-Ua-HIG"/>
                 <constraint firstItem="9i8-Fw-eAl" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="noc-ma-zKt"/>
+                <constraint firstItem="lfe-n0-gy1" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="pg7-TQ-xex"/>
+                <constraint firstAttribute="trailing" secondItem="lfe-n0-gy1" secondAttribute="trailing" id="tPy-Nc-J5m"/>
+                <constraint firstAttribute="bottom" secondItem="lfe-n0-gy1" secondAttribute="bottom" id="zky-0X-Agb"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
+            <point key="canvasLocation" x="70.5" y="53.5"/>
         </view>
     </objects>
     <resources>
-        <image name="logo_donly" width="1200" height="504"/>
+        <image name="background" width="640" height="1136"/>
+        <image name="logo_donly" width="323" height="138"/>
     </resources>
 </document>

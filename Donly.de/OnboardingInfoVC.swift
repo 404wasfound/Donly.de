@@ -26,14 +26,9 @@ class OnboardingInfoVC: UIViewController {
   
   internal var viewModel: OnboardingInfoViewModelProtocol?
   
-  init(viewModel: OnboardingInfoViewModelProtocol) {
+  init(withViewModel viewModel: OnboardingInfoViewModelProtocol) {
     self.viewModel = viewModel
     super.init(nibName: String(describing: OnboardingInfoVC.self), bundle: nil)
-  }
-  
-  convenience init() {
-    let viewModel = OnboardingInfoViewModel()
-    self.init(viewModel: viewModel)
   }
   
   required init?(coder aDecoder: NSCoder) {
@@ -59,7 +54,7 @@ class OnboardingInfoVC: UIViewController {
   }
   
   func navigateToNextVC() {
-    let nextVC = OnboardingPermissionsVC(page: .notifications)
+    let nextVC = OnboardingPermissionsScene.configure(forPage: .notifications)
     navigationController?.pushViewController(nextVC, animated: true)
   }
   

@@ -14,7 +14,7 @@ class OnboardingButton: UIButton {
     self.layer.cornerRadius = 5.0
   }
   
-  func configure(button: PermissionsButton, title: String) {
+  func configure(button: OnboardingPermissionsScene.PermissionsButton, title: String) {
     switch button {
     case .accept:
       setGreenButton()

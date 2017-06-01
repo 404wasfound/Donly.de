@@ -11,20 +11,17 @@ import RxSwift
 import RxCocoa
 
 protocol OnboardingLoginViewModelProtocol {
-  var loginButtons: LoginButtons { get }
+  var loginButtons: OnboardingLoginScene.LoginButtons { get }
   var loginInput: String? { get set }
   var passwordInput: String? { get set }
-  var error: Variable<LoginError?> { get set }
+  var error: Variable<OnboardingLoginScene.LoginError?> { get set }
   func attemptLogin(delegate: OnboardingLoginVCProtocol)
 }
 
-typealias LoginButtons = (login: String, register: String)
-typealias LoginError = (title: String, message: String)
-
 class OnboardingLoginViewModel: OnboardingLoginViewModelProtocol {
   
-  var loginButtons: LoginButtons
-  var error = Variable<LoginError?>(nil)
+  var loginButtons: OnboardingLoginScene.LoginButtons
+  var error = Variable<OnboardingLoginScene.LoginError?>(nil)
   var loginInput: String?
   var passwordInput: String?
   var disposeBag = DisposeBag()

@@ -14,7 +14,7 @@ protocol SplashViewModelProtocol {
   var nextController: UIViewController? { get set }
 }
 
-class SplashViewModel: SplashViewModelProtocol {
+final class SplashViewModel: SplashViewModelProtocol {
   var onboardingShown: Bool
   var nextController: UIViewController?
   init() {
@@ -30,8 +30,7 @@ extension SplashViewModel {
       let storyboard = UIStoryboard(name: "MainStoryboard", bundle: nil)
       return storyboard.instantiateInitialViewController()
     } else {
-      let onboardingVC = OnboardingInfoVC()
-      return onboardingVC
+      return OnboardingInfoScene.configure()
     }
   }
 }

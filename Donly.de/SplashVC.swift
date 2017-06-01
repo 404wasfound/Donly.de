@@ -14,13 +14,9 @@ class SplashVC: UIViewController {
   
   private var splashViewModel: SplashViewModelProtocol
   
-  init(viewModel: SplashViewModelProtocol) {
+  init(withViewModel viewModel: SplashViewModelProtocol) {
     self.splashViewModel = viewModel
     super.init(nibName: String(describing: SplashVC.self), bundle: nil)
-  }
-  
-  convenience init() {
-    self.init(viewModel: SplashViewModel())
   }
 
   required init?(coder aDecoder: NSCoder) {

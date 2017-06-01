@@ -9,42 +9,29 @@
 import Foundation
 import UIKit
 
-enum OnboardingPermissionsPage {
-  case notifications
-  case location
-}
-
-enum PermissionsButton {
-  case cancel
-  case accept
-}
-
-typealias PermissionsImageSet = (center: UIImage, left: UIImage, right: UIImage)
-typealias PermissionsButtons = (cancel: String, accept: String)
-
 protocol OnboardingPermissionsProtocol {
   func locationRequested()
   func notificationsRequested()
 }
 
 protocol OnboardingPermissionsViewModelProtocol {
-  var onboardingPermissionsPage: OnboardingPermissionsPage { get }
+  var onboardingPermissionsPage: OnboardingPermissionsScene.OnboardingPermissionsPage { get }
   var onboardingInfoElement: OnboardingInfoElement { get }
-  var onboardingPermissionsImageSet: PermissionsImageSet { get }
-  var onboardingPermissionsButtons: PermissionsButtons { get }
+  var onboardingPermissionsImageSet: OnboardingPermissionsScene.PermissionsImageSet { get }
+  var onboardingPermissionsButtons: OnboardingPermissionsScene.PermissionsButtons { get }
   func acceptButtonPressed(delegate: OnboardingPermissionsVCProtocol)
   func cancelButtonPressed(delegate: OnboardingPermissionsVCProtocol)
 }
 
 class OnboardingPermissionsViewModel: OnboardingPermissionsViewModelProtocol {
   
-  var onboardingPermissionsPage: OnboardingPermissionsPage
+  var onboardingPermissionsPage: OnboardingPermissionsScene.OnboardingPermissionsPage
   var onboardingInfoElement: OnboardingInfoElement
-  var onboardingPermissionsImageSet: PermissionsImageSet
-  var onboardingPermissionsButtons: PermissionsButtons
+  var onboardingPermissionsImageSet: OnboardingPermissionsScene.PermissionsImageSet
+  var onboardingPermissionsButtons: OnboardingPermissionsScene.PermissionsButtons
   var delegate: OnboardingPermissionsVCProtocol?
   
-  init(page: OnboardingPermissionsPage) {
+  init(withPage page: OnboardingPermissionsScene.OnboardingPermissionsPage) {
     self.onboardingPermissionsPage = page
     switch page {
     case .notifications:
@@ -102,9 +89,9 @@ extension OnboardingPermissionsViewModel: OnboardingPermissionsProtocol {
   func getNextVC() -> UIViewController {
     switch onboardingPermissionsPage {
     case .notifications:
-       return OnboardingPermissionsVC(page: .location)
+      return OnboardingPermissionsScene.configure(forPage: .location)
     case .location:
-      return OnboardingLoginVC()
+      return OnboardingLoginScene.configure()
     }
   }
 }

@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   }
   
   func instantiateRootVC() {
-    let splashViewController = SplashVC()
+    let splashViewController = SplashScene.configure()
     window?.rootViewController = splashViewController
   }
 

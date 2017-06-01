@@ -20,22 +20,30 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="1Rv-HV-UoX">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_donly" translatesAutoresizingMaskIntoConstraints="NO" id="yoS-yk-ZZx">
-                    <rect key="frame" x="87.5" y="80" width="200" height="100"/>
+                    <rect key="frame" x="87.5" y="200" width="200" height="100"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="100" id="8d0-ab-xCC"/>
                         <constraint firstAttribute="width" constant="200" id="gby-XT-PEj"/>
                     </constraints>
                 </imageView>
             </subviews>
-            <color key="backgroundColor" red="0.0" green="0.7843137255" blue="0.60784313729999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="yoS-yk-ZZx" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="80" id="BlI-eb-RRn"/>
+                <constraint firstItem="1Rv-HV-UoX" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="0Rb-my-7pJ"/>
+                <constraint firstAttribute="bottom" secondItem="1Rv-HV-UoX" secondAttribute="bottom" id="7cf-Dw-mf2"/>
                 <constraint firstItem="yoS-yk-ZZx" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="JhQ-pC-3is"/>
+                <constraint firstItem="1Rv-HV-UoX" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="UXr-zH-XqP"/>
+                <constraint firstAttribute="trailing" secondItem="1Rv-HV-UoX" secondAttribute="trailing" id="nyD-3i-f9O"/>
+                <constraint firstItem="yoS-yk-ZZx" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="200" id="uVk-eb-cZ2"/>
             </constraints>
+            <point key="canvasLocation" x="35.5" y="81.5"/>
         </view>
     </objects>
     <resources>
-        <image name="logo_donly" width="1200" height="504"/>
+        <image name="background" width="640" height="1136"/>
+        <image name="logo_donly" width="323" height="138"/>
     </resources>
 </document>
