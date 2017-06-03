@@ -13,6 +13,7 @@ import NVActivityIndicatorView
 
 protocol OnboardingLoginVCProtocol {
   func triggerActivityIndicator()
+  func navigateTo(vc: UIViewController)
 }
 
 class OnboardingLoginVC: UIViewController {
@@ -125,6 +126,13 @@ extension OnboardingLoginVC: OnboardingLoginVCProtocol {
       UIApplication.shared.beginIgnoringInteractionEvents()
     }
   }
+  
+  func navigateTo(vc: UIViewController) {
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    appDelegate.window?.rootViewController = vc
+    appDelegate.window?.makeKeyAndVisible()
+  }
+  
 }
 
 extension OnboardingLoginVC {

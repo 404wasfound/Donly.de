@@ -2,7 +2,7 @@
 //  MainVC.swift
 //  Donly.de
 //
-//  Created by Bogdan Yur on 4/1/17.
+//  Created by Bogdan Yur on 6/1/17.
 //  Copyright © 2017 404wasfound. All rights reserved.
 //
 
@@ -10,23 +10,38 @@ import UIKit
 
 class MainVC: UIViewController {
   
-  @IBOutlet private var container: UIView!
-  @IBOutlet private var tabBar: UITabBar!
+  @IBOutlet private weak var contentContainer: UIView!
+  @IBOutlet private weak var tabBarView: UIView!
+  @IBOutlet private weak var messagesButton: UIButton!
+  @IBOutlet private weak var myTasksButton: UIButton!
+  @IBOutlet private weak var allTasksButton: UIButton!
+  @IBOutlet private weak var notificationsButton: UIButton!
+  @IBOutlet private weak var profileButton: UIButton!
   
-  private var viewModel: MainViewModelProtocol?
+  var viewModel: MainViewModel?
+  private var currentPage: MainScene.MainPage?
+  var barButtons: [UIButton] = []
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    self.viewModel = MainViewModel(page: .alltasks)
-    showCurrentView()
+    self.setupUI()
   }
   
-  func showCurrentView() {
-    if let viewModel = self.viewModel, let vc = viewModel.configureView() {
-      addChildViewController(vc)
-      vc.view.frame = CGRect(x: 0, y: 0, width: container.frame.width, height: container.frame.height)
-      container.clipsToBounds = true
-      container.addSubview(vc.view)
+  override func viewWillAppear(_ animated: Bool) {
+    navigationController?.setNavigationBarHidden(false, animated: animated)
+  }
+  
+  func loadViewModel(forPage page: MainScene.MainPage) {
+    self.currentPage = page
+    self.viewModel = MainViewModel(withPage: page)
+  }
+  
+  func setupUI() {
+    self.barButtons = [self.messagesButton, self.myTasksButton, self.allTasksButton, self.notificationsButton, self.profileButton]
+    for button in barButtons {
+      button.imageEdgeInsets = UIEdgeInsets(top: 8, left: 0, bottom: 8, right: 0)
+      button.imageView?.contentMode = .scaleAspectFit
+      button.contentHorizontalAlignment = .center
     }
   }
   

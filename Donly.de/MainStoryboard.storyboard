@@ -65,7 +65,9 @@
                                     <constraint firstAttribute="height" constant="50" id="9hg-rh-yEb"/>
                                 </constraints>
                                 <items>
-                                    <tabBarItem systemItem="recents" id="VNo-Ax-TwL"/>
+                                    <tabBarItem title="messages" image="menu_icon_message" selectedImage="menu_icon_message" id="VNo-Ax-TwL">
+                                        <offsetWrapper key="titlePositionAdjustment" horizontal="-13" vertical="-14"/>
+                                    </tabBarItem>
                                     <tabBarItem systemItem="favorites" id="tNF-mF-CEm"/>
                                     <tabBarItem systemItem="search" id="1mj-hy-JTV"/>
                                     <tabBarItem systemItem="contacts" id="xBs-RK-8Hm"/>
@@ -103,6 +105,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="logo_donly" width="1200" height="504"/>
+        <image name="logo_donly" width="323" height="138"/>
+        <image name="menu_icon_message" width="51" height="49"/>
     </resources>
 </document>
