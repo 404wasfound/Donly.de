@@ -17,6 +17,52 @@ class MainScene {
     case allTasks
     case notifications
     case profile
+    
+    func getImageForSelectedState() -> UIImage? {
+      switch self {
+      case .messages:
+        return UIImage(named: "menu_icon_messages_selected")
+      case .myTasks:
+        return UIImage(named: "menu_icon_mytasks_selected")
+      case .allTasks:
+        return UIImage(named: "menu_icon_alltasks_selected")
+      case .notifications:
+        return UIImage(named: "menu_icon_notifications_selected")
+      case .profile:
+        return UIImage(named: "menu_icon_profile_selected")
+      }
+    }
+    
+    func getImageForUnselectedState() -> UIImage? {
+      switch self {
+      case .messages:
+        return UIImage(named: "menu_icon_messages")
+      case .myTasks:
+        return UIImage(named: "menu_icon_mytasks")
+      case .allTasks:
+        return UIImage(named: "menu_icon_alltasks")
+      case .notifications:
+        return UIImage(named: "menu_icon_notifications")
+      case .profile:
+        return UIImage(named: "menu_icon_profile")
+      }
+    }
+    
+    func getTitleForScreen() -> String {
+      switch self {
+      case .messages:
+        return "Messages"
+      case .myTasks:
+        return "My Tasks"
+      case .allTasks:
+        return "All Tasks"
+      case .notifications:
+        return "Notifications"
+      case .profile:
+        return "Profile"
+      }
+    }
+    
   }
   
   static func configure(forPage page: MainPage) -> UIViewController? {

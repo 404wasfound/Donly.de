@@ -40,6 +40,7 @@
 		F448D31B1EE0AFFD006A7416 /* MainScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F448D31A1EE0AFFD006A7416 /* MainScene.swift */; };
 		F448D31D1EE0B022006A7416 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F448D31C1EE0B022006A7416 /* MainViewModel.swift */; };
 		F448D31F1EE2EC97006A7416 /* MainVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F448D31E1EE2EC97006A7416 /* MainVC.storyboard */; };
+		F448D3231EE3085B006A7416 /* TabBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F448D3221EE3085A006A7416 /* TabBarButton.swift */; };
 		F449648A1E993F0D0000330A /* JobsTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44964891E993F0D0000330A /* JobsTableViewModel.swift */; };
 		F46C464F1E8D90E8001FF145 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46C464E1E8D90E8001FF145 /* AppDelegate.swift */; };
 		F46C46561E8D90E8001FF145 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F46C46551E8D90E8001FF145 /* Assets.xcassets */; };
@@ -119,6 +120,7 @@
 		F448D31A1EE0AFFD006A7416 /* MainScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainScene.swift; sourceTree = "<group>"; };
 		F448D31C1EE0B022006A7416 /* MainViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		F448D31E1EE2EC97006A7416 /* MainVC.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainVC.storyboard; sourceTree = "<group>"; };
+		F448D3221EE3085A006A7416 /* TabBarButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarButton.swift; sourceTree = "<group>"; };
 		F44964891E993F0D0000330A /* JobsTableViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobsTableViewModel.swift; sourceTree = "<group>"; };
 		F46C464B1E8D90E8001FF145 /* Donly.de.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Donly.de.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F46C464E1E8D90E8001FF145 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -287,6 +289,7 @@
 				F448D31C1EE0B022006A7416 /* MainViewModel.swift */,
 				F448D31A1EE0AFFD006A7416 /* MainScene.swift */,
 				F448D31E1EE2EC97006A7416 /* MainVC.storyboard */,
+				F448D3221EE3085A006A7416 /* TabBarButton.swift */,
 			);
 			name = "Main Scene";
 			sourceTree = "<group>";
@@ -723,6 +726,7 @@
 				F42157381EC734A5006441B3 /* OnboardingInfoVC.swift in Sources */,
 				F4F118AA1E99289B006D5A50 /* UserAPIRequest.swift in Sources */,
 				F448D30E1EE0A518006A7416 /* SplashScene.swift in Sources */,
+				F448D3231EE3085B006A7416 /* TabBarButton.swift in Sources */,
 				F448D3181EE0AEF7006A7416 /* MainVC.swift in Sources */,
 				F4F118A51E991983006D5A50 /* APIClient.swift in Sources */,
 				F428B33D1E943E9100CF64F6 /* NotificationsManager.swift in Sources */,

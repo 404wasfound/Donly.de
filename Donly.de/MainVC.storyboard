@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Messages-->
+        <!--MainVC-->
         <scene sceneID="HL2-YG-zuJ">
             <objects>
                 <viewController id="dJ8-GC-oAf" customClass="MainVC" customModule="Donly_de" customModuleProvider="target" sceneMemberID="viewController">
@@ -31,25 +31,40 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="TQM-6E-6Yz" userLabel="Tab Bar Buttons">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Maj-k0-M0f" userLabel="Messages">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Maj-k0-M0f" userLabel="Messages" customClass="TabBarButton" customModule="Donly_de" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="75" height="50"/>
-                                                <state key="normal" image="menu_icon_message"/>
+                                                <state key="normal" image="menu_icon_messages"/>
+                                                <connections>
+                                                    <action selector="messagesButtonPressed:" destination="dJ8-GC-oAf" eventType="touchUpInside" id="U5g-9F-v0z"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2E2-ir-Otj" userLabel="MyTasks">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2E2-ir-Otj" userLabel="MyTasks" customClass="TabBarButton" customModule="Donly_de" customModuleProvider="target">
                                                 <rect key="frame" x="75" y="0.0" width="75" height="50"/>
-                                                <state key="normal" image="menu_icon_mytask"/>
+                                                <state key="normal" image="menu_icon_mytasks"/>
+                                                <connections>
+                                                    <action selector="myTasksButtonPressed:" destination="dJ8-GC-oAf" eventType="touchUpInside" id="iFN-0z-BOW"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vDj-Zy-GBF" userLabel="Tasks">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vDj-Zy-GBF" userLabel="Tasks" customClass="TabBarButton" customModule="Donly_de" customModuleProvider="target">
                                                 <rect key="frame" x="150" y="0.0" width="75" height="50"/>
-                                                <state key="normal" image="menu_icon_tasks"/>
+                                                <state key="normal" image="menu_icon_alltasks"/>
+                                                <connections>
+                                                    <action selector="allTasksButtonPressed:" destination="dJ8-GC-oAf" eventType="touchUpInside" id="zqB-hG-lZU"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iaM-9V-e0R" userLabel="Notifications">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iaM-9V-e0R" userLabel="Notifications" customClass="TabBarButton" customModule="Donly_de" customModuleProvider="target">
                                                 <rect key="frame" x="225" y="0.0" width="75" height="50"/>
                                                 <state key="normal" image="menu_icon_notifications"/>
+                                                <connections>
+                                                    <action selector="notificationsButtonPressed:" destination="dJ8-GC-oAf" eventType="touchUpInside" id="fVB-0Q-8Qt"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ulK-Zn-TmT" userLabel="Profile">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ulK-Zn-TmT" userLabel="Profile" customClass="TabBarButton" customModule="Donly_de" customModuleProvider="target">
                                                 <rect key="frame" x="300" y="0.0" width="75" height="50"/>
                                                 <state key="normal" image="menu_icon_profile"/>
+                                                <connections>
+                                                    <action selector="profileButtonPressed:" destination="dJ8-GC-oAf" eventType="touchUpInside" id="4H1-ZF-S89"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -85,15 +100,15 @@
                             <constraint firstAttribute="trailing" secondItem="uNq-QF-nsk" secondAttribute="trailing" id="zqE-V2-LLU"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Messages" id="sM5-hJ-6Ft"/>
+                    <navigationItem key="navigationItem" id="sM5-hJ-6Ft"/>
                     <connections>
-                        <outlet property="allTasksButton" destination="vDj-Zy-GBF" id="sZW-If-240"/>
-                        <outlet property="contentContainer" destination="dKj-1B-sg2" id="mHE-TE-xIM"/>
-                        <outlet property="messagesButton" destination="Maj-k0-M0f" id="pw5-6g-nwg"/>
-                        <outlet property="myTasksButton" destination="2E2-ir-Otj" id="A1y-8U-cCv"/>
-                        <outlet property="notificationsButton" destination="iaM-9V-e0R" id="z8x-1x-8SW"/>
-                        <outlet property="profileButton" destination="ulK-Zn-TmT" id="ODk-SZ-0Ay"/>
-                        <outlet property="tabBarView" destination="u2f-JR-wuh" id="Yph-Oj-dUY"/>
+                        <outlet property="allTasksButton" destination="vDj-Zy-GBF" id="vZc-zg-325"/>
+                        <outlet property="contentContainer" destination="dKj-1B-sg2" id="2x6-9n-Qwv"/>
+                        <outlet property="messagesButton" destination="Maj-k0-M0f" id="J69-1k-cFy"/>
+                        <outlet property="myTasksButton" destination="2E2-ir-Otj" id="6rO-IY-aEm"/>
+                        <outlet property="notificationsButton" destination="iaM-9V-e0R" id="ltT-jI-jVE"/>
+                        <outlet property="profileButton" destination="ulK-Zn-TmT" id="rAE-5W-Zra"/>
+                        <outlet property="tabBarView" destination="u2f-JR-wuh" id="3MZ-nX-XrF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="duw-eO-DHb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -120,10 +135,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="menu_icon_message" width="51" height="49"/>
-        <image name="menu_icon_mytask" width="48" height="48"/>
+        <image name="menu_icon_alltasks" width="48" height="48"/>
+        <image name="menu_icon_messages" width="51" height="49"/>
+        <image name="menu_icon_mytasks" width="48" height="48"/>
         <image name="menu_icon_notifications" width="43" height="48"/>
         <image name="menu_icon_profile" width="47" height="48"/>
-        <image name="menu_icon_tasks" width="48" height="48"/>
     </resources>
 </document>
