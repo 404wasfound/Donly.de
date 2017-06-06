@@ -20,6 +20,11 @@ class MainMessagesVC: UIViewController {
   
   internal var viewModel: MainMessagesViewModelProtocol?
   internal var disposeBag = DisposeBag()
+  lazy var refreshControl: UIRefreshControl = {
+    let refreshControl = UIRefreshControl()
+    refreshControl.addTarget(self, action: #selector(MainMessagesVC.handleRefresh(refreshControl:)), for: UIControlEvents.valueChanged)
+    return refreshControl
+  }()
   var tempArray: [String]?
   
   override func viewDidLoad() {
@@ -55,8 +60,8 @@ class MainMessagesVC: UIViewController {
     self.messagesTable.delegate = self
     self.messagesTable.dataSource = self
     self.messagesTable.register(UINib(nibName: String(describing: MainMessagesTableCell.self), bundle: nil), forCellReuseIdentifier: String(describing: MainMessagesTableCell.self))
+    self.messagesTable.addSubview(self.refreshControl)
     self.messagesTable.allowsMultipleSelectionDuringEditing = true
-//    self.messagesTable.reloadData()
   }
   
 }
@@ -98,6 +103,11 @@ extension MainMessagesVC: UITableViewDelegate, UITableViewDataSource {
     if editingStyle == .delete {
       /// Perform deletion
     }
+  }
+  
+  func handleRefresh(refreshControl: UIRefreshControl) {
+    print("Refresh is done!")
+    refreshControl.endRefreshing()
   }
   
 }
