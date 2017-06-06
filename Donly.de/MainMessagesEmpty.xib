@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainMessagesVC" customModule="Donly_de" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="iN0-l3-epB" id="2dE-wI-TYt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="wUM-i4-MTM">
+                    <rect key="frame" x="63.5" y="259" width="248" height="149"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="Ycy-VG-NO8">
+                            <rect key="frame" x="0.0" y="0.0" width="248" height="100"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_messages_left" translatesAutoresizingMaskIntoConstraints="NO" id="mOx-Db-ZjZ">
+                                    <rect key="frame" x="0.0" y="25" width="50" height="50"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="50" id="Ddx-qn-N4Z"/>
+                                        <constraint firstAttribute="height" constant="50" id="hry-Da-1u6"/>
+                                    </constraints>
+                                </imageView>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_messages_center" translatesAutoresizingMaskIntoConstraints="NO" id="8yB-Cl-OgL">
+                                    <rect key="frame" x="74" y="0.0" width="100" height="100"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="100" id="C6v-9X-faH"/>
+                                        <constraint firstAttribute="height" constant="100" id="kKc-0c-imz"/>
+                                    </constraints>
+                                </imageView>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_messages_right" translatesAutoresizingMaskIntoConstraints="NO" id="fs7-Q9-fYJ">
+                                    <rect key="frame" x="198" y="25" width="50" height="50"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="50" id="88O-qw-vdy"/>
+                                        <constraint firstAttribute="height" constant="50" id="oCA-pZ-qjy"/>
+                                    </constraints>
+                                </imageView>
+                            </subviews>
+                        </stackView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sie haben keine Nachrichten" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fzA-rb-Wgr">
+                            <rect key="frame" x="0.0" y="124" width="248" height="25"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="25" id="cEs-2L-IDK"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="fzA-rb-Wgr" secondAttribute="trailing" id="fYc-AE-xwy"/>
+                        <constraint firstItem="fzA-rb-Wgr" firstAttribute="leading" secondItem="wUM-i4-MTM" secondAttribute="leading" id="xGR-0r-TNl"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="wUM-i4-MTM" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="D4P-O4-Ogx"/>
+                <constraint firstItem="wUM-i4-MTM" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Z9e-3w-4pt"/>
+            </constraints>
+            <point key="canvasLocation" x="35.5" y="53.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="icon_messages_center" width="216" height="180"/>
+        <image name="icon_messages_left" width="97" height="107"/>
+        <image name="icon_messages_right" width="99" height="106"/>
+    </resources>
+</document>

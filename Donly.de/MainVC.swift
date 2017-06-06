@@ -43,12 +43,13 @@ class MainVC: UIViewController {
     updateBar(forNewPage: MainScene.MainPage.profile)
   }
   
-  var viewModel: MainViewModel?
+  var viewModel: MainViewModelProtocol?
   private var currentPage: MainScene.MainPage = MainScene.MainPage.messages
   var barButtons: [MainScene.MainPage: TabBarButton] = [:]
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    self.loadViewForContainer()
     self.setupBarUI()
   }
   
@@ -61,10 +62,19 @@ class MainVC: UIViewController {
     self.viewModel = MainViewModel(withPage: page)
   }
   
+  func loadViewForContainer() {
+    if let vc = self.viewModel?.configureViewForContainer() {
+      addChildViewController(vc)
+      vc.view.frame = CGRect(x: 0, y: 0, width: contentContainer.frame.width, height: contentContainer.frame.height)
+      contentContainer.clipsToBounds = true
+      contentContainer.addSubview(vc.view)
+    }
+  }
+  
   func setupBarUI() {
     self.barButtons = [MainScene.MainPage.messages: self.messagesButton, MainScene.MainPage.myTasks: self.myTasksButton, MainScene.MainPage.allTasks: self.allTasksButton, MainScene.MainPage.notifications: self.notificationsButton, MainScene.MainPage.profile: self.profileButton]
     for buttonElement in barButtons {
-      buttonElement.value.imageEdgeInsets = UIEdgeInsets(top: 8, left: 0, bottom: 8, right: 0)
+      buttonElement.value.imageEdgeInsets = UIEdgeInsets(top: 12, left: 0, bottom: 12, right: 0)
       buttonElement.value.imageView?.contentMode = .scaleAspectFit
       buttonElement.value.contentHorizontalAlignment = .center
     }

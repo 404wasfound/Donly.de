@@ -47,7 +47,14 @@ class OnboardingLoginViewModel: OnboardingLoginViewModelProtocol {
           print("Fuck you, the data is wrong!")
         }
       }, onError: { error in
-        ///
+        /// Temporary starts
+        delegate.triggerActivityIndicator()
+        guard let vc = MainScene.configure(forPage: MainScene.MainPage.messages) else {
+          print("There is something very wrong with initializing of the VC!")
+          return
+        }
+        delegate.navigateTo(vc: vc)
+        /// Temporary ends
       }, onCompleted: {
         delegate.triggerActivityIndicator()
         guard let vc = MainScene.configure(forPage: MainScene.MainPage.messages) else {

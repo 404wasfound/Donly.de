@@ -33,25 +33,25 @@
                         <constraint firstAttribute="width" secondItem="iFG-6D-dIR" secondAttribute="height" multiplier="75:52" id="jK6-Pt-9Zd"/>
                     </constraints>
                 </imageView>
-                <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="8" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zo7-qk-uro" userLabel="Logo">
+                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zo7-qk-uro" userLabel="Logo">
                     <rect key="frame" x="52" y="61" width="271" height="140"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="notifications_icon_left" translatesAutoresizingMaskIntoConstraints="NO" id="p0R-qL-Wow">
-                            <rect key="frame" x="0.0" y="75" width="65" height="65"/>
+                            <rect key="frame" x="0.0" y="37.5" width="65" height="65"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="65" id="Rg8-J8-cPL"/>
                                 <constraint firstAttribute="width" constant="65" id="daN-Y6-l7C"/>
                             </constraints>
                         </imageView>
                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="notifications_icon_center" translatesAutoresizingMaskIntoConstraints="NO" id="Ko4-Yv-u5a">
-                            <rect key="frame" x="73" y="15" width="125" height="125"/>
+                            <rect key="frame" x="73" y="7.5" width="125" height="125"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="125" id="8fk-Pq-e5W"/>
                                 <constraint firstAttribute="width" constant="125" id="wXe-wA-fXH"/>
                             </constraints>
                         </imageView>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="notifications_icon_right" translatesAutoresizingMaskIntoConstraints="NO" id="fYH-dj-VBZ">
-                            <rect key="frame" x="206" y="75" width="65" height="65"/>
+                            <rect key="frame" x="206" y="37.5" width="65" height="65"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="65" id="D2M-yY-TTF"/>
                                 <constraint firstAttribute="width" constant="65" id="Sfl-wC-qG1"/>

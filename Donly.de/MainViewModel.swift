@@ -7,9 +7,10 @@
 //
 
 import Foundation
+import UIKit
 
 protocol MainViewModelProtocol {
-  
+  func configureViewForContainer() -> UIViewController?
 }
 
 class MainViewModel: MainViewModelProtocol {
@@ -18,6 +19,15 @@ class MainViewModel: MainViewModelProtocol {
   
   init(withPage page: MainScene.MainPage) {
     self.page = page
+  }
+  
+  func configureViewForContainer() -> UIViewController? {
+    switch page {
+    case .messages:
+      return MainMessagesScene.configure()
+    default: ()
+    }
+    return nil
   }
   
 }
