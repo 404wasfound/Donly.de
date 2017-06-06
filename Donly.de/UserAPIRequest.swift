@@ -36,6 +36,9 @@ class UserAPIRequest: APIRequestType {
       case .success(let data):
         let json = JSON(data: data)
         print(json)
+        guard self.checkForSucces(inJson: json) else {
+          return .failure(APIClientError.successFailure)
+        }
         if let user = User(json: json) {
           return .success(user)
         } else {

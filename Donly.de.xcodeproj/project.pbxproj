@@ -32,6 +32,7 @@
 		F428B3371E8FE04900CF64F6 /* MainVCt.swift in Sources */ = {isa = PBXBuildFile; fileRef = F428B3361E8FE04900CF64F6 /* MainVCt.swift */; };
 		F428B33B1E943AF900CF64F6 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F428B33A1E943AF900CF64F6 /* LocationManager.swift */; };
 		F428B33D1E943E9100CF64F6 /* NotificationsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F428B33C1E943E9100CF64F6 /* NotificationsManager.swift */; };
+		F43ECF5B1EE739C800F633E0 /* PhoneNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43ECF5A1EE739C800F633E0 /* PhoneNumber.swift */; };
 		F448D30E1EE0A518006A7416 /* SplashScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F448D30D1EE0A518006A7416 /* SplashScene.swift */; };
 		F448D3101EE0A61C006A7416 /* OnboardingInfoScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F448D30F1EE0A61C006A7416 /* OnboardingInfoScene.swift */; };
 		F448D3121EE0A6E3006A7416 /* OnboardingPermissionsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F448D3111EE0A6E3006A7416 /* OnboardingPermissionsScene.swift */; };
@@ -118,6 +119,7 @@
 		F428B3361E8FE04900CF64F6 /* MainVCt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainVCt.swift; sourceTree = "<group>"; };
 		F428B33A1E943AF900CF64F6 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		F428B33C1E943E9100CF64F6 /* NotificationsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsManager.swift; sourceTree = "<group>"; };
+		F43ECF5A1EE739C800F633E0 /* PhoneNumber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneNumber.swift; sourceTree = "<group>"; };
 		F448D30D1EE0A518006A7416 /* SplashScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashScene.swift; sourceTree = "<group>"; };
 		F448D30F1EE0A61C006A7416 /* OnboardingInfoScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingInfoScene.swift; sourceTree = "<group>"; };
 		F448D3111EE0A6E3006A7416 /* OnboardingPermissionsScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingPermissionsScene.swift; sourceTree = "<group>"; };
@@ -440,6 +442,7 @@
 			children = (
 				F4F118AC1E992BD3006D5A50 /* User.swift */,
 				F448D32F1EE6C81C006A7416 /* Message.swift */,
+				F43ECF5A1EE739C800F633E0 /* PhoneNumber.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -756,6 +759,7 @@
 				F448D30E1EE0A518006A7416 /* SplashScene.swift in Sources */,
 				F448D3231EE3085B006A7416 /* TabBarButton.swift in Sources */,
 				F448D3181EE0AEF7006A7416 /* MainVC.swift in Sources */,
+				F43ECF5B1EE739C800F633E0 /* PhoneNumber.swift in Sources */,
 				F4F118A51E991983006D5A50 /* APIClient.swift in Sources */,
 				F428B33D1E943E9100CF64F6 /* NotificationsManager.swift in Sources */,
 				F42268471EC8A87400075CBE /* Constants.swift in Sources */,

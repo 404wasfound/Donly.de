@@ -43,25 +43,19 @@ class OnboardingLoginViewModel: OnboardingLoginViewModelProtocol {
         switch result {
         case .success( _):
           print("Data is here!")
+          delegate.triggerActivityIndicator()
+          guard let vc = MainScene.configure(forPage: MainScene.MainPage.messages) else {
+            print("There is something very wrong with initializing of the VC!")
+            return
+          }
+          delegate.navigateTo(vc: vc)
         case .failure( _):
           print("Fuck you, the data is wrong!")
         }
       }, onError: { error in
-        /// Temporary starts
-        delegate.triggerActivityIndicator()
-        guard let vc = MainScene.configure(forPage: MainScene.MainPage.messages) else {
-          print("There is something very wrong with initializing of the VC!")
-          return
-        }
-        delegate.navigateTo(vc: vc)
-        /// Temporary ends
+        /// Some errr handling at some point
       }, onCompleted: {
-        delegate.triggerActivityIndicator()
-        guard let vc = MainScene.configure(forPage: MainScene.MainPage.messages) else {
-          print("There is something very wrong with initializing of the VC!")
-          return
-        }
-        delegate.navigateTo(vc: vc)
+
       }).addDisposableTo(disposeBag)
     }
   }

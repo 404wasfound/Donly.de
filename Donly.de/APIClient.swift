@@ -21,6 +21,7 @@ enum APIClientError: Error {
   case wrongHTTP(status: Int)
   case noResponse
   case other(Error)
+  case successFailure
 }
 
 final class APIClient {
