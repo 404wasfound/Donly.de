@@ -12,7 +12,7 @@
         <!--MainVC-->
         <scene sceneID="HL2-YG-zuJ">
             <objects>
-                <viewController id="dJ8-GC-oAf" customClass="MainVC" customModule="Donly_de" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="dJ8-GC-oAf" customClass="MainVC" customModule="Donly_de" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="OYc-Mn-OHO"/>
                         <viewControllerLayoutGuide type="bottom" id="O33-1v-nUK"/>

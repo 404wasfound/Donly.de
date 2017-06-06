@@ -33,6 +33,8 @@
 		F428B33B1E943AF900CF64F6 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F428B33A1E943AF900CF64F6 /* LocationManager.swift */; };
 		F428B33D1E943E9100CF64F6 /* NotificationsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F428B33C1E943E9100CF64F6 /* NotificationsManager.swift */; };
 		F43ECF5B1EE739C800F633E0 /* PhoneNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43ECF5A1EE739C800F633E0 /* PhoneNumber.swift */; };
+		F43ECF5E1EE75C4400F633E0 /* MainMessagesTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43ECF5C1EE75C4400F633E0 /* MainMessagesTableCell.swift */; };
+		F43ECF5F1EE75C4400F633E0 /* MainMessagesTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F43ECF5D1EE75C4400F633E0 /* MainMessagesTableCell.xib */; };
 		F448D30E1EE0A518006A7416 /* SplashScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F448D30D1EE0A518006A7416 /* SplashScene.swift */; };
 		F448D3101EE0A61C006A7416 /* OnboardingInfoScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F448D30F1EE0A61C006A7416 /* OnboardingInfoScene.swift */; };
 		F448D3121EE0A6E3006A7416 /* OnboardingPermissionsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F448D3111EE0A6E3006A7416 /* OnboardingPermissionsScene.swift */; };
@@ -120,6 +122,8 @@
 		F428B33A1E943AF900CF64F6 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		F428B33C1E943E9100CF64F6 /* NotificationsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsManager.swift; sourceTree = "<group>"; };
 		F43ECF5A1EE739C800F633E0 /* PhoneNumber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneNumber.swift; sourceTree = "<group>"; };
+		F43ECF5C1EE75C4400F633E0 /* MainMessagesTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMessagesTableCell.swift; sourceTree = "<group>"; };
+		F43ECF5D1EE75C4400F633E0 /* MainMessagesTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMessagesTableCell.xib; sourceTree = "<group>"; };
 		F448D30D1EE0A518006A7416 /* SplashScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashScene.swift; sourceTree = "<group>"; };
 		F448D30F1EE0A61C006A7416 /* OnboardingInfoScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingInfoScene.swift; sourceTree = "<group>"; };
 		F448D3111EE0A6E3006A7416 /* OnboardingPermissionsScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingPermissionsScene.swift; sourceTree = "<group>"; };
@@ -315,8 +319,10 @@
 				F448D3251EE6C4C4006A7416 /* MainMessagesVC.swift */,
 				F448D32B1EE6C750006A7416 /* MainMessagesViewModel.swift */,
 				F448D32D1EE6C761006A7416 /* MainMessagesScene.swift */,
+				F43ECF5C1EE75C4400F633E0 /* MainMessagesTableCell.swift */,
 				F448D3261EE6C4C4006A7416 /* MainMessagesVC.xib */,
 				F448D3291EE6C4D8006A7416 /* MainMessagesEmpty.xib */,
+				F43ECF5D1EE75C4400F633E0 /* MainMessagesTableCell.xib */,
 			);
 			name = "Main Messages";
 			sourceTree = "<group>";
@@ -348,7 +354,6 @@
 			children = (
 				F46C467C1E8D9103001FF145 /* Scenes */,
 				F4F118AB1E992BC5006D5A50 /* Model */,
-				F46C468A1E8DB311001FF145 /* Custom Views */,
 				F428B3391E943AE900CF64F6 /* Managers */,
 				F42268411EC8795800075CBE /* Extensions */,
 				F428B3281E8FCFAC00CF64F6 /* Utils */,
@@ -400,13 +405,6 @@
 			name = "Onboarding Scene";
 			sourceTree = "<group>";
 		};
-		F46C468A1E8DB311001FF145 /* Custom Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "Custom Views";
-			sourceTree = "<group>";
-		};
 		F46C468F1E8DBE6E001FF145 /* Main Screen */ = {
 			isa = PBXGroup;
 			children = (
@@ -452,8 +450,8 @@
 			children = (
 				F4F118B11E9937C9006D5A50 /* JobsTableVC.swift */,
 				F44964891E993F0D0000330A /* JobsTableViewModel.swift */,
-				F4F118B21E9937C9006D5A50 /* JobsTableVC.xib */,
 				F4F118B51E993854006D5A50 /* JobCell.swift */,
+				F4F118B21E9937C9006D5A50 /* JobsTableVC.xib */,
 				F4F118B61E993854006D5A50 /* JobCell.xib */,
 			);
 			name = "Main Screens";
@@ -583,6 +581,7 @@
 				F46C468E1E8DBB17001FF145 /* LaunchScreen.xib in Resources */,
 				F428B3311E8FD53D00CF64F6 /* SplashVC.xib in Resources */,
 				F46C46911E8DBEA0001FF145 /* MainStoryboard.storyboard in Resources */,
+				F43ECF5F1EE75C4400F633E0 /* MainMessagesTableCell.xib in Resources */,
 				F448D3281EE6C4C4006A7416 /* MainMessagesVC.xib in Resources */,
 				F448D32A1EE6C4D8006A7416 /* MainMessagesEmpty.xib in Resources */,
 				F42157391EC734A5006441B3 /* OnboardingInfoVC.xib in Resources */,
@@ -785,6 +784,7 @@
 				F448D3121EE0A6E3006A7416 /* OnboardingPermissionsScene.swift in Sources */,
 				F4F118A71E9919CA006D5A50 /* JSONSerializable.swift in Sources */,
 				F42157401EC741CF006441B3 /* OnboardingButton.swift in Sources */,
+				F43ECF5E1EE75C4400F633E0 /* MainMessagesTableCell.swift in Sources */,
 				F448D3101EE0A61C006A7416 /* OnboardingInfoScene.swift in Sources */,
 				F428B32A1E8FCFBF00CF64F6 /* ApplicationSettings.swift in Sources */,
 				F448D3271EE6C4C4006A7416 /* MainMessagesVC.swift in Sources */,

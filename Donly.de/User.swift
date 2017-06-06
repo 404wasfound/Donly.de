@@ -21,6 +21,7 @@ struct User {
 }
 extension User: JSONSerializable {
   init?(json: JSON) {
+    
     var token: String?
     var id: Int?
     var email: String?
