@@ -18,7 +18,7 @@ enum UserAPIResult {
 class UserAPIRequest: APIRequestType {
   var method: HTTPMethod = .get
   var parameters: [String : String]
-  var endpoint: Endpoint = .config
+  var endpoint: Endpoint = .login
   var client: APIClient
   typealias ReturnType = UserAPIResult
   

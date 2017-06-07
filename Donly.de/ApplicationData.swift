@@ -10,7 +10,7 @@ import Foundation
 import RxSwift
 
 protocol ApplicationDataProtocol {
-  var userToken: User? { get set }
+  var user: User? { get set }
   var userLocation: Variable<Location?> { get set }
 }
 
@@ -20,7 +20,7 @@ var appData = ApplicationData.shared
 class ApplicationData: ApplicationDataProtocol {
 
   static let shared = ApplicationData()
-  var userToken: User? = nil
+  var user: User? = nil
   var userLocation = Variable<Location?>(nil)
   
 }

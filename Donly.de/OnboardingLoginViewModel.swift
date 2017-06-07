@@ -41,8 +41,9 @@ class OnboardingLoginViewModel: OnboardingLoginViewModelProtocol {
       let userRequest = UserAPIRequest(parameters: parameters)
       userRequest.send().subscribe(onNext: { result in
         switch result {
-        case .success( _):
+        case .success(let user):
           print("Data is here!")
+          appData.user = user
           delegate.triggerActivityIndicator()
           guard let vc = MainScene.configure(forPage: MainScene.MainPage.messages) else {
             print("There is something very wrong with initializing of the VC!")

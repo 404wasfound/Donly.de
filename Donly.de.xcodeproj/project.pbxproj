@@ -884,7 +884,7 @@
 			baseConfigurationReference = 06031B57FB35A7700F8FD8F6 /* Pods-Donly.de.staging.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				BASE_URL = "http://update.donly.de/api/v1/system/";
+				BASE_URL = "http://update.donly.de/api/v1/";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = HPX9HV787C;
 				DISPLAY_NAME = "Donly.de STAGING";
