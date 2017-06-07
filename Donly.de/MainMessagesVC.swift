@@ -25,7 +25,6 @@ class MainMessagesVC: UIViewController {
     refreshControl.addTarget(self, action: #selector(MainMessagesVC.handleRefresh(refreshControl:)), for: UIControlEvents.valueChanged)
     return refreshControl
   }()
-  var tempArray: [String]?
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -42,9 +41,8 @@ class MainMessagesVC: UIViewController {
   }
   
   func setupBindings() {
-    viewModel?.tempArray.asObservable().bind(onNext: { array in
-      if let array = array {
-        self.tempArray = array
+    viewModel?.conversations.asObservable().bind(onNext: { conversations in
+      if let _ = conversations {
         DispatchQueue.main.async {
           let nib = UINib(nibName: String(describing: MainMessagesVC.self), bundle: nil)
           if let view = nib.instantiate(withOwner: self, options: nil).first as? UIView {
@@ -73,10 +71,10 @@ extension MainMessagesVC: UITableViewDelegate, UITableViewDataSource {
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: MainMessagesTableCell.self), for: indexPath) as? MainMessagesTableCell, let array = self.tempArray else {
+    guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: MainMessagesTableCell.self), for: indexPath) as? MainMessagesTableCell, let conversations = viewModel?.conversations.value else {
       return UITableViewCell()
     }
-    cell.configureCell(forDialog: array[indexPath.row])
+    cell.configureCell(forConversation: conversations[indexPath.row])
     return cell
   }
   
@@ -85,10 +83,10 @@ extension MainMessagesVC: UITableViewDelegate, UITableViewDataSource {
   }
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    guard let array = self.tempArray else {
-      return 1
+    guard let conversations = viewModel?.conversations.value else {
+      return 0
     }
-    return array.count
+    return conversations.count
   }
   
   func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

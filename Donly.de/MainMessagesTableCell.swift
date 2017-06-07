@@ -15,8 +15,14 @@ class MainMessagesTableCell: UITableViewCell {
   @IBOutlet private weak var lastMessage: UILabel!
   @IBOutlet private weak var lastMessageDate: UILabel!
   
-  func configureCell(forDialog dialog: String) { /// Temporary only string
-    self.userName.text = dialog
+  override func awakeFromNib() {
+    self.profileImageView.layer.cornerRadius = self.profileImageView.frame.width / 2
+  }
+  
+  func configureCell(forConversation conversation: Conversation) { /// Temporary only string
+    self.userName.text = conversation.user.fullName
+    self.lastMessage.text = conversation.lastMessage.message
+    self.lastMessageDate.text = conversation.lastMessage.sentDate.description(with: Locale.current)
   }
   
 }

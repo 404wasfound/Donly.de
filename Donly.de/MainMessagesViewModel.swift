@@ -10,30 +10,27 @@ import Foundation
 import RxSwift
 
 protocol MainMessagesViewModelProtocol {
-  var messages: Variable<[Message]?> { get set }
+  var conversations: Variable<[Conversation]?> { get set }
   var currentView: Variable<UIView?> { get set }
-  var tempArray: Variable<[String]?> { get set }
 }
 
 class MainMessagesViewModel: MainMessagesViewModelProtocol {
   
-  var messages = Variable<[Message]?>(nil)
+  var conversations = Variable<[Conversation]?>(nil)
   var currentView = Variable<UIView?>(nil)
   var disposeBag = DisposeBag()
-  var tempArray = Variable<[String]?>(nil)
   
   init() {
     self.sendMessagesRequest()
   }
   
   func sendMessagesRequest() {
-    let array = ["Bogdan Yur", "Some Another Name", "Some New Name", "The Fourth Name", "The Last Name"]
-    self.tempArray.value = array
     let conversationsRequest = ConversationsAPIRequest()
     conversationsRequest.send().subscribe(onNext: { result in
       switch result {
       case .success(let conversations):
         print("Number of conversations: \(conversations.count)")
+        self.conversations.value = conversations
       case .failure(let error):
         print(error)
       }
