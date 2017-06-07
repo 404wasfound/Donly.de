@@ -19,7 +19,7 @@ class MainMessagesViewModel: MainMessagesViewModelProtocol {
   
   var messages = Variable<[Message]?>(nil)
   var currentView = Variable<UIView?>(nil)
-  
+  var disposeBag = DisposeBag()
   var tempArray = Variable<[String]?>(nil)
   
   init() {
@@ -29,6 +29,19 @@ class MainMessagesViewModel: MainMessagesViewModelProtocol {
   func sendMessagesRequest() {
     let array = ["Bogdan Yur", "Some Another Name", "Some New Name", "The Fourth Name", "The Last Name"]
     self.tempArray.value = array
+    let conversationsRequest = ConversationsAPIRequest()
+    conversationsRequest.send().subscribe(onNext: { result in
+      switch result {
+      case .success(let conversations):
+        print("Number of conversations: \(conversations.count)")
+      case .failure(let error):
+        print(error)
+      }
+    }, onError: { error in
+      ///
+    }, onCompleted: { 
+      ///
+    }).addDisposableTo(disposeBag)
   }
   
   func configureView() {

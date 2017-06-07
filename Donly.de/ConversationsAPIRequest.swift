@@ -1,8 +1,8 @@
 //
-//  UserAPIRequest.swift
+//  ConversationsAPIRequest.swift
 //  Donly.de
 //
-//  Created by Bogdan Yur on 4/8/17.
+//  Created by Bogdan Yur on 6/8/17.
 //  Copyright © 2017 404wasfound. All rights reserved.
 //
 
@@ -10,24 +10,24 @@ import Foundation
 import RxSwift
 import SwiftyJSON
 
-enum UserAPIResult {
-  case success(User)
+enum ConversationsAPIResult {
+  case success([Conversation])
   case failure(APIClientError)
 }
 
-final class UserAPIRequest: APIRequestType {
+final class ConversationsAPIRequest: APIRequestType {
   var method: HTTPMethod = .get
   var parameters: [String : String]
-  var endpoint: Endpoint = .login
+  var endpoint: Endpoint = .conversations
   var client: APIClient
-  typealias ReturnType = UserAPIResult
+  typealias ReturnType = ConversationsAPIResult
   
-  init(parameters: [String: String]) {
-    self.parameters = parameters
+  init() {
+    self.parameters = [:]
     self.client = APIClient()
   }
   
-  func send() -> Observable<UserAPIResult> {
+  func send() -> Observable<ConversationsAPIResult> {
     return client.getData(resource: self)
       .catchError({ error in
         throw error
@@ -36,21 +36,18 @@ final class UserAPIRequest: APIRequestType {
         switch result {
         case .success(let data):
           let json = JSON(data: data)
-          let loginToken = json["loginTokem"].string
-          let jsonData = json["item"]
           print(json)
           guard self.checkForSucces(inJson: json) else {
             return .failure(APIClientError.successFailure)
           }
-          if var user = User(json: jsonData) {
-            user.token = loginToken
-            return .success(user)
-          } else {
+          let jsonData = json["items"]
+          guard let conversations: [Conversation] = deserialize(json: jsonData) else {
             return .failure(APIClientError.serializationJSONFailed)
           }
+          return .success(conversations)
         case .failure(let error):
           return .failure(error)
-        }
+       }
     }
   }
 }

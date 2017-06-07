@@ -35,6 +35,8 @@
 		F43ECF5B1EE739C800F633E0 /* PhoneNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43ECF5A1EE739C800F633E0 /* PhoneNumber.swift */; };
 		F43ECF5E1EE75C4400F633E0 /* MainMessagesTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43ECF5C1EE75C4400F633E0 /* MainMessagesTableCell.swift */; };
 		F43ECF5F1EE75C4400F633E0 /* MainMessagesTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F43ECF5D1EE75C4400F633E0 /* MainMessagesTableCell.xib */; };
+		F43ECF611EE8A8B900F633E0 /* Conversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43ECF601EE8A8B800F633E0 /* Conversation.swift */; };
+		F43ECF631EE8AFD800F633E0 /* ConversationsAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43ECF621EE8AFD700F633E0 /* ConversationsAPIRequest.swift */; };
 		F448D30E1EE0A518006A7416 /* SplashScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F448D30D1EE0A518006A7416 /* SplashScene.swift */; };
 		F448D3101EE0A61C006A7416 /* OnboardingInfoScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F448D30F1EE0A61C006A7416 /* OnboardingInfoScene.swift */; };
 		F448D3121EE0A6E3006A7416 /* OnboardingPermissionsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F448D3111EE0A6E3006A7416 /* OnboardingPermissionsScene.swift */; };
@@ -124,6 +126,8 @@
 		F43ECF5A1EE739C800F633E0 /* PhoneNumber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneNumber.swift; sourceTree = "<group>"; };
 		F43ECF5C1EE75C4400F633E0 /* MainMessagesTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMessagesTableCell.swift; sourceTree = "<group>"; };
 		F43ECF5D1EE75C4400F633E0 /* MainMessagesTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMessagesTableCell.xib; sourceTree = "<group>"; };
+		F43ECF601EE8A8B800F633E0 /* Conversation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Conversation.swift; sourceTree = "<group>"; };
+		F43ECF621EE8AFD700F633E0 /* ConversationsAPIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationsAPIRequest.swift; sourceTree = "<group>"; };
 		F448D30D1EE0A518006A7416 /* SplashScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashScene.swift; sourceTree = "<group>"; };
 		F448D30F1EE0A61C006A7416 /* OnboardingInfoScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingInfoScene.swift; sourceTree = "<group>"; };
 		F448D3111EE0A6E3006A7416 /* OnboardingPermissionsScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingPermissionsScene.swift; sourceTree = "<group>"; };
@@ -431,6 +435,7 @@
 			isa = PBXGroup;
 			children = (
 				F4F118A91E99289B006D5A50 /* UserAPIRequest.swift */,
+				F43ECF621EE8AFD700F633E0 /* ConversationsAPIRequest.swift */,
 			);
 			name = APIRequests;
 			sourceTree = "<group>";
@@ -441,6 +446,7 @@
 				F4F118AC1E992BD3006D5A50 /* User.swift */,
 				F448D32F1EE6C81C006A7416 /* Message.swift */,
 				F43ECF5A1EE739C800F633E0 /* PhoneNumber.swift */,
+				F43ECF601EE8A8B800F633E0 /* Conversation.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -752,10 +758,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				F448D31D1EE0B022006A7416 /* MainViewModel.swift in Sources */,
+				F43ECF631EE8AFD800F633E0 /* ConversationsAPIRequest.swift in Sources */,
 				F42157451EC7490D006441B3 /* OnboardingPermissionsVC.swift in Sources */,
 				F42157381EC734A5006441B3 /* OnboardingInfoVC.swift in Sources */,
 				F4F118AA1E99289B006D5A50 /* UserAPIRequest.swift in Sources */,
 				F448D30E1EE0A518006A7416 /* SplashScene.swift in Sources */,
+				F43ECF611EE8A8B900F633E0 /* Conversation.swift in Sources */,
 				F448D3231EE3085B006A7416 /* TabBarButton.swift in Sources */,
 				F448D3181EE0AEF7006A7416 /* MainVC.swift in Sources */,
 				F43ECF5B1EE739C800F633E0 /* PhoneNumber.swift in Sources */,

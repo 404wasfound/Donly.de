@@ -17,6 +17,7 @@ enum HTTPMethod: String {
 
 enum Endpoint: String {
   case login = "system/login"
+  case conversations = "dialogs"
 }
 
 protocol APIRequest {
@@ -43,8 +44,8 @@ extension APIRequest {
       fatalError("Unable to get URL with parameters.")
     }
     var request = URLRequest(url: finalUrl)
-    if let currentUser = appData.user {
-      request.addValue(currentUser.token, forHTTPHeaderField: "login-token")
+    if let currentUser = appData.user, let token = currentUser.token {
+      request.addValue(token, forHTTPHeaderField: "login-token")
     }
     request.httpMethod = method.rawValue
     return request
