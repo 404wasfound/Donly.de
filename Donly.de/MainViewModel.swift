@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 protocol MainViewModelProtocol {
-  func configureViewForContainer() -> UIViewController?
+  func configureViewForContainer(withRouter router: MainRouterProtocol) -> UIViewController?
 }
 
 class MainViewModel: MainViewModelProtocol {
@@ -21,10 +21,10 @@ class MainViewModel: MainViewModelProtocol {
     self.page = page
   }
   
-  func configureViewForContainer() -> UIViewController? {
+  func configureViewForContainer(withRouter router: MainRouterProtocol) -> UIViewController? {
     switch page {
     case .messages:
-      return ConversationsScene.configure()
+      return ConversationsScene.configure(withMainRouter: router)
     default: ()
     }
     return nil

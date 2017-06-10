@@ -28,13 +28,6 @@ class ConversationsVC: UIViewController {
     return refreshControl
   }()
   
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    self.viewModel?.delegate = self
-    viewModel?.getConversations(forPull: false)
-    setupBindings()
-  }
-  
   init(withViewModel viewModel: ConversationsViewModelProtocol) {
     self.viewModel = viewModel
     super.init(nibName: "ConversationsEmpty", bundle: nil)
@@ -42,6 +35,13 @@ class ConversationsVC: UIViewController {
   
   required init?(coder aDecoder: NSCoder) {
     fatalError()
+  }
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    self.viewModel?.delegate = self
+    viewModel?.getConversations(forPull: false)
+    setupBindings()
   }
   
   func setupBindings() {
@@ -71,7 +71,10 @@ class ConversationsVC: UIViewController {
 extension ConversationsVC: UITableViewDelegate, UITableViewDataSource {
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    /// Select the messages
+    guard let conversation = viewModel?.conversations.value?[indexPath.row] else {
+      return
+    }
+    viewModel?.openConversation(withId: conversation.id)
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

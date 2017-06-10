@@ -44,11 +44,13 @@ class MainVC: UIViewController {
   }
   
   var viewModel: MainViewModelProtocol?
+  var router: MainRouterProtocol?
   private var currentPage: MainScene.MainPage = MainScene.MainPage.messages
   var barButtons: [MainScene.MainPage: TabBarButton] = [:]
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    self.router = MainRouter(withMainViewcontroller: self)
     self.loadViewForContainer()
     self.setupBarUI()
   }
@@ -63,7 +65,7 @@ class MainVC: UIViewController {
   }
   
   func loadViewForContainer() {
-    if let vc = self.viewModel?.configureViewForContainer() {
+    if let router = self.router, let vc = self.viewModel?.configureViewForContainer(withRouter: router) {
       addChildViewController(vc)
       vc.view.frame = CGRect(x: 0, y: 0, width: contentContainer.frame.width, height: contentContainer.frame.height)
       contentContainer.clipsToBounds = true

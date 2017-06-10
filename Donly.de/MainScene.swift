@@ -65,6 +65,10 @@ class MainScene {
     
   }
   
+  enum Route {
+    case conversation
+  }
+  
   static func configure(forPage page: MainPage) -> UIViewController? {
     let storyBoard = UIStoryboard(name: String(describing: MainVC.self), bundle: nil)
     if let navController = storyBoard.instantiateInitialViewController() as? UINavigationController {

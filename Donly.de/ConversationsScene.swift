@@ -10,8 +10,8 @@ import Foundation
 
 class ConversationsScene {
  
-  static func configure() -> ConversationsVC {
-    let viewModel = ConversationsViewModel()
+  static func configure(withMainRouter router: MainRouterProtocol) -> ConversationsVC {
+    let viewModel = ConversationsViewModel(withMainRouter: router)
     return ConversationsVC(withViewModel: viewModel)
   }
   

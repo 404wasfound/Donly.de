@@ -11,8 +11,9 @@ import RxSwift
 
 protocol ConversationsViewModelProtocol {
   var conversations: Variable<[Conversation]?> { get set }
-  func getConversations(forPull: Bool)
   var delegate: ConversationsVCProtocol? { get set }
+  func getConversations(forPull: Bool)
+  func openConversation(withId id: Int)
 }
 
 class ConversationsViewModel: ConversationsViewModelProtocol {
@@ -20,9 +21,10 @@ class ConversationsViewModel: ConversationsViewModelProtocol {
   var conversations = Variable<[Conversation]?>(nil)
   var disposeBag = DisposeBag()
   var delegate: ConversationsVCProtocol?
+  private var mainRouter: MainRouterProtocol?
   
-  init() {
-    ///
+  init(withMainRouter router: MainRouterProtocol) {
+    self.mainRouter = router
   }
   
   func getConversations(forPull pull: Bool) {
@@ -46,8 +48,8 @@ class ConversationsViewModel: ConversationsViewModelProtocol {
     }).addDisposableTo(disposeBag)
   }
   
-  func configureView() {
-    ///
+  func openConversation(withId id: Int) {
+    mainRouter?.routeToConversation(withId: id)
   }
   
 }

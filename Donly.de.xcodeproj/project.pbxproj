@@ -53,6 +53,11 @@
 		F448D32C1EE6C750006A7416 /* ConversationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F448D32B1EE6C750006A7416 /* ConversationsViewModel.swift */; };
 		F448D32E1EE6C761006A7416 /* ConversationsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F448D32D1EE6C761006A7416 /* ConversationsScene.swift */; };
 		F448D3301EE6C81C006A7416 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = F448D32F1EE6C81C006A7416 /* Message.swift */; };
+		F4509D661EEC328100503DB1 /* ConversationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4509D641EEC328100503DB1 /* ConversationVC.swift */; };
+		F4509D671EEC328100503DB1 /* ConversationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4509D651EEC328100503DB1 /* ConversationVC.xib */; };
+		F4509D691EEC32A500503DB1 /* ConversationViewdModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4509D681EEC32A500503DB1 /* ConversationViewdModel.swift */; };
+		F4509D6B1EEC377300503DB1 /* ConversationScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4509D6A1EEC377300503DB1 /* ConversationScene.swift */; };
+		F4509D6D1EEC387600503DB1 /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4509D6C1EEC387600503DB1 /* MainRouter.swift */; };
 		F46C464F1E8D90E8001FF145 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46C464E1E8D90E8001FF145 /* AppDelegate.swift */; };
 		F46C46561E8D90E8001FF145 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F46C46551E8D90E8001FF145 /* Assets.xcassets */; };
 		F46C46641E8D90E8001FF145 /* Donly_deTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46C46631E8D90E8001FF145 /* Donly_deTests.swift */; };
@@ -138,6 +143,11 @@
 		F448D32B1EE6C750006A7416 /* ConversationsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationsViewModel.swift; sourceTree = "<group>"; };
 		F448D32D1EE6C761006A7416 /* ConversationsScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationsScene.swift; sourceTree = "<group>"; };
 		F448D32F1EE6C81C006A7416 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		F4509D641EEC328100503DB1 /* ConversationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationVC.swift; sourceTree = "<group>"; };
+		F4509D651EEC328100503DB1 /* ConversationVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConversationVC.xib; sourceTree = "<group>"; };
+		F4509D681EEC32A500503DB1 /* ConversationViewdModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationViewdModel.swift; sourceTree = "<group>"; };
+		F4509D6A1EEC377300503DB1 /* ConversationScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationScene.swift; sourceTree = "<group>"; };
+		F4509D6C1EEC387600503DB1 /* MainRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
 		F46C464B1E8D90E8001FF145 /* Donly.de.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Donly.de.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F46C464E1E8D90E8001FF145 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F46C46551E8D90E8001FF145 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -301,6 +311,7 @@
 				F448D31A1EE0AFFD006A7416 /* MainScene.swift */,
 				F448D3161EE0AEF7006A7416 /* MainVC.swift */,
 				F448D31C1EE0B022006A7416 /* MainViewModel.swift */,
+				F4509D6C1EEC387600503DB1 /* MainRouter.swift */,
 				F448D31E1EE2EC97006A7416 /* MainVC.storyboard */,
 				F448D3221EE3085A006A7416 /* TabBarButton.swift */,
 			);
@@ -333,6 +344,10 @@
 		F4509D631EEC2F9700503DB1 /* Conversation Scene */ = {
 			isa = PBXGroup;
 			children = (
+				F4509D6A1EEC377300503DB1 /* ConversationScene.swift */,
+				F4509D641EEC328100503DB1 /* ConversationVC.swift */,
+				F4509D681EEC32A500503DB1 /* ConversationViewdModel.swift */,
+				F4509D651EEC328100503DB1 /* ConversationVC.xib */,
 			);
 			name = "Conversation Scene";
 			sourceTree = "<group>";
@@ -568,6 +583,7 @@
 				F46C468E1E8DBB17001FF145 /* LaunchScreen.xib in Resources */,
 				F428B3311E8FD53D00CF64F6 /* SplashVC.xib in Resources */,
 				F43ECF5F1EE75C4400F633E0 /* ConversationsTableCell.xib in Resources */,
+				F4509D671EEC328100503DB1 /* ConversationVC.xib in Resources */,
 				F448D3281EE6C4C4006A7416 /* ConversationsVC.xib in Resources */,
 				F448D32A1EE6C4D8006A7416 /* ConversationsEmpty.xib in Resources */,
 				F42157391EC734A5006441B3 /* OnboardingInfoVC.xib in Resources */,
@@ -751,6 +767,7 @@
 				F4F118A51E991983006D5A50 /* APIClient.swift in Sources */,
 				F428B33D1E943E9100CF64F6 /* NotificationsManager.swift in Sources */,
 				F42268471EC8A87400075CBE /* Constants.swift in Sources */,
+				F4509D661EEC328100503DB1 /* ConversationVC.swift in Sources */,
 				F428B33B1E943AF900CF64F6 /* LocationManager.swift in Sources */,
 				F4F118AD1E992BD3006D5A50 /* User.swift in Sources */,
 				F428B3351E8FD82D00CF64F6 /* SplashViewModel.swift in Sources */,
@@ -758,16 +775,19 @@
 				F428B32C1E8FCFCB00CF64F6 /* ApplicationData.swift in Sources */,
 				F42268451EC89A4000075CBE /* AlertManager.swift in Sources */,
 				F448D32C1EE6C750006A7416 /* ConversationsViewModel.swift in Sources */,
+				F4509D6B1EEC377300503DB1 /* ConversationScene.swift in Sources */,
 				F448D32E1EE6C761006A7416 /* ConversationsScene.swift in Sources */,
 				F421573E1EC74048006441B3 /* OnboardingInfoElementView.swift in Sources */,
 				F428B3331E8FD58400CF64F6 /* SplashVC.swift in Sources */,
 				F4F118A31E991701006D5A50 /* APIRequest.swift in Sources */,
 				F422683D1EC8681200075CBE /* OnboardingLoginVC.swift in Sources */,
+				F4509D691EEC32A500503DB1 /* ConversationViewdModel.swift in Sources */,
 				F42268401EC8685100075CBE /* OnboardingLoginViewModel.swift in Sources */,
 				F42157481EC74920006441B3 /* OnboardingPermissionsViewModel.swift in Sources */,
 				F42268431EC879A800075CBE /* UIViewController+Extensions.swift in Sources */,
 				F448D31B1EE0AFFD006A7416 /* MainScene.swift in Sources */,
 				F46C464F1E8D90E8001FF145 /* AppDelegate.swift in Sources */,
+				F4509D6D1EEC387600503DB1 /* MainRouter.swift in Sources */,
 				F448D3121EE0A6E3006A7416 /* OnboardingPermissionsScene.swift in Sources */,
 				F4F118A71E9919CA006D5A50 /* JSONSerializable.swift in Sources */,
 				F42157401EC741CF006441B3 /* OnboardingButton.swift in Sources */,
