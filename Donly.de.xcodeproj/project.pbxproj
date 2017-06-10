@@ -58,6 +58,7 @@
 		F4509D691EEC32A500503DB1 /* ConversationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4509D681EEC32A500503DB1 /* ConversationViewModel.swift */; };
 		F4509D6B1EEC377300503DB1 /* ConversationScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4509D6A1EEC377300503DB1 /* ConversationScene.swift */; };
 		F4509D6D1EEC387600503DB1 /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4509D6C1EEC387600503DB1 /* MainRouter.swift */; };
+		F4509D6F1EEC405A00503DB1 /* ConversationMessagesAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4509D6E1EEC405A00503DB1 /* ConversationMessagesAPIRequest.swift */; };
 		F46C464F1E8D90E8001FF145 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46C464E1E8D90E8001FF145 /* AppDelegate.swift */; };
 		F46C46561E8D90E8001FF145 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F46C46551E8D90E8001FF145 /* Assets.xcassets */; };
 		F46C46641E8D90E8001FF145 /* Donly_deTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46C46631E8D90E8001FF145 /* Donly_deTests.swift */; };
@@ -66,7 +67,7 @@
 		F4F118A31E991701006D5A50 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F118A21E991701006D5A50 /* APIRequest.swift */; };
 		F4F118A51E991983006D5A50 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F118A41E991983006D5A50 /* APIClient.swift */; };
 		F4F118A71E9919CA006D5A50 /* JSONSerializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F118A61E9919CA006D5A50 /* JSONSerializable.swift */; };
-		F4F118AA1E99289B006D5A50 /* UserAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F118A91E99289B006D5A50 /* UserAPIRequest.swift */; };
+		F4F118AA1E99289B006D5A50 /* UserLoginAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F118A91E99289B006D5A50 /* UserLoginAPIRequest.swift */; };
 		F4F118AD1E992BD3006D5A50 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F118AC1E992BD3006D5A50 /* User.swift */; };
 /* End PBXBuildFile section */
 
@@ -148,6 +149,7 @@
 		F4509D681EEC32A500503DB1 /* ConversationViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationViewModel.swift; sourceTree = "<group>"; };
 		F4509D6A1EEC377300503DB1 /* ConversationScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationScene.swift; sourceTree = "<group>"; };
 		F4509D6C1EEC387600503DB1 /* MainRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
+		F4509D6E1EEC405A00503DB1 /* ConversationMessagesAPIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationMessagesAPIRequest.swift; sourceTree = "<group>"; };
 		F46C464B1E8D90E8001FF145 /* Donly.de.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Donly.de.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F46C464E1E8D90E8001FF145 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F46C46551E8D90E8001FF145 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -162,7 +164,7 @@
 		F4F118A21E991701006D5A50 /* APIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		F4F118A41E991983006D5A50 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		F4F118A61E9919CA006D5A50 /* JSONSerializable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONSerializable.swift; sourceTree = "<group>"; };
-		F4F118A91E99289B006D5A50 /* UserAPIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAPIRequest.swift; sourceTree = "<group>"; };
+		F4F118A91E99289B006D5A50 /* UserLoginAPIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserLoginAPIRequest.swift; sourceTree = "<group>"; };
 		F4F118AC1E992BD3006D5A50 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -443,8 +445,9 @@
 		F4F118A81E99287E006D5A50 /* APIRequests */ = {
 			isa = PBXGroup;
 			children = (
-				F4F118A91E99289B006D5A50 /* UserAPIRequest.swift */,
+				F4F118A91E99289B006D5A50 /* UserLoginAPIRequest.swift */,
 				F43ECF621EE8AFD700F633E0 /* ConversationsAPIRequest.swift */,
+				F4509D6E1EEC405A00503DB1 /* ConversationMessagesAPIRequest.swift */,
 			);
 			name = APIRequests;
 			sourceTree = "<group>";
@@ -756,7 +759,7 @@
 				F43ECF631EE8AFD800F633E0 /* ConversationsAPIRequest.swift in Sources */,
 				F42157451EC7490D006441B3 /* OnboardingPermissionsVC.swift in Sources */,
 				F42157381EC734A5006441B3 /* OnboardingInfoVC.swift in Sources */,
-				F4F118AA1E99289B006D5A50 /* UserAPIRequest.swift in Sources */,
+				F4F118AA1E99289B006D5A50 /* UserLoginAPIRequest.swift in Sources */,
 				F43ECF671EEC243300F633E0 /* SplashRouter.swift in Sources */,
 				F448D30E1EE0A518006A7416 /* SplashScene.swift in Sources */,
 				F43ECF611EE8A8B900F633E0 /* Conversation.swift in Sources */,
@@ -771,6 +774,7 @@
 				F428B33B1E943AF900CF64F6 /* LocationManager.swift in Sources */,
 				F4F118AD1E992BD3006D5A50 /* User.swift in Sources */,
 				F428B3351E8FD82D00CF64F6 /* SplashViewModel.swift in Sources */,
+				F4509D6F1EEC405A00503DB1 /* ConversationMessagesAPIRequest.swift in Sources */,
 				F421573B1EC73B56006441B3 /* OnboardingInfoViewModel.swift in Sources */,
 				F428B32C1E8FCFCB00CF64F6 /* ApplicationData.swift in Sources */,
 				F42268451EC89A4000075CBE /* AlertManager.swift in Sources */,

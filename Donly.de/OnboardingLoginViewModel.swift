@@ -38,7 +38,7 @@ class OnboardingLoginViewModel: OnboardingLoginViewModelProtocol {
       }
       let parameters = ["email": login, "password": password]
       print(parameters)
-      let userRequest = UserAPIRequest(parameters: parameters)
+      let userRequest = UserLoginAPIRequest(parameters: parameters)
       userRequest.send().subscribe(onNext: { result in
         switch result {
         case .success(let user):

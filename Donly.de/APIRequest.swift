@@ -18,12 +18,14 @@ enum HTTPMethod: String {
 enum Endpoint: String {
   case login = "system/login"
   case conversations = "dialogs"
+  case messages = "messages"
 }
 
 protocol APIRequest {
   var method: HTTPMethod { get }
   var endpoint: Endpoint { get }
   var parameters: [String: String] { get }
+  var idParameter: String? { get set }
   var client: APIClient { get set }
 }
 
@@ -37,8 +39,14 @@ extension APIRequest {
     guard let url = URL(string: appSet.url.appending(endpoint.rawValue)), var components = URLComponents(url: url, resolvingAgainstBaseURL: false) else {
       fatalError("Unable to create URL components.")
     }
-    components.queryItems = parameters.map {
-      URLQueryItem(name: String($0), value: String($1))
+    if let parameter = idParameter,
+      let urlWithParameter = URL(string: url.absoluteString.appending("/" + parameter)),
+      let newComponents = URLComponents(url: urlWithParameter, resolvingAgainstBaseURL: false) {
+      components = newComponents
+    } else {
+      components.queryItems = parameters.map {
+        URLQueryItem(name: String($0), value: String($1))
+      }
     }
     guard let finalUrl = components.url else {
       fatalError("Unable to get URL with parameters.")
@@ -62,6 +70,8 @@ extension APIRequest {
     }
     if success {
       print("[***] SUCCESS: TRUE")
+    } else {
+      print("[***] SUCCESS: FALSE")
     }
     return success
   }

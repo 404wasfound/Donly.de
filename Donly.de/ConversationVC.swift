@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class ConversationVC: UIViewController {
   
   private var viewModel: ConversationViewModelProtocol?
+  private var disposeBag = DisposeBag()
   
   init(withViewModel viewModel: ConversationViewModelProtocol) {
     self.viewModel = viewModel
@@ -23,7 +26,16 @@ class ConversationVC: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    viewModel?.getMessagesForConversation()
+    
   }
   
+  func setupBindings() {
+    viewModel?.messages.asObservable().bind(onNext: { messages in
+      if let _ = messages {
+        print("Messages are here!")
+      }
+    }).addDisposableTo(disposeBag)
+  }
   
 }

@@ -74,7 +74,7 @@ extension ConversationsVC: UITableViewDelegate, UITableViewDataSource {
     guard let conversation = viewModel?.conversations.value?[indexPath.row] else {
       return
     }
-    viewModel?.openConversation(withId: conversation.id)
+    viewModel?.openConversation(withId: conversation.user.id)
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
