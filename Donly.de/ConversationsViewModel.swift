@@ -1,5 +1,5 @@
 //
-//  MainMessagesViewModel.swift
+//  ConversationsViewModel.swift
 //  Donly.de
 //
 //  Created by Bogdan Yur on 6/6/17.
@@ -9,17 +9,17 @@
 import Foundation
 import RxSwift
 
-protocol MainMessagesViewModelProtocol {
+protocol ConversationsViewModelProtocol {
   var conversations: Variable<[Conversation]?> { get set }
   func getConversations(forPull: Bool)
-  var delegate: MainMessagesVCProtocol? { get set }
+  var delegate: ConversationsVCProtocol? { get set }
 }
 
-class MainMessagesViewModel: MainMessagesViewModelProtocol {
+class ConversationsViewModel: ConversationsViewModelProtocol {
   
   var conversations = Variable<[Conversation]?>(nil)
   var disposeBag = DisposeBag()
-  var delegate: MainMessagesVCProtocol?
+  var delegate: ConversationsVCProtocol?
   
   init() {
     ///

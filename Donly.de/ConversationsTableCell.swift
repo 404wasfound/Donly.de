@@ -1,5 +1,5 @@
 //
-//  MainMessagesTableCell.swift
+//  ConversationsTableCell.swift
 //  Donly.de
 //
 //  Created by Bogdan Yur on 6/6/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainMessagesTableCell: UITableViewCell {
+class ConversationsTableCell: UITableViewCell {
   
   @IBOutlet private weak var profileImageView: UIImageView!
   @IBOutlet private weak var userName: UILabel!

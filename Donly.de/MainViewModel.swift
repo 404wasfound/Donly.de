@@ -24,7 +24,7 @@ class MainViewModel: MainViewModelProtocol {
   func configureViewForContainer() -> UIViewController? {
     switch page {
     case .messages:
-      return MainMessagesScene.configure()
+      return ConversationsScene.configure()
     default: ()
     }
     return nil

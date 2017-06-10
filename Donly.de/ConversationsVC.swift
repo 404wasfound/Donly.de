@@ -1,5 +1,5 @@
 //
-//  MainMessagesVC.swift
+//  ConversationsVC.swift
 //  Donly.de
 //
 //  Created by Bogdan Yur on 6/6/17.
@@ -10,21 +10,21 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-protocol MainMessagesVCProtocol {
+protocol ConversationsVCProtocol {
   func showActivityIndicator()
   func hideActivityIndicator()
   func endRefreshing()
 }
 
-class MainMessagesVC: UIViewController {
+class ConversationsVC: UIViewController {
   
   @IBOutlet weak var messagesTable: UITableView!
   
-  internal var viewModel: MainMessagesViewModelProtocol?
+  internal var viewModel: ConversationsViewModelProtocol?
   internal var disposeBag = DisposeBag()
   lazy var refreshControl: UIRefreshControl = {
     let refreshControl = UIRefreshControl()
-    refreshControl.addTarget(self, action: #selector(MainMessagesVC.handleRefresh(refreshControl:)), for: UIControlEvents.valueChanged)
+    refreshControl.addTarget(self, action: #selector(ConversationsVC.handleRefresh(refreshControl:)), for: UIControlEvents.valueChanged)
     return refreshControl
   }()
   
@@ -35,9 +35,9 @@ class MainMessagesVC: UIViewController {
     setupBindings()
   }
   
-  init(withViewModel viewModel: MainMessagesViewModelProtocol) {
+  init(withViewModel viewModel: ConversationsViewModelProtocol) {
     self.viewModel = viewModel
-    super.init(nibName: "MainMessagesEmpty", bundle: nil)
+    super.init(nibName: "ConversationsEmpty", bundle: nil)
   }
   
   required init?(coder aDecoder: NSCoder) {
@@ -48,7 +48,7 @@ class MainMessagesVC: UIViewController {
     viewModel?.conversations.asObservable().bind(onNext: { conversations in
       if let _ = conversations {
         DispatchQueue.main.async {
-          let nib = UINib(nibName: String(describing: MainMessagesVC.self), bundle: nil)
+          let nib = UINib(nibName: String(describing: ConversationsVC.self), bundle: nil)
           if let view = nib.instantiate(withOwner: self, options: nil).first as? UIView {
             self.view = view
           }
@@ -61,21 +61,21 @@ class MainMessagesVC: UIViewController {
   func configureTable() {
     self.messagesTable.delegate = self
     self.messagesTable.dataSource = self
-    self.messagesTable.register(UINib(nibName: String(describing: MainMessagesTableCell.self), bundle: nil), forCellReuseIdentifier: String(describing: MainMessagesTableCell.self))
+    self.messagesTable.register(UINib(nibName: String(describing: ConversationsTableCell.self), bundle: nil), forCellReuseIdentifier: String(describing: ConversationsTableCell.self))
     self.messagesTable.addSubview(self.refreshControl)
     self.messagesTable.allowsMultipleSelectionDuringEditing = true
   }
   
 }
 
-extension MainMessagesVC: UITableViewDelegate, UITableViewDataSource {
+extension ConversationsVC: UITableViewDelegate, UITableViewDataSource {
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     /// Select the messages
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: MainMessagesTableCell.self), for: indexPath) as? MainMessagesTableCell, let conversations = viewModel?.conversations.value else {
+    guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: ConversationsTableCell.self), for: indexPath) as? ConversationsTableCell, let conversations = viewModel?.conversations.value else {
       return UITableViewCell()
     }
     cell.configureCell(forConversation: conversations[indexPath.row])
@@ -113,7 +113,7 @@ extension MainMessagesVC: UITableViewDelegate, UITableViewDataSource {
   
 }
 
-extension MainMessagesVC: MainMessagesVCProtocol {
+extension ConversationsVC: ConversationsVCProtocol {
   
   func endRefreshing() {
     print("Refresh is done!")
