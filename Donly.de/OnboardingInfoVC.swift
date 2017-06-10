@@ -24,7 +24,7 @@ class OnboardingInfoVC: UIViewController {
     navigateToNextVC()
   }
   
-  internal var viewModel: OnboardingInfoViewModelProtocol?
+  private var viewModel: OnboardingInfoViewModelProtocol?
   
   init(withViewModel viewModel: OnboardingInfoViewModelProtocol) {
     self.viewModel = viewModel

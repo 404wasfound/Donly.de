@@ -28,7 +28,7 @@ class OnboardingPermissionsVC: UIViewController {
     viewModel?.acceptButtonPressed(delegate: self)
   }
   
-  internal var viewModel: OnboardingPermissionsViewModelProtocol?
+  private var viewModel: OnboardingPermissionsViewModelProtocol?
   
   init(withViewModel viewModel: OnboardingPermissionsViewModelProtocol) {
     self.viewModel = viewModel

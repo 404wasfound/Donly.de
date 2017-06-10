@@ -11,25 +11,25 @@ import UIKit
 
 protocol SplashViewModelProtocol {
   var onboardingShown: Bool { get set }
-  var nextController: UIViewController? { get set }
+  var nextPage: SplashScene.Route? { get set }
 }
 
 final class SplashViewModel: SplashViewModelProtocol {
   var onboardingShown: Bool
-  var nextController: UIViewController?
+  var nextPage: SplashScene.Route?
   init() {
     self.onboardingShown = appSet.onboardingShown
-    self.nextController = configureNext()
+    self.nextPage = configureNext()
   }
 }
 
 extension SplashViewModel {
-  func configureNext() -> UIViewController? {
-    self.onboardingShown = false /// TODO: Remove, its temporary
+  func configureNext() -> SplashScene.Route? {
+    self.onboardingShown = true /// TODO: Remove, its temporary
     if onboardingShown {
-       return MainScene.configure(forPage: MainScene.MainPage.messages)
+      return SplashScene.Route.main
     } else {
-      return OnboardingInfoScene.configure()
+      return SplashScene.Route.onboarding
     }
   }
 }

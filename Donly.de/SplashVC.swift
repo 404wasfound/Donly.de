@@ -12,10 +12,12 @@ class SplashVC: UIViewController {
 
   @IBOutlet private weak var logo: UIImageView!
   
-  private var splashViewModel: SplashViewModelProtocol
+  private var viewModel: SplashViewModelProtocol
+  private var router: SplashRouter
   
   init(withViewModel viewModel: SplashViewModelProtocol) {
-    self.splashViewModel = viewModel
+    self.viewModel = viewModel
+    self.router = SplashRouter(withViewModel: viewModel)
     super.init(nibName: String(describing: SplashVC.self), bundle: nil)
   }
 
@@ -25,22 +27,11 @@ class SplashVC: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    self.setup()
+    self.setupFirstScene()
   }
   
-  func setup() {
-    guard let nextController = self.splashViewModel.nextController else {
-      return
-    }
-    let appDelegate = UIApplication.shared.delegate as! AppDelegate
-    if let vc = nextController as? UINavigationController {
-      appDelegate.window?.rootViewController = vc
-    } else {
-      let navController = UINavigationController()
-      navController.viewControllers = [nextController]
-      appDelegate.window?.rootViewController = navController
-    }
-    appDelegate.window?.makeKeyAndVisible()
+  func setupFirstScene() {
+    router.route()
   }
   
 }

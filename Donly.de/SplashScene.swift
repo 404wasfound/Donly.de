@@ -10,6 +10,11 @@ import Foundation
 
 class SplashScene {
   
+  enum Route {
+    case onboarding
+    case main
+  }
+  
   static func configure() -> SplashVC {
     let viewModel = SplashViewModel()
     return SplashVC(withViewModel: viewModel)

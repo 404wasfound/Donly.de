@@ -27,8 +27,8 @@ class OnboardingLoginVC: UIViewController {
   
   internal var viewModel: OnboardingLoginViewModelProtocol?
   internal var disposeBag = DisposeBag()
-  internal var activityIndicator: NVActivityIndicatorView?
-  fileprivate var activeField: UITextField?
+//  internal var activityIndicator: NVActivityIndicatorView?
+//  fileprivate var activeField: UITextField?
 
   init(withViewModel viewModel: OnboardingLoginViewModelProtocol) {
     self.viewModel = viewModel
@@ -94,13 +94,13 @@ class OnboardingLoginVC: UIViewController {
 
 extension OnboardingLoginVC: UITextFieldDelegate {
   
-  func textFieldDidBeginEditing(_ textField: UITextField) {
-    self.activeField = textField
-  }
- 
-  func textFieldDidEndEditing(_ textField: UITextField) {
-    self.activeField = nil
-  }
+//  func textFieldDidBeginEditing(_ textField: UITextField) {
+//    self.activeField = textField
+//  }
+// 
+//  func textFieldDidEndEditing(_ textField: UITextField) {
+//    self.activeField = nil
+//  }
 
   func textFieldShouldReturn(_ textField: UITextField) -> Bool {
     self.view.endEditing(true)

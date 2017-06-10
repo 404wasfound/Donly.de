@@ -37,6 +37,7 @@
 		F43ECF611EE8A8B900F633E0 /* Conversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43ECF601EE8A8B800F633E0 /* Conversation.swift */; };
 		F43ECF631EE8AFD800F633E0 /* ConversationsAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43ECF621EE8AFD700F633E0 /* ConversationsAPIRequest.swift */; };
 		F43ECF651EEC14E700F633E0 /* ActivityIndicatorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43ECF641EEC14E600F633E0 /* ActivityIndicatorManager.swift */; };
+		F43ECF671EEC243300F633E0 /* SplashRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43ECF661EEC243300F633E0 /* SplashRouter.swift */; };
 		F448D30E1EE0A518006A7416 /* SplashScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F448D30D1EE0A518006A7416 /* SplashScene.swift */; };
 		F448D3101EE0A61C006A7416 /* OnboardingInfoScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F448D30F1EE0A61C006A7416 /* OnboardingInfoScene.swift */; };
 		F448D3121EE0A6E3006A7416 /* OnboardingPermissionsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F448D3111EE0A6E3006A7416 /* OnboardingPermissionsScene.swift */; };
@@ -121,6 +122,7 @@
 		F43ECF601EE8A8B800F633E0 /* Conversation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Conversation.swift; sourceTree = "<group>"; };
 		F43ECF621EE8AFD700F633E0 /* ConversationsAPIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationsAPIRequest.swift; sourceTree = "<group>"; };
 		F43ECF641EEC14E600F633E0 /* ActivityIndicatorManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorManager.swift; sourceTree = "<group>"; };
+		F43ECF661EEC243300F633E0 /* SplashRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashRouter.swift; sourceTree = "<group>"; };
 		F448D30D1EE0A518006A7416 /* SplashScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashScene.swift; sourceTree = "<group>"; };
 		F448D30F1EE0A61C006A7416 /* OnboardingInfoScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingInfoScene.swift; sourceTree = "<group>"; };
 		F448D3111EE0A6E3006A7416 /* OnboardingPermissionsScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingPermissionsScene.swift; sourceTree = "<group>"; };
@@ -220,9 +222,9 @@
 		F42157411EC7443D006441B3 /* OnboardingInfo */ = {
 			isa = PBXGroup;
 			children = (
+				F448D30F1EE0A61C006A7416 /* OnboardingInfoScene.swift */,
 				F42157361EC734A5006441B3 /* OnboardingInfoVC.swift */,
 				F421573A1EC73B56006441B3 /* OnboardingInfoViewModel.swift */,
-				F448D30F1EE0A61C006A7416 /* OnboardingInfoScene.swift */,
 				F42157371EC734A5006441B3 /* OnboardingInfoVC.xib */,
 			);
 			name = OnboardingInfo;
@@ -231,9 +233,9 @@
 		F42157421EC748E2006441B3 /* OnboardingPermissions */ = {
 			isa = PBXGroup;
 			children = (
+				F448D3111EE0A6E3006A7416 /* OnboardingPermissionsScene.swift */,
 				F42157431EC7490D006441B3 /* OnboardingPermissionsVC.swift */,
 				F42157471EC74920006441B3 /* OnboardingPermissionsViewModel.swift */,
-				F448D3111EE0A6E3006A7416 /* OnboardingPermissionsScene.swift */,
 				F42157441EC7490D006441B3 /* OnboardingPermissionsVC.xib */,
 			);
 			name = OnboardingPermissions;
@@ -242,9 +244,9 @@
 		F422683A1EC867EB00075CBE /* OnboardingLogin */ = {
 			isa = PBXGroup;
 			children = (
+				F448D3131EE0A846006A7416 /* OnboardingLoginScene.swift */,
 				F422683B1EC8681200075CBE /* OnboardingLoginVC.swift */,
 				F422683F1EC8685100075CBE /* OnboardingLoginViewModel.swift */,
-				F448D3131EE0A846006A7416 /* OnboardingLoginScene.swift */,
 				F422683C1EC8681200075CBE /* OnboardingLoginVC.xib */,
 			);
 			name = OnboardingLogin;
@@ -271,9 +273,10 @@
 		F428B32D1E8FD46700CF64F6 /* Splash Scene */ = {
 			isa = PBXGroup;
 			children = (
+				F448D30D1EE0A518006A7416 /* SplashScene.swift */,
 				F428B3321E8FD58400CF64F6 /* SplashVC.swift */,
 				F428B3341E8FD82D00CF64F6 /* SplashViewModel.swift */,
-				F448D30D1EE0A518006A7416 /* SplashScene.swift */,
+				F43ECF661EEC243300F633E0 /* SplashRouter.swift */,
 				F428B3301E8FD53D00CF64F6 /* SplashVC.xib */,
 			);
 			name = "Splash Scene";
@@ -295,9 +298,9 @@
 			isa = PBXGroup;
 			children = (
 				F448D3241EE6C3CB006A7416 /* Main Messages */,
+				F448D31A1EE0AFFD006A7416 /* MainScene.swift */,
 				F448D3161EE0AEF7006A7416 /* MainVC.swift */,
 				F448D31C1EE0B022006A7416 /* MainViewModel.swift */,
-				F448D31A1EE0AFFD006A7416 /* MainScene.swift */,
 				F448D31E1EE2EC97006A7416 /* MainVC.storyboard */,
 				F448D3221EE3085A006A7416 /* TabBarButton.swift */,
 			);
@@ -307,9 +310,9 @@
 		F448D3241EE6C3CB006A7416 /* Main Messages */ = {
 			isa = PBXGroup;
 			children = (
+				F448D32D1EE6C761006A7416 /* MainMessagesScene.swift */,
 				F448D3251EE6C4C4006A7416 /* MainMessagesVC.swift */,
 				F448D32B1EE6C750006A7416 /* MainMessagesViewModel.swift */,
-				F448D32D1EE6C761006A7416 /* MainMessagesScene.swift */,
 				F43ECF5C1EE75C4400F633E0 /* MainMessagesTableCell.swift */,
 				F448D3261EE6C4C4006A7416 /* MainMessagesVC.xib */,
 				F448D3291EE6C4D8006A7416 /* MainMessagesEmpty.xib */,
@@ -722,6 +725,7 @@
 				F42157451EC7490D006441B3 /* OnboardingPermissionsVC.swift in Sources */,
 				F42157381EC734A5006441B3 /* OnboardingInfoVC.swift in Sources */,
 				F4F118AA1E99289B006D5A50 /* UserAPIRequest.swift in Sources */,
+				F43ECF671EEC243300F633E0 /* SplashRouter.swift in Sources */,
 				F448D30E1EE0A518006A7416 /* SplashScene.swift in Sources */,
 				F43ECF611EE8A8B900F633E0 /* Conversation.swift in Sources */,
 				F448D3231EE3085B006A7416 /* TabBarButton.swift in Sources */,
