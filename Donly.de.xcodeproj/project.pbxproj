@@ -55,7 +55,7 @@
 		F448D3301EE6C81C006A7416 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = F448D32F1EE6C81C006A7416 /* Message.swift */; };
 		F4509D661EEC328100503DB1 /* ConversationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4509D641EEC328100503DB1 /* ConversationVC.swift */; };
 		F4509D671EEC328100503DB1 /* ConversationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4509D651EEC328100503DB1 /* ConversationVC.xib */; };
-		F4509D691EEC32A500503DB1 /* ConversationViewdModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4509D681EEC32A500503DB1 /* ConversationViewdModel.swift */; };
+		F4509D691EEC32A500503DB1 /* ConversationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4509D681EEC32A500503DB1 /* ConversationViewModel.swift */; };
 		F4509D6B1EEC377300503DB1 /* ConversationScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4509D6A1EEC377300503DB1 /* ConversationScene.swift */; };
 		F4509D6D1EEC387600503DB1 /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4509D6C1EEC387600503DB1 /* MainRouter.swift */; };
 		F46C464F1E8D90E8001FF145 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46C464E1E8D90E8001FF145 /* AppDelegate.swift */; };
@@ -145,7 +145,7 @@
 		F448D32F1EE6C81C006A7416 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		F4509D641EEC328100503DB1 /* ConversationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationVC.swift; sourceTree = "<group>"; };
 		F4509D651EEC328100503DB1 /* ConversationVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConversationVC.xib; sourceTree = "<group>"; };
-		F4509D681EEC32A500503DB1 /* ConversationViewdModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationViewdModel.swift; sourceTree = "<group>"; };
+		F4509D681EEC32A500503DB1 /* ConversationViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationViewModel.swift; sourceTree = "<group>"; };
 		F4509D6A1EEC377300503DB1 /* ConversationScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationScene.swift; sourceTree = "<group>"; };
 		F4509D6C1EEC387600503DB1 /* MainRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
 		F46C464B1E8D90E8001FF145 /* Donly.de.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Donly.de.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -346,7 +346,7 @@
 			children = (
 				F4509D6A1EEC377300503DB1 /* ConversationScene.swift */,
 				F4509D641EEC328100503DB1 /* ConversationVC.swift */,
-				F4509D681EEC32A500503DB1 /* ConversationViewdModel.swift */,
+				F4509D681EEC32A500503DB1 /* ConversationViewModel.swift */,
 				F4509D651EEC328100503DB1 /* ConversationVC.xib */,
 			);
 			name = "Conversation Scene";
@@ -781,7 +781,7 @@
 				F428B3331E8FD58400CF64F6 /* SplashVC.swift in Sources */,
 				F4F118A31E991701006D5A50 /* APIRequest.swift in Sources */,
 				F422683D1EC8681200075CBE /* OnboardingLoginVC.swift in Sources */,
-				F4509D691EEC32A500503DB1 /* ConversationViewdModel.swift in Sources */,
+				F4509D691EEC32A500503DB1 /* ConversationViewModel.swift in Sources */,
 				F42268401EC8685100075CBE /* OnboardingLoginViewModel.swift in Sources */,
 				F42157481EC74920006441B3 /* OnboardingPermissionsViewModel.swift in Sources */,
 				F42268431EC879A800075CBE /* UIViewController+Extensions.swift in Sources */,
