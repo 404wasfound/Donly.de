@@ -11,6 +11,8 @@ import RxSwift
 import RxCocoa
 
 protocol MainMessagesVCProtocol {
+  func showActivityIndicator()
+  func hideActivityIndicator()
   func endRefreshing()
 }
 
@@ -28,6 +30,8 @@ class MainMessagesVC: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    self.viewModel?.delegate = self
+    viewModel?.getConversations(forPull: false)
     setupBindings()
   }
   
@@ -104,7 +108,7 @@ extension MainMessagesVC: UITableViewDelegate, UITableViewDataSource {
   }
   
   func handleRefresh(refreshControl: UIRefreshControl) {
-    viewModel?.sendMessagesRequest(withDelegata: self)
+    viewModel?.getConversations(forPull: true)
   }
   
 }
@@ -115,6 +119,14 @@ extension MainMessagesVC: MainMessagesVCProtocol {
     print("Refresh is done!")
     messagesTable.reloadData()
     refreshControl.endRefreshing()
+  }
+  
+  func showActivityIndicator() {
+    ActivityIndicatorManager.shared.show(onView: self.view)
+  }
+  
+  func hideActivityIndicator() {
+    ActivityIndicatorManager.shared.hide()
   }
   
 }

@@ -32,7 +32,7 @@ class OnboardingLoginViewModel: OnboardingLoginViewModelProtocol {
   
   func attemptLogin(delegate: OnboardingLoginVCProtocol) {
     if checkInputFields() {
-      delegate.triggerActivityIndicator()
+      delegate.showActivityIndicator()
       guard let login = loginInput, let password = passwordInput else {
         return
       }
@@ -44,7 +44,6 @@ class OnboardingLoginViewModel: OnboardingLoginViewModelProtocol {
         case .success(let user):
           print("Data is here!")
           appData.user = user
-          delegate.triggerActivityIndicator()
           guard let vc = MainScene.configure(forPage: MainScene.MainPage.messages) else {
             print("There is something very wrong with initializing of the VC!")
             return
@@ -56,7 +55,7 @@ class OnboardingLoginViewModel: OnboardingLoginViewModelProtocol {
       }, onError: { error in
         /// Some errr handling at some point
       }, onCompleted: {
-
+        delegate.hideActivityIndicator()
       }).addDisposableTo(disposeBag)
     }
   }

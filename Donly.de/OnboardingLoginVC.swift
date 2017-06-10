@@ -12,7 +12,8 @@ import RxCocoa
 import NVActivityIndicatorView
 
 protocol OnboardingLoginVCProtocol {
-  func triggerActivityIndicator()
+  func showActivityIndicator()
+  func hideActivityIndicator()
   func navigateTo(vc: UIViewController)
 }
 
@@ -109,23 +110,31 @@ extension OnboardingLoginVC: UITextFieldDelegate {
 
 extension OnboardingLoginVC: OnboardingLoginVCProtocol {
   
-  func triggerActivityIndicator() {
-    if let indicator = activityIndicator {
-      if indicator.isAnimating {
-        indicator.stopAnimating()
-        UIApplication.shared.endIgnoringInteractionEvents()
-      } else {
-        indicator.startAnimating()
-        UIApplication.shared.beginIgnoringInteractionEvents()
-      }
-    } else {
-      let frame = CGRect(x: self.view.frame.width / 2 - 30, y: self.view.frame.height / 2 - 30, width: 60.0, height: 60.0)
-      self.activityIndicator = NVActivityIndicatorView(frame: frame, type: NVActivityIndicatorType.ballScaleMultiple, color: donlyColor, padding: nil)
-      self.view.addSubview(self.activityIndicator!)
-      self.activityIndicator?.startAnimating()
-      UIApplication.shared.beginIgnoringInteractionEvents()
-    }
+  func showActivityIndicator() {
+    ActivityIndicatorManager.shared.show(onView: self.view)
   }
+  
+  func hideActivityIndicator() {
+    ActivityIndicatorManager.shared.hide()
+  }
+  
+//  func triggerActivityIndicator() {
+//    if let indicator = activityIndicator {
+//      if indicator.isAnimating {
+//        indicator.stopAnimating()
+//        UIApplication.shared.endIgnoringInteractionEvents()
+//      } else {
+//        indicator.startAnimating()
+//        UIApplication.shared.beginIgnoringInteractionEvents()
+//      }
+//    } else {
+//      let frame = CGRect(x: self.view.frame.width / 2 - 30, y: self.view.frame.height / 2 - 30, width: 60.0, height: 60.0)
+//      self.activityIndicator = NVActivityIndicatorView(frame: frame, type: NVActivityIndicatorType.ballScaleMultiple, color: donlyColor, padding: nil)
+//      self.view.addSubview(self.activityIndicator!)
+//      self.activityIndicator?.startAnimating()
+//      UIApplication.shared.beginIgnoringInteractionEvents()
+//    }
+//  }
   
   func navigateTo(vc: UIViewController) {
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
