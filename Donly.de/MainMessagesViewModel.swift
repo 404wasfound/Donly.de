@@ -11,20 +11,19 @@ import RxSwift
 
 protocol MainMessagesViewModelProtocol {
   var conversations: Variable<[Conversation]?> { get set }
-  var currentView: Variable<UIView?> { get set }
+  func sendMessagesRequest(withDelegata delegate: MainMessagesVCProtocol?)
 }
 
 class MainMessagesViewModel: MainMessagesViewModelProtocol {
   
   var conversations = Variable<[Conversation]?>(nil)
-  var currentView = Variable<UIView?>(nil)
   var disposeBag = DisposeBag()
   
   init() {
-    self.sendMessagesRequest()
+    self.sendMessagesRequest(withDelegata: nil)
   }
   
-  func sendMessagesRequest() {
+  func sendMessagesRequest(withDelegata delegate: MainMessagesVCProtocol?) {
     let conversationsRequest = ConversationsAPIRequest()
     conversationsRequest.send().subscribe(onNext: { result in
       switch result {
@@ -37,7 +36,7 @@ class MainMessagesViewModel: MainMessagesViewModelProtocol {
     }, onError: { error in
       ///
     }, onCompleted: { 
-      ///
+      delegate?.endRefreshing()
     }).addDisposableTo(disposeBag)
   }
   

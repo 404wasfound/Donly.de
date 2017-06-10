@@ -25,7 +25,7 @@ final class SplashViewModel: SplashViewModelProtocol {
 
 extension SplashViewModel {
   func configureNext() -> UIViewController? {
-    self.onboardingShown = false /// TODO: Remove, its temporary
+//    self.onboardingShown = false /// TODO: Remove, its temporary
     if onboardingShown {
        return MainScene.configure(forPage: MainScene.MainPage.messages)
     } else {

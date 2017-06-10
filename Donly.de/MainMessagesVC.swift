@@ -11,12 +11,12 @@ import RxSwift
 import RxCocoa
 
 protocol MainMessagesVCProtocol {
-  
+  func endRefreshing()
 }
 
 class MainMessagesVC: UIViewController {
   
-  @IBOutlet private weak var messagesTable: UITableView!
+  @IBOutlet weak var messagesTable: UITableView!
   
   internal var viewModel: MainMessagesViewModelProtocol?
   internal var disposeBag = DisposeBag()
@@ -104,7 +104,16 @@ extension MainMessagesVC: UITableViewDelegate, UITableViewDataSource {
   }
   
   func handleRefresh(refreshControl: UIRefreshControl) {
+    viewModel?.sendMessagesRequest(withDelegata: self)
+  }
+  
+}
+
+extension MainMessagesVC: MainMessagesVCProtocol {
+  
+  func endRefreshing() {
     print("Refresh is done!")
+    messagesTable.reloadData()
     refreshControl.endRefreshing()
   }
   
