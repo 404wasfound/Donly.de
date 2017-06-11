@@ -19,4 +19,13 @@ extension UIViewController {
   func dismissKeyboard() {
     view.endEditing(true)
   }
+  
+  func showActivityIndicator() {
+    ActivityIndicatorManager.shared.show(onView: self.view)
+  }
+  
+  func hideActivityIndicator() {
+    ActivityIndicatorManager.shared.hide()
+  }
+  
 }

@@ -9,9 +9,10 @@
 import Foundation
 import SwiftyJSON
 import RealmSwift
+import JSQMessagesViewController
 
 struct Message {
-  var id: String?
+  var id: Int?
   var message: String
   var sentDate: Date
   var isRead: Bool
@@ -21,7 +22,7 @@ struct Message {
 extension Message: JSONSerializable {
   
   init?(json: JSON) {
-    var id: String?
+    var id: Int?
     var message: String?
     var sentDate: Date?
     var isRead: Bool?
@@ -30,7 +31,7 @@ extension Message: JSONSerializable {
     for (key, value) : (String, JSON) in json {
       switch key {
         case "id":
-          id = value.string
+          id = value.int
         case "message":
           message = value.string
         case "sent_at":
@@ -57,3 +58,13 @@ extension Message: JSONSerializable {
     self.user = parsedUser
   }
 }
+
+extension Message {
+  func getJSQMessage() -> JSQMessage? {
+    guard let id = self.id else {
+      return nil
+    }
+    return JSQMessage(senderId: String(describing: id), senderDisplayName: user.fullName, date: sentDate, text: message)
+  }
+}
+

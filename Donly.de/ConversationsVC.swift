@@ -11,8 +11,8 @@ import RxSwift
 import RxCocoa
 
 protocol ConversationsVCProtocol {
-  func showActivityIndicator()
-  func hideActivityIndicator()
+  func showIndicator()
+  func hideIndicator()
   func endRefreshing()
 }
 
@@ -39,7 +39,7 @@ class ConversationsVC: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    self.viewModel?.delegate = self
+    viewModel?.delegate = self
     viewModel?.getConversations(forPull: false)
     setupBindings()
   }
@@ -124,12 +124,12 @@ extension ConversationsVC: ConversationsVCProtocol {
     refreshControl.endRefreshing()
   }
   
-  func showActivityIndicator() {
-    ActivityIndicatorManager.shared.show(onView: self.view)
+  func showIndicator() {
+    self.showActivityIndicator()
   }
   
-  func hideActivityIndicator() {
-    ActivityIndicatorManager.shared.hide()
+  func hideIndicator() {
+    self.hideActivityIndicator()
   }
   
 }

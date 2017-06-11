@@ -12,8 +12,8 @@ import RxCocoa
 import NVActivityIndicatorView
 
 protocol OnboardingLoginVCProtocol {
-  func showActivityIndicator()
-  func hideActivityIndicator()
+  func showIndicator()
+  func hideIndicator()
   func navigateTo(vc: UIViewController)
 }
 
@@ -41,6 +41,7 @@ class OnboardingLoginVC: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    self.viewModel?.delegate = self
     self.hideKeyboardOnTapOutside()
     self.setupUI()
     self.setupBindings()
@@ -81,7 +82,7 @@ class OnboardingLoginVC: UIViewController {
     }).addDisposableTo(disposeBag)
     
     self.loginButton.rx.tap.subscribe(onNext: {
-      self.viewModel?.attemptLogin(delegate: self)
+      self.viewModel?.attemptLogin()
     }).addDisposableTo(disposeBag)
     
     self.registerButton.rx.tap.subscribe(onNext: {
@@ -110,12 +111,12 @@ extension OnboardingLoginVC: UITextFieldDelegate {
 
 extension OnboardingLoginVC: OnboardingLoginVCProtocol {
   
-  func showActivityIndicator() {
-    ActivityIndicatorManager.shared.show(onView: self.view)
+  func showIndicator() {
+    self.showActivityIndicator()
   }
   
-  func hideActivityIndicator() {
-    ActivityIndicatorManager.shared.hide()
+  func hideIndicator() {
+    self.hideActivityIndicator()
   }
   
 //  func triggerActivityIndicator() {

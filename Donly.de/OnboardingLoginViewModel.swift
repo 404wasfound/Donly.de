@@ -15,7 +15,8 @@ protocol OnboardingLoginViewModelProtocol {
   var loginInput: String? { get set }
   var passwordInput: String? { get set }
   var error: Variable<OnboardingLoginScene.LoginError?> { get set }
-  func attemptLogin(delegate: OnboardingLoginVCProtocol)
+  var delegate: OnboardingLoginVCProtocol? { get set }
+  func attemptLogin()
 }
 
 class OnboardingLoginViewModel: OnboardingLoginViewModelProtocol {
@@ -25,14 +26,15 @@ class OnboardingLoginViewModel: OnboardingLoginViewModelProtocol {
   var loginInput: String?
   var passwordInput: String?
   var disposeBag = DisposeBag()
+  var delegate: OnboardingLoginVCProtocol?
   
   init() {
     self.loginButtons = (login: "Einloggen", register: "Zu einem Darsteller")
   }
   
-  func attemptLogin(delegate: OnboardingLoginVCProtocol) {
+  func attemptLogin() {
     if checkInputFields() {
-      delegate.showActivityIndicator()
+      delegate?.showIndicator()
       guard let login = loginInput, let password = passwordInput else {
         return
       }
@@ -48,14 +50,14 @@ class OnboardingLoginViewModel: OnboardingLoginViewModelProtocol {
             print("There is something very wrong with initializing of the VC!")
             return
           }
-          delegate.navigateTo(vc: vc)
+          self.delegate?.navigateTo(vc: vc)
         case .failure( _):
           print("Fuck you, the data is wrong!")
         }
       }, onError: { error in
         /// Some errr handling at some point
       }, onCompleted: {
-        delegate.hideActivityIndicator()
+        self.delegate?.hideIndicator()
       }).addDisposableTo(disposeBag)
     }
   }

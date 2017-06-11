@@ -8,37 +8,46 @@
 
 import Foundation
 import RxSwift
+import JSQMessagesViewController
 
 protocol ConversationViewModelProtocol {
-  var messages: Variable<[Message]?> { get set }
+  var messages: Variable<[JSQMessage]?> { get set }
   func getMessagesForConversation()
+  var delegate: ConversationVCProtocol? { get set }
 }
 
 class ConversationViewModel: ConversationViewModelProtocol {
   
   var id: Int
-  var messages = Variable<[Message]?>(nil)
+  var messages = Variable<[JSQMessage]?>(nil)
   var disposeBag = DisposeBag()
+  var delegate: ConversationVCProtocol?
   
   init(withConversationId id: Int) {
     self.id = id
   }
   
   func getMessagesForConversation() {
+    delegate?.showIndicator()
     let messagesRequest = ConversationMessagesAPIRequest(withUserId: self.id)
     messagesRequest.send().subscribe(onNext: { result in
       switch result {
       case .success(let messages):
         print("Number of messages: \(messages.count)")
-        self.messages.value = messages
+        self.createJSQmessages(fromMessages: messages)
       case .failure(let error):
         print(error.localizedDescription)
       }
     }, onError: { error in
       ///
     }, onCompleted: { 
-      ///
+      self.delegate?.hideIndicator()
     }).addDisposableTo(disposeBag)
+  }
+  
+  func createJSQmessages(fromMessages messages: [Message]) {
+    let jsqMessages = messages.flatMap { $0.getJSQMessage() }
+    self.messages.value = jsqMessages
   }
   
 }

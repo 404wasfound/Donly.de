@@ -29,7 +29,7 @@ class ConversationsViewModel: ConversationsViewModelProtocol {
   
   func getConversations(forPull pull: Bool) {
     let conversationsRequest = ConversationsAPIRequest()
-    delegate?.showActivityIndicator()
+    delegate?.showIndicator()
     conversationsRequest.send().subscribe(onNext: { result in
       switch result {
       case .success(let conversations):
@@ -41,7 +41,7 @@ class ConversationsViewModel: ConversationsViewModelProtocol {
     }, onError: { error in
       ///
     }, onCompleted: {
-      self.delegate?.hideActivityIndicator()
+      self.delegate?.hideIndicator()
       if pull {
         self.delegate?.endRefreshing()
       }

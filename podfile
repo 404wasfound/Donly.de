@@ -12,7 +12,8 @@ target 'Donly.de' do
   pod 'RealmSwift'
   pod 'SwiftyJSON'
   pod 'NVActivityIndicatorView'  
- 
+  pod 'JSQMessagesViewController' 
+
   target 'Donly.deTests' do
     inherit! :search_paths
     # Pods for testing
