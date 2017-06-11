@@ -12,24 +12,25 @@ import JSQMessagesViewController
 
 protocol ConversationViewModelProtocol {
   var messages: Variable<[JSQMessage]?> { get set }
-  func getMessagesForConversation()
   var delegate: ConversationVCProtocol? { get set }
+  func getMessagesForConversation()
+  func sendMessage(withText text: String)
 }
 
 class ConversationViewModel: ConversationViewModelProtocol {
   
-  var id: Int
+  var conversation: Conversation
   var messages = Variable<[JSQMessage]?>(nil)
   var disposeBag = DisposeBag()
   var delegate: ConversationVCProtocol?
   
-  init(withConversationId id: Int) {
-    self.id = id
+  init(withConversation conversation: Conversation) {
+    self.conversation = conversation
   }
   
   func getMessagesForConversation() {
     delegate?.showIndicator()
-    let messagesRequest = ConversationMessagesAPIRequest(withUserId: self.id)
+    let messagesRequest = ConversationMessagesAPIRequest(withUserId: self.conversation.user.id)
     messagesRequest.send().subscribe(onNext: { result in
       switch result {
       case .success(let messages):
@@ -46,8 +47,27 @@ class ConversationViewModel: ConversationViewModelProtocol {
   }
   
   func createJSQmessages(fromMessages messages: [Message]) {
-    let jsqMessages = messages.flatMap { $0.getJSQMessage() }
+    let jsqMessages = messages.map { $0.getJSQMessage() }
     self.messages.value = jsqMessages
+  }
+  
+  func sendMessage(withText text: String) {
+    let sendMessageRequest = SendMessageAPIRequest(withUserId: conversation.user.id, withMessage: text)
+    sendMessageRequest.send().subscribe(onNext: { result in
+      switch result {
+      case .success(let message):
+        let jsqMessage = message.getJSQMessage()
+        self.messages.value?.append(jsqMessage)
+        self.delegate?.endSendingMessage()
+      case .failure(let error):
+        print(error.localizedDescription)
+      }
+    }, onError: { error in
+      ///
+    }, onCompleted: { 
+      ///
+    }).addDisposableTo(disposeBag)
+    print("Message with text: (\(text)) is sent!")
   }
   
 }

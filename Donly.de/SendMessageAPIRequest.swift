@@ -1,8 +1,8 @@
 //
-//  ConversationsAPIRequest.swift
+//  SendMessageAPIRequest.swift
 //  Donly.de
 //
-//  Created by Bogdan Yur on 6/8/17.
+//  Created by Bogdan Yur on 6/11/17.
 //  Copyright © 2017 404wasfound. All rights reserved.
 //
 
@@ -10,25 +10,27 @@ import Foundation
 import RxSwift
 import SwiftyJSON
 
-enum ConversationsAPIResult {
-  case success([Conversation])
+enum SendMessageAPIResult {
+  case success(Message)
   case failure(APIClientError)
 }
 
-final class ConversationsAPIRequest: APIRequestType {
-  var method: HTTPMethod = .get
-  var idParameter: String? = nil
-  var parameters: [String: Any]
-  var endpoint: Endpoint = .conversations
-  var client: APIClient
-  typealias ReturnType = ConversationsAPIResult
+final class SendMessageAPIRequest: APIRequestType {
   
-  init() {
-    self.parameters = [:]
+  var method: HTTPMethod = .post
+  var idParameter: String? = nil
+  var parameters: [String : Any]
+  var endpoint: Endpoint = .messages
+  var client: APIClient
+  typealias ReturnType = SendMessageAPIResult
+  
+  init(withUserId id: Int, withMessage text: String) {
+    self.idParameter = "\(id)"
+    self.parameters = ["message": text]
     self.client = APIClient()
   }
   
-  func send() -> Observable<ConversationsAPIResult> {
+  func send() -> Observable<SendMessageAPIResult> {
     return client.getData(resource: self)
       .catchError({ error in
         throw error
@@ -37,19 +39,20 @@ final class ConversationsAPIRequest: APIRequestType {
         switch result {
         case .success(let data):
           let json = JSON(data: data)
-          print("JSON from \(String(describing: ConversationsAPIRequest.self)): ")
+          print("JSON from \(String(describing: SendMessageAPIRequest.self)): ")
           print(json)
           guard self.checkForSucces(inJson: json) else {
             return .failure(APIClientError.successFailure)
           }
-          let jsonData = json["items"]
-          guard let conversations: [Conversation] = deserialize(json: jsonData) else {
+          let jsonData = json["item"]
+          guard let message = Message(json: jsonData) else {
             return .failure(APIClientError.serializationJSONFailed)
           }
-          return .success(conversations)
+          return .success(message)
         case .failure(let error):
           return .failure(error)
-       }
+        }
     }
   }
+  
 }

@@ -64,6 +64,7 @@
 		F46C46641E8D90E8001FF145 /* Donly_deTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46C46631E8D90E8001FF145 /* Donly_deTests.swift */; };
 		F46C466F1E8D90E8001FF145 /* Donly_deUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46C466E1E8D90E8001FF145 /* Donly_deUITests.swift */; };
 		F46C468E1E8DBB17001FF145 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F46C468D1E8DBB17001FF145 /* LaunchScreen.xib */; };
+		F4C6618B1EED844F00413F34 /* SendMessageAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C6618A1EED844F00413F34 /* SendMessageAPIRequest.swift */; };
 		F4F118A31E991701006D5A50 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F118A21E991701006D5A50 /* APIRequest.swift */; };
 		F4F118A51E991983006D5A50 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F118A41E991983006D5A50 /* APIClient.swift */; };
 		F4F118A71E9919CA006D5A50 /* JSONSerializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F118A61E9919CA006D5A50 /* JSONSerializable.swift */; };
@@ -161,6 +162,7 @@
 		F46C466E1E8D90E8001FF145 /* Donly_deUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Donly_deUITests.swift; sourceTree = "<group>"; };
 		F46C46701E8D90E8001FF145 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F46C468D1E8DBB17001FF145 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
+		F4C6618A1EED844F00413F34 /* SendMessageAPIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendMessageAPIRequest.swift; sourceTree = "<group>"; };
 		F4F118A21E991701006D5A50 /* APIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		F4F118A41E991983006D5A50 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		F4F118A61E9919CA006D5A50 /* JSONSerializable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONSerializable.swift; sourceTree = "<group>"; };
@@ -448,6 +450,7 @@
 				F4F118A91E99289B006D5A50 /* UserLoginAPIRequest.swift */,
 				F43ECF621EE8AFD700F633E0 /* ConversationsAPIRequest.swift */,
 				F4509D6E1EEC405A00503DB1 /* ConversationMessagesAPIRequest.swift */,
+				F4C6618A1EED844F00413F34 /* SendMessageAPIRequest.swift */,
 			);
 			name = APIRequests;
 			sourceTree = "<group>";
@@ -780,6 +783,7 @@
 				F42268451EC89A4000075CBE /* AlertManager.swift in Sources */,
 				F448D32C1EE6C750006A7416 /* ConversationsViewModel.swift in Sources */,
 				F4509D6B1EEC377300503DB1 /* ConversationScene.swift in Sources */,
+				F4C6618B1EED844F00413F34 /* SendMessageAPIRequest.swift in Sources */,
 				F448D32E1EE6C761006A7416 /* ConversationsScene.swift in Sources */,
 				F421573E1EC74048006441B3 /* OnboardingInfoElementView.swift in Sources */,
 				F428B3331E8FD58400CF64F6 /* SplashVC.swift in Sources */,

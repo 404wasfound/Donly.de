@@ -10,8 +10,8 @@ import Foundation
 
 class ConversationScene {
   
-  static func configure(forConversationId id: Int) -> ConversationVC {
-    let viewModel = ConversationViewModel(withConversationId: id)
+  static func configure(forConversation conversation: Conversation) -> ConversationVC {
+    let viewModel = ConversationViewModel(withConversation: conversation)
     return ConversationVC(withViewModel: viewModel)
   }
   

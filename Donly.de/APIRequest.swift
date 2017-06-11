@@ -24,7 +24,7 @@ enum Endpoint: String {
 protocol APIRequest {
   var method: HTTPMethod { get }
   var endpoint: Endpoint { get }
-  var parameters: [String: String] { get }
+  var parameters: [String: Any] { get }
   var idParameter: String? { get set }
   var client: APIClient { get set }
 }
@@ -45,18 +45,33 @@ extension APIRequest {
       components = newComponents
     } else {
       components.queryItems = parameters.map {
-        URLQueryItem(name: String($0), value: String($1))
+        URLQueryItem(name: String($0), value: String(describing: $1))
       }
     }
     guard let finalUrl = components.url else {
       fatalError("Unable to get URL with parameters.")
     }
     var request = URLRequest(url: finalUrl)
+    if method == .post {
+      request.httpBody = createHttpBodyString(parameters: parameters).data(using: .utf8)
+    }
     if let currentUser = appData.user, let token = currentUser.token {
       request.addValue(token, forHTTPHeaderField: "login-token")
     }
     request.httpMethod = method.rawValue
     return request
+  }
+  
+  func createHttpBodyString(parameters: [String: Any]) -> String {
+    var bodyString: String = ""
+    for param in parameters {
+      if !bodyString.isEmpty {
+        bodyString = bodyString + ", "
+      }
+      bodyString = bodyString + "\"\(param.key)\":\"\(param.value)\""
+    }
+    bodyString = "{" + bodyString + "}"
+    return bodyString
   }
   
   func checkForSucces(inJson json: JSON) -> Bool {

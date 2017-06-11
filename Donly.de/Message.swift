@@ -60,11 +60,8 @@ extension Message: JSONSerializable {
 }
 
 extension Message {
-  func getJSQMessage() -> JSQMessage? {
-    guard let id = self.id else {
-      return nil
-    }
-    return JSQMessage(senderId: String(describing: id), senderDisplayName: user.fullName, date: sentDate, text: message)
+  func getJSQMessage() -> JSQMessage {
+    return JSQMessage(senderId: String(describing: user.id), senderDisplayName: user.fullName, date: sentDate, text: message)
   }
 }
 

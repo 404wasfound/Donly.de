@@ -14,13 +14,13 @@ import JSQMessagesViewController
 protocol ConversationVCProtocol {
   func showIndicator()
   func hideIndicator()
+  func endSendingMessage()
 }
 
 class ConversationVC: JSQMessagesViewController {
   
-  var viewModel: ConversationViewModelProtocol?
+  fileprivate var viewModel: ConversationViewModelProtocol?
   private var disposeBag = DisposeBag()
-  
   lazy var outgoingBubbleImageView: JSQMessagesBubbleImage = self.setupOutgoingMessageBubble()
   lazy var incomingBubbleImageView: JSQMessagesBubbleImage = self.setupIncomingMessageBubble()
   
@@ -35,6 +35,8 @@ class ConversationVC: JSQMessagesViewController {
   
   override func viewWillAppear(_ animated: Bool) {
     self.navigationController?.navigationBar.tintColor = donlyColor
+    self.collectionView.collectionViewLayout.incomingAvatarViewSize = CGSize.zero
+    self.collectionView.collectionViewLayout.outgoingAvatarViewSize = CGSize.zero
   }
   
   override func viewDidLoad() {
@@ -43,9 +45,11 @@ class ConversationVC: JSQMessagesViewController {
     viewModel?.getMessagesForConversation()
     setupBindings()
     self.senderDisplayName = appData.user?.fullName
-    self.senderId = String(describing: appData.user?.id)
-    self.collectionView.collectionViewLayout.incomingAvatarViewSize = CGSize.zero
-    self.collectionView.collectionViewLayout.outgoingAvatarViewSize = CGSize.zero
+    if let user = appData.user {
+      self.senderId = "\(user.id)"
+    } else {
+      self.senderId = ""
+    }
   }
   
   func setupBindings() {
@@ -53,7 +57,6 @@ class ConversationVC: JSQMessagesViewController {
       if let newMessages = messages {
         print("Messages are here! (In number of: \(newMessages.count))")
         self.collectionView.reloadData()
-        self.finishReceivingMessage()
       }
     }).addDisposableTo(disposeBag)
   }
@@ -112,6 +115,10 @@ extension ConversationVC {
     return JSQMessagesBubbleImageFactory().incomingMessagesBubbleImage(with: UIColor.jsq_messageBubbleLightGray())
   }
   
+  override func didPressSend(_ button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: Date!) {
+    viewModel?.sendMessage(withText: text)
+  }
+  
 }
 
 extension ConversationVC: ConversationVCProtocol {
@@ -121,5 +128,9 @@ extension ConversationVC: ConversationVCProtocol {
   
   func hideIndicator() {
     self.hideActivityIndicator()
+  }
+  
+  func endSendingMessage() {
+    self.finishSendingMessage()
   }
 }

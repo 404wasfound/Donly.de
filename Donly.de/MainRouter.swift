@@ -9,7 +9,7 @@
 import Foundation
 
 protocol MainRouterProtocol {
-  func routeToConversation(withId id: Int)
+  func routeToConversation(_ conversation: Conversation)
 }
 
 class MainRouter: MainRouterProtocol {
@@ -20,8 +20,8 @@ class MainRouter: MainRouterProtocol {
     self.mainViewController = vc
   }
   
-  func routeToConversation(withId id: Int) {
-    let vc = ConversationScene.configure(forConversationId: id)
+  func routeToConversation(_ conversation: Conversation) {
+    let vc = ConversationScene.configure(forConversation: conversation)
     DispatchQueue.main.async {
       self.mainViewController.navigationController?.pushViewController(vc, animated: true)
     }

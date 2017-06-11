@@ -18,7 +18,7 @@ enum ConversationMessagesAPIResult {
 final class ConversationMessagesAPIRequest: APIRequestType {
   var method: HTTPMethod = .get
   var idParameter: String? = nil
-  var parameters: [String : String]
+  var parameters: [String : Any]
   var endpoint: Endpoint = .messages
   var client: APIClient
   typealias ReturnType = ConversationMessagesAPIResult
