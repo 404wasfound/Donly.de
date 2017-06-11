@@ -37,6 +37,7 @@ class ConversationVC: JSQMessagesViewController {
     self.navigationController?.navigationBar.tintColor = donlyColor
     self.collectionView.collectionViewLayout.incomingAvatarViewSize = CGSize.zero
     self.collectionView.collectionViewLayout.outgoingAvatarViewSize = CGSize.zero
+    self.setupInputToolbar()
   }
   
   override func viewDidLoad() {
@@ -117,6 +118,20 @@ extension ConversationVC {
   
   override func didPressSend(_ button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: Date!) {
     viewModel?.sendMessage(withText: text)
+  }
+  
+  func setupInputToolbar() {
+    self.inputToolbar.contentView.leftBarButtonItem = nil
+    let frame = CGRect(x: 0.0, y: 0.0, width: 35.0, height: 35.0)
+    let sendButton = UIButton(frame: frame)
+    sendButton.setImage(UIImage(named:"send_message"), for: .normal)
+    sendButton.backgroundColor = donlyColor
+    sendButton.layer.cornerRadius = 4.0
+    sendButton.imageEdgeInsets = UIEdgeInsets(top: 8, left: 0, bottom: 8, right: 0)
+    sendButton.imageView?.contentMode = .scaleAspectFit
+    sendButton.contentHorizontalAlignment = .center
+    self.inputToolbar.contentView.rightBarButtonItem = sendButton
+    self.inputToolbar.sendButtonOnRight = true
   }
   
 }
