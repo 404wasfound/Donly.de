@@ -111,11 +111,11 @@ class MainVC: UIViewController {
   
   func setupSlider(forPage page: MainScene.MainPage) {
     if let button = barButtons[page] {
-      let heightForSlider: CGFloat = 4.0
-      let frame = CGRect(x: 0, y: self.view.frame.height - heightForSlider, width: self.messagesButton.frame.width, height: heightForSlider)
+      let heightForSlider: CGFloat = 3.0
+      let frame = CGRect(x: 0, y: self.view.frame.height - self.messagesButton.frame.height - heightForSlider / 2 - 0.5, width: self.messagesButton.frame.width, height: heightForSlider)
       self.sliderSelection = UIView(frame: frame)
       self.sliderSelection.center.x = button.center.x
-      self.sliderSelection.layer.cornerRadius = 3.0
+      self.sliderSelection.layer.cornerRadius = 2.0
       self.sliderSelection.backgroundColor = donlyColor
       self.view.addSubview(sliderSelection)
     }
