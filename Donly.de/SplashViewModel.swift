@@ -25,7 +25,7 @@ final class SplashViewModel: SplashViewModelProtocol {
 
 extension SplashViewModel {
   func configureNext() -> SplashScene.Route? {
-    self.onboardingShown = false /// TODO: Remove, its temporary
+    self.onboardingShown = true /// TODO: Remove, its temporary
     if onboardingShown {
       return SplashScene.Route.main
     } else {

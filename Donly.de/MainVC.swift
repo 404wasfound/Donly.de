@@ -42,17 +42,19 @@ class MainVC: UIViewController {
     ///
     updateBar(forNewPage: MainScene.MainPage.profile)
   }
-  
+
   var viewModel: MainViewModelProtocol?
   var router: MainRouterProtocol?
   private var currentPage: MainScene.MainPage = MainScene.MainPage.messages
   var barButtons: [MainScene.MainPage: TabBarButton] = [:]
+  var sliderSelection: UIView!
   
   override func viewDidLoad() {
     super.viewDidLoad()
     self.router = MainRouter(withMainViewcontroller: self)
     self.loadViewForContainer()
     self.setupBarUI()
+    self.setupSlider(forPage: self.currentPage)
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -103,7 +105,28 @@ class MainVC: UIViewController {
   func updateBar(forNewPage page: MainScene.MainPage) {
     setupBarButton(forPage: self.currentPage, withState: false)
     setupBarButton(forPage: page, withState: true)
+    moveSlider(forPage: self.currentPage)
     navigationItem.title = page.getTitleForScreen()
   }
   
+  func setupSlider(forPage page: MainScene.MainPage) {
+    if let button = barButtons[page] {
+      let heightForSlider: CGFloat = 4.0
+      let frame = CGRect(x: 0, y: self.view.frame.height - heightForSlider, width: self.messagesButton.frame.width, height: heightForSlider)
+      self.sliderSelection = UIView(frame: frame)
+      self.sliderSelection.center.x = button.center.x
+      self.sliderSelection.layer.cornerRadius = 3.0
+      self.sliderSelection.backgroundColor = donlyColor
+      self.view.addSubview(sliderSelection)
+    }
+  }
+  
+  func moveSlider(forPage page: MainScene.MainPage) {
+    if let button = barButtons[page] {
+      let positionX = button.center.x
+      UIView.animate(withDuration: 0.2) {
+        self.sliderSelection.center.x = positionX
+      }
+    }
+  }
 }

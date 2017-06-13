@@ -9,4 +9,4 @@
 import Foundation
 import UIKit
 
-let donlyColor = UIColor(red: 0.000, green: 0.867, blue: 0.761, alpha: 1.00)
+let donlyColor = UIColor(red: 0.000, green: 0.863, blue: 0.745, alpha: 1.00)
