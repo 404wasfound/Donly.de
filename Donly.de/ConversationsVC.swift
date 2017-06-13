@@ -74,6 +74,7 @@ extension ConversationsVC: UITableViewDelegate, UITableViewDataSource {
     guard let conversation = viewModel?.conversations.value?[indexPath.row] else {
       return
     }
+    tableView.deselectRow(at: indexPath, animated: true)
     viewModel?.openConversation(conversation)
   }
   

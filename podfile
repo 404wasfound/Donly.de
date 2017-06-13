@@ -13,6 +13,7 @@ target 'Donly.de' do
   pod 'SwiftyJSON'
   pod 'NVActivityIndicatorView'  
   pod 'JSQMessagesViewController' 
+  pod 'Kingfisher'  
 
   target 'Donly.deTests' do
     inherit! :search_paths

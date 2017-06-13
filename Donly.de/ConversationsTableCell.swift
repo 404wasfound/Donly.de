@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class ConversationsTableCell: UITableViewCell {
   
@@ -23,6 +24,8 @@ class ConversationsTableCell: UITableViewCell {
     self.userName.text = conversation.user.fullName
     self.lastMessage.text = conversation.lastMessage.message
     self.lastMessageDate.text = conversation.lastMessage.sentDate.description(with: Locale.current)
+    let url = URL(string: conversation.user.imagePath)
+    self.profileImageView.kf.setImage(with: url)
   }
   
 }
