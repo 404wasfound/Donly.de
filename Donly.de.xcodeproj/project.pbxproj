@@ -53,6 +53,7 @@
 		F448D32C1EE6C750006A7416 /* ConversationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F448D32B1EE6C750006A7416 /* ConversationsViewModel.swift */; };
 		F448D32E1EE6C761006A7416 /* ConversationsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F448D32D1EE6C761006A7416 /* ConversationsScene.swift */; };
 		F448D3301EE6C81C006A7416 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = F448D32F1EE6C81C006A7416 /* Message.swift */; };
+		F44C00CB1EF1EA2400DAB511 /* UserDataAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44C00CA1EF1EA2400DAB511 /* UserDataAPIRequest.swift */; };
 		F4509D661EEC328100503DB1 /* ConversationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4509D641EEC328100503DB1 /* ConversationVC.swift */; };
 		F4509D671EEC328100503DB1 /* ConversationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4509D651EEC328100503DB1 /* ConversationVC.xib */; };
 		F4509D691EEC32A500503DB1 /* ConversationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4509D681EEC32A500503DB1 /* ConversationViewModel.swift */; };
@@ -145,6 +146,7 @@
 		F448D32B1EE6C750006A7416 /* ConversationsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationsViewModel.swift; sourceTree = "<group>"; };
 		F448D32D1EE6C761006A7416 /* ConversationsScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationsScene.swift; sourceTree = "<group>"; };
 		F448D32F1EE6C81C006A7416 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		F44C00CA1EF1EA2400DAB511 /* UserDataAPIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDataAPIRequest.swift; sourceTree = "<group>"; };
 		F4509D641EEC328100503DB1 /* ConversationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationVC.swift; sourceTree = "<group>"; };
 		F4509D651EEC328100503DB1 /* ConversationVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConversationVC.xib; sourceTree = "<group>"; };
 		F4509D681EEC32A500503DB1 /* ConversationViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationViewModel.swift; sourceTree = "<group>"; };
@@ -451,6 +453,7 @@
 				F43ECF621EE8AFD700F633E0 /* ConversationsAPIRequest.swift */,
 				F4509D6E1EEC405A00503DB1 /* ConversationMessagesAPIRequest.swift */,
 				F4C6618A1EED844F00413F34 /* SendMessageAPIRequest.swift */,
+				F44C00CA1EF1EA2400DAB511 /* UserDataAPIRequest.swift */,
 			);
 			name = APIRequests;
 			sourceTree = "<group>";
@@ -773,6 +776,7 @@
 				F4F118A51E991983006D5A50 /* APIClient.swift in Sources */,
 				F428B33D1E943E9100CF64F6 /* NotificationsManager.swift in Sources */,
 				F42268471EC8A87400075CBE /* Constants.swift in Sources */,
+				F44C00CB1EF1EA2400DAB511 /* UserDataAPIRequest.swift in Sources */,
 				F4509D661EEC328100503DB1 /* ConversationVC.swift in Sources */,
 				F428B33B1E943AF900CF64F6 /* LocationManager.swift in Sources */,
 				F4F118AD1E992BD3006D5A50 /* User.swift in Sources */,

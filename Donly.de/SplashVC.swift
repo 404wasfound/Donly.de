@@ -7,6 +7,12 @@
 //
 
 import UIKit
+import RxSwift
+
+protocol SplashVCProtocol {
+  func showIndicator()
+  func hideIndicator()
+}
 
 class SplashVC: UIViewController {
 
@@ -14,6 +20,7 @@ class SplashVC: UIViewController {
   
   private var viewModel: SplashViewModelProtocol
   private var router: SplashRouter
+  private var disposeBag = DisposeBag()
   
   init(withViewModel viewModel: SplashViewModelProtocol) {
     self.viewModel = viewModel
@@ -27,11 +34,32 @@ class SplashVC: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    self.setupFirstScene()
+    self.viewModel.delegate = self
+    self.viewModel.configureNext()
+    self.setupBindings()
+  }
+  
+  func setupBindings() {
+    viewModel.nextPage.asObservable()
+      .bind(onNext: { _ in
+        self.setupFirstScene()
+      }).addDisposableTo(disposeBag)
   }
   
   func setupFirstScene() {
     router.route()
+  }
+  
+}
+
+extension SplashVC: SplashVCProtocol {
+  
+  func showIndicator() {
+    self.showActivityIndicator()
+  }
+  
+  func hideIndicator() {
+    self.hideActivityIndicator()
   }
   
 }

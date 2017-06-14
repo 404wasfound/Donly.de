@@ -19,6 +19,7 @@ enum Endpoint: String {
   case login = "system/login"
   case conversations = "dialogs"
   case messages = "messages"
+  case users = "users"
 }
 
 protocol APIRequest {
@@ -55,10 +56,11 @@ extension APIRequest {
     if method == .post {
       request.httpBody = createHttpBodyString(parameters: parameters).data(using: .utf8)
     }
-    if let currentUser = appData.user, let token = currentUser.token {
-      request.addValue(token, forHTTPHeaderField: "login-token")
+    if let userData = appData.userData {
+      request.addValue(userData.token, forHTTPHeaderField: "login-token")
     }
     request.httpMethod = method.rawValue
+    print("Firing request to the (\(String(describing: request.url?.absoluteString)))")
     return request
   }
   

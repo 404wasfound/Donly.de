@@ -13,6 +13,7 @@ class SplashScene {
   enum Route {
     case onboarding
     case main
+    case login
   }
   
   static func configure() -> SplashVC {

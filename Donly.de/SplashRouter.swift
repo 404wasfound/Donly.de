@@ -18,7 +18,7 @@ class SplashRouter {
   }
   
   func route() {
-    guard let next = viewModel?.nextPage else {
+    guard let next = viewModel?.nextPage.value else {
       return
     }
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -27,7 +27,13 @@ class SplashRouter {
       let vc = MainScene.configure(forPage: MainScene.MainPage.messages)
       appDelegate.window?.rootViewController = vc
     case .onboarding:
+      UserDefaults.standard.set(true, forKey: "OnboardingShown")
       let vc = OnboardingInfoScene.configure()
+      let navController = UINavigationController()
+      navController.viewControllers = [vc]
+      appDelegate.window?.rootViewController = navController
+    case .login:
+      let vc = OnboardingLoginScene.configure()
       let navController = UINavigationController()
       navController.viewControllers = [vc]
       appDelegate.window?.rootViewController = navController
