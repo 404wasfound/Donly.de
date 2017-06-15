@@ -47,7 +47,7 @@ final class ConversationMessagesAPIRequest: APIRequestType {
           guard let messages: [Message] = deserialize(json: jsonData) else {
             return .failure(APIClientError.serializationJSONFailed)
           }
-          return .success(messages)
+          return .success(messages.reversed())
         case .failure(let error):
           return .failure(error)
         }
