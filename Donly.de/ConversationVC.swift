@@ -10,6 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 import JSQMessagesViewController
+import Kingfisher
 
 protocol ConversationVCProtocol {
   func showIndicator()
@@ -38,6 +39,7 @@ class ConversationVC: JSQMessagesViewController {
     self.collectionView.collectionViewLayout.incomingAvatarViewSize = CGSize.zero
     self.collectionView.collectionViewLayout.outgoingAvatarViewSize = CGSize.zero
     self.setupInputToolbar()
+    self.setupProfileImage()
   }
   
   override func viewDidLoad() {
@@ -147,5 +149,20 @@ extension ConversationVC: ConversationVCProtocol {
   
   func endSendingMessage() {
     self.finishSendingMessage()
+  }
+  
+  func setupProfileImage() {
+    guard let url = viewModel?.profileImageUrl else {
+      return
+    }
+    let imageView = UIImageView()
+    imageView.kf.setImage(with: URL(string: url))
+    let button = UIButton(frame: CGRect(x: 0, y: 0, width: 36, height: 36))
+    button.setImage(imageView.image, for: .normal)
+    let barButton = UIBarButtonItem(customView: button)
+    barButton.customView?.layer.cornerRadius = button.frame.width / 2
+    barButton.customView?.clipsToBounds = true
+    barButton.customView?.isUserInteractionEnabled = false
+    self.navigationItem.rightBarButtonItem = barButton
   }
 }

@@ -13,6 +13,7 @@ import JSQMessagesViewController
 protocol ConversationViewModelProtocol {
   var messages: Variable<[JSQMessage]?> { get set }
   var delegate: ConversationVCProtocol? { get set }
+  var profileImageUrl: String { get }
   func getMessagesForConversation()
   func sendMessage(withText text: String)
 }
@@ -21,11 +22,13 @@ class ConversationViewModel: ConversationViewModelProtocol {
   
   var conversation: Conversation
   var messages = Variable<[JSQMessage]?>(nil)
+  var profileImageUrl: String
   var disposeBag = DisposeBag()
   var delegate: ConversationVCProtocol?
   
   init(withConversation conversation: Conversation) {
     self.conversation = conversation
+    self.profileImageUrl = conversation.user.imagePath
   }
   
   func getMessagesForConversation() {
