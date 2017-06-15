@@ -10,6 +10,8 @@
 		0A2D92125C20935D13DCA00C /* Pods_Donly_deUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C3B630B7F4F453F68D27147 /* Pods_Donly_deUITests.framework */; };
 		5616B79BDCC2151ED54F8E03 /* Pods_Donly_deTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 688493A6803C95A4E2504C35 /* Pods_Donly_deTests.framework */; };
 		B37C485B6E76722ECFA303E5 /* Pods_Donly_de.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A90C87EAC5D9362CCDFAF6C /* Pods_Donly_de.framework */; };
+		F40509C81EF335E8002FE4FB /* DateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40509C71EF335E8002FE4FB /* DateManager.swift */; };
+		F40509CA1EF33E0F002FE4FB /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40509C91EF33E0F002FE4FB /* Date+Extensions.swift */; };
 		F42157381EC734A5006441B3 /* OnboardingInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42157361EC734A5006441B3 /* OnboardingInfoVC.swift */; };
 		F42157391EC734A5006441B3 /* OnboardingInfoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F42157371EC734A5006441B3 /* OnboardingInfoVC.xib */; };
 		F421573B1EC73B56006441B3 /* OnboardingInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F421573A1EC73B56006441B3 /* OnboardingInfoViewModel.swift */; };
@@ -103,6 +105,8 @@
 		8C3B630B7F4F453F68D27147 /* Pods_Donly_deUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Donly_deUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B53FD0A6D3D647518F2FA4BA /* Pods-Donly.deTests.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Donly.deTests.staging.xcconfig"; path = "Pods/Target Support Files/Pods-Donly.deTests/Pods-Donly.deTests.staging.xcconfig"; sourceTree = "<group>"; };
 		F3D8A333BF5987B22F504E7E /* Pods-Donly.deUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Donly.deUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Donly.deUITests/Pods-Donly.deUITests.release.xcconfig"; sourceTree = "<group>"; };
+		F40509C71EF335E8002FE4FB /* DateManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateManager.swift; sourceTree = "<group>"; };
+		F40509C91EF33E0F002FE4FB /* Date+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		F42157361EC734A5006441B3 /* OnboardingInfoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingInfoVC.swift; sourceTree = "<group>"; };
 		F42157371EC734A5006441B3 /* OnboardingInfoVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OnboardingInfoVC.xib; sourceTree = "<group>"; };
 		F421573A1EC73B56006441B3 /* OnboardingInfoViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingInfoViewModel.swift; sourceTree = "<group>"; };
@@ -272,6 +276,7 @@
 			isa = PBXGroup;
 			children = (
 				F42268421EC879A800075CBE /* UIViewController+Extensions.swift */,
+				F40509C91EF33E0F002FE4FB /* Date+Extensions.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -306,6 +311,7 @@
 				F428B33C1E943E9100CF64F6 /* NotificationsManager.swift */,
 				F42268441EC89A4000075CBE /* AlertManager.swift */,
 				F43ECF641EEC14E600F633E0 /* ActivityIndicatorManager.swift */,
+				F40509C71EF335E8002FE4FB /* DateManager.swift */,
 			);
 			name = Managers;
 			sourceTree = "<group>";
@@ -789,6 +795,7 @@
 				F4509D6B1EEC377300503DB1 /* ConversationScene.swift in Sources */,
 				F4C6618B1EED844F00413F34 /* SendMessageAPIRequest.swift in Sources */,
 				F448D32E1EE6C761006A7416 /* ConversationsScene.swift in Sources */,
+				F40509C81EF335E8002FE4FB /* DateManager.swift in Sources */,
 				F421573E1EC74048006441B3 /* OnboardingInfoElementView.swift in Sources */,
 				F428B3331E8FD58400CF64F6 /* SplashVC.swift in Sources */,
 				F4F118A31E991701006D5A50 /* APIRequest.swift in Sources */,
@@ -803,6 +810,7 @@
 				F448D3121EE0A6E3006A7416 /* OnboardingPermissionsScene.swift in Sources */,
 				F4F118A71E9919CA006D5A50 /* JSONSerializable.swift in Sources */,
 				F42157401EC741CF006441B3 /* OnboardingButton.swift in Sources */,
+				F40509CA1EF33E0F002FE4FB /* Date+Extensions.swift in Sources */,
 				F43ECF5E1EE75C4400F633E0 /* ConversationsTableCell.swift in Sources */,
 				F448D3101EE0A61C006A7416 /* OnboardingInfoScene.swift in Sources */,
 				F428B32A1E8FCFBF00CF64F6 /* ApplicationSettings.swift in Sources */,

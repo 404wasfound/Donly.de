@@ -20,10 +20,10 @@ class ConversationsTableCell: UITableViewCell {
     self.profileImageView.layer.cornerRadius = self.profileImageView.frame.width / 2
   }
   
-  func configureCell(forConversation conversation: Conversation) { /// Temporary only string
+  func configureCell(forConversation conversation: Conversation) {
     self.userName.text = conversation.user.fullName
     self.lastMessage.text = conversation.lastMessage.message
-    self.lastMessageDate.text = conversation.lastMessage.sentDate.description(with: Locale.current)
+    self.lastMessageDate.text = DateManager.getFormattedDate(fromDate: conversation.lastMessage.sentDate)
     let url = URL(string: conversation.user.imagePath)
     self.profileImageView.kf.setImage(with: url)
   }
