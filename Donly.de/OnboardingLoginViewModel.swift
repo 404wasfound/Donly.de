@@ -43,9 +43,8 @@ class OnboardingLoginViewModel: OnboardingLoginViewModelProtocol {
       let userRequest = UserLoginAPIRequest(parameters: parameters)
       userRequest.send().subscribe(onNext: { result in
         if let error = result.error {
-          print("Fuck you, the data is wrong!")
+          print(error.getDescription())
         } else if let user = result.result {
-          print("Data is here!")
           appData.user = user
           guard let vc = MainScene.configure(forPage: MainScene.MainPage.messages) else {
             print("There is something very wrong with initializing of the VC!")

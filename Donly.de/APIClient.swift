@@ -22,6 +22,22 @@ enum APIClientError: Error {
   case noResponse
   case other(Error)
   case successFailure
+  
+  func getDescription() -> String {
+    switch self {
+    case .serializationJSONFailed:
+      return "Serialized failed!"
+    case .wrongHTTP(status: let status):
+      return "The HTTP status is denied! Received status: \(status)"
+    case .noResponse:
+      return "No response received!"
+    case .other(let error):
+      return "Some weird error occured! Error: \(error)"
+    case .successFailure:
+      return "Success tag failed!"
+    }
+  }
+  
 }
 
 final class APIClient {

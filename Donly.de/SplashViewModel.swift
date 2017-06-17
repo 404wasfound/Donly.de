@@ -43,7 +43,7 @@ extension SplashViewModel {
     delegate?.showIndicator()
     userDataRequest.send().subscribe(onNext: { result in
       if let error = result.error {
-        print("Something is wrong here! Here goes the error: (\(error.localizedDescription))")
+        print(error.getDescription())
       } else if var user = result.result {
         user.token = token
         appData.user = user

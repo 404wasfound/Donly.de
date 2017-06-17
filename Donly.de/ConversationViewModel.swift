@@ -36,7 +36,7 @@ class ConversationViewModel: ConversationViewModelProtocol {
     let messagesRequest = ConversationMessagesAPIRequest(withUserId: self.conversation.user.id)
     messagesRequest.send().subscribe(onNext: { result in
       if let error = result.error {
-        print(error.localizedDescription)
+        print(error.getDescription())
       } else if let messages = result.result {
         print("Number of messages: \(messages.count)")
         self.createJSQmessages(fromMessages: messages)
@@ -57,18 +57,18 @@ class ConversationViewModel: ConversationViewModelProtocol {
     let sendMessageRequest = SendMessageAPIRequest(withUserId: conversation.user.id, withMessage: text)
     sendMessageRequest.send().subscribe(onNext: { result in
       if let error = result.error {
-        print(error.localizedDescription)
+        print(error.getDescription())
       } else if let message = result.result {
         let jsqMessage = message.getJSQMessage()
         self.messages.value?.append(jsqMessage)
         self.delegate?.endSendingMessage()
+        print("Message with text: (\(text)) is sent!")
       }
     }, onError: { error in
       ///
     }, onCompleted: { 
       ///
     }).addDisposableTo(disposeBag)
-    print("Message with text: (\(text)) is sent!")
   }
   
 }

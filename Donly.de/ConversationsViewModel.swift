@@ -32,7 +32,7 @@ class ConversationsViewModel: ConversationsViewModelProtocol {
     delegate?.showIndicator()
     conversationsRequest.send().subscribe(onNext: { result in
       if let error = result.error {
-        print(error)
+        print(error.getDescription())
       } else if let conversations = result.result {
         print("Number of conversations: \(conversations.count)")
         self.conversations.value = conversations
