@@ -26,7 +26,7 @@ enum APIClientError: Error {
 
 final class APIClient {
   
-  func getData(resource: APIRequest) -> Observable<APIResponse> {
+  static func getData(resource: APIRequest) -> Observable<APIResponse> {
     let request = resource.makeRequest()
     return Observable.create { observer in
       Alamofire.request(request).responseData(completionHandler: { data in

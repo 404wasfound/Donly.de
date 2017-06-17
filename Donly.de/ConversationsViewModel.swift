@@ -31,12 +31,11 @@ class ConversationsViewModel: ConversationsViewModelProtocol {
     let conversationsRequest = ConversationsAPIRequest()
     delegate?.showIndicator()
     conversationsRequest.send().subscribe(onNext: { result in
-      switch result {
-      case .success(let conversations):
+      if let error = result.error {
+        print(error)
+      } else if let conversations = result.result {
         print("Number of conversations: \(conversations.count)")
         self.conversations.value = conversations
-      case .failure(let error):
-        print(error)
       }
     }, onError: { error in
       ///

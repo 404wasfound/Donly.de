@@ -27,12 +27,6 @@ protocol APIRequest {
   var endpoint: Endpoint { get }
   var parameters: [String: Any] { get }
   var idParameter: String? { get set }
-  var client: APIClient { get set }
-}
-
-protocol APIRequestType: APIRequest {
-  associatedtype ReturnType: Any
-  func send() -> Observable<ReturnType>
 }
 
 extension APIRequest {
@@ -92,4 +86,38 @@ extension APIRequest {
     }
     return success
   }
+  
+}
+
+protocol APIRequestType: APIRequest {
+  associatedtype ReturnType: Any
+  func process(jsonData: JSON) -> (result: ReturnType?, error: APIClientError?)
+}
+
+extension APIRequestType {
+  
+  func send() -> Observable<(result: ReturnType?, error: APIClientError?)> {
+    return APIClient.getData(resource: self).catchError({ error in
+      throw error
+    }).map({ result in
+      switch result {
+      case .success(let data):
+        let jsonData = JSON(data: data)
+        guard self.checkForSucces(inJson: jsonData) else {
+          return (result: nil, error: APIClientError.successFailure)
+        }
+        let parsedResult = self.process(jsonData: jsonData)
+        if let error = parsedResult.error {
+          return (result: nil, error: error)
+        } else if let result = parsedResult.result {
+          return (result: result, error: nil)
+        } else {
+          return (result: nil, error: APIClientError.serializationJSONFailed)
+        }
+      case .failure(let error):
+        return (result: nil, error: error)
+      }
+    })
+  }
+  
 }

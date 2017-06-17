@@ -42,8 +42,9 @@ class OnboardingLoginViewModel: OnboardingLoginViewModelProtocol {
       print(parameters)
       let userRequest = UserLoginAPIRequest(parameters: parameters)
       userRequest.send().subscribe(onNext: { result in
-        switch result {
-        case .success(let user):
+        if let error = result.error {
+          print("Fuck you, the data is wrong!")
+        } else if let user = result.result {
           print("Data is here!")
           appData.user = user
           guard let vc = MainScene.configure(forPage: MainScene.MainPage.messages) else {
@@ -51,8 +52,6 @@ class OnboardingLoginViewModel: OnboardingLoginViewModelProtocol {
             return
           }
           self.delegate?.navigateTo(vc: vc)
-        case .failure( _):
-          print("Fuck you, the data is wrong!")
         }
       }, onError: { error in
         /// Some errr handling at some point

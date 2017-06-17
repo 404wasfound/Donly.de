@@ -35,12 +35,11 @@ class ConversationViewModel: ConversationViewModelProtocol {
     delegate?.showIndicator()
     let messagesRequest = ConversationMessagesAPIRequest(withUserId: self.conversation.user.id)
     messagesRequest.send().subscribe(onNext: { result in
-      switch result {
-      case .success(let messages):
+      if let error = result.error {
+        print(error.localizedDescription)
+      } else if let messages = result.result {
         print("Number of messages: \(messages.count)")
         self.createJSQmessages(fromMessages: messages)
-      case .failure(let error):
-        print(error.localizedDescription)
       }
     }, onError: { error in
       ///
@@ -57,13 +56,12 @@ class ConversationViewModel: ConversationViewModelProtocol {
   func sendMessage(withText text: String) {
     let sendMessageRequest = SendMessageAPIRequest(withUserId: conversation.user.id, withMessage: text)
     sendMessageRequest.send().subscribe(onNext: { result in
-      switch result {
-      case .success(let message):
+      if let error = result.error {
+        print(error.localizedDescription)
+      } else if let message = result.result {
         let jsqMessage = message.getJSQMessage()
         self.messages.value?.append(jsqMessage)
         self.delegate?.endSendingMessage()
-      case .failure(let error):
-        print(error.localizedDescription)
       }
     }, onError: { error in
       ///

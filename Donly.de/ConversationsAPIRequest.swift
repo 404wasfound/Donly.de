@@ -10,46 +10,25 @@ import Foundation
 import RxSwift
 import SwiftyJSON
 
-enum ConversationsAPIResult {
-  case success([Conversation])
-  case failure(APIClientError)
-}
-
 final class ConversationsAPIRequest: APIRequestType {
   var method: HTTPMethod = .get
   var idParameter: String? = nil
   var parameters: [String: Any]
   var endpoint: Endpoint = .conversations
-  var client: APIClient
-  typealias ReturnType = ConversationsAPIResult
+  typealias ReturnType = [Conversation]
   
   init() {
     self.parameters = [:]
-    self.client = APIClient()
   }
   
-  func send() -> Observable<ConversationsAPIResult> {
-    return client.getData(resource: self)
-      .catchError({ error in
-        throw error
-      })
-      .map { result in
-        switch result {
-        case .success(let data):
-          let json = JSON(data: data)
-          print("JSON from \(String(describing: ConversationsAPIRequest.self)): ")
-          print(json)
-          guard self.checkForSucces(inJson: json) else {
-            return .failure(APIClientError.successFailure)
-          }
-          let jsonData = json["items"]
-          guard let conversations: [Conversation] = deserialize(json: jsonData) else {
-            return .failure(APIClientError.serializationJSONFailed)
-          }
-          return .success(conversations)
-        case .failure(let error):
-          return .failure(error)
-       }
+  func process(jsonData: JSON) -> (result: [Conversation]?, error: APIClientError?) {
+    print("JSON from \(String(describing: ConversationsAPIRequest.self)): ")
+    print(jsonData)
+    let jsonConversationsData = jsonData["items"]
+    guard let conversations: [Conversation] = deserialize(json: jsonConversationsData) else {
+      return (result: nil, error: APIClientError.serializationJSONFailed)
     }
+    return (result: conversations, error: nil)
   }
+  
 }
