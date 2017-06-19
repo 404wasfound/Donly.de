@@ -11,7 +11,7 @@ import UIKit
 
 class MainScene {
   
-  enum MainPage {
+  enum MainPage: Int {
     case messages
     case myTasks
     case allTasks

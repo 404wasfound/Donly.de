@@ -32,18 +32,24 @@ class MainVC: UIViewController {
   @IBOutlet private weak var allTasksButton: TabBarButton!
   @IBAction private func allTasksButtonPressed(_ sender: UIButton) {
     ///
+    viewModel?.page = .allTasks
+    loadViewForContainer()
     updateBar(forNewPage: MainScene.MainPage.allTasks)
   }
   
   @IBOutlet private weak var notificationsButton: TabBarButton!
   @IBAction private func notificationsButtonPressed(_ sender: UIButton) {
     ///
+    viewModel?.page = .notifications
+    loadViewForContainer()
     updateBar(forNewPage: MainScene.MainPage.notifications)
   }
   
   @IBOutlet private weak var profileButton: TabBarButton!
   @IBAction private func profileButtonPressed(_ sender: UIButton) {
     ///
+    viewModel?.page = .profile
+    loadViewForContainer()
     updateBar(forNewPage: MainScene.MainPage.profile)
   }
 
@@ -69,19 +75,43 @@ class MainVC: UIViewController {
     self.currentPage = page
     self.viewModel = MainViewModel(withPage: page)
   }
-  
+}
+
+/// Loading and animating related stuff
+extension MainVC {
   func loadViewForContainer() {
     if let router = self.router, let vc = self.viewModel?.configureViewForContainer(withRouter: router) {
       addChildViewController(vc)
-      vc.view.frame = CGRect(x: self.view.frame.origin.x + self.view.frame.width, y: 0, width: contentContainer.frame.width, height: contentContainer.frame.height)
-      UIView.animate(withDuration: 0.2) {
-        vc.view.center.x = self.view.center.x
-      }
+      performPageAnimation(forController: vc)
+      viewModel?.currentScreen = vc
       contentContainer.clipsToBounds = true
       contentContainer.addSubview(vc.view)
     }
   }
   
+  func performPageAnimation(forController vc: UIViewController) {
+    guard let pageRaw = viewModel?.page.rawValue, pageRaw != currentPage.rawValue else {
+      return
+    }
+    let difference = self.view.frame.width
+    var frameForView = CGRect(x: self.view.frame.origin.x + difference, y: 0, width: contentContainer.frame.width, height: contentContainer.frame.height)
+    if pageRaw < self.currentPage.rawValue {
+      frameForView = CGRect(x: self.view.frame.origin.x - difference, y: 0, width: contentContainer.frame.width, height: contentContainer.frame.height)
+    }
+    vc.view.frame = frameForView
+    UIView.animate(withDuration: 0.2) {
+      var oldViewCenter = self.view.center.x - difference
+      if pageRaw < self.currentPage.rawValue {
+        oldViewCenter = self.view.center.x + difference
+      }
+      self.viewModel?.currentScreen?.view.center.x = oldViewCenter
+      vc.view.center.x = self.view.center.x
+    }
+  }
+}
+
+/// Bar related stuff
+extension MainVC {
   func setupBarUI() {
     self.barButtons = [MainScene.MainPage.messages: self.messagesButton, MainScene.MainPage.myTasks: self.myTasksButton, MainScene.MainPage.allTasks: self.allTasksButton, MainScene.MainPage.notifications: self.notificationsButton, MainScene.MainPage.profile: self.profileButton]
     for buttonElement in barButtons {
@@ -115,7 +145,10 @@ class MainVC: UIViewController {
     moveSlider(forPage: self.currentPage)
     navigationItem.title = page.getTitleForScreen()
   }
-  
+}
+
+/// Bar slider related stuff
+extension MainVC {
   func setupSlider(forPage page: MainScene.MainPage) {
     if let button = barButtons[page] {
       let heightForSlider: CGFloat = 3.0

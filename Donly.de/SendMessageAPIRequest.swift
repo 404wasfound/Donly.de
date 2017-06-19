@@ -13,7 +13,7 @@ import SwiftyJSON
 final class SendMessageAPIRequest: APIRequestType {
   var method: HTTPMethod = .post
   var idParameter: String? = nil
-  var parameters: [String : Any]
+  var parameters: [String: Any]
   var endpoint: Endpoint = .messages
   typealias ReturnType = Message
   

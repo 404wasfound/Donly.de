@@ -333,7 +333,8 @@
 		F448D3151EE0AE84006A7416 /* Main Scene */ = {
 			isa = PBXGroup;
 			children = (
-				F448D3241EE6C3CB006A7416 /* Main Messages */,
+				F44AE64D1EF5809F00D8221E /* Jobs */,
+				F448D3241EE6C3CB006A7416 /* Conversations */,
 				F448D31A1EE0AFFD006A7416 /* MainScene.swift */,
 				F448D3161EE0AEF7006A7416 /* MainVC.swift */,
 				F448D31C1EE0B022006A7416 /* MainViewModel.swift */,
@@ -344,14 +345,13 @@
 			name = "Main Scene";
 			sourceTree = "<group>";
 		};
-		F448D3241EE6C3CB006A7416 /* Main Messages */ = {
+		F448D3241EE6C3CB006A7416 /* Conversations */ = {
 			isa = PBXGroup;
 			children = (
-				F44AE64D1EF5809F00D8221E /* Jobs */,
 				F4509D621EEC2F7500503DB1 /* All Conversations Scene */,
 				F4509D631EEC2F9700503DB1 /* Conversation Scene */,
 			);
-			name = "Main Messages";
+			name = Conversations;
 			sourceTree = "<group>";
 		};
 		F44AE64D1EF5809F00D8221E /* Jobs */ = {

@@ -13,7 +13,7 @@ import SwiftyJSON
 final class ConversationMessagesAPIRequest: APIRequestType {
   var method: HTTPMethod = .get
   var idParameter: String? = nil
-  var parameters: [String : Any]
+  var parameters: [String: Any]
   var endpoint: Endpoint = .messages
   typealias ReturnType = [Message]
   
