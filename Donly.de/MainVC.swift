@@ -10,10 +10,10 @@ import UIKit
 
 class MainVC: UIViewController {
   
-  @IBOutlet private weak var contentContainer: UIView!
-  @IBOutlet private weak var tabBarView: UIView!
+  @IBOutlet weak var contentContainer: UIView!
+  @IBOutlet weak var tabBarView: UIView!
   
-  @IBOutlet private weak var messagesButton: TabBarButton!
+  @IBOutlet weak var messagesButton: TabBarButton!
   @IBAction private func messagesButtonPressed(_ sender: UIButton) {
     ///trigger smth on view model
     viewModel?.page = .messages
@@ -21,7 +21,7 @@ class MainVC: UIViewController {
     updateBar(forNewPage: MainScene.MainPage.messages)
   }
   
-  @IBOutlet private weak var myTasksButton: TabBarButton!
+  @IBOutlet weak var myTasksButton: TabBarButton!
   @IBAction private func myTasksButtonPressed(_ sender: UIButton) {
     ///
     viewModel?.page = .myTasks
@@ -29,7 +29,7 @@ class MainVC: UIViewController {
     updateBar(forNewPage: MainScene.MainPage.myTasks)
   }
   
-  @IBOutlet private weak var allTasksButton: TabBarButton!
+  @IBOutlet weak var allTasksButton: TabBarButton!
   @IBAction private func allTasksButtonPressed(_ sender: UIButton) {
     ///
     viewModel?.page = .allTasks
@@ -37,7 +37,7 @@ class MainVC: UIViewController {
     updateBar(forNewPage: MainScene.MainPage.allTasks)
   }
   
-  @IBOutlet private weak var notificationsButton: TabBarButton!
+  @IBOutlet weak var notificationsButton: TabBarButton!
   @IBAction private func notificationsButtonPressed(_ sender: UIButton) {
     ///
     viewModel?.page = .notifications
@@ -45,7 +45,7 @@ class MainVC: UIViewController {
     updateBar(forNewPage: MainScene.MainPage.notifications)
   }
   
-  @IBOutlet private weak var profileButton: TabBarButton!
+  @IBOutlet weak var profileButton: TabBarButton!
   @IBAction private func profileButtonPressed(_ sender: UIButton) {
     ///
     viewModel?.page = .profile
@@ -55,7 +55,7 @@ class MainVC: UIViewController {
 
   var viewModel: MainViewModelProtocol?
   var router: MainRouterProtocol?
-  private var currentPage: MainScene.MainPage = MainScene.MainPage.messages
+  fileprivate var currentPage: MainScene.MainPage = MainScene.MainPage.messages
   var barButtons: [MainScene.MainPage: TabBarButton] = [:]
   var sliderSelection: UIView!
   

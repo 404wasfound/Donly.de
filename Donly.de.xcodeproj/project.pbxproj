@@ -357,6 +357,14 @@
 		F44AE64D1EF5809F00D8221E /* Jobs */ = {
 			isa = PBXGroup;
 			children = (
+				F44AE65C1EF8831C00D8221E /* All Jobs */,
+			);
+			name = Jobs;
+			sourceTree = "<group>";
+		};
+		F44AE65C1EF8831C00D8221E /* All Jobs */ = {
+			isa = PBXGroup;
+			children = (
 				F44AE64E1EF5811100D8221E /* JobsVC.swift */,
 				F44AE6521EF5813F00D8221E /* JobsScene.swift */,
 				F44AE6541EF5814C00D8221E /* JobsViewModel.swift */,
@@ -365,7 +373,7 @@
 				F44AE64F1EF5811100D8221E /* JobsVC.xib */,
 				F44AE65A1EF5819500D8221E /* JobsEmpty.xib */,
 			);
-			name = Jobs;
+			name = "All Jobs";
 			sourceTree = "<group>";
 		};
 		F4509D621EEC2F7500503DB1 /* All Conversations Scene */ = {
