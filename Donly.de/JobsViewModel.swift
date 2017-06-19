@@ -10,14 +10,16 @@ import Foundation
 import RxSwift
 
 protocol JobsViewModelProtocol {
-  
+  var page: MainScene.MainPage { get set }
 }
 
 class JobsViewModel: JobsViewModelProtocol {
   
   private var mainRouter: MainRouterProtocol?
+  var page: MainScene.MainPage
   
-  init(withMainRouter router: MainRouterProtocol) {
+  init(withMainRouter router: MainRouterProtocol, forPage page: MainScene.MainPage) {
     self.mainRouter = router
+    self.page = page
   }
 }

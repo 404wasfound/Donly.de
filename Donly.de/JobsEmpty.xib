@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="JobsVC" customModule="Donly_de" customModuleProvider="target">
             <connections>
+                <outlet property="jobSearchButton" destination="psX-mE-Tnl" id="nsd-m4-nRj"/>
                 <outlet property="view" destination="iN0-l3-epB" id="IgI-YL-jKE"/>
             </connections>
         </placeholder>
@@ -70,6 +71,9 @@
                         <constraint firstAttribute="height" constant="50" id="KJq-s0-z1u"/>
                         <constraint firstAttribute="width" constant="150" id="shD-qr-kcG"/>
                     </constraints>
+                    <connections>
+                        <action selector="jobSearchButtonPressed:" destination="-1" eventType="touchUpInside" id="o0k-Wa-YJO"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

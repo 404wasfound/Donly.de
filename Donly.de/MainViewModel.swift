@@ -29,18 +29,18 @@ class MainViewModel: MainViewModelProtocol {
     if let vc = scenesForPages[page] {
       return vc
     }
+    var vc: UIViewController?
     switch page {
     case .messages:
-      let vc = ConversationsScene.configure(withMainRouter: router)
-      scenesForPages[.messages] = vc
-      return vc
+      vc = ConversationsScene.configure(withMainRouter: router)
     case .myTasks:
-      let vc = JobsScene.configure(withMainRouter: router)
-      scenesForPages[.myTasks] = vc
-      return vc
+      vc = JobsScene.configure(withMainRouter: router, forPage: .myTasks)
+    case .allTasks:
+      vc = JobsScene.configure(withMainRouter: router, forPage: .allTasks)
     default: ()
     }
-    return nil
+    scenesForPages[page] = vc
+    return vc
   }
   
 }

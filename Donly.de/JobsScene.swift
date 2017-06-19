@@ -10,8 +10,8 @@ import Foundation
 
 class JobsScene {
   
-  static func configure(withMainRouter router: MainRouterProtocol) -> JobsVC {
-    let viewModel = JobsViewModel(withMainRouter: router)
+  static func configure(withMainRouter router: MainRouterProtocol, forPage page: MainScene.MainPage) -> JobsVC {
+    let viewModel = JobsViewModel(withMainRouter: router, forPage: page)
     return JobsVC(withViewModel: viewModel)
   }
   
