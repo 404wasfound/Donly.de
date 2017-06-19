@@ -16,12 +16,16 @@ class MainVC: UIViewController {
   @IBOutlet private weak var messagesButton: TabBarButton!
   @IBAction private func messagesButtonPressed(_ sender: UIButton) {
     ///trigger smth on view model
+    viewModel?.page = .messages
+    loadViewForContainer()
     updateBar(forNewPage: MainScene.MainPage.messages)
   }
   
   @IBOutlet private weak var myTasksButton: TabBarButton!
   @IBAction private func myTasksButtonPressed(_ sender: UIButton) {
     ///
+    viewModel?.page = .myTasks
+    loadViewForContainer()
     updateBar(forNewPage: MainScene.MainPage.myTasks)
   }
   
@@ -69,7 +73,10 @@ class MainVC: UIViewController {
   func loadViewForContainer() {
     if let router = self.router, let vc = self.viewModel?.configureViewForContainer(withRouter: router) {
       addChildViewController(vc)
-      vc.view.frame = CGRect(x: 0, y: 0, width: contentContainer.frame.width, height: contentContainer.frame.height)
+      vc.view.frame = CGRect(x: self.view.frame.origin.x + self.view.frame.width, y: 0, width: contentContainer.frame.width, height: contentContainer.frame.height)
+      UIView.animate(withDuration: 0.2) {
+        vc.view.center.x = self.view.center.x
+      }
       contentContainer.clipsToBounds = true
       contentContainer.addSubview(vc.view)
     }

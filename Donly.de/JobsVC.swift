@@ -7,13 +7,24 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class JobsVC: UIViewController {
   
+  internal var viewModel: JobsViewModelProtocol?
+  
   override func viewDidLoad() {
     super.viewDidLoad()
-    
-    // Do any additional setup after loading the view.
+  }
+  
+  init(withViewModel viewModel: JobsViewModelProtocol) {
+    self.viewModel = viewModel
+    super.init(nibName: "JobsEmpty", bundle: nil)
+  }
+  
+  required init?(coder aDecoder: NSCoder) {
+    fatalError()
   }
 
 }

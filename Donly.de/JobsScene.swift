@@ -7,3 +7,12 @@
 //
 
 import Foundation
+
+class JobsScene {
+  
+  static func configure(withMainRouter router: MainRouterProtocol) -> JobsVC {
+    let viewModel = JobsViewModel(withMainRouter: router)
+    return JobsVC(withViewModel: viewModel)
+  }
+  
+}

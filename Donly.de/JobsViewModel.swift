@@ -7,3 +7,17 @@
 //
 
 import Foundation
+import RxSwift
+
+protocol JobsViewModelProtocol {
+  
+}
+
+class JobsViewModel: JobsViewModelProtocol {
+  
+  private var mainRouter: MainRouterProtocol?
+  
+  init(withMainRouter router: MainRouterProtocol) {
+    self.mainRouter = router
+  }
+}
