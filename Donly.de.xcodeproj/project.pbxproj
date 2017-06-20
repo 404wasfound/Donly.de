@@ -69,6 +69,8 @@
 		F4509D6B1EEC377300503DB1 /* ConversationScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4509D6A1EEC377300503DB1 /* ConversationScene.swift */; };
 		F4509D6D1EEC387600503DB1 /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4509D6C1EEC387600503DB1 /* MainRouter.swift */; };
 		F4509D6F1EEC405A00503DB1 /* ConversationMessagesAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4509D6E1EEC405A00503DB1 /* ConversationMessagesAPIRequest.swift */; };
+		F453B1491EF9C94300231059 /* JobsAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F453B1481EF9C94300231059 /* JobsAPIRequest.swift */; };
+		F453B14B1EF9CD6100231059 /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = F453B14A1EF9CD6100231059 /* Job.swift */; };
 		F46C464F1E8D90E8001FF145 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46C464E1E8D90E8001FF145 /* AppDelegate.swift */; };
 		F46C46561E8D90E8001FF145 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F46C46551E8D90E8001FF145 /* Assets.xcassets */; };
 		F46C46641E8D90E8001FF145 /* Donly_deTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46C46631E8D90E8001FF145 /* Donly_deTests.swift */; };
@@ -171,6 +173,8 @@
 		F4509D6A1EEC377300503DB1 /* ConversationScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationScene.swift; sourceTree = "<group>"; };
 		F4509D6C1EEC387600503DB1 /* MainRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
 		F4509D6E1EEC405A00503DB1 /* ConversationMessagesAPIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationMessagesAPIRequest.swift; sourceTree = "<group>"; };
+		F453B1481EF9C94300231059 /* JobsAPIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobsAPIRequest.swift; sourceTree = "<group>"; };
+		F453B14A1EF9CD6100231059 /* Job.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Job.swift; sourceTree = "<group>"; };
 		F46C464B1E8D90E8001FF145 /* Donly.de.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Donly.de.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F46C464E1E8D90E8001FF145 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F46C46551E8D90E8001FF145 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -497,6 +501,7 @@
 				F4509D6E1EEC405A00503DB1 /* ConversationMessagesAPIRequest.swift */,
 				F4C6618A1EED844F00413F34 /* SendMessageAPIRequest.swift */,
 				F44C00CA1EF1EA2400DAB511 /* UserDataAPIRequest.swift */,
+				F453B1481EF9C94300231059 /* JobsAPIRequest.swift */,
 			);
 			name = APIRequests;
 			sourceTree = "<group>";
@@ -508,6 +513,7 @@
 				F448D32F1EE6C81C006A7416 /* Message.swift */,
 				F43ECF5A1EE739C800F633E0 /* PhoneNumber.swift */,
 				F43ECF601EE8A8B800F633E0 /* Conversation.swift */,
+				F453B14A1EF9CD6100231059 /* Job.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -854,11 +860,13 @@
 				F448D3121EE0A6E3006A7416 /* OnboardingPermissionsScene.swift in Sources */,
 				F4F118A71E9919CA006D5A50 /* JSONSerializable.swift in Sources */,
 				F42157401EC741CF006441B3 /* OnboardingButton.swift in Sources */,
+				F453B14B1EF9CD6100231059 /* Job.swift in Sources */,
 				F40509CA1EF33E0F002FE4FB /* Date+Extensions.swift in Sources */,
 				F43ECF5E1EE75C4400F633E0 /* ConversationsTableCell.swift in Sources */,
 				F448D3101EE0A61C006A7416 /* OnboardingInfoScene.swift in Sources */,
 				F428B32A1E8FCFBF00CF64F6 /* ApplicationSettings.swift in Sources */,
 				F448D3271EE6C4C4006A7416 /* ConversationsVC.swift in Sources */,
+				F453B1491EF9C94300231059 /* JobsAPIRequest.swift in Sources */,
 				F448D3301EE6C81C006A7416 /* Message.swift in Sources */,
 				F448D3141EE0A846006A7416 /* OnboardingLoginScene.swift in Sources */,
 			);

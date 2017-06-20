@@ -20,6 +20,7 @@ enum Endpoint: String {
   case conversations = "dialogs"
   case messages = "messages"
   case users = "users"
+  case jobs = "jobs"
 }
 
 protocol APIRequest {
