@@ -10,14 +10,17 @@ import Foundation
 
 protocol MainRouterProtocol {
   func routeToConversation(_ conversation: Conversation)
+  func routeToAllJobs()
 }
 
 class MainRouter: MainRouterProtocol {
   
   unowned var mainViewController: MainVC
+  var viewModel: MainViewModelProtocol?
   
-  init(withMainViewcontroller vc: MainVC) {
+  init(withMainViewcontroller vc: MainVC, andViewModel viewModel: MainViewModelProtocol?) {
     self.mainViewController = vc
+    self.viewModel = viewModel
   }
   
   func routeToConversation(_ conversation: Conversation) {
@@ -25,6 +28,12 @@ class MainRouter: MainRouterProtocol {
     DispatchQueue.main.async {
       self.mainViewController.navigationController?.pushViewController(vc, animated: true)
     }
+  }
+  
+  func routeToAllJobs() {
+    self.viewModel?.page = .allTasks
+    self.mainViewController.loadViewForContainer()
+    self.mainViewController.updateBar(forNewPage: MainScene.MainPage.allTasks)
   }
   
 }

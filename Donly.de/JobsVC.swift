@@ -14,7 +14,7 @@ class JobsVC: UIViewController {
   
   @IBOutlet weak var jobSearchButton: UIButton!
   @IBAction func jobSearchButtonPressed(_ sender: UIButton!) {
-    ///
+    viewModel?.openAllJobsScreen()
   }
   
   internal var viewModel: JobsViewModelProtocol?

@@ -61,7 +61,7 @@ class MainVC: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    self.router = MainRouter(withMainViewcontroller: self)
+    self.router = MainRouter(withMainViewcontroller: self, andViewModel: self.viewModel)
     self.loadViewForContainer()
     self.setupBarUI()
     self.setupSlider(forPage: self.currentPage)

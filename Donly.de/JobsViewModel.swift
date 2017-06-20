@@ -11,6 +11,7 @@ import RxSwift
 
 protocol JobsViewModelProtocol {
   var page: MainScene.MainPage { get set }
+  func openAllJobsScreen()
 }
 
 class JobsViewModel: JobsViewModelProtocol {
@@ -22,4 +23,9 @@ class JobsViewModel: JobsViewModelProtocol {
     self.mainRouter = router
     self.page = page
   }
+  
+  func openAllJobsScreen() {
+    mainRouter?.routeToAllJobs()
+  }
+  
 }
