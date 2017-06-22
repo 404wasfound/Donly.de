@@ -10,8 +10,13 @@ import UIKit
 import RxSwift
 import RxCocoa
 
+protocol NotificationsVCProtocol {
+  func endRefreshing()
+}
+
 class NotificationsVC: UIViewController {
   
+  @IBOutlet weak var notificationsTable: UITableView!
   @IBOutlet weak var reloadButton: ReloadButton!
   @IBAction func reloadButtonPressed(_ sender: UIButton) {
     self.reloadData()
@@ -20,6 +25,12 @@ class NotificationsVC: UIViewController {
   internal var viewModel: NotificationsViewModelProtocol?
   internal var disposeBag = DisposeBag()
   internal var emptyView: UIView!
+  internal var mainViewConfigured: Bool = false
+  lazy var refreshControl: UIRefreshControl = {
+    let refreshControl = UIRefreshControl()
+    refreshControl.addTarget(self, action: #selector(NotificationsVC.handleRefresh(refreshControl:)), for: UIControlEvents.valueChanged)
+    return refreshControl
+  }()
   
   init(withViewModel viewModel: NotificationsViewModelProtocol) {
     self.viewModel = viewModel
@@ -32,6 +43,7 @@ class NotificationsVC: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    viewModel?.delegate = self
     viewModel?.getNotifications(forPull: false)
     setupEmptyView()
     setupBindings()
@@ -50,12 +62,96 @@ class NotificationsVC: UIViewController {
           self.emptyView.removeFromSuperview()
           return
         }
+        if self.mainViewConfigured { return }
+        self.configureMainView()
       }
     }).addDisposableTo(disposeBag)
   }
   
+  func configureMainView() {
+    DispatchQueue.main.async {
+      let nib = UINib(nibName: String(describing: NotificationsVC.self), bundle: nil)
+      if let view = nib.instantiate(withOwner: self, options: nil).first as? UIView {
+        self.configureTable()
+        self.mainViewConfigured = true
+        UIView.animate(withDuration: 0.3, animations: {
+          self.emptyView.alpha = 0.3
+          self.emptyView.removeFromSuperview()
+          self.view.alpha = 0.3
+          self.view = view
+          self.view.alpha = 1.0
+        })
+      }
+    }
+  }
+  
+  func configureTable() {
+    self.notificationsTable.delegate = self
+    self.notificationsTable.dataSource = self
+    self.notificationsTable.register(UINib(nibName: String(describing: NotificationsTableCell.self), bundle: nil), forCellReuseIdentifier: String(describing: NotificationsTableCell.self))
+    self.notificationsTable.addSubview(self.refreshControl)
+    self.notificationsTable.allowsMultipleSelectionDuringEditing = true
+  }
+  
+}
+
+extension NotificationsVC: UITableViewDelegate, UITableViewDataSource {
+
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    tableView.deselectRow(at: indexPath, animated: true)
+  }
+  
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: NotificationsTableCell.self), for: indexPath) as? NotificationsTableCell, let notifications = viewModel?.notifications.value else {
+      return UITableViewCell()
+    }
+    cell.configureCell(forNotification: notifications[indexPath.row])
+    return cell
+  }
+  
+  func numberOfSections(in tableView: UITableView) -> Int {
+    return 1
+  }
+  
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    guard let notifications = viewModel?.notifications.value else {
+      return 0
+    }
+    return notifications.count
+  }
+  
+  func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    return 80.0
+  }
+  
+  func handleRefresh(refreshControl: UIRefreshControl) {
+    viewModel?.getNotifications(forPull: true)
+  }
+  
   func reloadData() {
     self.viewModel?.getNotifications(forPull: false)
+  }
+  
+}
+
+extension NotificationsVC: NotificationsVCProtocol {
+  
+  func endRefreshing() {
+    print("Refresh is done!")
+    self.refreshMainView()
+    refreshControl.endRefreshing()
+  }
+  
+  func refreshMainView() {
+    if let notifications = viewModel?.notifications.value, notifications.isEmpty {
+      let nib = UINib(nibName: "NotificationsEmpty", bundle: nil)
+      if let view = nib.instantiate(withOwner: self, options: nil).first as? UIView {
+        self.view = view
+        self.mainViewConfigured = false
+      }
+    } else {
+      notificationsTable.reloadData()
+    }
   }
   
 }

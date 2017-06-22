@@ -71,6 +71,8 @@
 		F4509D6F1EEC405A00503DB1 /* ConversationMessagesAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4509D6E1EEC405A00503DB1 /* ConversationMessagesAPIRequest.swift */; };
 		F453B1491EF9C94300231059 /* JobsAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F453B1481EF9C94300231059 /* JobsAPIRequest.swift */; };
 		F453B14B1EF9CD6100231059 /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = F453B14A1EF9CD6100231059 /* Job.swift */; };
+		F46143B91EFC4C9F00E6F424 /* NotificationsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46143B81EFC4C9F00E6F424 /* NotificationsTableCell.swift */; };
+		F46143BB1EFC4D9D00E6F424 /* NotificationsTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F46143BA1EFC4D9C00E6F424 /* NotificationsTableCell.xib */; };
 		F462ABD61F17ED6700BB6C42 /* ReloadButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F462ABD51F17ED6700BB6C42 /* ReloadButton.swift */; };
 		F46C464F1E8D90E8001FF145 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46C464E1E8D90E8001FF145 /* AppDelegate.swift */; };
 		F46C46561E8D90E8001FF145 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F46C46551E8D90E8001FF145 /* Assets.xcassets */; };
@@ -192,6 +194,8 @@
 		F4509D6E1EEC405A00503DB1 /* ConversationMessagesAPIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationMessagesAPIRequest.swift; sourceTree = "<group>"; };
 		F453B1481EF9C94300231059 /* JobsAPIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobsAPIRequest.swift; sourceTree = "<group>"; };
 		F453B14A1EF9CD6100231059 /* Job.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Job.swift; sourceTree = "<group>"; };
+		F46143B81EFC4C9F00E6F424 /* NotificationsTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsTableCell.swift; sourceTree = "<group>"; };
+		F46143BA1EFC4D9C00E6F424 /* NotificationsTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NotificationsTableCell.xib; sourceTree = "<group>"; };
 		F462ABD51F17ED6700BB6C42 /* ReloadButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReloadButton.swift; sourceTree = "<group>"; };
 		F46C464B1E8D90E8001FF145 /* Donly.de.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Donly.de.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F46C464E1E8D90E8001FF145 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -587,8 +591,10 @@
 				F4F3B7871F169B680066FEB7 /* NotificationsScene.swift */,
 				F4F3B7831F169B470066FEB7 /* NotificationsVC.swift */,
 				F4F3B7891F169B750066FEB7 /* NotificationsViewModel.swift */,
+				F46143B81EFC4C9F00E6F424 /* NotificationsTableCell.swift */,
 				F4F3B7841F169B470066FEB7 /* NotificationsVC.xib */,
 				F4F3B78B1F169D990066FEB7 /* NotificationsEmpty.xib */,
+				F46143BA1EFC4D9C00E6F424 /* NotificationsTableCell.xib */,
 			);
 			name = Notifications;
 			sourceTree = "<group>";
@@ -727,6 +733,7 @@
 				F4F3B78C1F169D990066FEB7 /* NotificationsEmpty.xib in Resources */,
 				F42157391EC734A5006441B3 /* OnboardingInfoVC.xib in Resources */,
 				F46C46561E8D90E8001FF145 /* Assets.xcassets in Resources */,
+				F46143BB1EFC4D9D00E6F424 /* NotificationsTableCell.xib in Resources */,
 				F422683E1EC8681200075CBE /* OnboardingLoginVC.xib in Resources */,
 				F42157461EC7490D006441B3 /* OnboardingPermissionsVC.xib in Resources */,
 			);
@@ -920,6 +927,7 @@
 				F428B3351E8FD82D00CF64F6 /* SplashViewModel.swift in Sources */,
 				F4F3B7901F16A8280066FEB7 /* Notification.swift in Sources */,
 				F4A0B6BA1EFE9EDA00B6EE5B /* JobSubCategory.swift in Sources */,
+				F46143B91EFC4C9F00E6F424 /* NotificationsTableCell.swift in Sources */,
 				F4509D6F1EEC405A00503DB1 /* ConversationMessagesAPIRequest.swift in Sources */,
 				F421573B1EC73B56006441B3 /* OnboardingInfoViewModel.swift in Sources */,
 				F428B32C1E8FCFCB00CF64F6 /* ApplicationData.swift in Sources */,

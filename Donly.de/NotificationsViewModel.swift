@@ -12,6 +12,7 @@ import RxSwift
 protocol NotificationsViewModelProtocol {
   func getNotifications(forPull pull: Bool)
   var notifications: Variable<[Notification]?> { get set }
+  var delegate: NotificationsVCProtocol? { get set }
 }
 
 class NotificationsViewModel: NotificationsViewModelProtocol {
@@ -20,6 +21,7 @@ class NotificationsViewModel: NotificationsViewModelProtocol {
   private var mainVC: MainVCProtocol?
   var disposeBag = DisposeBag()
   var notifications = Variable<[Notification]?>(nil)
+  var delegate: NotificationsVCProtocol?
   
   init(withMainRouter router: MainRouterProtocol?, andMainVC main: MainVCProtocol?) {
     self.mainRouter = router
@@ -41,7 +43,7 @@ class NotificationsViewModel: NotificationsViewModelProtocol {
     }, onCompleted: { 
       self.mainVC?.hideIndicator()
       if pull {
-        /// call end refreshing on the VC
+        self.delegate?.endRefreshing()
       }
     }).addDisposableTo(disposeBag)
   }
