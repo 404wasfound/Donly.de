@@ -71,6 +71,7 @@
 		F4509D6F1EEC405A00503DB1 /* ConversationMessagesAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4509D6E1EEC405A00503DB1 /* ConversationMessagesAPIRequest.swift */; };
 		F453B1491EF9C94300231059 /* JobsAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F453B1481EF9C94300231059 /* JobsAPIRequest.swift */; };
 		F453B14B1EF9CD6100231059 /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = F453B14A1EF9CD6100231059 /* Job.swift */; };
+		F462ABD61F17ED6700BB6C42 /* ReloadButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F462ABD51F17ED6700BB6C42 /* ReloadButton.swift */; };
 		F46C464F1E8D90E8001FF145 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46C464E1E8D90E8001FF145 /* AppDelegate.swift */; };
 		F46C46561E8D90E8001FF145 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F46C46551E8D90E8001FF145 /* Assets.xcassets */; };
 		F46C46641E8D90E8001FF145 /* Donly_deTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46C46631E8D90E8001FF145 /* Donly_deTests.swift */; };
@@ -191,6 +192,7 @@
 		F4509D6E1EEC405A00503DB1 /* ConversationMessagesAPIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationMessagesAPIRequest.swift; sourceTree = "<group>"; };
 		F453B1481EF9C94300231059 /* JobsAPIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobsAPIRequest.swift; sourceTree = "<group>"; };
 		F453B14A1EF9CD6100231059 /* Job.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Job.swift; sourceTree = "<group>"; };
+		F462ABD51F17ED6700BB6C42 /* ReloadButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReloadButton.swift; sourceTree = "<group>"; };
 		F46C464B1E8D90E8001FF145 /* Donly.de.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Donly.de.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F46C464E1E8D90E8001FF145 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F46C46551E8D90E8001FF145 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -369,6 +371,7 @@
 		F448D3151EE0AE84006A7416 /* Main Scene */ = {
 			isa = PBXGroup;
 			children = (
+				F462ABD41F17ED4400BB6C42 /* Custom Views */,
 				F448D3241EE6C3CB006A7416 /* Conversations */,
 				F44AE64D1EF5809F00D8221E /* Jobs */,
 				F4F3B7821F169B120066FEB7 /* Notifications */,
@@ -437,6 +440,14 @@
 				F4509D651EEC328100503DB1 /* ConversationVC.xib */,
 			);
 			name = "Conversation Scene";
+			sourceTree = "<group>";
+		};
+		F462ABD41F17ED4400BB6C42 /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				F462ABD51F17ED6700BB6C42 /* ReloadButton.swift */,
+			);
+			name = "Custom Views";
 			sourceTree = "<group>";
 		};
 		F46C46421E8D90E8001FF145 = {
@@ -904,6 +915,7 @@
 				F44C00CB1EF1EA2400DAB511 /* UserDataAPIRequest.swift in Sources */,
 				F4509D661EEC328100503DB1 /* ConversationVC.swift in Sources */,
 				F428B33B1E943AF900CF64F6 /* LocationManager.swift in Sources */,
+				F462ABD61F17ED6700BB6C42 /* ReloadButton.swift in Sources */,
 				F4F118AD1E992BD3006D5A50 /* User.swift in Sources */,
 				F428B3351E8FD82D00CF64F6 /* SplashViewModel.swift in Sources */,
 				F4F3B7901F16A8280066FEB7 /* Notification.swift in Sources */,

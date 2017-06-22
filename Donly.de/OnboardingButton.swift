@@ -29,9 +29,10 @@ class OnboardingButton: UIButton {
   }
   
   private func setGreyButton() {
-    layer.borderWidth = 2.0
+    layer.borderWidth = 1.0
     layer.borderColor = UIColor.lightGray.cgColor
     layer.backgroundColor = UIColor(red: 0.949, green: 0.949, blue: 0.949, alpha: 1.00).cgColor
+    setTitleColor(.lightGray, for: .normal)
   }
 
 }

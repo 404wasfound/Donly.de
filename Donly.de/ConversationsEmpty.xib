@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ConversationsVC" customModule="Donly_de" customModuleProvider="target">
             <connections>
+                <outlet property="reloadButton" destination="23o-yg-TVe" id="JKE-sb-dIS"/>
                 <outlet property="view" destination="iN0-l3-epB" id="1em-mq-yB7"/>
             </connections>
         </placeholder>
@@ -63,11 +64,24 @@
                         <constraint firstItem="fzA-rb-Wgr" firstAttribute="leading" secondItem="wUM-i4-MTM" secondAttribute="leading" id="xGR-0r-TNl"/>
                     </constraints>
                 </stackView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="23o-yg-TVe" customClass="ReloadButton" customModule="Donly_de" customModuleProvider="target">
+                    <rect key="frame" x="112.5" y="440" width="150" height="50"/>
+                    <color key="backgroundColor" name="secondarySelectedControlColor" catalog="System" colorSpace="catalog"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="829-8j-CTK"/>
+                        <constraint firstAttribute="width" constant="150" id="FD2-ic-hLf"/>
+                    </constraints>
+                    <connections>
+                        <action selector="reloadButtonPressed:" destination="-1" eventType="touchUpInside" id="yEV-F4-uZS"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="23o-yg-TVe" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="91l-cD-P9e"/>
                 <constraint firstItem="wUM-i4-MTM" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="D4P-O4-Ogx"/>
                 <constraint firstItem="wUM-i4-MTM" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Z9e-3w-4pt"/>
+                <constraint firstItem="23o-yg-TVe" firstAttribute="top" secondItem="wUM-i4-MTM" secondAttribute="bottom" constant="32" id="h3J-pd-UGN"/>
             </constraints>
             <point key="canvasLocation" x="35.5" y="53.5"/>
         </view>

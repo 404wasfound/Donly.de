@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="JobsVC" customModule="Donly_de" customModuleProvider="target">
             <connections>
+                <outlet property="buttonsStackWidth" destination="VUD-dI-MxG" id="z77-Oa-LDN"/>
                 <outlet property="jobSearchButton" destination="psX-mE-Tnl" id="nsd-m4-nRj"/>
+                <outlet property="reloadButton" destination="EEh-mR-eDJ" id="vMw-P4-99t"/>
                 <outlet property="view" destination="iN0-l3-epB" id="IgI-YL-jKE"/>
             </connections>
         </placeholder>
@@ -64,23 +66,41 @@
                         <constraint firstAttribute="trailing" secondItem="Rdz-Kq-p52" secondAttribute="trailing" id="cWZ-0p-LYp"/>
                     </constraints>
                 </stackView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="psX-mE-Tnl">
-                    <rect key="frame" x="85" y="390.5" width="150" height="50"/>
-                    <color key="backgroundColor" red="0.0" green="0.81486002599999996" blue="0.60784313729999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="reH-pV-SAW">
+                    <rect key="frame" x="10" y="390.5" width="300" height="50"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EEh-mR-eDJ" customClass="ReloadButton" customModule="Donly_de" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="146" height="50"/>
+                            <color key="backgroundColor" name="secondarySelectedControlColor" catalog="System" colorSpace="catalog"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="B7t-8v-zUx"/>
+                            </constraints>
+                            <connections>
+                                <action selector="reloadButtonPressed:" destination="-1" eventType="touchUpInside" id="Avb-XA-bum"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="psX-mE-Tnl">
+                            <rect key="frame" x="154" y="0.0" width="146" height="50"/>
+                            <color key="backgroundColor" red="0.0" green="0.81486002599999996" blue="0.60784313729999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="KJq-s0-z1u"/>
+                            </constraints>
+                            <connections>
+                                <action selector="jobSearchButtonPressed:" destination="-1" eventType="touchUpInside" id="o0k-Wa-YJO"/>
+                            </connections>
+                        </button>
+                    </subviews>
                     <constraints>
-                        <constraint firstAttribute="height" constant="50" id="KJq-s0-z1u"/>
-                        <constraint firstAttribute="width" constant="150" id="shD-qr-kcG"/>
+                        <constraint firstAttribute="height" constant="50" id="8ct-sh-WQC"/>
+                        <constraint firstAttribute="width" constant="300" id="VUD-dI-MxG"/>
                     </constraints>
-                    <connections>
-                        <action selector="jobSearchButtonPressed:" destination="-1" eventType="touchUpInside" id="o0k-Wa-YJO"/>
-                    </connections>
-                </button>
+                </stackView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="aoy-0N-9op" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="OQz-Tv-Uc9"/>
-                <constraint firstItem="psX-mE-Tnl" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="PUt-dP-jeT"/>
-                <constraint firstItem="psX-mE-Tnl" firstAttribute="top" secondItem="aoy-0N-9op" secondAttribute="bottom" constant="32" id="j1e-iT-b9w"/>
+                <constraint firstItem="reH-pV-SAW" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="fZD-Aa-Ie5"/>
+                <constraint firstItem="reH-pV-SAW" firstAttribute="top" secondItem="aoy-0N-9op" secondAttribute="bottom" constant="32" id="gXo-WZ-SEr"/>
                 <constraint firstItem="aoy-0N-9op" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="l1X-ng-nlG"/>
             </constraints>
             <point key="canvasLocation" x="125" y="53"/>

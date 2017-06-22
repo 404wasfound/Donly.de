@@ -12,6 +12,11 @@ import RxCocoa
 
 class NotificationsVC: UIViewController {
   
+  @IBOutlet weak var reloadButton: ReloadButton!
+  @IBAction func reloadButtonPressed(_ sender: UIButton) {
+    self.reloadData()
+  }
+  
   internal var viewModel: NotificationsViewModelProtocol?
   internal var disposeBag = DisposeBag()
   internal var emptyView: UIView!
@@ -48,4 +53,9 @@ class NotificationsVC: UIViewController {
       }
     }).addDisposableTo(disposeBag)
   }
+  
+  func reloadData() {
+    self.viewModel?.getNotifications(forPull: false)
+  }
+  
 }

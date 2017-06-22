@@ -17,6 +17,10 @@ protocol ConversationsVCProtocol {
 class ConversationsVC: UIViewController {
   
   @IBOutlet weak var messagesTable: UITableView!
+  @IBOutlet weak var reloadButton: ReloadButton!
+  @IBAction func reloadButtonPressed(_ sender: UIButton) {
+    self.reloadData()
+  }
   
   internal var viewModel: ConversationsViewModelProtocol?
   internal var disposeBag = DisposeBag()
@@ -136,6 +140,10 @@ extension ConversationsVC: UITableViewDelegate, UITableViewDataSource {
   
   func handleRefresh(refreshControl: UIRefreshControl) {
     viewModel?.getConversations(forPull: true)
+  }
+  
+  func reloadData() {
+    self.viewModel?.getConversations(forPull: false)
   }
   
 }
