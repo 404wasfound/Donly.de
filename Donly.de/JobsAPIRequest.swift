@@ -15,24 +15,21 @@ final class JobsAPIRequest: APIRequestType {
   var idParameter: String?
   var parameters: [String : Any]
   var endpoint: Endpoint = .jobs
-  typealias ReturnType = Job
+  typealias ReturnType = [Job]
   
   init(withParameters parameters: [String: String] = [:], withIdParameter id: String? = nil) {
     self.parameters = parameters
     self.idParameter = id
   }
   
-  func process(jsonData: JSON) -> (result: Job?, error: APIClientError?) {
+  func process(jsonData: JSON) -> (result: [Job]?, error: APIClientError?) {
     print("JSON from \(String(describing: JobsAPIRequest.self)):")
     print(jsonData)
-    return (result: nil, error: nil)
+    let jsonJobsData = jsonData["items"]
+    guard let jobs: [Job] = deserialize(json: jsonJobsData) else {
+      return (result: nil, error: APIClientError.serializationJSONFailed)
+    }
+    return (result: jobs, error: nil)
   }
   
 }
-
-
-
-
-
-
-//http://update.donly.de/api/v1/jobs?filter=owner
