@@ -17,9 +17,8 @@ final class JobsAPIRequest: APIRequestType {
   var endpoint: Endpoint = .jobs
   typealias ReturnType = [Job]
   
-  init(withParameters parameters: [String: String] = [:], withIdParameter id: String? = nil) {
+  init(withParameters parameters: [String: String] = [:]) {
     self.parameters = parameters
-    self.idParameter = id
   }
   
   func process(jsonData: JSON) -> (result: [Job]?, error: APIClientError?) {

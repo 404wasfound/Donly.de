@@ -10,6 +10,12 @@ import UIKit
 import RxSwift
 import RxCocoa
 
+protocol JobsVCProtocol {
+  func showIndicator()
+  func hideIndicator()
+  func endRefreshing()
+}
+
 class JobsVC: UIViewController {
   
   @IBOutlet weak var jobSearchButton: UIButton!
@@ -18,9 +24,17 @@ class JobsVC: UIViewController {
   }
   
   internal var viewModel: JobsViewModelProtocol?
+  internal var disposeBag = DisposeBag()
+  lazy var refreshControl: UIRefreshControl = {
+    let refreshControl = UIRefreshControl()
+    refreshControl.addTarget(self, action: #selector(JobsVC.handleRefresh(refreshControl:)), for: UIControlEvents.valueChanged)
+    return refreshControl
+  }()
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    viewModel?.delegate = self
+    viewModel?.getJobs(forPull: false)
   }
   
   init(withViewModel viewModel: JobsViewModelProtocol) {
@@ -34,6 +48,12 @@ class JobsVC: UIViewController {
   
   override func viewWillAppear(_ animated: Bool) {
     setupJobSearchButton()
+  }
+  
+  func setupBindings() {
+    viewModel?.jobs.asObservable().bind(onNext: { jobs in
+      print("Here goes jobs on VC!. Jobs count: \(jobs?.count)")
+    }).addDisposableTo(disposeBag)
   }
   
   func setupJobSearchButton() {
@@ -51,5 +71,25 @@ class JobsVC: UIViewController {
     self.jobSearchButton.setTitle("Jobsuche", for: .normal)
     self.jobSearchButton.setTitleColor(.white, for: .normal)
   }
+  
+  func handleRefresh(refreshControl: UIRefreshControl) {
+    viewModel?.getJobs(forPull: true)
+  }
+  
+}
 
+extension JobsVC: JobsVCProtocol {
+  
+  func endRefreshing() {
+    print("Refresh is done!")
+  }
+  
+  func showIndicator() {
+    self.showActivityIndicator()
+  }
+  
+  func hideIndicator() {
+    self.hideActivityIndicator()
+  }
+  
 }

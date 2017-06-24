@@ -12,7 +12,7 @@ import RealmSwift
 
 enum JobStatus: String {
   case opened = "opened"
-  case inProgress = "in_progress"
+  case inProgress = "in_process"
   case finished = "finished"
   case blocked = "blocked"
 }
@@ -27,7 +27,7 @@ struct Job {
   var address: Address
   var cost: Cost
   var jobDate: JobDate
-  var performer: User
+  var performer: User?
   var owner: User
   var closedSetting: Bool
   var commentsBlocked: Bool
@@ -115,7 +115,7 @@ extension Job: JSONSerializable {
     if let categoryId = categoryId, let subCategoryId = subCategoryId, let jobCategoryType = JobCategoryType(rawValue: categoryId) {
       category = JobCategory(id: categoryId, jobCategoryType: jobCategoryType, subCategory: JobSubCategory(id: subCategoryId))
     }
-    guard let idParsed = id, let urlParsed = url, let statusParsed = status, let categoryParsed = category, let titleParsed = title, let descriptionParsed = description, let addressParsed = address, let costParsed = cost, let jobDateParsed = jobDate, let performerParsed = performer, let ownerParsed = owner else {
+    guard let idParsed = id, let urlParsed = url, let statusParsed = status, let categoryParsed = category, let titleParsed = title, let descriptionParsed = description, let addressParsed = address, let costParsed = cost, let jobDateParsed = jobDate, let ownerParsed = owner else {
       return nil
     }
     self.id = idParsed
@@ -127,7 +127,7 @@ extension Job: JSONSerializable {
     self.address = addressParsed
     self.cost = costParsed
     self.jobDate = jobDateParsed
-    self.performer = performerParsed
+    self.performer = performer
     self.owner = ownerParsed
     self.closedSetting = closedSetting
     self.commentsBlocked = commentsBlocked

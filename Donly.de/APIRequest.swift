@@ -53,6 +53,7 @@ extension APIRequest {
     }
     if let userData = appData.userData {
       request.addValue(userData.token, forHTTPHeaderField: "login-token")
+      print("login-token: \(userData.token)")
     }
     request.httpMethod = method.rawValue
     print("Firing request to the (\(String(describing: request.url?.absoluteString)))")

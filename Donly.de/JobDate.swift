@@ -30,7 +30,7 @@ extension JobDate: JSONSerializable {
     var type: JobDateType?
     for (key, value) : (String, JSON) in json {
       switch key {
-        case "dateTime":
+        case "datetime":
           if let dateRaw = value.int {
             dateTime = Date(timeIntervalSince1970: Double(dateRaw))
           }
