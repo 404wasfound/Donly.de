@@ -9,16 +9,26 @@
 import UIKit
 
 class JobsTableCell: UITableViewCell {
+
+  @IBOutlet private weak var jobCategoryImageView: UIImageView!
+  @IBOutlet private weak var jobCategoryBackground: UIView!
+  @IBOutlet private weak var jobTitleLabel: UILabel!
+  @IBOutlet private weak var jobStatusLabel: UILabel!
+  @IBOutlet private weak var jobStatusImageView: UIImageView!
   
   override func awakeFromNib() {
-    super.awakeFromNib()
-    // Initialization code
+    self.jobCategoryBackground.layer.cornerRadius = self.jobCategoryBackground.frame.width / 2
   }
   
-  override func setSelected(_ selected: Bool, animated: Bool) {
-    super.setSelected(selected, animated: animated)
-    
-    // Configure the view for the selected state
+  func configureCell(forJob job: Job) {
+    self.jobTitleLabel.text = job.title
+    self.jobStatusLabel.text = job.status.getStatusName()
+    if let statusImage = UIImage(named: job.status.getImageName()) {
+      self.jobStatusImageView.image = statusImage
+    }
+    if let categoryImage = UIImage(named: job.category.jobCategoryType.getImageName()) {
+      self.jobCategoryImageView.image = categoryImage
+    }
   }
   
 }

@@ -16,6 +16,9 @@ protocol JobsVCProtocol {
 
 class JobsVC: UIViewController {
   
+  @IBOutlet weak var jobsTable: UITableView!
+  @IBOutlet weak var listMapSwitch: UISegmentedControl!
+  @IBOutlet weak var listMapSwitchContainer: UIView!
   @IBOutlet weak var jobSearchButton: UIButton!
   @IBAction func jobSearchButtonPressed(_ sender: UIButton!) {
     viewModel?.openAllJobsScreen()
@@ -29,12 +32,6 @@ class JobsVC: UIViewController {
     return refreshControl
   }()
   
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    viewModel?.delegate = self
-    viewModel?.getJobs(forPull: false)
-  }
-  
   init(withViewModel viewModel: JobsViewModelProtocol) {
     self.viewModel = viewModel
     super.init(nibName: "JobsEmpty", bundle: nil)
@@ -44,14 +41,37 @@ class JobsVC: UIViewController {
     fatalError()
   }
   
-  override func viewWillAppear(_ animated: Bool) {
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    viewModel?.delegate = self
+    viewModel?.getJobs(forPull: false)
     setupJobSearchButton()
+    setupBindings()
   }
   
   func setupBindings() {
     viewModel?.jobs.asObservable().bind(onNext: { jobs in
-      print("Here goes jobs on VC!. Jobs count: \(String(describing: jobs?.count))")
+      if let _ = jobs {
+        DispatchQueue.main.async {
+          let nib = UINib(nibName: String(describing: JobsVC.self) , bundle: nil)
+          if let view = nib.instantiate(withOwner: self, options: nil).first as? UIView {
+            self.view = view
+            if self.viewModel?.page == .myTasks {
+              self.listMapSwitchContainer.isHidden = true
+            }
+          }
+          self.configureTable()
+        }
+      }
     }).addDisposableTo(disposeBag)
+  }
+  
+  func configureTable() {
+    self.jobsTable.delegate = self
+    self.jobsTable.dataSource = self
+    self.jobsTable.register(UINib(nibName: String(describing: JobsTableCell.self), bundle: nil), forCellReuseIdentifier: String(describing: JobsTableCell.self))
+    self.jobsTable.addSubview(self.refreshControl)
+    self.jobsTable.allowsMultipleSelectionDuringEditing = true
   }
   
   func setupJobSearchButton() {
@@ -70,6 +90,36 @@ class JobsVC: UIViewController {
     self.jobSearchButton.setTitleColor(.white, for: .normal)
   }
   
+}
+
+extension JobsVC: UITableViewDelegate, UITableViewDataSource {
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    tableView.deselectRow(at: indexPath, animated: true)
+  }
+  
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: JobsTableCell.self), for: indexPath) as? JobsTableCell, let jobs = viewModel?.jobs.value else {
+      return UITableViewCell()
+    }
+    cell.configureCell(forJob: jobs[indexPath.row])
+    return cell
+  }
+  
+  func numberOfSections(in tableView: UITableView) -> Int {
+    return 1
+  }
+  
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    guard let jobs = viewModel?.jobs.value else {
+      return 0
+    }
+    return jobs.count
+  }
+  
+  func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    return 80.0
+  }
+  
   func handleRefresh(refreshControl: UIRefreshControl) {
     viewModel?.getJobs(forPull: true)
   }
@@ -80,6 +130,8 @@ extension JobsVC: JobsVCProtocol {
   
   func endRefreshing() {
     print("Refresh is done!")
+    jobsTable.reloadData()
+    refreshControl.endRefreshing()
   }
   
 }

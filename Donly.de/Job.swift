@@ -15,6 +15,24 @@ enum JobStatus: String {
   case inProgress = "in_process"
   case finished = "finished"
   case blocked = "blocked"
+  
+  func getStatusName() -> String {
+    switch self {
+      case .opened: return "Waiting"
+      case .inProgress: return "In Progress"
+      case .finished: return "Completed"
+      case .blocked: return "Closed"
+    }
+  }
+  
+  func getImageName() -> String {
+    switch self {
+      case .finished: return "icon_job_status_finished"
+      case .inProgress: return "icon_job_status_inprogress"
+      case .blocked: return "icon_job_status_blocked"
+      case .opened: return "icon_job_status_waiting"
+    }
+  }
 }
 
 struct Job {

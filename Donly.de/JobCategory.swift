@@ -17,6 +17,17 @@ enum JobCategoryType: Int {
   case deliveryService = 6
   case transportationHelp = 7
   case otherServices = 8
+  
+  func getImageName() -> String {
+    switch self {
+      case .computerHelp: return "icon_job_it"
+      case .craftWork: return "icon_job_craft"
+      case .householdWork: return "icon_job_household"
+      case .deliveryService: return "icon_job_delivery"
+      case .transportationHelp: return "icon_job_transportation"
+      case .otherServices: return "icon_job_other"
+    }
+  }
 }
 
 
