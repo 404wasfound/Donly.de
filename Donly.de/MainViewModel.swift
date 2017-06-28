@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 protocol MainViewModelProtocol {
-  func configureViewForContainer(withRouter router: MainRouterProtocol) -> UIViewController?
+  func configureViewForContainer(withRouter router: MainRouterProtocol, andMainVC main: MainVCProtocol) -> UIViewController?
   var page: MainScene.MainPage { get set }
   var currentScreen: UIViewController? { get set }
 }
@@ -25,18 +25,18 @@ class MainViewModel: MainViewModelProtocol {
     self.page = page
   }
   
-  func configureViewForContainer(withRouter router: MainRouterProtocol) -> UIViewController? {
+  func configureViewForContainer(withRouter router: MainRouterProtocol, andMainVC main: MainVCProtocol) -> UIViewController? {
     if let vc = scenesForPages[page] {
       return vc
     }
     var vc: UIViewController?
     switch page {
     case .messages:
-      vc = ConversationsScene.configure(withMainRouter: router)
+      vc = ConversationsScene.configure(withMainRouter: router, andMainVC: main)
     case .myTasks:
-      vc = JobsScene.configure(withMainRouter: router, forPage: .myTasks)
+      vc = JobsScene.configure(withMainRouter: router, andMainVC: main, forPage: .myTasks)
     case .allTasks:
-      vc = JobsScene.configure(withMainRouter: router, forPage: .allTasks)
+      vc = JobsScene.configure(withMainRouter: router, andMainVC: main, forPage: .allTasks)
     default: ()
     }
     scenesForPages[page] = vc

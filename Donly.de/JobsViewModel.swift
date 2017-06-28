@@ -20,13 +20,15 @@ protocol JobsViewModelProtocol {
 class JobsViewModel: JobsViewModelProtocol {
   
   private var mainRouter: MainRouterProtocol?
+  private var mainVC: MainVCProtocol?
   var page: MainScene.MainPage
   var delegate: JobsVCProtocol?
   var disposeBag = DisposeBag()
   var jobs = Variable<[Job]?>(nil)
   
-  init(withMainRouter router: MainRouterProtocol, forPage page: MainScene.MainPage) {
+  init(withMainRouter router: MainRouterProtocol, andMainVC main: MainVCProtocol, forPage page: MainScene.MainPage) {
     self.mainRouter = router
+    self.mainVC = main
     self.page = page
   }
   
@@ -41,11 +43,11 @@ class JobsViewModel: JobsViewModelProtocol {
     } else if page == .allTasks {
       ///nothing for nowß
     }
-    delegate?.showIndicator()
+    mainVC?.showIndicator()
     let jobsRequest = JobsAPIRequest(withParameters: parameters)
     jobsRequest.send().subscribe(onNext: { result in
       if let error = result.error {
-        print("Some weird error")
+        print("Some weird error: \(error)")
       } else if let jobs = result.result {
         print("Number of jobs: \(jobs.count)")
         self.jobs.value = jobs
@@ -53,7 +55,7 @@ class JobsViewModel: JobsViewModelProtocol {
     }, onError: { error in
       ///
     }, onCompleted: { 
-      self.delegate?.hideIndicator()
+      self.mainVC?.hideIndicator()
       if pull {
         self.delegate?.endRefreshing()
       }

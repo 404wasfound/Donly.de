@@ -8,6 +8,11 @@
 
 import UIKit
 
+protocol MainVCProtocol {
+  func showIndicator()
+  func hideIndicator()
+}
+
 class MainVC: UIViewController {
   
   @IBOutlet weak var contentContainer: UIView!
@@ -80,7 +85,7 @@ class MainVC: UIViewController {
 /// Loading and animating related stuff
 extension MainVC {
   func loadViewForContainer() {
-    if let router = self.router, let vc = self.viewModel?.configureViewForContainer(withRouter: router) {
+    if let router = self.router, let vc = self.viewModel?.configureViewForContainer(withRouter: router, andMainVC: self) {
       addChildViewController(vc)
       performPageAnimation(forController: vc)
       viewModel?.currentScreen = vc
@@ -168,5 +173,16 @@ extension MainVC {
         self.sliderSelection.center.x = positionX
       }
     }
+  }
+}
+
+/// MainVCProtocol
+extension MainVC: MainVCProtocol {
+  func showIndicator() {
+    self.showActivityIndicator()
+  }
+  
+  func hideIndicator() {
+    self.hideActivityIndicator()
   }
 }

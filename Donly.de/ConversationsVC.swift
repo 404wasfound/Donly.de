@@ -11,8 +11,6 @@ import RxSwift
 import RxCocoa
 
 protocol ConversationsVCProtocol {
-  func showIndicator()
-  func hideIndicator()
   func endRefreshing()
 }
 
@@ -123,14 +121,6 @@ extension ConversationsVC: ConversationsVCProtocol {
     print("Refresh is done!")
     messagesTable.reloadData()
     refreshControl.endRefreshing()
-  }
-  
-  func showIndicator() {
-    self.showActivityIndicator()
-  }
-  
-  func hideIndicator() {
-    self.hideActivityIndicator()
   }
   
 }

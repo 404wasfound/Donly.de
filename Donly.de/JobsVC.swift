@@ -11,8 +11,6 @@ import RxSwift
 import RxCocoa
 
 protocol JobsVCProtocol {
-  func showIndicator()
-  func hideIndicator()
   func endRefreshing()
 }
 
@@ -52,7 +50,7 @@ class JobsVC: UIViewController {
   
   func setupBindings() {
     viewModel?.jobs.asObservable().bind(onNext: { jobs in
-      print("Here goes jobs on VC!. Jobs count: \(jobs?.count)")
+      print("Here goes jobs on VC!. Jobs count: \(String(describing: jobs?.count))")
     }).addDisposableTo(disposeBag)
   }
   
@@ -82,14 +80,6 @@ extension JobsVC: JobsVCProtocol {
   
   func endRefreshing() {
     print("Refresh is done!")
-  }
-  
-  func showIndicator() {
-    self.showActivityIndicator()
-  }
-  
-  func hideIndicator() {
-    self.hideActivityIndicator()
   }
   
 }
