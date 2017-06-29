@@ -10,6 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 import TwicketSegmentedControl
+import MapKit
 
 protocol JobsVCProtocol {
   func endRefreshing()
@@ -18,7 +19,6 @@ protocol JobsVCProtocol {
 class JobsVC: UIViewController {
   
   @IBOutlet weak var jobsTable: UITableView!
-  @IBOutlet weak var listMapSwitchContainer: UIView!
   @IBOutlet weak var jobSearchButton: UIButton!
   @IBAction func jobSearchButtonPressed(_ sender: UIButton!) {
     viewModel?.openAllJobsScreen()
@@ -27,6 +27,7 @@ class JobsVC: UIViewController {
   internal var viewModel: JobsViewModelProtocol?
   internal var disposeBag = DisposeBag()
   internal var listMapSwitch = TwicketSegmentedControl()
+  internal var mapView: MKMapView?
   lazy var refreshControl: UIRefreshControl = {
     let refreshControl = UIRefreshControl()
     refreshControl.addTarget(self, action: #selector(JobsVC.handleRefresh(refreshControl:)), for: UIControlEvents.valueChanged)
@@ -57,8 +58,8 @@ class JobsVC: UIViewController {
           let nib = UINib(nibName: String(describing: JobsVC.self) , bundle: nil)
           if let view = nib.instantiate(withOwner: self, options: nil).first as? UIView {
             self.view = view
-            self.configureListMapSwitchView()
             self.configureTable()
+            self.configureListMapSwitchView()
           }
         }
       }
@@ -67,17 +68,18 @@ class JobsVC: UIViewController {
   
   func configureListMapSwitchView() {
     if self.viewModel?.page == .myTasks {
-      self.listMapSwitchContainer.isHidden = true
+      self.listMapSwitch.isHidden = true
     } else {
       let segments = ["List", "Map"]
-      let frame = CGRect(x: 0, y: 0, width: 300, height: 30)
+      let frame = CGRect(x: self.view.center.x - 150, y: 4, width: 300, height: 30)
       self.listMapSwitch.frame = frame
-      self.listMapSwitch.center.x = self.view.center.x
-      self.listMapSwitch.center.y = 20.0
       self.listMapSwitch.setSegmentItems(segments)
       self.listMapSwitch.delegate = self
       self.listMapSwitch.sliderBackgroundColor = donlyColor
-      self.listMapSwitchContainer.addSubview(self.listMapSwitch)
+      self.listMapSwitch.backgroundColor = UIColor.clear
+      self.listMapSwitch.isSliderShadowHidden = true
+      self.view.addSubview(self.listMapSwitch)
+      self.jobsTable.contentInset = UIEdgeInsetsMake(29, 0, 0, 0)
     }
   }
   
@@ -150,7 +152,24 @@ extension JobsVC: JobsVCProtocol, TwicketSegmentedControlDelegate {
   }
   
   func didSelect(_ segmentIndex: Int) {
-    /// Nothing for now
+    if segmentIndex == 1 {
+      if let _ = self.mapView {
+        self.mapView?.isHidden = false
+      } else {
+        self.mapView = MKMapView()
+        self.mapView?.frame = self.jobsTable.frame
+        guard let map = self.mapView else {
+          return
+        }
+        self.view.addSubview(map)
+        self.view.bringSubview(toFront: self.listMapSwitch)
+        map.isHidden = false
+      }
+    } else {
+      if let _ = self.mapView {
+        self.mapView?.isHidden = true
+      }
+    }
   }
   
 }
