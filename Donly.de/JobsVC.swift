@@ -60,10 +60,14 @@ class JobsVC: UIViewController {
         DispatchQueue.main.async {
           let nib = UINib(nibName: String(describing: JobsVC.self) , bundle: nil)
           if let view = nib.instantiate(withOwner: self, options: nil).first as? UIView {
-            self.view = view
             self.configureTable()
             self.configureListMapSwitchView()
             self.mainViewConfigured = true
+            UIView.animate(withDuration: 0.5, animations: {
+              self.view.alpha = 0.3
+              self.view = view
+              self.view.alpha = 1.0
+            })
           }
         }
       }
