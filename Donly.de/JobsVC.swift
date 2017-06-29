@@ -79,7 +79,8 @@ class JobsVC: UIViewController {
       self.listMapSwitch.backgroundColor = UIColor.clear
       self.listMapSwitch.isSliderShadowHidden = true
       self.view.addSubview(self.listMapSwitch)
-      self.jobsTable.contentInset = UIEdgeInsetsMake(29, 0, 0, 0)
+      self.mapView = nil
+      self.jobsTable.contentInset = UIEdgeInsetsMake(30, 0, 0, 0)
     }
   }
   
