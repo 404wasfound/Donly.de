@@ -32,7 +32,7 @@ enum JobStatus: String {
       case .blocked: return "icon_job_status_blocked"
       case .opened: return "icon_job_status_waiting"
     }
-  }
+  }  
 }
 
 struct Job {

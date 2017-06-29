@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import TwicketSegmentedControl
 
 protocol JobsVCProtocol {
   func endRefreshing()
@@ -17,7 +18,6 @@ protocol JobsVCProtocol {
 class JobsVC: UIViewController {
   
   @IBOutlet weak var jobsTable: UITableView!
-  @IBOutlet weak var listMapSwitch: UISegmentedControl!
   @IBOutlet weak var listMapSwitchContainer: UIView!
   @IBOutlet weak var jobSearchButton: UIButton!
   @IBAction func jobSearchButtonPressed(_ sender: UIButton!) {
@@ -26,6 +26,7 @@ class JobsVC: UIViewController {
   
   internal var viewModel: JobsViewModelProtocol?
   internal var disposeBag = DisposeBag()
+  internal var listMapSwitch = TwicketSegmentedControl()
   lazy var refreshControl: UIRefreshControl = {
     let refreshControl = UIRefreshControl()
     refreshControl.addTarget(self, action: #selector(JobsVC.handleRefresh(refreshControl:)), for: UIControlEvents.valueChanged)
@@ -56,14 +57,28 @@ class JobsVC: UIViewController {
           let nib = UINib(nibName: String(describing: JobsVC.self) , bundle: nil)
           if let view = nib.instantiate(withOwner: self, options: nil).first as? UIView {
             self.view = view
-            if self.viewModel?.page == .myTasks {
-              self.listMapSwitchContainer.isHidden = true
-            }
+            self.configureListMapSwitchView()
+            self.configureTable()
           }
-          self.configureTable()
         }
       }
     }).addDisposableTo(disposeBag)
+  }
+  
+  func configureListMapSwitchView() {
+    if self.viewModel?.page == .myTasks {
+      self.listMapSwitchContainer.isHidden = true
+    } else {
+      let segments = ["List", "Map"]
+      let frame = CGRect(x: 0, y: 0, width: 300, height: 30)
+      self.listMapSwitch.frame = frame
+      self.listMapSwitch.center.x = self.view.center.x
+      self.listMapSwitch.center.y = 20.0
+      self.listMapSwitch.setSegmentItems(segments)
+      self.listMapSwitch.delegate = self
+      self.listMapSwitch.sliderBackgroundColor = donlyColor
+      self.listMapSwitchContainer.addSubview(self.listMapSwitch)
+    }
   }
   
   func configureTable() {
@@ -126,12 +141,16 @@ extension JobsVC: UITableViewDelegate, UITableViewDataSource {
   
 }
 
-extension JobsVC: JobsVCProtocol {
+extension JobsVC: JobsVCProtocol, TwicketSegmentedControlDelegate {
   
   func endRefreshing() {
     print("Refresh is done!")
     jobsTable.reloadData()
     refreshControl.endRefreshing()
+  }
+  
+  func didSelect(_ segmentIndex: Int) {
+    /// Nothing for now
   }
   
 }

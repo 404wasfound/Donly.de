@@ -23,6 +23,7 @@ class JobsTableCell: UITableViewCell {
   func configureCell(forJob job: Job) {
     self.jobTitleLabel.text = job.title
     self.jobStatusLabel.text = job.status.getStatusName()
+    self.jobCategoryBackground.backgroundColor = job.category.jobCategoryType.getColor()
     if let statusImage = UIImage(named: job.status.getImageName()) {
       self.jobStatusImageView.image = statusImage
     }

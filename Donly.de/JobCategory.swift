@@ -28,6 +28,17 @@ enum JobCategoryType: Int {
       case .otherServices: return "icon_job_other"
     }
   }
+  
+  func getColor() -> UIColor {
+    switch self {
+      case .computerHelp: return UIColor(red: 0.506, green: 0.231, blue: 0.737, alpha: 1.0)
+      case .craftWork: return UIColor(red:1.000, green:0.357, blue:0.196, alpha:1.00)
+      case .householdWork: return UIColor(red:0.000, green:0.765, blue:0.984, alpha:1.00)
+      case .deliveryService: return UIColor(red:1.000, green:0.000, blue:0.627, alpha:1.00)
+      case .transportationHelp: return UIColor(red:0.000, green:0.706, blue:0.510, alpha:1.00)
+      case .otherServices: return UIColor(red:0.416, green:0.416, blue:0.416, alpha:1.00)
+    }
+  }
 }
 
 

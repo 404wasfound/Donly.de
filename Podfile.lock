@@ -14,6 +14,7 @@ PODS:
     - RxSwift (~> 3.4)
   - RxSwift (3.4.1)
   - SwiftyJSON (3.1.4)
+  - TwicketSegmentedControl (0.1.2)
 
 DEPENDENCIES:
   - Alamofire
@@ -24,6 +25,7 @@ DEPENDENCIES:
   - RxCocoa
   - RxSwift
   - SwiftyJSON
+  - TwicketSegmentedControl
 
 SPEC CHECKSUMS:
   Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
@@ -36,7 +38,8 @@ SPEC CHECKSUMS:
   RxCocoa: a8a5f1d061d0043e28f56976829f31ce63e8eb09
   RxSwift: 656f8fbeca5bc372121a72d9ebdd3cd3bc0ffade
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
+  TwicketSegmentedControl: 6d7a4cf243657e0ac3f00d06d873a25334c04042
 
-PODFILE CHECKSUM: ef77c6ecc3af24e1c12ffd61191aaefcb7343e5f
+PODFILE CHECKSUM: d02b4ab30cb89af4fdb2f9e832b3137cebcee4cb
 
 COCOAPODS: 1.2.0
