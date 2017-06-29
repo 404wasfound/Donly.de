@@ -20,6 +20,7 @@ class ConversationsVC: UIViewController {
   
   internal var viewModel: ConversationsViewModelProtocol?
   internal var disposeBag = DisposeBag()
+  internal var mainViewConfigured: Bool = false
   lazy var refreshControl: UIRefreshControl = {
     let refreshControl = UIRefreshControl()
     refreshControl.addTarget(self, action: #selector(ConversationsVC.handleRefresh(refreshControl:)), for: UIControlEvents.valueChanged)
@@ -45,12 +46,14 @@ class ConversationsVC: UIViewController {
   func setupBindings() {
     viewModel?.conversations.asObservable().bind(onNext: { conversations in
       if let _ = conversations {
+        if self.mainViewConfigured { return }
         DispatchQueue.main.async {
           let nib = UINib(nibName: String(describing: ConversationsVC.self), bundle: nil)
           if let view = nib.instantiate(withOwner: self, options: nil).first as? UIView {
             self.view = view
+            self.configureTable()
+            self.mainViewConfigured = true
           }
-          self.configureTable()
         }
       }
     }).addDisposableTo(disposeBag)

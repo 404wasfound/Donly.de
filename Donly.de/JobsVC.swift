@@ -28,6 +28,7 @@ class JobsVC: UIViewController {
   internal var disposeBag = DisposeBag()
   internal var listMapSwitch = TwicketSegmentedControl()
   internal var mapView: MKMapView?
+  internal var mainViewConfigured: Bool = false
   lazy var refreshControl: UIRefreshControl = {
     let refreshControl = UIRefreshControl()
     refreshControl.addTarget(self, action: #selector(JobsVC.handleRefresh(refreshControl:)), for: UIControlEvents.valueChanged)
@@ -54,12 +55,15 @@ class JobsVC: UIViewController {
   func setupBindings() {
     viewModel?.jobs.asObservable().bind(onNext: { jobs in
       if let _ = jobs {
+        self.mapView = nil
+        if self.mainViewConfigured { return }
         DispatchQueue.main.async {
           let nib = UINib(nibName: String(describing: JobsVC.self) , bundle: nil)
           if let view = nib.instantiate(withOwner: self, options: nil).first as? UIView {
             self.view = view
             self.configureTable()
             self.configureListMapSwitchView()
+            self.mainViewConfigured = true
           }
         }
       }
@@ -79,7 +83,6 @@ class JobsVC: UIViewController {
       self.listMapSwitch.backgroundColor = UIColor.clear
       self.listMapSwitch.isSliderShadowHidden = true
       self.view.addSubview(self.listMapSwitch)
-      self.mapView = nil
       self.jobsTable.contentInset = UIEdgeInsetsMake(30, 0, 0, 0)
     }
   }
