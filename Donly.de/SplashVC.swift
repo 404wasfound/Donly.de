@@ -42,16 +42,7 @@ class SplashVC: UIViewController {
   func setupBindings() {
     viewModel.nextPage.asObservable()
       .bind(onNext: { _ in
-        DispatchQueue.main.async {
-          UIView.animate(withDuration: 0.3, animations: {
-            self.view.alpha = 0.5
-            self.view.backgroundColor = .white
-          }, completion: { finished in
-            if finished {
-              self.setupFirstScene()
-            }
-          })
-        }
+        self.setupFirstScene()
       }).addDisposableTo(disposeBag)
   }
   

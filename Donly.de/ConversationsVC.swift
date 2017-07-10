@@ -21,6 +21,7 @@ class ConversationsVC: UIViewController {
   internal var viewModel: ConversationsViewModelProtocol?
   internal var disposeBag = DisposeBag()
   internal var mainViewConfigured: Bool = false
+  internal var emptyView: UIView!
   lazy var refreshControl: UIRefreshControl = {
     let refreshControl = UIRefreshControl()
     refreshControl.addTarget(self, action: #selector(ConversationsVC.handleRefresh(refreshControl:)), for: UIControlEvents.valueChanged)
@@ -40,27 +41,44 @@ class ConversationsVC: UIViewController {
     super.viewDidLoad()
     viewModel?.delegate = self
     viewModel?.getConversations(forPull: false)
+    setupEmptyView()
     setupBindings()
+  }
+  
+  func setupEmptyView() {
+    self.emptyView = UIView(frame: self.view.frame)
+    self.emptyView.backgroundColor = .white
+    self.view.addSubview(self.emptyView)
   }
   
   func setupBindings() {
     viewModel?.conversations.asObservable().bind(onNext: { conversations in
-      if let _ = conversations {
-        if self.mainViewConfigured { return }
-        DispatchQueue.main.async {
-          let nib = UINib(nibName: String(describing: ConversationsVC.self), bundle: nil)
-          if let view = nib.instantiate(withOwner: self, options: nil).first as? UIView {
-            self.configureTable()
-            self.mainViewConfigured = true
-            UIView.animate(withDuration: 0.5, animations: {
-              self.view.alpha = 0.3
-              self.view = view
-              self.view.alpha = 1.0
-            })
-          }
+      if let newConversations = conversations {
+        guard newConversations.count > 0 else {
+          self.emptyView.removeFromSuperview()
+          return
         }
+        if self.mainViewConfigured { return }
+        self.configureMainView()
       }
     }).addDisposableTo(disposeBag)
+  }
+  
+  func configureMainView() {
+    DispatchQueue.main.async {
+      let nib = UINib(nibName: String(describing: ConversationsVC.self), bundle: nil)
+      if let view = nib.instantiate(withOwner: self, options: nil).first as? UIView {
+        self.configureTable()
+        self.mainViewConfigured = true
+        UIView.animate(withDuration: 0.3, animations: {
+          self.emptyView.alpha = 0.3
+          self.emptyView.removeFromSuperview()
+          self.view.alpha = 0.3
+          self.view = view
+          self.view.alpha = 1.0
+        })
+      }
+    }
   }
   
   func configureTable() {

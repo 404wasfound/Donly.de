@@ -29,6 +29,7 @@ class JobsVC: UIViewController {
   internal var listMapSwitch = TwicketSegmentedControl()
   internal var mapView: MKMapView?
   internal var mainViewConfigured: Bool = false
+  internal var emptyView: UIView!
   lazy var refreshControl: UIRefreshControl = {
     let refreshControl = UIRefreshControl()
     refreshControl.addTarget(self, action: #selector(JobsVC.handleRefresh(refreshControl:)), for: UIControlEvents.valueChanged)
@@ -49,29 +50,46 @@ class JobsVC: UIViewController {
     viewModel?.delegate = self
     viewModel?.getJobs(forPull: false)
     setupJobSearchButton()
+    setupEmptyView()
     setupBindings()
+  }
+  
+  func setupEmptyView() {
+    self.emptyView = UIView(frame: self.view.frame)
+    self.emptyView.backgroundColor = .white
+    self.view.addSubview(self.emptyView)
   }
   
   func setupBindings() {
     viewModel?.jobs.asObservable().bind(onNext: { jobs in
-      if let _ = jobs {
+      if let newJobs = jobs {
         self.mapView = nil
-        if self.mainViewConfigured { return }
-        DispatchQueue.main.async {
-          let nib = UINib(nibName: String(describing: JobsVC.self) , bundle: nil)
-          if let view = nib.instantiate(withOwner: self, options: nil).first as? UIView {
-            self.configureTable()
-            self.configureListMapSwitchView()
-            self.mainViewConfigured = true
-            UIView.animate(withDuration: 0.5, animations: {
-              self.view.alpha = 0.3
-              self.view = view
-              self.view.alpha = 1.0
-            })
-          }
+        guard newJobs.count > 0 else {
+          self.emptyView.removeFromSuperview()
+          return
         }
+        if self.mainViewConfigured { return }
+        self.configureMainView()
       }
     }).addDisposableTo(disposeBag)
+  }
+  
+  func configureMainView() {
+    DispatchQueue.main.async {
+      let nib = UINib(nibName: String(describing: JobsVC.self) , bundle: nil)
+      if let view = nib.instantiate(withOwner: self, options: nil).first as? UIView {
+        self.configureTable()
+        self.configureListMapSwitchView()
+        self.mainViewConfigured = true
+        UIView.animate(withDuration: 0.3, animations: {
+          self.emptyView.alpha = 0.3
+          self.emptyView.removeFromSuperview()
+          self.view.alpha = 0.3
+          self.view = view
+          self.view.alpha = 1.0
+        })
+      }
+    }
   }
   
   func configureListMapSwitchView() {
@@ -87,7 +105,7 @@ class JobsVC: UIViewController {
       self.listMapSwitch.backgroundColor = UIColor.clear
       self.listMapSwitch.isSliderShadowHidden = true
       self.view.addSubview(self.listMapSwitch)
-      self.jobsTable.contentInset = UIEdgeInsetsMake(30, 0, 0, 0)
+      self.jobsTable.contentInset = UIEdgeInsetsMake(46, 0, 0, 0)
     }
   }
   
