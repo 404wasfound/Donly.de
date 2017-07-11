@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OnboardingLoginVC" customModule="Donly_de" customModuleProvider="target">
             <connections>
+                <outlet property="donlyLogoImageView" destination="qaf-a2-7m5" id="KyR-3u-1vl"/>
                 <outlet property="loginButton" destination="akY-JR-Di7" id="c8U-Vl-vX1"/>
                 <outlet property="loginTextfield" destination="WaR-Eh-iXM" id="MLc-NK-B6f"/>
                 <outlet property="passwordTextfield" destination="ir7-N4-1zb" id="XdG-uD-kFU"/>

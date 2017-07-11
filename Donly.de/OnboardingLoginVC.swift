@@ -20,6 +20,7 @@ protocol OnboardingLoginVCProtocol {
 class OnboardingLoginVC: UIViewController {
 
 //  @IBOutlet weak var scrollView: UIScrollView!
+  @IBOutlet weak var donlyLogoImageView: UIImageView!
   @IBOutlet private weak var loginTextfield: UITextField!
   @IBOutlet private weak var passwordTextfield: UITextField!
   @IBOutlet private weak var loginButton: OnboardingButton!
@@ -27,6 +28,7 @@ class OnboardingLoginVC: UIViewController {
   
   internal var viewModel: OnboardingLoginViewModelProtocol?
   internal var disposeBag = DisposeBag()
+  internal var viewIsMovedUp: Bool = false
 //  internal var activityIndicator: NVActivityIndicatorView?
 //  fileprivate var activeField: UITextField?
 
@@ -50,11 +52,11 @@ class OnboardingLoginVC: UIViewController {
   }
   
   override func viewWillAppear(_ animated: Bool) {
-//    registerForKeyboardNotifications()
+    registerForKeyboardNotifications()
   }
   
   override func viewWillDisappear(_ animated: Bool) {
-//    deregisterFromKeyboardNotifications()
+    deregisterFromKeyboardNotifications()
   }
   
   func setupUI() {
@@ -95,13 +97,13 @@ class OnboardingLoginVC: UIViewController {
 
 extension OnboardingLoginVC: UITextFieldDelegate {
   
-//  func textFieldDidBeginEditing(_ textField: UITextField) {
+  func textFieldDidBeginEditing(_ textField: UITextField) {
 //    self.activeField = textField
-//  }
-// 
-//  func textFieldDidEndEditing(_ textField: UITextField) {
+  }
+ 
+  func textFieldDidEndEditing(_ textField: UITextField) {
 //    self.activeField = nil
-//  }
+  }
 
   func textFieldShouldReturn(_ textField: UITextField) -> Bool {
     self.view.endEditing(true)
@@ -147,18 +149,37 @@ extension OnboardingLoginVC: OnboardingLoginVCProtocol {
 
 extension OnboardingLoginVC {
   
-//  func registerForKeyboardNotifications(){
-//    //Adding notifies on keyboard appearing
-//    NotificationCenter.default.addObserver(self, selector: #selector(keyboardWasShown(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-//    NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillBeHidden(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
-//  }
-//  
-//  func deregisterFromKeyboardNotifications(){
-//    //Removing notifies on keyboard appearing
-//    NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-//    NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)
-//  }
-//  
+  func registerForKeyboardNotifications(){
+    NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShown(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillBeHidden(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+  }
+  
+  func deregisterFromKeyboardNotifications(){
+    NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+    NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+  }
+  
+  func keyboardWillShown(notification: NSNotification) {
+    if !self.viewIsMovedUp {
+      self.viewIsMovedUp = true
+      UIView.animate(withDuration: 0.5) {
+        self.view.frame.origin.y = self.view.frame.origin.y - 60
+        self.donlyLogoImageView.frame.origin.y = self.donlyLogoImageView.frame.origin.y + 45
+      }
+    }
+  }
+  
+  func keyboardWillBeHidden(notification: NSNotification) {
+    if self.viewIsMovedUp {
+      self.viewIsMovedUp = false
+      UIView.animate(withDuration: 0.5) {
+        self.view.frame.origin.y = self.view.frame.origin.y + 60
+        self.donlyLogoImageView.frame.origin.y = self.donlyLogoImageView.frame.origin.y - 45
+      }
+    }
+  }
+  
+//
 //  func keyboardWasShown(notification: NSNotification){
 //    //Need to calculate keyboard exact size due to Apple suggestions
 //    self.scrollView.isScrollEnabled = true
