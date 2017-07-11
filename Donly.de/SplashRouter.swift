@@ -34,9 +34,8 @@ class SplashRouter {
       appDelegate.window?.rootViewController = navController
     case .login:
       let vc = OnboardingLoginScene.configure()
-      let navController = UINavigationController()
-      navController.viewControllers = [vc]
-      appDelegate.window?.rootViewController = navController
+      appDelegate.window?.rootViewController = vc
+      appDelegate.window?.makeKeyAndVisible()
     }
     appDelegate.window?.makeKeyAndVisible()
   }
