@@ -37,6 +37,8 @@ class MainViewModel: MainViewModelProtocol {
       vc = JobsScene.configure(withMainRouter: router, andMainVC: main, forPage: .myTasks)
     case .allTasks:
       vc = JobsScene.configure(withMainRouter: router, andMainVC: main, forPage: .allTasks)
+    case .profile:
+      vc = ProfileScene.configure(withMainRouter: router)
     default: ()
     }
     scenesForPages[page] = vc

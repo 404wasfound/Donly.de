@@ -87,6 +87,10 @@
 		F4F118A71E9919CA006D5A50 /* JSONSerializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F118A61E9919CA006D5A50 /* JSONSerializable.swift */; };
 		F4F118AA1E99289B006D5A50 /* UserLoginAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F118A91E99289B006D5A50 /* UserLoginAPIRequest.swift */; };
 		F4F118AD1E992BD3006D5A50 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F118AC1E992BD3006D5A50 /* User.swift */; };
+		F4F3B77C1F1561020066FEB7 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F3B77A1F1561020066FEB7 /* ProfileVC.swift */; };
+		F4F3B77D1F1561020066FEB7 /* ProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4F3B77B1F1561020066FEB7 /* ProfileVC.xib */; };
+		F4F3B77F1F1561480066FEB7 /* ProfileScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F3B77E1F1561480066FEB7 /* ProfileScene.swift */; };
+		F4F3B7811F15615B0066FEB7 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F3B7801F15615B0066FEB7 /* ProfileViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -202,6 +206,10 @@
 		F4F118A61E9919CA006D5A50 /* JSONSerializable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONSerializable.swift; sourceTree = "<group>"; };
 		F4F118A91E99289B006D5A50 /* UserLoginAPIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserLoginAPIRequest.swift; sourceTree = "<group>"; };
 		F4F118AC1E992BD3006D5A50 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		F4F3B77A1F1561020066FEB7 /* ProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		F4F3B77B1F1561020066FEB7 /* ProfileVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileVC.xib; sourceTree = "<group>"; };
+		F4F3B77E1F1561480066FEB7 /* ProfileScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileScene.swift; sourceTree = "<group>"; };
+		F4F3B7801F15615B0066FEB7 /* ProfileViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -347,6 +355,7 @@
 		F448D3151EE0AE84006A7416 /* Main Scene */ = {
 			isa = PBXGroup;
 			children = (
+				F4F3B7791F15607F0066FEB7 /* Profile */,
 				F44AE64D1EF5809F00D8221E /* Jobs */,
 				F448D3241EE6C3CB006A7416 /* Conversations */,
 				F448D31A1EE0AFFD006A7416 /* MainScene.swift */,
@@ -379,8 +388,8 @@
 		F44AE65C1EF8831C00D8221E /* All Jobs */ = {
 			isa = PBXGroup;
 			children = (
-				F44AE64E1EF5811100D8221E /* JobsVC.swift */,
 				F44AE6521EF5813F00D8221E /* JobsScene.swift */,
+				F44AE64E1EF5811100D8221E /* JobsVC.swift */,
 				F44AE6541EF5814C00D8221E /* JobsViewModel.swift */,
 				F44AE6561EF5817B00D8221E /* JobsTableCell.swift */,
 				F44AE6571EF5817B00D8221E /* JobsTableCell.xib */,
@@ -533,6 +542,17 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		F4F3B7791F15607F0066FEB7 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				F4F3B77E1F1561480066FEB7 /* ProfileScene.swift */,
+				F4F3B77A1F1561020066FEB7 /* ProfileVC.swift */,
+				F4F3B7801F15615B0066FEB7 /* ProfileViewModel.swift */,
+				F4F3B77B1F1561020066FEB7 /* ProfileVC.xib */,
+			);
+			name = Profile;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -656,6 +676,7 @@
 				F46C468E1E8DBB17001FF145 /* LaunchScreen.xib in Resources */,
 				F428B3311E8FD53D00CF64F6 /* SplashVC.xib in Resources */,
 				F43ECF5F1EE75C4400F633E0 /* ConversationsTableCell.xib in Resources */,
+				F4F3B77D1F1561020066FEB7 /* ProfileVC.xib in Resources */,
 				F44AE6591EF5817B00D8221E /* JobsTableCell.xib in Resources */,
 				F44AE65B1EF5819500D8221E /* JobsEmpty.xib in Resources */,
 				F4509D671EEC328100503DB1 /* ConversationVC.xib in Resources */,
@@ -842,6 +863,7 @@
 				F43ECF651EEC14E700F633E0 /* ActivityIndicatorManager.swift in Sources */,
 				F43ECF5B1EE739C800F633E0 /* PhoneNumber.swift in Sources */,
 				F4A0B6BE1EFEA20200B6EE5B /* Cost.swift in Sources */,
+				F4F3B7811F15615B0066FEB7 /* ProfileViewModel.swift in Sources */,
 				F4A0B6B81EFE9D4C00B6EE5B /* JobCategory.swift in Sources */,
 				F4F118A51E991983006D5A50 /* APIClient.swift in Sources */,
 				F428B33D1E943E9100CF64F6 /* NotificationsManager.swift in Sources */,
@@ -862,6 +884,7 @@
 				F44AE6531EF5813F00D8221E /* JobsScene.swift in Sources */,
 				F4C6618B1EED844F00413F34 /* SendMessageAPIRequest.swift in Sources */,
 				F448D32E1EE6C761006A7416 /* ConversationsScene.swift in Sources */,
+				F4F3B77F1F1561480066FEB7 /* ProfileScene.swift in Sources */,
 				F40509C81EF335E8002FE4FB /* DateManager.swift in Sources */,
 				F421573E1EC74048006441B3 /* OnboardingInfoElementView.swift in Sources */,
 				F44AE6581EF5817B00D8221E /* JobsTableCell.swift in Sources */,
@@ -884,6 +907,7 @@
 				F43ECF5E1EE75C4400F633E0 /* ConversationsTableCell.swift in Sources */,
 				F448D3101EE0A61C006A7416 /* OnboardingInfoScene.swift in Sources */,
 				F4A0B6BC1EFE9FC900B6EE5B /* Address.swift in Sources */,
+				F4F3B77C1F1561020066FEB7 /* ProfileVC.swift in Sources */,
 				F428B32A1E8FCFBF00CF64F6 /* ApplicationSettings.swift in Sources */,
 				F448D3271EE6C4C4006A7416 /* ConversationsVC.swift in Sources */,
 				F453B1491EF9C94300231059 /* JobsAPIRequest.swift in Sources */,

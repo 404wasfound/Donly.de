@@ -36,4 +36,10 @@ class MainRouter: MainRouterProtocol {
     self.mainViewController.updateBar(forNewPage: MainScene.MainPage.allTasks)
   }
   
+  func routeToProfile() {
+    self.viewModel?.page = .profile
+    self.mainViewController.loadViewForContainer()
+    self.mainViewController.updateBar(forNewPage: MainScene.MainPage.profile)
+  }
+  
 }

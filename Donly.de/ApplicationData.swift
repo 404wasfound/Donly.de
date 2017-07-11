@@ -14,6 +14,7 @@ protocol ApplicationDataProtocol {
   var user: User? { get set }
   var userLocation: Variable<Location?> { get set }
   func readUserData()
+  func cleanUserData()
 }
 
 typealias Location = (lon: Double, lat: Double)
@@ -49,6 +50,13 @@ extension ApplicationData {
       let userId = UserDefaults.standard.integer(forKey: "userId")
       self.userData = (token: token, userId: userId)
     }
+  }
+  
+  func cleanUserData() {
+    self.user = nil
+    self.userData = nil
+    UserDefaults.standard.set(nil, forKey: "token")
+    UserDefaults.standard.set(nil, forKey: "userId")
   }
   
   func setCurrent(location: Location?) {

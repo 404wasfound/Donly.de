@@ -63,7 +63,6 @@ class JobsVC: UIViewController {
   func setupBindings() {
     viewModel?.jobs.asObservable().bind(onNext: { jobs in
       if let newJobs = jobs {
-        self.mapView = nil
         guard newJobs.count > 0 else {
           self.emptyView.removeFromSuperview()
           return
@@ -175,6 +174,7 @@ extension JobsVC: JobsVCProtocol, TwicketSegmentedControlDelegate {
     print("Refresh is done!")
     jobsTable.reloadData()
     refreshControl.endRefreshing()
+    self.mapView = nil
   }
   
   func didSelect(_ segmentIndex: Int) {
