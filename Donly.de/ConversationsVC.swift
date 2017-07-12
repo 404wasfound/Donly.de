@@ -54,7 +54,7 @@ class ConversationsVC: UIViewController {
   func setupBindings() {
     viewModel?.conversations.asObservable().bind(onNext: { conversations in
       if let newConversations = conversations {
-        guard newConversations.count > 0 else {
+        guard !newConversations.isEmpty else {
           self.emptyView.removeFromSuperview()
           return
         }

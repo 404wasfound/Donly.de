@@ -7,10 +7,14 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class NotificationsVC: UIViewController {
   
   internal var viewModel: NotificationsViewModelProtocol?
+  internal var disposeBag = DisposeBag()
+  internal var emptyView: UIView!
   
   init(withViewModel viewModel: NotificationsViewModelProtocol) {
     self.viewModel = viewModel
@@ -23,7 +27,25 @@ class NotificationsVC: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view.
+    viewModel?.getNotifications(forPull: false)
+    setupEmptyView()
+    setupBindings()
   }
   
+  func setupEmptyView() {
+    self.emptyView = UIView(frame: self.view.frame)
+    self.emptyView.backgroundColor = .white
+    self.view.addSubview(self.emptyView)
+  }
+  
+  func setupBindings() {
+    viewModel?.notifications.asObservable().bind(onNext: { notifications in
+      if let newNotifications = notifications {
+        guard !newNotifications.isEmpty else {
+          self.emptyView.removeFromSuperview()
+          return
+        }
+      }
+    }).addDisposableTo(disposeBag)
+  }
 }

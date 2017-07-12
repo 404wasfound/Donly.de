@@ -41,7 +41,7 @@ class JobsViewModel: JobsViewModelProtocol {
     if page == .myTasks {
       parameters = ["filter": "performer"]
     } else if page == .allTasks {
-      ///nothing for nowß
+      ///nothing for now
     }
     mainVC?.showIndicator()
     let jobsRequest = JobsAPIRequest(withParameters: parameters)

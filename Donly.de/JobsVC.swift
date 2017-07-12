@@ -63,7 +63,7 @@ class JobsVC: UIViewController {
   func setupBindings() {
     viewModel?.jobs.asObservable().bind(onNext: { jobs in
       if let newJobs = jobs {
-        guard newJobs.count > 0 else {
+        guard !newJobs.isEmpty else {
           self.emptyView.removeFromSuperview()
           return
         }
