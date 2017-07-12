@@ -144,8 +144,20 @@ extension ConversationsVC: ConversationsVCProtocol {
   
   func endRefreshing() {
     print("Refresh is done!")
-    messagesTable.reloadData()
+    self.refreshMainView()
     refreshControl.endRefreshing()
+  }
+  
+  func refreshMainView() {
+    if let conversations = viewModel?.conversations.value, conversations.isEmpty {
+      let nib = UINib(nibName: "ConversationsEmpty", bundle: nil)
+      if let view = nib.instantiate(withOwner: self, options: nil).first as? UIView {
+        self.view = view
+        self.mainViewConfigured = false
+      }
+    } else {
+      messagesTable.reloadData()
+    }
   }
   
 }

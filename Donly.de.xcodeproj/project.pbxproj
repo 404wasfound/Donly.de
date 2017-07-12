@@ -91,6 +91,11 @@
 		F4F3B77D1F1561020066FEB7 /* ProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4F3B77B1F1561020066FEB7 /* ProfileVC.xib */; };
 		F4F3B77F1F1561480066FEB7 /* ProfileScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F3B77E1F1561480066FEB7 /* ProfileScene.swift */; };
 		F4F3B7811F15615B0066FEB7 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F3B7801F15615B0066FEB7 /* ProfileViewModel.swift */; };
+		F4F3B7851F169B470066FEB7 /* NotificationsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F3B7831F169B470066FEB7 /* NotificationsVC.swift */; };
+		F4F3B7861F169B470066FEB7 /* NotificationsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4F3B7841F169B470066FEB7 /* NotificationsVC.xib */; };
+		F4F3B7881F169B680066FEB7 /* NotificationsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F3B7871F169B680066FEB7 /* NotificationsScene.swift */; };
+		F4F3B78A1F169B750066FEB7 /* NotificationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F3B7891F169B750066FEB7 /* NotificationsViewModel.swift */; };
+		F4F3B78C1F169D990066FEB7 /* NotificationsEmpty.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4F3B78B1F169D990066FEB7 /* NotificationsEmpty.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -210,6 +215,11 @@
 		F4F3B77B1F1561020066FEB7 /* ProfileVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileVC.xib; sourceTree = "<group>"; };
 		F4F3B77E1F1561480066FEB7 /* ProfileScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileScene.swift; sourceTree = "<group>"; };
 		F4F3B7801F15615B0066FEB7 /* ProfileViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		F4F3B7831F169B470066FEB7 /* NotificationsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsVC.swift; sourceTree = "<group>"; };
+		F4F3B7841F169B470066FEB7 /* NotificationsVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NotificationsVC.xib; sourceTree = "<group>"; };
+		F4F3B7871F169B680066FEB7 /* NotificationsScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsScene.swift; sourceTree = "<group>"; };
+		F4F3B7891F169B750066FEB7 /* NotificationsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsViewModel.swift; sourceTree = "<group>"; };
+		F4F3B78B1F169D990066FEB7 /* NotificationsEmpty.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NotificationsEmpty.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -355,9 +365,10 @@
 		F448D3151EE0AE84006A7416 /* Main Scene */ = {
 			isa = PBXGroup;
 			children = (
-				F4F3B7791F15607F0066FEB7 /* Profile */,
-				F44AE64D1EF5809F00D8221E /* Jobs */,
 				F448D3241EE6C3CB006A7416 /* Conversations */,
+				F44AE64D1EF5809F00D8221E /* Jobs */,
+				F4F3B7821F169B120066FEB7 /* Notifications */,
+				F4F3B7791F15607F0066FEB7 /* Profile */,
 				F448D31A1EE0AFFD006A7416 /* MainScene.swift */,
 				F448D3161EE0AEF7006A7416 /* MainVC.swift */,
 				F448D31C1EE0B022006A7416 /* MainViewModel.swift */,
@@ -553,6 +564,18 @@
 			name = Profile;
 			sourceTree = "<group>";
 		};
+		F4F3B7821F169B120066FEB7 /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				F4F3B7871F169B680066FEB7 /* NotificationsScene.swift */,
+				F4F3B7831F169B470066FEB7 /* NotificationsVC.swift */,
+				F4F3B7891F169B750066FEB7 /* NotificationsViewModel.swift */,
+				F4F3B7841F169B470066FEB7 /* NotificationsVC.xib */,
+				F4F3B78B1F169D990066FEB7 /* NotificationsEmpty.xib */,
+			);
+			name = Notifications;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -679,10 +702,12 @@
 				F4F3B77D1F1561020066FEB7 /* ProfileVC.xib in Resources */,
 				F44AE6591EF5817B00D8221E /* JobsTableCell.xib in Resources */,
 				F44AE65B1EF5819500D8221E /* JobsEmpty.xib in Resources */,
+				F4F3B7861F169B470066FEB7 /* NotificationsVC.xib in Resources */,
 				F4509D671EEC328100503DB1 /* ConversationVC.xib in Resources */,
 				F448D3281EE6C4C4006A7416 /* ConversationsVC.xib in Resources */,
 				F44AE6511EF5811100D8221E /* JobsVC.xib in Resources */,
 				F448D32A1EE6C4D8006A7416 /* ConversationsEmpty.xib in Resources */,
+				F4F3B78C1F169D990066FEB7 /* NotificationsEmpty.xib in Resources */,
 				F42157391EC734A5006441B3 /* OnboardingInfoVC.xib in Resources */,
 				F46C46561E8D90E8001FF145 /* Assets.xcassets in Resources */,
 				F422683E1EC8681200075CBE /* OnboardingLoginVC.xib in Resources */,
@@ -857,6 +882,7 @@
 				F4F118AA1E99289B006D5A50 /* UserLoginAPIRequest.swift in Sources */,
 				F43ECF671EEC243300F633E0 /* SplashRouter.swift in Sources */,
 				F448D30E1EE0A518006A7416 /* SplashScene.swift in Sources */,
+				F4F3B78A1F169B750066FEB7 /* NotificationsViewModel.swift in Sources */,
 				F43ECF611EE8A8B900F633E0 /* Conversation.swift in Sources */,
 				F448D3231EE3085B006A7416 /* TabBarButton.swift in Sources */,
 				F448D3181EE0AEF7006A7416 /* MainVC.swift in Sources */,
@@ -868,6 +894,7 @@
 				F4F118A51E991983006D5A50 /* APIClient.swift in Sources */,
 				F428B33D1E943E9100CF64F6 /* NotificationsManager.swift in Sources */,
 				F42268471EC8A87400075CBE /* Constants.swift in Sources */,
+				F4F3B7881F169B680066FEB7 /* NotificationsScene.swift in Sources */,
 				F44C00CB1EF1EA2400DAB511 /* UserDataAPIRequest.swift in Sources */,
 				F4509D661EEC328100503DB1 /* ConversationVC.swift in Sources */,
 				F428B33B1E943AF900CF64F6 /* LocationManager.swift in Sources */,
@@ -895,6 +922,7 @@
 				F42268401EC8685100075CBE /* OnboardingLoginViewModel.swift in Sources */,
 				F42157481EC74920006441B3 /* OnboardingPermissionsViewModel.swift in Sources */,
 				F44AE6501EF5811100D8221E /* JobsVC.swift in Sources */,
+				F4F3B7851F169B470066FEB7 /* NotificationsVC.swift in Sources */,
 				F42268431EC879A800075CBE /* UIViewController+Extensions.swift in Sources */,
 				F448D31B1EE0AFFD006A7416 /* MainScene.swift in Sources */,
 				F46C464F1E8D90E8001FF145 /* AppDelegate.swift in Sources */,

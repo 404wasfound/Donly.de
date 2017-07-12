@@ -75,7 +75,7 @@ class JobsVC: UIViewController {
   
   func configureMainView() {
     DispatchQueue.main.async {
-      let nib = UINib(nibName: String(describing: JobsVC.self) , bundle: nil)
+      let nib = UINib(nibName: String(describing: JobsVC.self), bundle: nil)
       if let view = nib.instantiate(withOwner: self, options: nil).first as? UIView {
         self.configureTable()
         self.configureListMapSwitchView()
@@ -172,9 +172,21 @@ extension JobsVC: JobsVCProtocol, TwicketSegmentedControlDelegate {
   
   func endRefreshing() {
     print("Refresh is done!")
-    jobsTable.reloadData()
+    self.refreshMainView()
     refreshControl.endRefreshing()
     self.mapView = nil
+  }
+  
+  func refreshMainView() {
+    if let jobs = viewModel?.jobs.value, jobs.isEmpty {
+      let nib = UINib(nibName: "JobsEmpty", bundle: nil)
+      if let view = nib.instantiate(withOwner: self, options: nil).first as? UIView {
+        self.view = view
+        self.mainViewConfigured = false
+      }
+    } else {
+      jobsTable.reloadData()
+    }
   }
   
   func didSelect(_ segmentIndex: Int) {

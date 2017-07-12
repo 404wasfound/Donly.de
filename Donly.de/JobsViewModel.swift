@@ -39,7 +39,7 @@ class JobsViewModel: JobsViewModelProtocol {
   func getJobs(forPull pull: Bool) {
     var parameters = [String: String]()
     if page == .myTasks {
-      parameters = ["filter": "owner"]
+      parameters = ["filter": "performer"]
     } else if page == .allTasks {
       ///nothing for nowß
     }

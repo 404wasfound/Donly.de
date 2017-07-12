@@ -39,7 +39,8 @@ class MainViewModel: MainViewModelProtocol {
       vc = JobsScene.configure(withMainRouter: router, andMainVC: main, forPage: .allTasks)
     case .profile:
       vc = ProfileScene.configure(withMainRouter: router)
-    default: ()
+    case .notifications:
+      vc = NotificationsScene.configure(withMainRouter: router, andMainVC: main)
     }
     scenesForPages[page] = vc
     return vc
