@@ -12,6 +12,10 @@ import RxCocoa
 
 class NotificationsVC: UIViewController {
   
+  @IBOutlet weak var reloadButton: OnboardingButton!
+  @IBAction func reloadButtonPressed(_ sender: UIButton) {
+    self.reloadData()
+  }
   internal var viewModel: NotificationsViewModelProtocol?
   internal var disposeBag = DisposeBag()
   internal var emptyView: UIView!
@@ -30,6 +34,7 @@ class NotificationsVC: UIViewController {
     viewModel?.getNotifications(forPull: false)
     setupEmptyView()
     setupBindings()
+    self.reloadButton.configure(button: .cancel, title: "Reload")
   }
   
   func setupEmptyView() {
@@ -41,11 +46,16 @@ class NotificationsVC: UIViewController {
   func setupBindings() {
     viewModel?.notifications.asObservable().bind(onNext: { notifications in
       if let newNotifications = notifications {
-        guard !newNotifications.isEmpty else {
+        guard newNotifications.isEmpty else {
           self.emptyView.removeFromSuperview()
           return
         }
       }
     }).addDisposableTo(disposeBag)
   }
+  
+  func reloadData() {
+    self.viewModel?.getNotifications(forPull: false)
+  }
+  
 }

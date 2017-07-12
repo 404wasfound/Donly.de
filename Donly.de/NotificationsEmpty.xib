@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NotificationsVC" customModule="Donly_de" customModuleProvider="target">
             <connections>
+                <outlet property="reloadButton" destination="OZ2-B5-aFl" id="8XQ-Jm-DlT"/>
                 <outlet property="view" destination="iN0-l3-epB" id="2a8-qV-1Xz"/>
             </connections>
         </placeholder>
@@ -63,11 +64,24 @@
                         <constraint firstAttribute="trailing" secondItem="V81-AY-ieq" secondAttribute="trailing" id="krw-UP-Hrr"/>
                     </constraints>
                 </stackView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OZ2-B5-aFl" customClass="OnboardingButton" customModule="Donly_de" customModuleProvider="target">
+                    <rect key="frame" x="85" y="390.5" width="150" height="50"/>
+                    <color key="backgroundColor" name="secondarySelectedControlColor" catalog="System" colorSpace="catalog"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="ctS-Vq-ke2"/>
+                        <constraint firstAttribute="width" constant="150" id="zkv-rf-4QX"/>
+                    </constraints>
+                    <connections>
+                        <action selector="reloadButtonPressed:" destination="-1" eventType="touchUpInside" id="q8b-sw-jGX"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="OZ2-B5-aFl" firstAttribute="top" secondItem="Kgc-eY-XUe" secondAttribute="bottom" constant="32" id="24b-2Q-rZk"/>
                 <constraint firstItem="Kgc-eY-XUe" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="3ei-up-Vh2"/>
                 <constraint firstItem="Kgc-eY-XUe" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Ojk-9V-cPX"/>
+                <constraint firstItem="OZ2-B5-aFl" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="rz5-1o-bIo"/>
             </constraints>
         </view>
     </objects>

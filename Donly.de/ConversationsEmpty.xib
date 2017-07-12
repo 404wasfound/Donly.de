@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -11,16 +11,17 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ConversationsVC" customModule="Donly_de" customModuleProvider="target">
             <connections>
+                <outlet property="reloadButton" destination="REq-uh-OVh" id="jaD-mI-hBJ"/>
                 <outlet property="view" destination="iN0-l3-epB" id="1em-mq-yB7"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="wUM-i4-MTM">
-                    <rect key="frame" x="63.5" y="259" width="248" height="149"/>
+                    <rect key="frame" x="36" y="209.5" width="248" height="149"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="Ycy-VG-NO8">
                             <rect key="frame" x="0.0" y="0.0" width="248" height="100"/>
@@ -63,13 +64,29 @@
                         <constraint firstItem="fzA-rb-Wgr" firstAttribute="leading" secondItem="wUM-i4-MTM" secondAttribute="leading" id="xGR-0r-TNl"/>
                     </constraints>
                 </stackView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="REq-uh-OVh" customClass="OnboardingButton" customModule="Donly_de" customModuleProvider="target">
+                    <rect key="frame" x="85" y="390.5" width="150" height="50"/>
+                    <color key="backgroundColor" name="secondarySelectedControlColor" catalog="System" colorSpace="catalog"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="4WX-Aq-yWA"/>
+                        <constraint firstAttribute="width" constant="150" id="aXL-OE-ZOa"/>
+                    </constraints>
+                    <state key="normal">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="reloadButtonPressed:" destination="-1" eventType="touchUpInside" id="aRT-6C-apr"/>
+                    </connections>
+                </button>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="wUM-i4-MTM" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="D4P-O4-Ogx"/>
-                <constraint firstItem="wUM-i4-MTM" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Z9e-3w-4pt"/>
+                <constraint firstItem="REq-uh-OVh" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="DzI-vj-0h9"/>
+                <constraint firstItem="wUM-i4-MTM" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="vcf-Rd-7Zk"/>
+                <constraint firstItem="REq-uh-OVh" firstAttribute="top" secondItem="wUM-i4-MTM" secondAttribute="bottom" constant="32" id="w6h-5E-TUT"/>
+                <constraint firstItem="wUM-i4-MTM" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="xhK-rW-n5A"/>
             </constraints>
-            <point key="canvasLocation" x="35.5" y="53.5"/>
+            <point key="canvasLocation" x="35" y="53"/>
         </view>
     </objects>
     <resources>

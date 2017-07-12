@@ -11,7 +11,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="JobsVC" customModule="Donly_de" customModuleProvider="target">
             <connections>
+                <outlet property="buttonsStackConstraint" destination="1VE-xG-cHT" id="kJw-ox-6ue"/>
                 <outlet property="jobSearchButton" destination="psX-mE-Tnl" id="nsd-m4-nRj"/>
+                <outlet property="reloadButton" destination="JX5-zG-m0s" id="oqY-Vi-hr7"/>
                 <outlet property="view" destination="iN0-l3-epB" id="IgI-YL-jKE"/>
             </connections>
         </placeholder>
@@ -64,23 +66,35 @@
                         <constraint firstAttribute="trailing" secondItem="Rdz-Kq-p52" secondAttribute="trailing" id="cWZ-0p-LYp"/>
                     </constraints>
                 </stackView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="psX-mE-Tnl">
-                    <rect key="frame" x="85" y="390.5" width="150" height="50"/>
-                    <color key="backgroundColor" red="0.0" green="0.81486002599999996" blue="0.60784313729999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="BBq-Ex-W9j">
+                    <rect key="frame" x="10" y="390.5" width="300" height="50"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JX5-zG-m0s" customClass="OnboardingButton" customModule="Donly_de" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="146" height="50"/>
+                            <color key="backgroundColor" name="secondarySelectedControlColor" catalog="System" colorSpace="catalog"/>
+                            <connections>
+                                <action selector="reloadButtonPressed:" destination="-1" eventType="touchUpInside" id="8He-yi-it1"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="psX-mE-Tnl">
+                            <rect key="frame" x="154" y="0.0" width="146" height="50"/>
+                            <color key="backgroundColor" red="0.0" green="0.81486002599999996" blue="0.60784313729999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="jobSearchButtonPressed:" destination="-1" eventType="touchUpInside" id="o0k-Wa-YJO"/>
+                            </connections>
+                        </button>
+                    </subviews>
                     <constraints>
-                        <constraint firstAttribute="height" constant="50" id="KJq-s0-z1u"/>
-                        <constraint firstAttribute="width" constant="150" id="shD-qr-kcG"/>
+                        <constraint firstAttribute="width" constant="300" id="1VE-xG-cHT"/>
+                        <constraint firstAttribute="height" constant="50" id="Yyj-Zx-Pgg"/>
                     </constraints>
-                    <connections>
-                        <action selector="jobSearchButtonPressed:" destination="-1" eventType="touchUpInside" id="o0k-Wa-YJO"/>
-                    </connections>
-                </button>
+                </stackView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="BBq-Ex-W9j" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="0ad-Lj-9bw"/>
+                <constraint firstItem="BBq-Ex-W9j" firstAttribute="top" secondItem="aoy-0N-9op" secondAttribute="bottom" constant="32" id="FOk-Mz-MA6"/>
                 <constraint firstItem="aoy-0N-9op" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="OQz-Tv-Uc9"/>
-                <constraint firstItem="psX-mE-Tnl" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="PUt-dP-jeT"/>
-                <constraint firstItem="psX-mE-Tnl" firstAttribute="top" secondItem="aoy-0N-9op" secondAttribute="bottom" constant="32" id="j1e-iT-b9w"/>
                 <constraint firstItem="aoy-0N-9op" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="l1X-ng-nlG"/>
             </constraints>
             <point key="canvasLocation" x="125" y="53"/>

@@ -17,6 +17,10 @@ protocol ConversationsVCProtocol {
 class ConversationsVC: UIViewController {
   
   @IBOutlet weak var messagesTable: UITableView!
+  @IBOutlet weak var reloadButton: OnboardingButton!
+  @IBAction func reloadButtonPressed(_ sender: UIButton) {
+    self.reloadData()
+  }
   
   internal var viewModel: ConversationsViewModelProtocol?
   internal var disposeBag = DisposeBag()
@@ -41,6 +45,7 @@ class ConversationsVC: UIViewController {
     super.viewDidLoad()
     viewModel?.delegate = self
     viewModel?.getConversations(forPull: false)
+    self.reloadButton.configure(button: .cancel, title: "Reload")
     setupEmptyView()
     setupBindings()
   }
@@ -87,6 +92,10 @@ class ConversationsVC: UIViewController {
     self.messagesTable.register(UINib(nibName: String(describing: ConversationsTableCell.self), bundle: nil), forCellReuseIdentifier: String(describing: ConversationsTableCell.self))
     self.messagesTable.addSubview(self.refreshControl)
     self.messagesTable.allowsMultipleSelectionDuringEditing = true
+  }
+  
+  func reloadData() {
+    self.viewModel?.getConversations(forPull: false)
   }
   
 }
