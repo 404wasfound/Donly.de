@@ -73,6 +73,8 @@
 		F453B14B1EF9CD6100231059 /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = F453B14A1EF9CD6100231059 /* Job.swift */; };
 		F46143B91EFC4C9F00E6F424 /* NotificationsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46143B81EFC4C9F00E6F424 /* NotificationsTableCell.swift */; };
 		F46143BB1EFC4D9D00E6F424 /* NotificationsTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F46143BA1EFC4D9C00E6F424 /* NotificationsTableCell.xib */; };
+		F46143BD1F1819A100E6F424 /* NotificationBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46143BC1F1819A100E6F424 /* NotificationBadge.swift */; };
+		F46143BF1F1819CC00E6F424 /* NotificationBadge.xib in Resources */ = {isa = PBXBuildFile; fileRef = F46143BE1F1819CC00E6F424 /* NotificationBadge.xib */; };
 		F462ABD61F17ED6700BB6C42 /* ReloadButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F462ABD51F17ED6700BB6C42 /* ReloadButton.swift */; };
 		F46C464F1E8D90E8001FF145 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46C464E1E8D90E8001FF145 /* AppDelegate.swift */; };
 		F46C46561E8D90E8001FF145 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F46C46551E8D90E8001FF145 /* Assets.xcassets */; };
@@ -196,6 +198,8 @@
 		F453B14A1EF9CD6100231059 /* Job.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Job.swift; sourceTree = "<group>"; };
 		F46143B81EFC4C9F00E6F424 /* NotificationsTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsTableCell.swift; sourceTree = "<group>"; };
 		F46143BA1EFC4D9C00E6F424 /* NotificationsTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NotificationsTableCell.xib; sourceTree = "<group>"; };
+		F46143BC1F1819A100E6F424 /* NotificationBadge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationBadge.swift; sourceTree = "<group>"; };
+		F46143BE1F1819CC00E6F424 /* NotificationBadge.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NotificationBadge.xib; sourceTree = "<group>"; };
 		F462ABD51F17ED6700BB6C42 /* ReloadButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReloadButton.swift; sourceTree = "<group>"; };
 		F46C464B1E8D90E8001FF145 /* Donly.de.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Donly.de.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F46C464E1E8D90E8001FF145 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -450,6 +454,8 @@
 			isa = PBXGroup;
 			children = (
 				F462ABD51F17ED6700BB6C42 /* ReloadButton.swift */,
+				F46143BC1F1819A100E6F424 /* NotificationBadge.swift */,
+				F46143BE1F1819CC00E6F424 /* NotificationBadge.xib */,
 			);
 			name = "Custom Views";
 			sourceTree = "<group>";
@@ -726,6 +732,7 @@
 				F44AE6591EF5817B00D8221E /* JobsTableCell.xib in Resources */,
 				F44AE65B1EF5819500D8221E /* JobsEmpty.xib in Resources */,
 				F4F3B7861F169B470066FEB7 /* NotificationsVC.xib in Resources */,
+				F46143BF1F1819CC00E6F424 /* NotificationBadge.xib in Resources */,
 				F4509D671EEC328100503DB1 /* ConversationVC.xib in Resources */,
 				F448D3281EE6C4C4006A7416 /* ConversationsVC.xib in Resources */,
 				F44AE6511EF5811100D8221E /* JobsVC.xib in Resources */,
@@ -910,6 +917,7 @@
 				F43ECF611EE8A8B900F633E0 /* Conversation.swift in Sources */,
 				F448D3231EE3085B006A7416 /* TabBarButton.swift in Sources */,
 				F448D3181EE0AEF7006A7416 /* MainVC.swift in Sources */,
+				F46143BD1F1819A100E6F424 /* NotificationBadge.swift in Sources */,
 				F43ECF651EEC14E700F633E0 /* ActivityIndicatorManager.swift in Sources */,
 				F43ECF5B1EE739C800F633E0 /* PhoneNumber.swift in Sources */,
 				F4A0B6BE1EFEA20200B6EE5B /* Cost.swift in Sources */,

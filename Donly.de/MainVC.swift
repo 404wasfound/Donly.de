@@ -70,6 +70,7 @@ class MainVC: UIViewController {
     self.loadViewForContainer()
     self.setupBarUI()
     self.setupSlider(forPage: self.currentPage)
+    self.configureBadge()
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -173,6 +174,16 @@ extension MainVC {
         self.sliderSelection.center.x = positionX
       }
     }
+  }
+}
+
+extension MainVC {
+  func configureBadge() {
+    let badge = NotificationBadge.instantiateFromNib()
+    badge.setBadgeValue(5)
+    badge.center.y = self.sliderSelection.center.y
+    badge.center.x = self.sliderSelection.center.x - 20
+    self.view.addSubview(badge)
   }
 }
 
