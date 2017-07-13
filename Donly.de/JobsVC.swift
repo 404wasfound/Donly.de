@@ -23,11 +23,6 @@ class JobsVC: UIViewController {
   @IBAction func jobSearchButtonPressed(_ sender: UIButton!) {
     viewModel?.openAllJobsScreen()
   }
-  @IBOutlet weak var reloadButton: OnboardingButton!
-  @IBAction func reloadButtonPressed(_ sender: UIButton) {
-    self.reloadData()
-  }
-  @IBOutlet weak var buttonsStackConstraint: NSLayoutConstraint!
   
   internal var viewModel: JobsViewModelProtocol?
   internal var disposeBag = DisposeBag()
@@ -122,14 +117,10 @@ class JobsVC: UIViewController {
   }
   
   func setupJobSearchButton() {
-    self.reloadButton.configure(button: .cancel, title: "Reload")
     guard viewModel?.page == .myTasks else {
       self.jobSearchButton.isHidden = true
-      self.buttonsStackConstraint.constant = 150
       return
     }
-    self.buttonsStackConstraint.constant = 300
-    self.jobSearchButton.backgroundColor = donlyColor
     self.jobSearchButton.isHidden = false
     self.jobSearchButton.setImage(UIImage(named: "icon_jobs_search_button"), for: .normal)
     self.jobSearchButton.imageEdgeInsets = UIEdgeInsets(top: 17, left: 0, bottom: 17, right: 28)
@@ -139,10 +130,6 @@ class JobsVC: UIViewController {
     self.jobSearchButton.contentVerticalAlignment = .center
     self.jobSearchButton.setTitle("Jobsuche", for: .normal)
     self.jobSearchButton.setTitleColor(.white, for: .normal)
-  }
-  
-  func reloadData() {
-    self.viewModel?.getJobs(forPull: false)
   }
   
 }
