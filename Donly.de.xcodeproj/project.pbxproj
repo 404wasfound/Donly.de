@@ -391,7 +391,6 @@
 				F448D31C1EE0B022006A7416 /* MainViewModel.swift */,
 				F4509D6C1EEC387600503DB1 /* MainRouter.swift */,
 				F448D31E1EE2EC97006A7416 /* MainVC.storyboard */,
-				F448D3221EE3085A006A7416 /* TabBarButton.swift */,
 			);
 			name = "Main Scene";
 			sourceTree = "<group>";
@@ -455,6 +454,7 @@
 		F462ABD41F17ED4400BB6C42 /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				F448D3221EE3085A006A7416 /* TabBarButton.swift */,
 				F462ABD51F17ED6700BB6C42 /* ReloadButton.swift */,
 				F46143BC1F1819A100E6F424 /* NotificationBadge.swift */,
 				F46143BE1F1819CC00E6F424 /* NotificationBadge.xib */,
