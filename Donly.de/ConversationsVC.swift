@@ -62,8 +62,11 @@ class ConversationsVC: UIViewController {
           self.emptyView.removeFromSuperview()
           return
         }
-        if self.mainViewConfigured { return }
-        self.configureMainView()
+        if self.mainViewConfigured {
+          self.messagesTable.reloadData()
+        } else {
+          self.configureMainView()
+        }
       }
     }).addDisposableTo(disposeBag)
   }
@@ -163,8 +166,6 @@ extension ConversationsVC: ConversationsVCProtocol {
         self.view = view
         self.mainViewConfigured = false
       }
-    } else {
-      messagesTable.reloadData()
     }
   }
   

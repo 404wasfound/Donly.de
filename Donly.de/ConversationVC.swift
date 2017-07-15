@@ -165,4 +165,9 @@ extension ConversationVC: ConversationVCProtocol {
     barButton.customView?.isUserInteractionEnabled = false
     self.navigationItem.rightBarButtonItem = barButton
   }
+  
+  override func viewWillDisappear(_ animated: Bool) {
+    self.viewModel?.refreshConversationsListIfNeeded()
+    self.viewModel?.refreshBadgeIfNeeded()
+  }
 }

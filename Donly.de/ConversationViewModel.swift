@@ -11,11 +11,13 @@ import RxSwift
 import JSQMessagesViewController
 
 protocol ConversationViewModelProtocol {
+  func getMessagesForConversation()
+  func sendMessage(withText text: String)
+  func refreshConversationsListIfNeeded()
+  func refreshBadgeIfNeeded()
   var messages: Variable<[JSQMessage]?> { get set }
   var delegate: ConversationVCProtocol? { get set }
   var profileImageUrl: String { get }
-  func getMessagesForConversation()
-  func sendMessage(withText text: String)
 }
 
 class ConversationViewModel: ConversationViewModelProtocol {
@@ -25,10 +27,14 @@ class ConversationViewModel: ConversationViewModelProtocol {
   var profileImageUrl: String
   var disposeBag = DisposeBag()
   var delegate: ConversationVCProtocol?
+  var conversationsVM: ConversationsViewModel?
+  private var willNeedToReloadConversations = false
+  private var willNeedToReloadBadge = false
   
-  init(withConversation conversation: Conversation) {
+  init(withConversation conversation: Conversation, withConvsVM convsVM: ConversationsViewModel) {
     self.conversation = conversation
     self.profileImageUrl = conversation.user.imagePath
+    self.conversationsVM = convsVM
   }
   
   func getMessagesForConversation() {
@@ -40,6 +46,7 @@ class ConversationViewModel: ConversationViewModelProtocol {
       } else if let messages = result.result {
         print("Number of messages: \(messages.count)")
         self.createJSQmessages(fromMessages: messages)
+        self.checkIfBadgeShouldBeReloaded()
       }
     }, onError: { error in
       ///
@@ -51,6 +58,12 @@ class ConversationViewModel: ConversationViewModelProtocol {
   func createJSQmessages(fromMessages messages: [Message]) {
     let jsqMessages = messages.map { $0.getJSQMessage() }
     self.messages.value = jsqMessages
+  }
+  
+  func checkIfBadgeShouldBeReloaded() {
+    if conversation.lastMessage.isRead == false {
+      self.willNeedToReloadBadge = true
+    }
   }
   
   func sendMessage(withText text: String) {
@@ -66,9 +79,24 @@ class ConversationViewModel: ConversationViewModelProtocol {
       }
     }, onError: { error in
       ///
-    }, onCompleted: { 
-      ///
+    }, onCompleted: {
+      if !self.willNeedToReloadConversations {
+        self.willNeedToReloadConversations = true
+        self.willNeedToReloadBadge = false
+      }
     }).addDisposableTo(disposeBag)
+  }
+  
+  func refreshConversationsListIfNeeded() {
+    if willNeedToReloadConversations {
+      self.conversationsVM?.getConversations(forPull: false)
+    }
+  }
+  
+  func refreshBadgeIfNeeded() {
+    if willNeedToReloadBadge {
+      self.conversationsVM?.refreshBadge()
+    }
   }
   
 }

@@ -44,8 +44,8 @@ class NotificationsViewModel: NotificationsViewModelProtocol {
       self.mainVM?.hideIndicator()
       if pull {
         self.delegate?.endRefreshing()
-        self.mainVM?.getBadgeCounterForPage(MainScene.MainPage.notifications)
       }
+      self.mainVM?.getBadgeCounterForPage(MainScene.MainPage.notifications)
     }).addDisposableTo(disposeBag)
   }
   

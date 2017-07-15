@@ -9,7 +9,7 @@
 import Foundation
 
 protocol MainRouterProtocol {
-  func routeToConversation(_ conversation: Conversation)
+  func routeToConversation(_ conversation: Conversation, withConvsVM convsVM: ConversationsViewModel)
   func routeToAllJobs()
 }
 
@@ -23,8 +23,8 @@ class MainRouter: MainRouterProtocol {
     self.viewModel = viewModel
   }
   
-  func routeToConversation(_ conversation: Conversation) {
-    let vc = ConversationScene.configure(forConversation: conversation)
+  func routeToConversation(_ conversation: Conversation, withConvsVM convsVM: ConversationsViewModel) {
+    let vc = ConversationScene.configure(forConversation: conversation, withConvsVM: convsVM)
     DispatchQueue.main.async {
       self.mainViewController.navigationController?.pushViewController(vc, animated: true)
     }

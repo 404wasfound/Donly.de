@@ -62,8 +62,11 @@ class NotificationsVC: UIViewController {
           self.emptyView.removeFromSuperview()
           return
         }
-        if self.mainViewConfigured { return }
-        self.configureMainView()
+        if self.mainViewConfigured {
+          self.notificationsTable.reloadData()
+        } else {
+          self.configureMainView()
+        }
       }
     }).addDisposableTo(disposeBag)
   }
@@ -149,8 +152,6 @@ extension NotificationsVC: NotificationsVCProtocol {
         self.view = view
         self.mainViewConfigured = false
       }
-    } else {
-      notificationsTable.reloadData()
     }
   }
   

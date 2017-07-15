@@ -10,10 +10,11 @@ import Foundation
 import RxSwift
 
 protocol ConversationsViewModelProtocol {
-  var conversations: Variable<[Conversation]?> { get set }
-  var delegate: ConversationsVCProtocol? { get set }
   func getConversations(forPull: Bool)
   func openConversation(_ conversation: Conversation)
+  func refreshBadge()
+  var conversations: Variable<[Conversation]?> { get set }
+  var delegate: ConversationsVCProtocol? { get set }
 }
 
 class ConversationsViewModel: ConversationsViewModelProtocol {
@@ -45,13 +46,17 @@ class ConversationsViewModel: ConversationsViewModelProtocol {
       self.mainVM?.hideIndicator()
       if pull {
         self.delegate?.endRefreshing()
-        self.mainVM?.getBadgeCounterForPage(MainScene.MainPage.messages)
       }
+      self.refreshBadge()
     }).addDisposableTo(disposeBag)
   }
   
   func openConversation(_ conversation: Conversation) {
-    mainRouter?.routeToConversation(conversation)
+    mainRouter?.routeToConversation(conversation, withConvsVM: self)
+  }
+  
+  func refreshBadge() {
+    self.mainVM?.getBadgeCounterForPage(MainScene.MainPage.messages)
   }
   
 }
