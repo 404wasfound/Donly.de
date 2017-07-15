@@ -18,18 +18,18 @@ protocol NotificationsViewModelProtocol {
 class NotificationsViewModel: NotificationsViewModelProtocol {
   
   private var mainRouter: MainRouterProtocol?
-  private var mainVC: MainVCProtocol?
+  private var mainVM: MainViewModelProtocol?
   var disposeBag = DisposeBag()
   var notifications = Variable<[Notification]?>(nil)
   var delegate: NotificationsVCProtocol?
   
-  init(withMainRouter router: MainRouterProtocol?, andMainVC main: MainVCProtocol?) {
+  init(withMainRouter router: MainRouterProtocol?, andMainVM mainVM: MainViewModelProtocol?) {
     self.mainRouter = router
-    self.mainVC = main
+    self.mainVM = mainVM
   }
   
   func getNotifications(forPull pull: Bool) {
-    mainVC?.showIndicator()
+    mainVM?.showIndicator()
     let notificationsRequest = NotificationsAPIRequest()
     notificationsRequest.send().subscribe(onNext: { result in
       if let error = result.error {
@@ -41,9 +41,10 @@ class NotificationsViewModel: NotificationsViewModelProtocol {
     }, onError: { error in
       ///
     }, onCompleted: { 
-      self.mainVC?.hideIndicator()
+      self.mainVM?.hideIndicator()
       if pull {
         self.delegate?.endRefreshing()
+        self.mainVM?.getBadgeCounterForPage(MainScene.MainPage.notifications)
       }
     }).addDisposableTo(disposeBag)
   }

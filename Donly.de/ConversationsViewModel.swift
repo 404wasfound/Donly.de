@@ -22,16 +22,16 @@ class ConversationsViewModel: ConversationsViewModelProtocol {
   var disposeBag = DisposeBag()
   var delegate: ConversationsVCProtocol?
   private var mainRouter: MainRouterProtocol?
-  private var mainVC: MainVCProtocol?
+  private var mainVM: MainViewModelProtocol?
   
-  init(withMainRouter router: MainRouterProtocol, andMainVC main: MainVCProtocol) {
+  init(withMainRouter router: MainRouterProtocol, andMainVM mainVM: MainViewModelProtocol) {
     self.mainRouter = router
-    self.mainVC = main
+    self.mainVM = mainVM
   }
   
   func getConversations(forPull pull: Bool) {
     let conversationsRequest = ConversationsAPIRequest()
-    mainVC?.showIndicator()
+    mainVM?.showIndicator()
     conversationsRequest.send().subscribe(onNext: { result in
       if let error = result.error {
         print(error.getDescription())
@@ -42,9 +42,10 @@ class ConversationsViewModel: ConversationsViewModelProtocol {
     }, onError: { error in
       ///
     }, onCompleted: {
-      self.mainVC?.hideIndicator()
+      self.mainVM?.hideIndicator()
       if pull {
         self.delegate?.endRefreshing()
+        self.mainVM?.getBadgeCounterForPage(MainScene.MainPage.messages)
       }
     }).addDisposableTo(disposeBag)
   }

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 protocol MainVCProtocol {
   func showIndicator()
@@ -63,14 +65,19 @@ class MainVC: UIViewController {
   fileprivate var currentPage: MainScene.MainPage = MainScene.MainPage.messages
   var barButtons: [MainScene.MainPage: TabBarButton] = [:]
   var sliderSelection: UIView!
+  internal var badgeViews: [MainScene.MainPage: NotificationBadge?] = [:]
+  internal var disposeBag = DisposeBag()
   
   override func viewDidLoad() {
     super.viewDidLoad()
     self.router = MainRouter(withMainViewcontroller: self, andViewModel: self.viewModel)
     self.loadViewForContainer()
+    self.viewModel?.mainVC = self
+    self.viewModel?.getBadgeCounterForPage(.messages)
+    self.viewModel?.getBadgeCounterForPage(.notifications)
+    self.setupBindings()
     self.setupBarUI()
     self.setupSlider(forPage: self.currentPage)
-    self.configureBadge()
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -85,6 +92,21 @@ class MainVC: UIViewController {
 
 /// Loading and animating related stuff
 extension MainVC {
+  
+  func setupBindings() {
+    self.viewModel?.messagesCounter.asObservable().bind(onNext: { value in
+      if let newValue = value {
+        self.configureBadgeForPage(.messages, withValue: newValue)
+      }
+    }).addDisposableTo(disposeBag)
+    
+    self.viewModel?.notificationsCounter.asObservable().bind(onNext: { value in
+      if let newValue = value {
+        self.configureBadgeForPage(.notifications, withValue: newValue)
+      }
+    }).addDisposableTo(disposeBag)
+  }
+  
   func loadViewForContainer() {
     if let router = self.router, let vc = self.viewModel?.configureViewForContainer(withRouter: router, andMainVC: self) {
       addChildViewController(vc)
@@ -178,13 +200,26 @@ extension MainVC {
 }
 
 extension MainVC {
-  func configureBadge() {
-    let badge = NotificationBadge.instantiateFromNib()
-    badge.setBadgeValue(5)
-    badge.center.y = self.sliderSelection.center.y
-    badge.center.x = self.sliderSelection.center.x - 20
-    self.view.addSubview(badge)
+  func configureBadgeForPage(_ page: MainScene.MainPage, withValue value: Int) {
+    guard let barButton = barButtons[page] else { return }
+    guard let badge = badgeViews[page] else {
+      if value == 0 { return }
+      let newBadge = NotificationBadge.instantiateFromNib()
+      newBadge.setBadgeValue(value)
+      newBadge.center.y = self.sliderSelection.center.y
+      newBadge.center.x = barButton.center.x - barButton.frame.width * 0.25
+      badgeViews[page] = newBadge
+      self.view.addSubview(newBadge)
+      return
+    }
+    if value == 0 {
+      badge?.removeFromSuperview()
+      badgeViews[page] = nil
+    } else {
+      badge?.setBadgeValue(value)
+    }
   }
+  
 }
 
 /// MainVCProtocol

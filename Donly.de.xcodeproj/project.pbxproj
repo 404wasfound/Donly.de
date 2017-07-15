@@ -75,6 +75,7 @@
 		F46143BB1EFC4D9D00E6F424 /* NotificationsTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F46143BA1EFC4D9C00E6F424 /* NotificationsTableCell.xib */; };
 		F46143BD1F1819A100E6F424 /* NotificationBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46143BC1F1819A100E6F424 /* NotificationBadge.swift */; };
 		F46143BF1F1819CC00E6F424 /* NotificationBadge.xib in Resources */ = {isa = PBXBuildFile; fileRef = F46143BE1F1819CC00E6F424 /* NotificationBadge.xib */; };
+		F46143C11F1A43FB00E6F424 /* BadgeCounterAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46143C01F1A43FB00E6F424 /* BadgeCounterAPIRequest.swift */; };
 		F462ABD61F17ED6700BB6C42 /* ReloadButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F462ABD51F17ED6700BB6C42 /* ReloadButton.swift */; };
 		F46C464F1E8D90E8001FF145 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46C464E1E8D90E8001FF145 /* AppDelegate.swift */; };
 		F46C46561E8D90E8001FF145 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F46C46551E8D90E8001FF145 /* Assets.xcassets */; };
@@ -200,6 +201,7 @@
 		F46143BA1EFC4D9C00E6F424 /* NotificationsTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NotificationsTableCell.xib; sourceTree = "<group>"; };
 		F46143BC1F1819A100E6F424 /* NotificationBadge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationBadge.swift; sourceTree = "<group>"; };
 		F46143BE1F1819CC00E6F424 /* NotificationBadge.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NotificationBadge.xib; sourceTree = "<group>"; };
+		F46143C01F1A43FB00E6F424 /* BadgeCounterAPIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadgeCounterAPIRequest.swift; sourceTree = "<group>"; };
 		F462ABD51F17ED6700BB6C42 /* ReloadButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReloadButton.swift; sourceTree = "<group>"; };
 		F46C464B1E8D90E8001FF145 /* Donly.de.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Donly.de.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F46C464E1E8D90E8001FF145 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -558,6 +560,7 @@
 				F44C00CA1EF1EA2400DAB511 /* UserDataAPIRequest.swift */,
 				F453B1481EF9C94300231059 /* JobsAPIRequest.swift */,
 				F4F3B78D1F16A7BD0066FEB7 /* NotificationsAPIRequest.swift */,
+				F46143C01F1A43FB00E6F424 /* BadgeCounterAPIRequest.swift */,
 			);
 			name = APIRequests;
 			sourceTree = "<group>";
@@ -912,6 +915,7 @@
 				F42157381EC734A5006441B3 /* OnboardingInfoVC.swift in Sources */,
 				F4F118AA1E99289B006D5A50 /* UserLoginAPIRequest.swift in Sources */,
 				F43ECF671EEC243300F633E0 /* SplashRouter.swift in Sources */,
+				F46143C11F1A43FB00E6F424 /* BadgeCounterAPIRequest.swift in Sources */,
 				F448D30E1EE0A518006A7416 /* SplashScene.swift in Sources */,
 				F4F3B78A1F169B750066FEB7 /* NotificationsViewModel.swift in Sources */,
 				F43ECF611EE8A8B900F633E0 /* Conversation.swift in Sources */,

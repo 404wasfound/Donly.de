@@ -10,8 +10,8 @@ import Foundation
 
 class NotificationsScene {
   
-  static func configure(withMainRouter router: MainRouterProtocol, andMainVC main: MainVCProtocol) -> NotificationsVC {
-    let viewModel = NotificationsViewModel(withMainRouter: router, andMainVC: main)
+  static func configure(withMainRouter router: MainRouterProtocol, andMainVM mainVM: MainViewModelProtocol) -> NotificationsVC {
+    let viewModel = NotificationsViewModel(withMainRouter: router, andMainVM: mainVM)
     return NotificationsVC(withViewModel: viewModel)
   }
   
