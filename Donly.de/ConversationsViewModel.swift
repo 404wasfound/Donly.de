@@ -39,6 +39,7 @@ class ConversationsViewModel: ConversationsViewModelProtocol {
       } else if let conversations = result.result {
         print("Number of conversations: \(conversations.count)")
         self.conversations.value = conversations
+        self.mainVM?.hideIndicator()
       }
     }, onError: { error in
       ///
@@ -48,7 +49,9 @@ class ConversationsViewModel: ConversationsViewModelProtocol {
         self.delegate?.endRefreshing()
       }
       self.refreshBadge()
-    }).addDisposableTo(disposeBag)
+    }) {
+      self.mainVM?.hideIndicator()
+    }.addDisposableTo(disposeBag)
   }
   
   func openConversation(_ conversation: Conversation) {

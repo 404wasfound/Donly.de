@@ -26,9 +26,11 @@ class ActivityIndicatorManager {
   }
   
   func hide() {
-    self.activityIndicator?.stopAnimating()
-    UIApplication.shared.endIgnoringInteractionEvents()
-    self.activityIndicator = nil
+    if let _ = self.activityIndicator {
+      self.activityIndicator?.stopAnimating()
+      UIApplication.shared.endIgnoringInteractionEvents()
+      self.activityIndicator = nil
+    }
   }
   
 }

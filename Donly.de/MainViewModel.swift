@@ -16,6 +16,7 @@ protocol MainViewModelProtocol {
   func getBadgeCounterForPage(_ page: MainScene.MainPage)
   func showIndicator()
   func hideIndicator()
+  func resetScenes()
   var page: MainScene.MainPage { get set }
   var currentScreen: UIViewController? { get set }
   var messagesCounter: Variable<Int?> { get set }
@@ -91,6 +92,10 @@ class MainViewModel: MainViewModelProtocol {
   
   func hideIndicator() {
     mainVC?.hideIndicator()
+  }
+  
+  func resetScenes() {
+    scenesForPages = [:]
   }
   
 }

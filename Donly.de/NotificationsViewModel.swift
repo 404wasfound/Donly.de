@@ -37,6 +37,7 @@ class NotificationsViewModel: NotificationsViewModelProtocol {
       } else if let notifications = result.result {
         print("Number of notifications: \(notifications.count)")
         self.notifications.value = notifications
+        self.mainVM?.hideIndicator()
       }
     }, onError: { error in
       ///
@@ -46,7 +47,9 @@ class NotificationsViewModel: NotificationsViewModelProtocol {
         self.delegate?.endRefreshing()
       }
       self.mainVM?.getBadgeCounterForPage(MainScene.MainPage.notifications)
-    }).addDisposableTo(disposeBag)
+    }) {
+      self.mainVM?.hideIndicator()
+    }.addDisposableTo(disposeBag)
   }
   
 }

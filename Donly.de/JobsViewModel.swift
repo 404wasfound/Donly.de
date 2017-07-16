@@ -51,6 +51,7 @@ class JobsViewModel: JobsViewModelProtocol {
       } else if let jobs = result.result {
         print("Number of jobs: \(jobs.count)")
         self.jobs.value = jobs
+        self.mainVM?.hideIndicator()
       }
     }, onError: { error in
       ///
@@ -59,7 +60,9 @@ class JobsViewModel: JobsViewModelProtocol {
       if pull {
         self.delegate?.endRefreshing()
       }
-    }).addDisposableTo(disposeBag)
+    }) {
+      self.mainVM?.hideIndicator()
+    }.addDisposableTo(disposeBag)
   }
   
 }

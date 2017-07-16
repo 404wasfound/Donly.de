@@ -52,7 +52,9 @@ class ConversationViewModel: ConversationViewModelProtocol {
       ///
     }, onCompleted: { 
       self.delegate?.hideIndicator()
-    }).addDisposableTo(disposeBag)
+    }) {
+      self.delegate?.hideIndicator()
+    }.addDisposableTo(disposeBag)
   }
   
   func createJSQmessages(fromMessages messages: [Message]) {

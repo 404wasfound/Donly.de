@@ -22,7 +22,6 @@ class NotificationsTableCell: UITableViewCell {
     self.profileImageView.layer.cornerRadius = self.profileImageView.frame.width / 2
     self.userName.textColor = donlyColor
     self.notificationTitle.textColor = donlyColor
-    self.notificationDate.textColor = .lightGray
   }
   
   func configureCell(forNotification notification: Notification) {

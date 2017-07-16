@@ -71,10 +71,7 @@ class MainVC: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     self.router = MainRouter(withMainViewcontroller: self, andViewModel: self.viewModel)
-    self.loadViewForContainer()
-    self.viewModel?.mainVC = self
-    self.viewModel?.getBadgeCounterForPage(.messages)
-    self.viewModel?.getBadgeCounterForPage(.notifications)
+    self.loadData()
     self.setupBindings()
     self.setupBarUI()
     self.setupSlider(forPage: self.currentPage)
@@ -82,12 +79,21 @@ class MainVC: UIViewController {
   
   override func viewWillAppear(_ animated: Bool) {
     self.updateBar(forNewPage: self.currentPage)
+    self.registerForNotifications()
   }
   
   func loadViewModel(forPage page: MainScene.MainPage) {
     self.currentPage = page
     self.viewModel = MainViewModel(withPage: page)
   }
+  
+  func loadData() {
+    self.loadViewForContainer()
+    self.viewModel?.mainVC = self
+    self.viewModel?.getBadgeCounterForPage(.messages)
+    self.viewModel?.getBadgeCounterForPage(.notifications)
+  }
+  
 }
 
 /// Loading and animating related stuff
@@ -112,6 +118,8 @@ extension MainVC {
       addChildViewController(vc)
       performPageAnimation(forController: vc)
       viewModel?.currentScreen = vc
+      let frameForSubview = CGRect(x: 0, y: 0, width: contentContainer.frame.width, height: contentContainer.frame.height)
+      vc.view.frame = frameForSubview
       contentContainer.clipsToBounds = true
       contentContainer.addSubview(vc.view)
     }
@@ -231,4 +239,26 @@ extension MainVC: MainVCProtocol {
   func hideIndicator() {
     self.hideActivityIndicator()
   }
+  
+  func registerForNotifications() {
+    NotificationCenter.default.addObserver(self, selector: #selector(reloadViewsOnDidBecomeActive), name: .UIApplicationWillEnterForeground, object: nil)
+  }
+  
+  func deregisterFromNotifications() {
+    NotificationCenter.default.removeObserver(self, name: .UIApplicationWillEnterForeground, object: nil)
+  }
+  
+  @objc func reloadViewsOnDidBecomeActive() {
+//    self.setupEmptyView()
+    self.contentContainer.subviews.forEach({ $0.removeFromSuperview() })
+    self.viewModel?.resetScenes()
+    self.loadData()
+  }
+  
+  func setupEmptyView() {
+    let emptyView = UIView(frame: self.contentContainer.frame)
+    emptyView.backgroundColor = .white
+    self.contentContainer.addSubview(emptyView)
+  }
+  
 }
