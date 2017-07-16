@@ -76,6 +76,10 @@
 		F46143BD1F1819A100E6F424 /* NotificationBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46143BC1F1819A100E6F424 /* NotificationBadge.swift */; };
 		F46143BF1F1819CC00E6F424 /* NotificationBadge.xib in Resources */ = {isa = PBXBuildFile; fileRef = F46143BE1F1819CC00E6F424 /* NotificationBadge.xib */; };
 		F46143C11F1A43FB00E6F424 /* BadgeCounterAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46143C01F1A43FB00E6F424 /* BadgeCounterAPIRequest.swift */; };
+		F46143C61F1B987D00E6F424 /* JobVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46143C41F1B987D00E6F424 /* JobVC.swift */; };
+		F46143C71F1B987D00E6F424 /* JobVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F46143C51F1B987D00E6F424 /* JobVC.xib */; };
+		F46143C91F1B988C00E6F424 /* JobViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46143C81F1B988C00E6F424 /* JobViewModel.swift */; };
+		F46143CB1F1B989E00E6F424 /* JobScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46143CA1F1B989E00E6F424 /* JobScene.swift */; };
 		F462ABD61F17ED6700BB6C42 /* ReloadButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F462ABD51F17ED6700BB6C42 /* ReloadButton.swift */; };
 		F46C464F1E8D90E8001FF145 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46C464E1E8D90E8001FF145 /* AppDelegate.swift */; };
 		F46C46561E8D90E8001FF145 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F46C46551E8D90E8001FF145 /* Assets.xcassets */; };
@@ -202,6 +206,10 @@
 		F46143BC1F1819A100E6F424 /* NotificationBadge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationBadge.swift; sourceTree = "<group>"; };
 		F46143BE1F1819CC00E6F424 /* NotificationBadge.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NotificationBadge.xib; sourceTree = "<group>"; };
 		F46143C01F1A43FB00E6F424 /* BadgeCounterAPIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadgeCounterAPIRequest.swift; sourceTree = "<group>"; };
+		F46143C41F1B987D00E6F424 /* JobVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobVC.swift; sourceTree = "<group>"; };
+		F46143C51F1B987D00E6F424 /* JobVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JobVC.xib; sourceTree = "<group>"; };
+		F46143C81F1B988C00E6F424 /* JobViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobViewModel.swift; sourceTree = "<group>"; };
+		F46143CA1F1B989E00E6F424 /* JobScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobScene.swift; sourceTree = "<group>"; };
 		F462ABD51F17ED6700BB6C42 /* ReloadButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReloadButton.swift; sourceTree = "<group>"; };
 		F46C464B1E8D90E8001FF145 /* Donly.de.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Donly.de.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F46C464E1E8D90E8001FF145 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -408,6 +416,7 @@
 			isa = PBXGroup;
 			children = (
 				F44AE65C1EF8831C00D8221E /* All Jobs */,
+				F46143C31F1B960000E6F424 /* Job Scene */,
 			);
 			name = Jobs;
 			sourceTree = "<group>";
@@ -449,6 +458,17 @@
 				F4509D651EEC328100503DB1 /* ConversationVC.xib */,
 			);
 			name = "Conversation Scene";
+			sourceTree = "<group>";
+		};
+		F46143C31F1B960000E6F424 /* Job Scene */ = {
+			isa = PBXGroup;
+			children = (
+				F46143CA1F1B989E00E6F424 /* JobScene.swift */,
+				F46143C41F1B987D00E6F424 /* JobVC.swift */,
+				F46143C81F1B988C00E6F424 /* JobViewModel.swift */,
+				F46143C51F1B987D00E6F424 /* JobVC.xib */,
+			);
+			name = "Job Scene";
 			sourceTree = "<group>";
 		};
 		F462ABD41F17ED4400BB6C42 /* Custom Views */ = {
@@ -729,6 +749,7 @@
 			files = (
 				F448D31F1EE2EC97006A7416 /* MainVC.storyboard in Resources */,
 				F46C468E1E8DBB17001FF145 /* LaunchScreen.xib in Resources */,
+				F46143C71F1B987D00E6F424 /* JobVC.xib in Resources */,
 				F428B3311E8FD53D00CF64F6 /* SplashVC.xib in Resources */,
 				F43ECF5F1EE75C4400F633E0 /* ConversationsTableCell.xib in Resources */,
 				F4F3B77D1F1561020066FEB7 /* ProfileVC.xib in Resources */,
@@ -922,6 +943,8 @@
 				F448D3231EE3085B006A7416 /* TabBarButton.swift in Sources */,
 				F448D3181EE0AEF7006A7416 /* MainVC.swift in Sources */,
 				F46143BD1F1819A100E6F424 /* NotificationBadge.swift in Sources */,
+				F46143CB1F1B989E00E6F424 /* JobScene.swift in Sources */,
+				F46143C91F1B988C00E6F424 /* JobViewModel.swift in Sources */,
 				F43ECF651EEC14E700F633E0 /* ActivityIndicatorManager.swift in Sources */,
 				F43ECF5B1EE739C800F633E0 /* PhoneNumber.swift in Sources */,
 				F4A0B6BE1EFEA20200B6EE5B /* Cost.swift in Sources */,
@@ -934,6 +957,7 @@
 				F44C00CB1EF1EA2400DAB511 /* UserDataAPIRequest.swift in Sources */,
 				F4509D661EEC328100503DB1 /* ConversationVC.swift in Sources */,
 				F428B33B1E943AF900CF64F6 /* LocationManager.swift in Sources */,
+				F46143C61F1B987D00E6F424 /* JobVC.swift in Sources */,
 				F462ABD61F17ED6700BB6C42 /* ReloadButton.swift in Sources */,
 				F4F118AD1E992BD3006D5A50 /* User.swift in Sources */,
 				F428B3351E8FD82D00CF64F6 /* SplashViewModel.swift in Sources */,

@@ -146,7 +146,11 @@ class JobsVC: UIViewController {
 
 extension JobsVC: UITableViewDelegate, UITableViewDataSource {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    guard let job = self.viewModel?.jobs.value?[indexPath.row] else {
+      return
+    }
     tableView.deselectRow(at: indexPath, animated: true)
+    self.viewModel?.openJob(job)
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
