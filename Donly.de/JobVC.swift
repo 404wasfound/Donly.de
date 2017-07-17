@@ -20,6 +20,7 @@ class JobVC: UIViewController {
   @IBOutlet weak var priceLabel: UILabel!
   @IBOutlet weak var jobTypeLabel: UILabel!
   @IBOutlet weak var jobTypeImageView: UIImageView!
+  @IBOutlet weak var jobTypeImageBackground: UIView!
   @IBOutlet weak var jobStatusLabel: UILabel!
   @IBOutlet weak var jobStatusImageView: UIImageView!
   @IBOutlet weak var jobAddressLabel: UILabel!
@@ -65,6 +66,8 @@ class JobVC: UIViewController {
     if let categoryImage = UIImage(named: job.category.jobCategoryType.getImageName()) {
       self.jobTypeImageView.image = categoryImage
     }
+    self.jobTypeImageBackground.backgroundColor = job.category.jobCategoryType.getColor()
+    self.jobTypeImageBackground.layer.cornerRadius = self.jobTypeImageView.frame.width / 2
     if let statusImage = UIImage(named: job.status.getImageName()) {
       self.jobStatusImageView.image = statusImage
     }
