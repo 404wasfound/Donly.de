@@ -10,7 +10,7 @@ import Foundation
 
 protocol MainRouterProtocol {
   func routeToConversation(_ conversation: Conversation, withConvsVM convsVM: ConversationsViewModel)
-  func routeToJob(_ job: Job, withJobsVM jobsVM: JobsViewModelProtocol)
+  func routeToJob(_ jobId: Int, withJobsVM jobsVM: JobsViewModelProtocol)
   func routeToAllJobs()
 }
 
@@ -31,8 +31,8 @@ class MainRouter: MainRouterProtocol {
     }
   }
   
-  func routeToJob(_ job: Job, withJobsVM jobsVM: JobsViewModelProtocol) {
-    let vc = JobScene.configure(forJob: job, withMainRouter: self, andWithJobsVM: jobsVM)
+  func routeToJob(_ jobId: Int, withJobsVM jobsVM: JobsViewModelProtocol) {
+    let vc = JobScene.configure(forJobId: jobId, withMainRouter: self, andWithJobsVM: jobsVM)
     DispatchQueue.main.async {
       self.mainViewController.navigationController?.pushViewController(vc, animated: true)
     }

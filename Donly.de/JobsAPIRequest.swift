@@ -13,7 +13,7 @@ import SwiftyJSON
 final class JobsAPIRequest: APIRequestType {
   var method: HTTPMethod = .get
   var idParameter: String?
-  var parameters: [String : Any]
+  var parameters: [String: Any]
   var endpoint: Endpoint = .jobs
   typealias ReturnType = [Job]
   

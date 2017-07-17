@@ -12,7 +12,7 @@ import RxSwift
 protocol JobsViewModelProtocol {
   func openAllJobsScreen()
   func getJobs(forPull pull: Bool)
-  func openJob(_ job: Job)
+  func openJob(_ jobId: Int)
   var page: MainScene.MainPage { get set }
   var delegate: JobsVCProtocol? { get set }
   var jobs: Variable<[Job]?> { get set }
@@ -66,8 +66,8 @@ class JobsViewModel: JobsViewModelProtocol {
     }.addDisposableTo(disposeBag)
   }
   
-  func openJob(_ job: Job) {
-    mainRouter?.routeToJob(job, withJobsVM: self)
+  func openJob(_ jobId: Int) {
+    mainRouter?.routeToJob(jobId, withJobsVM: self)
   }
   
 }

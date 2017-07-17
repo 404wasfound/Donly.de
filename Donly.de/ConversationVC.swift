@@ -56,7 +56,7 @@ class ConversationVC: JSQMessagesViewController {
   }
   
   func setupBindings() {
-    viewModel?.messages.asObservable().bind(onNext: { messages in
+    self.viewModel?.messages.asObservable().bind(onNext: { messages in
       if let newMessages = messages {
         print("Messages are here! (In number of: \(newMessages.count))")
         self.collectionView.reloadData()

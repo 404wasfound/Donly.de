@@ -150,7 +150,7 @@ extension JobsVC: UITableViewDelegate, UITableViewDataSource {
       return
     }
     tableView.deselectRow(at: indexPath, animated: true)
-    self.viewModel?.openJob(job)
+    self.viewModel?.openJob(job.id)
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
