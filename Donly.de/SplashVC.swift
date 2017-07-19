@@ -55,7 +55,7 @@ class SplashVC: UIViewController {
 extension SplashVC: SplashVCProtocol {
   
   func showIndicator() {
-    self.showActivityIndicator()
+    self.showActivityIndicator(withColor: .white)
   }
   
   func hideIndicator() {

@@ -75,11 +75,11 @@ class MainVC: UIViewController {
     self.setupBindings()
     self.setupBarUI()
     self.setupSlider(forPage: self.currentPage)
+    self.registerForNotifications()
   }
   
   override func viewWillAppear(_ animated: Bool) {
     self.updateBar(forNewPage: self.currentPage)
-    self.registerForNotifications()
   }
   
   func loadViewModel(forPage page: MainScene.MainPage) {
@@ -233,7 +233,7 @@ extension MainVC {
 /// MainVCProtocol
 extension MainVC: MainVCProtocol {
   func showIndicator() {
-    self.showActivityIndicator()
+    self.showActivityIndicator(withColor: donlyColor)
   }
   
   func hideIndicator() {
@@ -249,7 +249,7 @@ extension MainVC: MainVCProtocol {
   }
   
   @objc func reloadViewsOnDidBecomeActive() {
-//    self.setupEmptyView()
+    self.setupEmptyView()
     self.contentContainer.subviews.forEach({ $0.removeFromSuperview() })
     self.viewModel?.resetScenes()
     self.loadData()

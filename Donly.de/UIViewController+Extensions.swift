@@ -20,8 +20,8 @@ extension UIViewController {
     view.endEditing(true)
   }
   
-  func showActivityIndicator() {
-    ActivityIndicatorManager.shared.show(onView: self.view)
+  func showActivityIndicator(withColor color: UIColor) {
+    ActivityIndicatorManager.shared.show(onView: self.view, withColor: color)
   }
   
   func hideActivityIndicator() {

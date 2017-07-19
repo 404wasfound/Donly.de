@@ -114,7 +114,7 @@ extension OnboardingLoginVC: UITextFieldDelegate {
 extension OnboardingLoginVC: OnboardingLoginVCProtocol {
   
   func showIndicator() {
-    self.showActivityIndicator()
+    self.showActivityIndicator(withColor: donlyColor)
   }
   
   func hideIndicator() {

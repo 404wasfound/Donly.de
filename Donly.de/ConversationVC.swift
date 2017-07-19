@@ -44,9 +44,9 @@ class ConversationVC: JSQMessagesViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    viewModel?.delegate = self
-    viewModel?.getMessagesForConversation()
-    setupBindings()
+    self.viewModel?.delegate = self
+    self.viewModel?.getMessagesForConversation()
+    self.setupBindings()
     self.senderDisplayName = appData.user?.fullName
     if let user = appData.user {
       self.senderId = "\(user.id)"
@@ -140,7 +140,7 @@ extension ConversationVC {
 
 extension ConversationVC: ConversationVCProtocol {
   func showIndicator() {
-    self.showActivityIndicator()
+    self.showActivityIndicator(withColor: donlyColor)
   }
   
   func hideIndicator() {
