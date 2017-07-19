@@ -15,8 +15,9 @@ class ActivityIndicatorManager {
   internal var activityIndicator: NVActivityIndicatorView?
   
   func show(onView view: UIView) {
-    let frame = CGRect(x: view.frame.width / 2 - 30, y: view.frame.height / 2 - 30, width: 60.0, height: 60.0)
+    let frame = CGRect(x: 0, y: 0, width: 60.0, height: 60.0)
     self.activityIndicator = NVActivityIndicatorView(frame: frame, type: NVActivityIndicatorType.ballScaleMultiple, color: donlyColor, padding: nil)
+    self.activityIndicator?.center = view.center
     guard let indicator = self.activityIndicator else {
       return
     }
