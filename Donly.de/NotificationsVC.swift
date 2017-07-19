@@ -94,6 +94,9 @@ class NotificationsVC: UIViewController {
     self.notificationsTable.register(UINib(nibName: String(describing: NotificationsTableCell.self), bundle: nil), forCellReuseIdentifier: String(describing: NotificationsTableCell.self))
     self.notificationsTable.addSubview(self.refreshControl)
     self.notificationsTable.allowsMultipleSelectionDuringEditing = true
+    self.notificationsTable.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+    self.notificationsTable.tableFooterView?.isHidden = true
+    self.notificationsTable.backgroundColor = lightGrayColor
   }
   
 }
