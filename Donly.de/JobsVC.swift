@@ -122,6 +122,9 @@ class JobsVC: UIViewController {
     self.jobsTable.register(UINib(nibName: String(describing: JobsTableCell.self), bundle: nil), forCellReuseIdentifier: String(describing: JobsTableCell.self))
     self.jobsTable.addSubview(self.refreshControl)
     self.jobsTable.allowsMultipleSelectionDuringEditing = true
+    self.jobsTable.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+    self.jobsTable.tableFooterView?.isHidden = true
+    self.jobsTable.backgroundColor = .clear
   }
   
   func setupJobSearchButton() {

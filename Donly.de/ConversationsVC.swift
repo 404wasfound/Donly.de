@@ -94,6 +94,9 @@ class ConversationsVC: UIViewController {
     self.messagesTable.register(UINib(nibName: String(describing: ConversationsTableCell.self), bundle: nil), forCellReuseIdentifier: String(describing: ConversationsTableCell.self))
     self.messagesTable.addSubview(self.refreshControl)
     self.messagesTable.allowsMultipleSelectionDuringEditing = true
+    self.messagesTable.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+    self.messagesTable.tableFooterView?.isHidden = true
+    self.messagesTable.backgroundColor = .clear
   }
   
 }
